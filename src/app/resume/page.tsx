@@ -112,29 +112,50 @@ export default function ResumePage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow"
+            className="bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all"
           >
-            <h2 className="text-h4 font-semibold text-gray-900 mb-6">Key Achievements</h2>
+            <motion.h2
+              className="text-h4 font-semibold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-8"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              Key Achievements
+            </motion.h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {[
-                { value: '$1.2M+', label: 'Total Revenue' },
-                { value: '500+', label: 'Enterprise Users' },
-                { value: '2M+', label: 'Monthly API Requests' },
-                { value: '30+', label: 'Integrations' },
-                { value: '0', label: 'Security Breaches' },
-                { value: '14+', label: 'Years Experience' }
+                { value: '$1.2M+', label: 'Total Revenue', icon: '💰' },
+                { value: '500+', label: 'Enterprise Users', icon: '👥' },
+                { value: '2M+', label: 'Monthly API Requests', icon: '⚡' },
+                { value: '30+', label: 'Integrations', icon: '🔗' },
+                { value: '0', label: 'Security Breaches', icon: '🛡️' },
+                { value: '14+', label: 'Years Experience', icon: '⭐' }
               ].map((stat, idx) => (
                 <motion.div
                   key={stat.label}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: idx * 0.05 }}
+                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ delay: idx * 0.06, duration: 0.5, type: "spring", stiffness: 100 }}
                   viewport={{ once: true }}
-                  whileHover={{ scale: 1.02 }}
-                  className="cursor-pointer"
+                  whileHover={{ y: -6, boxShadow: '0 12px 24px rgba(0, 102, 255, 0.12)' }}
+                  className="p-5 bg-white border border-gray-100 rounded-xl hover:border-accent/30 transition-all cursor-pointer group"
                 >
-                  <div className="text-h3 font-bold text-accent">{stat.value}</div>
-                  <div className="text-body-sm text-gray-600">{stat.label}</div>
+                  <div className="flex items-start justify-between mb-3">
+                    <motion.span
+                      className="text-2xl"
+                      whileHover={{ scale: 1.2, rotate: 5 }}
+                      transition={{ type: 'spring', stiffness: 200 }}
+                    >
+                      {stat.icon}
+                    </motion.span>
+                  </div>
+                  <div className="text-h4 font-bold text-accent group-hover:text-accent-light transition-colors">
+                    {stat.value}
+                  </div>
+                  <div className="text-body-sm text-gray-600 group-hover:text-gray-700 transition-colors mt-1">
+                    {stat.label}
+                  </div>
                 </motion.div>
               ))}
             </div>
