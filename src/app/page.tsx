@@ -632,6 +632,194 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Featured Projects Showcase */}
+      <section className="py-24 px-8 bg-gradient-to-b from-black to-gray-950 relative overflow-hidden">
+        {/* Background elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div
+            className="absolute top-1/4 -left-40 w-80 h-80 bg-accent/8 rounded-full blur-3xl"
+            animate={{ y: [0, -40, 0], x: [0, 20, 0] }}
+            transition={{ duration: 15, repeat: Infinity }}
+          />
+          <motion.div
+            className="absolute bottom-1/4 -right-40 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl"
+            animate={{ y: [0, 40, 0], x: [0, -20, 0] }}
+            transition={{ duration: 18, repeat: Infinity }}
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <motion.h2
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text mb-4"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              Featured Projects
+            </motion.h2>
+            <motion.p
+              className="text-body-lg text-gray-500"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              Real-world applications showcasing AI integration, scalable architecture, and measurable business impact
+            </motion.p>
+          </motion.div>
+
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {projects.filter(p => p.featured).slice(0, 4).map((project, idx) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.15, duration: 0.6 }}
+                whileHover={{ y: -8, boxShadow: '0 25px 50px rgba(0, 102, 255, 0.25)' }}
+                className="bg-gradient-to-br from-gray-900/90 to-gray-950 border border-gray-800/50 hover:border-accent/50 rounded-3xl overflow-hidden transition-all duration-300 group"
+              >
+                {/* Project Image Placeholder */}
+                <div className="relative h-48 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <motion.div
+                      className="text-7xl opacity-20"
+                      whileHover={{ scale: 1.15, rotate: 5 }}
+                      transition={{ type: 'spring', stiffness: 200 }}
+                    >
+                      {project.category === 'ai' ? '🤖' : project.category === 'saas' ? '💼' : '🔗'}
+                    </motion.div>
+                  </div>
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide ${
+                      project.category === 'ai'
+                        ? 'bg-accent/20 text-accent'
+                        : project.category === 'saas'
+                        ? 'bg-purple-500/20 text-purple-400'
+                        : 'bg-green-500/20 text-green-400'
+                    }`}>
+                      {project.category}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Project Content */}
+                <div className="p-8">
+                  <h3 className="text-h4 font-bold text-cream mb-2 group-hover:text-accent transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-body-sm text-gray-500 mb-4">
+                    {project.subtitle}
+                  </p>
+                  <p className="text-body text-gray-400 leading-relaxed mb-6">
+                    {project.description}
+                  </p>
+
+                  {/* Metrics Grid */}
+                  {project.metrics && project.metrics.length > 0 && (
+                    <div className="grid grid-cols-3 gap-3 mb-6">
+                      {project.metrics.map((metric, metricIdx) => (
+                        <motion.div
+                          key={metric.label}
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: idx * 0.15 + metricIdx * 0.05 }}
+                          whileHover={{ scale: 1.05 }}
+                          className="bg-gray-800/50 rounded-lg p-3 text-center border border-gray-700/50"
+                        >
+                          <div className="text-body font-bold text-accent mb-1">
+                            {metric.value}
+                          </div>
+                          <div className="text-[10px] text-gray-500 uppercase tracking-wide">
+                            {metric.label}
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Technologies */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.technologies.slice(0, 5).map((tech, techIdx) => (
+                      <motion.span
+                        key={tech}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.15 + techIdx * 0.03 }}
+                        whileHover={{ scale: 1.1, y: -2 }}
+                        className="px-3 py-1 bg-gray-800/60 text-gray-400 text-[11px] rounded-full border border-gray-700/30"
+                      >
+                        {tech}
+                      </motion.span>
+                    ))}
+                    {project.technologies.length > 5 && (
+                      <span className="px-3 py-1 bg-gray-800/60 text-gray-500 text-[11px] rounded-full">
+                        +{project.technologies.length - 5}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Action Link */}
+                  {project.links.live && (
+                    <motion.a
+                      href={project.links.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-accent hover:text-accent-light font-medium text-body-sm transition-colors"
+                      whileHover={{ x: 4 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      View Project
+                      <motion.svg
+                        className="w-4 h-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        whileHover={{ x: 2 }}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </motion.svg>
+                    </motion.a>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* View All Projects CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+            className="mt-12 text-center"
+          >
+            <motion.a
+              href="/resume#projects"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-white font-semibold rounded-xl shadow-lg"
+              whileHover={{ scale: 1.05, boxShadow: '0 12px 32px rgba(0, 102, 255, 0.4)' }}
+              whileTap={{ scale: 0.98 }}
+            >
+              View All Projects
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </motion.a>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Testimonials / Social Proof */}
       <section className="py-24 px-8 bg-gradient-to-b from-black via-gray-950 to-black relative overflow-hidden">
         {/* Background decoration */}
