@@ -87,6 +87,44 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
+
+            {/* Currently Seeking Banner */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="mt-16 bg-gradient-to-r from-accent/10 to-accent/5 border border-accent/30 rounded-2xl p-6 backdrop-blur-sm"
+            >
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="text-center md:text-left">
+                  <motion.h3
+                    className="text-body-lg font-semibold text-cream mb-2 flex items-center justify-center md:justify-start gap-2"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.9 }}
+                  >
+                    <motion.span
+                      animate={{ scale: [1, 1.2, 1] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      🎯
+                    </motion.span>
+                    Currently Seeking Opportunities
+                  </motion.h3>
+                  <p className="text-body-sm text-gray-400">
+                    AI Engineer • Full-Stack Developer • Technical Lead • Remote or Denver-based
+                  </p>
+                </div>
+                <motion.a
+                  href="mailto:contact@nickkulavic.ai"
+                  className="px-6 py-3 bg-accent hover:bg-accent-light text-white font-semibold rounded-xl shadow-lg whitespace-nowrap"
+                  whileHover={{ scale: 1.05, boxShadow: '0 8px 24px rgba(0, 102, 255, 0.3)' }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  Let&apos;s Talk →
+                </motion.a>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -143,6 +181,90 @@ export default function Home() {
         </div>
       </section>
 
+      {/* What I Bring - White Section */}
+      <section className="py-20 px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12 text-center"
+          >
+            <motion.h2
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-4"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              What Sets Me Apart
+            </motion.h2>
+            <p className="text-body-lg text-gray-600 max-w-3xl mx-auto">
+              The rare combination that delivers both technical excellence and business results
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: '🚀',
+                title: 'Ship Fast, Ship Right',
+                description: 'From zero to production in weeks, not months. Built entire SaaS platforms single-handedly while maintaining enterprise-grade security (SOC 2, zero breaches).'
+              },
+              {
+                icon: '💰',
+                title: 'Revenue-Focused Engineering',
+                description: '$1.2M+ generated across 3 ventures. I build products that customers pay for, not just impressive tech demos. Every line of code drives business value.'
+              },
+              {
+                icon: '🤖',
+                title: 'AI-First Mindset',
+                description: 'Daily user of Claude Code, AWS Bedrock, and modern AI tooling. I leverage AI to 10x productivity while building AI products that solve real problems.'
+              },
+              {
+                icon: '☁️',
+                title: 'AWS Architecture Expert',
+                description: '8+ years with AWS Lambda, DynamoDB, Bedrock. I design serverless systems that handle 2M+ monthly requests while keeping costs low and scaling automatically.'
+              },
+              {
+                icon: '🔧',
+                title: 'Full-Stack Versatility',
+                description: 'React (7y), Node.js (10y), TypeScript (6y). Backend, frontend, infrastructure - I handle the entire stack so your team moves faster.'
+              },
+              {
+                icon: '🎯',
+                title: 'Startup to Enterprise',
+                description: 'Founded companies AND worked in enterprise environments. I understand both moving fast AND building systems that scale to thousands of users with compliance requirements.'
+              }
+            ].map((item, idx) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.08, duration: 0.5 }}
+                whileHover={{ y: -6, boxShadow: '0 12px 32px rgba(0, 102, 255, 0.12)' }}
+                className="bg-gradient-to-br from-cream to-white border border-gray-200 rounded-2xl p-6 hover:border-accent/40 transition-all group cursor-pointer"
+              >
+                <motion.div
+                  className="text-4xl mb-4"
+                  whileHover={{ scale: 1.15, rotate: 5 }}
+                  transition={{ type: 'spring', stiffness: 200 }}
+                >
+                  {item.icon}
+                </motion.div>
+                <h3 className="text-body-lg font-bold text-gray-900 mb-3 group-hover:text-accent transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-body-sm text-gray-600 leading-relaxed">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Experience - Dark Section */}
       <section className="py-20 px-8 bg-gray-950">
         <div className="max-w-6xl mx-auto">
@@ -167,9 +289,32 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
                 whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(0, 102, 255, 0.1)' }}
-                className="bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-accent/50 transition-all cursor-pointer"
+                className="bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-accent/50 transition-all cursor-pointer relative overflow-hidden"
               >
-                <div className="flex items-start justify-between mb-4">
+                {/* Logo in corner */}
+                {exp.logo && (
+                  <motion.div
+                    className="absolute top-4 right-4"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 + 0.15, type: "spring", stiffness: 150 }}
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                  >
+                    <div
+                      className="w-14 h-14 rounded-xl flex items-center justify-center font-bold text-sm border border-opacity-30"
+                      style={{
+                        backgroundColor: exp.logo.bgColor,
+                        color: exp.logo.color,
+                        borderColor: exp.logo.color
+                      }}
+                    >
+                      {exp.logo.initials}
+                    </div>
+                  </motion.div>
+                )}
+
+                <div className="flex items-start justify-between mb-4 pr-16">
                   <div>
                     <h3 className="text-body-lg font-semibold text-cream mb-1">{exp.role}</h3>
                     <p className="text-body text-gray-400">{exp.company}</p>
@@ -179,7 +324,7 @@ export default function Home() {
                       initial={{ scale: 0.8, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
                       transition={{ delay: idx * 0.1 + 0.2 }}
-                      className="px-3 py-1 bg-green-500/10 border border-green-500/30 text-green-400 text-caption rounded-full"
+                      className="px-3 py-1 bg-green-500/10 border border-green-500/30 text-green-400 text-caption rounded-full absolute top-20 right-4"
                     >
                       Current
                     </motion.span>

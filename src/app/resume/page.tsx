@@ -176,8 +176,31 @@ export default function ResumePage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: expIdx * 0.1 }}
                   viewport={{ once: true }}
-                  className="group border-l-4 border-accent/30 hover:border-accent pl-6 transition-colors"
+                  className="group border-l-4 border-accent/30 hover:border-accent pl-6 transition-colors relative"
                 >
+                  {/* Logo */}
+                  {exp.logo && (
+                    <motion.div
+                      className="absolute -left-11 top-0"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: expIdx * 0.1 + 0.1, type: "spring", stiffness: 150 }}
+                      whileHover={{ scale: 1.15, rotate: 5 }}
+                    >
+                      <div
+                        className="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-xs border shadow-sm"
+                        style={{
+                          backgroundColor: exp.logo.bgColor,
+                          color: exp.logo.color,
+                          borderColor: exp.logo.color + '40'
+                        }}
+                      >
+                        {exp.logo.initials}
+                      </div>
+                    </motion.div>
+                  )}
+
                   <div className="flex justify-between items-baseline mb-2">
                     <div>
                       <h3 className="text-body-lg font-semibold text-gray-900 group-hover:text-accent transition-colors">
@@ -290,19 +313,72 @@ export default function ResumePage() {
       {/* Education & Certifications - White Section */}
       <div className="py-16 px-8 bg-white">
         <div className="max-w-3xl mx-auto">
-          <section className="mb-12">
-            <h2 className="text-h4 font-semibold text-gray-900 mb-6">Education & Certifications</h2>
+          <motion.section
+            className="mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.h2
+              className="text-h4 font-semibold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-6"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              Education & Certifications
+            </motion.h2>
             <div className="space-y-4">
-              <div className="bg-cream border border-gray-200 rounded-xl p-5">
-                <h3 className="text-body font-semibold text-gray-900">AWS Certified Solutions Architect</h3>
-                <p className="text-body-sm text-gray-600">Amazon Web Services • Professional Level</p>
-              </div>
-              <div className="bg-cream border border-gray-200 rounded-xl p-5">
-                <h3 className="text-body font-semibold text-gray-900">Infusionsoft Certified Partner</h3>
-                <p className="text-body-sm text-gray-600">Keap • Expert Level</p>
-              </div>
+              {[
+                {
+                  title: 'AWS Certified Solutions Architect',
+                  organization: 'Amazon Web Services',
+                  level: 'Professional Level',
+                  icon: '☁️',
+                  color: '#FF9900'
+                },
+                {
+                  title: 'Infusionsoft Certified Partner',
+                  organization: 'Keap',
+                  level: 'Expert Level',
+                  icon: '🎓',
+                  color: '#73C41D'
+                }
+              ].map((cert, idx) => (
+                <motion.div
+                  key={cert.title}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1, duration: 0.5 }}
+                  whileHover={{ x: 4, boxShadow: '0 8px 20px rgba(0, 102, 255, 0.1)' }}
+                  className="bg-cream border border-gray-200 rounded-xl p-5 hover:border-accent/30 transition-all cursor-pointer group flex items-start gap-4"
+                >
+                  <motion.div
+                    className="text-3xl"
+                    whileHover={{ scale: 1.2, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 200 }}
+                  >
+                    {cert.icon}
+                  </motion.div>
+                  <div className="flex-1">
+                    <h3 className="text-body font-semibold text-gray-900 group-hover:text-accent transition-colors">
+                      {cert.title}
+                    </h3>
+                    <p className="text-body-sm text-gray-600">
+                      {cert.organization} • {cert.level}
+                    </p>
+                  </div>
+                  <motion.div
+                    className="w-2 h-2 rounded-full"
+                    style={{ backgroundColor: cert.color }}
+                    whileHover={{ scale: 1.5 }}
+                  />
+                </motion.div>
+              ))}
             </div>
-          </section>
+          </motion.section>
 
           {/* Target Roles */}
           <section className="mb-8">

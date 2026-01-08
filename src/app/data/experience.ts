@@ -10,6 +10,11 @@ export interface ExperienceEntry {
   technologies: string[];
   metrics?: string[];
   category: 'ai-engineering' | 'full-stack' | 'entrepreneurship' | 'leadership';
+  logo?: {
+    initials: string;
+    color: string;
+    bgColor: string;
+  };
 }
 
 export const experiences: ExperienceEntry[] = [
@@ -21,6 +26,11 @@ export const experiences: ExperienceEntry[] = [
     startDate: 'March 2025',
     endDate: 'Present',
     description: 'Building enterprise AI-powered applications for the mortgage industry with focus on scalability, security, and compliance.',
+    logo: {
+      initials: 'T3',
+      color: '#0066FF',
+      bgColor: '#0066FF15'
+    },
     achievements: [
       'Architected LoanMaps, a comprehensive loan origination system serving 500+ loan officers',
       'Developed RuleTool, an AI-driven PDF processing platform achieving 80% faster processing times',
@@ -42,6 +52,11 @@ export const experiences: ExperienceEntry[] = [
     startDate: 'January 2023',
     endDate: 'Present',
     description: 'Founded serverless SaaS platform for email list backup and protection, ensuring business continuity for email marketing operations.',
+    logo: {
+      initials: 'LB',
+      color: '#8B5CF6',
+      bgColor: '#8B5CF615'
+    },
     achievements: [
       'Architected fully serverless solution using AWS Cognito, DynamoDB, and Lambda',
       'Implemented AI capabilities using AWS Bedrock and Claude/ChatGPT APIs for intelligent classification',
@@ -62,6 +77,11 @@ export const experiences: ExperienceEntry[] = [
     startDate: 'January 2015',
     endDate: 'Present',
     description: 'Founded and scaled profitable SaaS business providing API integration and automation solutions for CRM platforms.',
+    logo: {
+      initials: 'MF',
+      color: '#0891B2',
+      bgColor: '#0891B215'
+    },
     achievements: [
       'Generated $1.2M+ in cumulative revenue through sustainable SaaS model',
       'Processed 33,000+ recurring orders across six continents',
@@ -80,10 +100,15 @@ export const experiences: ExperienceEntry[] = [
     id: 'alignlife',
     company: 'AlignLife Franchise',
     role: 'Director of Automation & Lead Developer',
-    location: 'Denver, CO',
+    location: 'Peoria, IL',
     startDate: 'January 2011',
     endDate: 'December 2016',
     description: 'Built complete franchise technology stack for chiropractic practices, enabling multi-location management and operational automation.',
+    logo: {
+      initials: 'AL',
+      color: '#10B981',
+      bgColor: '#10B98115'
+    },
     achievements: [
       'Architected and built entire franchise technology infrastructure serving 20+ chiropractic locations',
       'Designed automated workflows for patient management, scheduling, and billing systems',
@@ -103,10 +128,15 @@ export const experiences: ExperienceEntry[] = [
     id: 'aceva',
     company: 'ACEVA (Nutraceutical E-Commerce)',
     role: 'Operations Director & Lead Developer',
-    location: 'Denver, CO',
+    location: 'Peoria, IL',
     startDate: 'January 2011',
     endDate: 'December 2016',
     description: 'Managed operational and technical aspects of nutraceutical e-commerce platform, including platform architecture and migration.',
+    logo: {
+      initials: 'AC',
+      color: '#059669',
+      bgColor: '#05966915'
+    },
     achievements: [
       'Maintained and optimized Magento-based e-commerce platform for nutraceutical products',
       'Led complete platform migration from Magento to Shopify for improved performance',
