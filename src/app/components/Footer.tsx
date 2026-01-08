@@ -5,42 +5,159 @@ import { motion } from 'framer-motion';
 
 const Footer = () => {
   return (
-    <footer className="bg-black py-12 px-8 border-t border-gray-900">
+    <footer className="bg-black py-16 px-8 border-t border-gray-900">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-8">
+        {/* Top Section - Stats & CTA */}
+        <div className="mb-12 pb-12 border-b border-gray-900">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* Left - CTA */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h3 className="text-h3 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text mb-4">
+                Let&apos;s Build Something Great
+              </h3>
+              <p className="text-body text-gray-400 mb-6 leading-relaxed">
+                Looking for an AI Engineer or Full-Stack Developer who delivers results?
+                I&apos;m available for full-time opportunities.
+              </p>
+              <motion.a
+                href="mailto:contact@nickkulavic.ai"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-white font-semibold rounded-xl shadow-lg transition-all"
+                whileHover={{ scale: 1.05, boxShadow: '0 12px 32px rgba(0, 102, 255, 0.4)' }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Get in Touch
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </motion.a>
+            </motion.div>
+
+            {/* Right - Key Stats */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="grid grid-cols-2 gap-6"
+            >
+              {[
+                { value: '14+', label: 'Years Experience', icon: '⏱️' },
+                { value: '$1.2M+', label: 'Revenue Generated', icon: '💰' },
+                { value: '500+', label: 'Enterprise Users', icon: '👥' },
+                { value: '0', label: 'Security Breaches', icon: '🔒' }
+              ].map((stat, idx) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 + idx * 0.08, type: 'spring', stiffness: 150 }}
+                  whileHover={{ scale: 1.05, y: -4 }}
+                  className="bg-gradient-to-br from-gray-900/80 to-gray-950 border border-gray-800/50 rounded-xl p-5 text-center group cursor-pointer"
+                >
+                  <motion.div
+                    className="text-3xl mb-2"
+                    whileHover={{ scale: 1.2, rotate: 10 }}
+                  >
+                    {stat.icon}
+                  </motion.div>
+                  <div className="text-h3 font-bold text-accent mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-caption text-gray-500 group-hover:text-gray-400 transition-colors">
+                    {stat.label}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+        {/* Middle Section - Navigation & Quick Actions */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          {/* Left - Branding */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="mb-6 md:mb-0"
           >
             <h3 className="text-h4 font-bold text-cream mb-2">Nick Kulavic</h3>
-            <p className="text-body-sm text-gray-500">AI Developer & SaaS Entrepreneur</p>
+            <p className="text-body-sm text-gray-500 mb-4">AI Developer & SaaS Entrepreneur</p>
+            <p className="text-body-sm text-gray-600 leading-relaxed">
+              Building enterprise AI applications and scaling SaaS solutions with 14+ years of proven results.
+            </p>
           </motion.div>
 
+          {/* Center - Quick Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="flex flex-wrap justify-center gap-8"
+            className="flex flex-col items-start md:items-center"
           >
-            {[
-              { name: 'Home', href: '/' },
-              { name: 'Resume', href: '/resume' },
-              { name: 'Contact', href: 'mailto:contact@nickkulavic.ai' }
-            ].map((item) => (
+            <h4 className="text-body font-semibold text-gray-400 mb-4">Quick Links</h4>
+            <div className="flex flex-col gap-3">
+              {[
+                { name: 'Home', href: '/', icon: '🏠' },
+                { name: 'Resume', href: '/resume', icon: '📄' },
+                { name: 'Projects', href: '/#projects', icon: '💼' },
+                { name: 'Contact', href: 'mailto:contact@nickkulavic.ai', icon: '✉️' }
+              ].map((item) => (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  className="flex items-center gap-2 text-gray-500 hover:text-accent transition-colors text-body-sm group"
+                  whileHover={{ x: 4 }}
+                  transition={{ type: 'spring', stiffness: 200 }}
+                >
+                  <span className="group-hover:scale-110 transition-transform">{item.icon}</span>
+                  {item.name}
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Right - Quick Actions */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="flex flex-col items-start md:items-end"
+          >
+            <h4 className="text-body font-semibold text-gray-400 mb-4">Get Started</h4>
+            <div className="flex flex-col gap-3 w-full md:w-auto">
               <motion.a
-                key={item.name}
-                href={item.href}
-                className="text-gray-500 hover:text-accent transition-colors text-body-sm"
-                whileHover={{ y: -2, color: '#0066FF' }}
-                transition={{ type: 'spring', stiffness: 200 }}
+                href="/resume"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 hover:bg-gray-800 border border-gray-800 hover:border-accent/50 text-gray-300 hover:text-cream rounded-lg transition-all text-body-sm font-medium"
+                whileHover={{ scale: 1.02, x: -2 }}
+                whileTap={{ scale: 0.98 }}
               >
-                {item.name}
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                View Full Resume
               </motion.a>
-            ))}
+              <motion.a
+                href="https://linkedin.com/in/nickkulavic"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#0A66C2] hover:bg-[#004182] text-white rounded-lg transition-all text-body-sm font-medium"
+                whileHover={{ scale: 1.02, x: -2, boxShadow: '0 8px 20px rgba(10, 102, 194, 0.3)' }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+                Connect on LinkedIn
+              </motion.a>
+            </div>
           </motion.div>
         </div>
 
