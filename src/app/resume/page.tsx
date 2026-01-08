@@ -9,53 +9,98 @@ export default function ResumePage() {
   return (
     <div className="min-h-screen bg-cream">
       {/* Header Section - Dark */}
-      <div className="bg-black py-16 px-8">
-        <div className="max-w-3xl mx-auto">
-          <header className="border-b border-gray-800 pb-8 mb-8">
-            <h1 className="text-h1 font-bold text-cream mb-2">Nick Kulavic</h1>
-            <p className="text-body-lg text-gray-400 mb-4">
+      <div className="bg-black py-16 px-8 relative overflow-hidden">
+        {/* Animated background */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div
+            className="absolute -top-40 -right-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl"
+            animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
+            transition={{ duration: 8, repeat: Infinity }}
+          />
+        </div>
+
+        <div className="max-w-3xl mx-auto relative z-10">
+          <motion.header
+            className="border-b border-gray-800 pb-8 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <motion.h1
+              className="text-h1 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text mb-2"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.6 }}
+            >
+              Nick Kulavic
+            </motion.h1>
+            <motion.p
+              className="text-body-lg text-transparent bg-gradient-to-r from-gray-400 to-accent bg-clip-text mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+            >
               AI Engineer & Full-Stack Developer
-            </p>
-            <div className="flex flex-wrap gap-6 text-body-sm text-gray-500">
+            </motion.p>
+            <motion.div
+              className="flex flex-wrap gap-6 text-body-sm text-gray-500"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+            >
               <span>Denver, CO</span>
-              <span>•</span>
-              <a
+              <span className="text-gray-700">•</span>
+              <motion.a
                 href="mailto:contact@nickkulavic.ai"
                 className="hover:text-accent transition-colors"
+                whileHover={{ scale: 1.05, color: '#0066FF' }}
               >
                 Email
-              </a>
-              <span>•</span>
-              <a
+              </motion.a>
+              <span className="text-gray-700">•</span>
+              <motion.a
                 href="https://linkedin.com/in/nickkulavic"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-accent transition-colors"
+                whileHover={{ scale: 1.05, color: '#0066FF' }}
               >
                 LinkedIn
-              </a>
-              <span>•</span>
-              <a
+              </motion.a>
+              <span className="text-gray-700">•</span>
+              <motion.a
                 href="https://github.com/nkulavic"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-accent transition-colors"
+                whileHover={{ scale: 1.05, color: '#0066FF' }}
               >
                 GitHub
-              </a>
-            </div>
-          </header>
+              </motion.a>
+            </motion.div>
+          </motion.header>
 
           {/* Summary */}
-          <section>
-            <h2 className="text-h4 font-semibold text-cream mb-4">Professional Summary</h2>
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+          >
+            <motion.h2
+              className="text-h4 font-semibold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text mb-4"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            >
+              Professional Summary
+            </motion.h2>
             <p className="text-body text-gray-300 leading-relaxed">
               AI & Full-Stack Developer with 14+ years building enterprise applications and profitable SaaS ventures.
               Expertise in AWS, serverless architecture, and AI integration. Founded multiple companies generating $1.2M+
               in revenue. Currently developing AI-powered solutions at Take3Tech serving 500+ users with SOC 2 compliance.
               Proven track record in scaling SaaS products, API integrations, and delivering business value through technology.
             </p>
-          </section>
+          </motion.section>
         </div>
       </div>
 
