@@ -497,7 +497,7 @@ export default function Home() {
                   </h4>
                 </div>
 
-                <div className="space-y-2.5">
+                <div className="space-y-3">
                   {category.skills.slice(0, 5).map((skill, skillIdx) => (
                     <motion.div
                       key={skill.name}
@@ -505,23 +505,130 @@ export default function Home() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: idx * 0.08 + skillIdx * 0.04 }}
-                      className="flex items-center justify-between text-body-sm text-gray-500 group-hover:text-gray-400 transition-colors"
+                      className="group/skill"
                     >
-                      <span>{skill.name}</span>
-                      {skill.yearsExperience && skill.yearsExperience >= 5 && (
-                        <motion.span
-                          className="text-accent font-medium text-caption"
-                          whileHover={{ scale: 1.1 }}
-                        >
-                          {skill.yearsExperience}y
-                        </motion.span>
-                      )}
+                      <div className="flex items-center justify-between text-body-sm mb-1.5">
+                        <span className="text-gray-400 group-hover:text-cream transition-colors font-medium">
+                          {skill.name}
+                        </span>
+                        <div className="flex items-center gap-1.5">
+                          {/* Level Badge */}
+                          <motion.span
+                            className={`text-[10px] px-1.5 py-0.5 rounded font-semibold uppercase tracking-wide ${
+                              skill.level === 'expert'
+                                ? 'bg-accent/20 text-accent'
+                                : skill.level === 'advanced'
+                                ? 'bg-purple-500/20 text-purple-400'
+                                : 'bg-gray-700/50 text-gray-400'
+                            }`}
+                            whileHover={{ scale: 1.1 }}
+                          >
+                            {skill.level === 'expert' ? 'EXP' : skill.level === 'advanced' ? 'ADV' : 'INT'}
+                          </motion.span>
+                          {/* Years */}
+                          {skill.yearsExperience && (
+                            <motion.span
+                              className="text-accent font-medium text-[10px]"
+                              whileHover={{ scale: 1.1 }}
+                            >
+                              {skill.yearsExperience}y
+                            </motion.span>
+                          )}
+                        </div>
+                      </div>
+                      {/* Proficiency Bar */}
+                      <div className="h-1 bg-gray-800/50 rounded-full overflow-hidden">
+                        <motion.div
+                          className={`h-full rounded-full ${
+                            skill.level === 'expert'
+                              ? 'bg-gradient-to-r from-accent to-accent-light'
+                              : skill.level === 'advanced'
+                              ? 'bg-gradient-to-r from-purple-500 to-purple-400'
+                              : 'bg-gradient-to-r from-gray-600 to-gray-500'
+                          }`}
+                          initial={{ width: 0 }}
+                          whileInView={{
+                            width:
+                              skill.level === 'expert'
+                                ? '95%'
+                                : skill.level === 'advanced'
+                                ? '75%'
+                                : '55%'
+                          }}
+                          viewport={{ once: true }}
+                          transition={{
+                            delay: idx * 0.08 + skillIdx * 0.04 + 0.2,
+                            duration: 1,
+                            ease: 'easeOut'
+                          }}
+                        />
+                      </div>
                     </motion.div>
                   ))}
                 </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Skills Summary Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4"
+          >
+            {[
+              {
+                count: skillCategories.flatMap(c => c.skills).filter(s => s.level === 'expert').length,
+                label: 'Expert Skills',
+                color: 'accent',
+                icon: '⚡'
+              },
+              {
+                count: skillCategories.flatMap(c => c.skills).filter(s => s.yearsExperience && s.yearsExperience >= 8).length,
+                label: '8+ Years Experience',
+                color: 'purple-400',
+                icon: '🎯'
+              },
+              {
+                count: skillCategories.length,
+                label: 'Tech Categories',
+                color: 'green-400',
+                icon: '🛠️'
+              },
+              {
+                count: skillCategories.flatMap(c => c.skills).length,
+                label: 'Total Technologies',
+                color: 'yellow-400',
+                icon: '💫'
+              }
+            ].map((stat, idx) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 + idx * 0.08, type: 'spring', stiffness: 150 }}
+                whileHover={{ scale: 1.05, y: -4 }}
+                className="bg-gradient-to-br from-gray-900/60 to-gray-950 border border-gray-800/50 rounded-xl p-4 text-center group cursor-pointer"
+              >
+                <motion.div
+                  className="text-3xl mb-2"
+                  whileHover={{ scale: 1.2, rotate: 10 }}
+                  transition={{ type: 'spring', stiffness: 200 }}
+                >
+                  {stat.icon}
+                </motion.div>
+                <div className={`text-h3 font-bold text-${stat.color} mb-1`}>
+                  {stat.count}
+                </div>
+                <div className="text-caption text-gray-500 group-hover:text-gray-400 transition-colors">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
