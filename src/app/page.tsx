@@ -34,22 +34,24 @@ export default function Home() {
 
             {/* Key Metrics Row */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-              <div>
-                <div className="text-h2 font-bold text-accent">$1.2M+</div>
-                <div className="text-body-sm text-gray-500">Revenue Generated</div>
-              </div>
-              <div>
-                <div className="text-h2 font-bold text-accent">500+</div>
-                <div className="text-body-sm text-gray-500">Enterprise Users</div>
-              </div>
-              <div>
-                <div className="text-h2 font-bold text-accent">30+</div>
-                <div className="text-body-sm text-gray-500">Integrations</div>
-              </div>
-              <div>
-                <div className="text-h2 font-bold text-accent">14+</div>
-                <div className="text-body-sm text-gray-500">Years Experience</div>
-              </div>
+              {[
+                { value: '$1.2M+', label: 'Revenue Generated' },
+                { value: '500+', label: 'Enterprise Users' },
+                { value: '30+', label: 'Integrations' },
+                { value: '14+', label: 'Years Experience' }
+              ].map((metric, idx) => (
+                <motion.div
+                  key={metric.label}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 + idx * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                  className="group"
+                >
+                  <div className="text-h2 font-bold text-accent group-hover:text-accent-light transition-colors">{metric.value}</div>
+                  <div className="text-body-sm text-gray-500">{metric.label}</div>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
@@ -101,8 +103,9 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-accent/50 transition-all"
+                transition={{ delay: idx * 0.1, duration: 0.5 }}
+                whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(0, 102, 255, 0.1)' }}
+                className="bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-accent/50 transition-all cursor-pointer"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
@@ -110,9 +113,14 @@ export default function Home() {
                     <p className="text-body text-gray-400">{exp.company}</p>
                   </div>
                   {exp.endDate === 'Present' && (
-                    <span className="px-3 py-1 bg-green-500/10 border border-green-500/30 text-green-400 text-caption rounded-full">
+                    <motion.span
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      transition={{ delay: idx * 0.1 + 0.2 }}
+                      className="px-3 py-1 bg-green-500/10 border border-green-500/30 text-green-400 text-caption rounded-full"
+                    >
                       Current
-                    </span>
+                    </motion.span>
                   )}
                 </div>
                 <p className="text-body-sm text-gray-500 mb-4">
@@ -122,13 +130,16 @@ export default function Home() {
 
                 {exp.metrics && exp.metrics.length > 0 && (
                   <div className="flex flex-wrap gap-2">
-                    {exp.metrics.map((metric, idx) => (
-                      <span
-                        key={idx}
+                    {exp.metrics.map((metric, metricIdx) => (
+                      <motion.span
+                        key={metric}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: idx * 0.1 + metricIdx * 0.05 }}
                         className="px-3 py-1 bg-accent/10 border border-accent/30 text-accent text-caption rounded-lg"
                       >
                         {metric}
-                      </span>
+                      </motion.span>
                     ))}
                   </div>
                 )}
@@ -160,38 +171,56 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-cream border border-gray-200 rounded-2xl p-6 hover:border-accent/50 transition-all group"
+                transition={{ delay: idx * 0.1, duration: 0.5 }}
+                whileHover={{ y: -4, boxShadow: '0 12px 24px rgba(0, 0, 0, 0.08)' }}
+                className="bg-cream border border-gray-200 rounded-2xl p-6 hover:border-accent/50 transition-all group cursor-pointer"
               >
-                <h4 className="text-h4 font-semibold text-gray-900 mb-2 group-hover:text-accent transition-colors">
+                <motion.h4
+                  className="text-h4 font-semibold text-gray-900 mb-2 transition-colors"
+                  whileHover={{ color: '#0066FF' }}
+                >
                   {project.title}
-                </h4>
+                </motion.h4>
                 <p className="text-body-sm text-gray-600 mb-3">{project.subtitle}</p>
                 <p className="text-body-sm text-gray-700 mb-4">{project.description}</p>
 
                 {project.metrics && (
                   <div className="grid grid-cols-2 gap-3 mb-4">
-                    {project.metrics.slice(0, 2).map((metric, idx) => (
-                      <div key={idx} className="text-center p-3 bg-white border border-gray-200 rounded-lg">
+                    {project.metrics.slice(0, 2).map((metric, metricIdx) => (
+                      <motion.div
+                        key={metric.label}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: idx * 0.1 + metricIdx * 0.05 }}
+                        whileHover={{ scale: 1.02 }}
+                        className="text-center p-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+                      >
                         <div className="text-body-lg font-bold text-accent">{metric.value}</div>
                         <div className="text-caption text-gray-600">{metric.label}</div>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 )}
 
                 {project.links.live && (
-                  <a
+                  <motion.a
                     href={project.links.live}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-accent hover:text-accent-light transition-colors text-body-sm font-medium"
+                    whileHover={{ x: 4 }}
                   >
                     View Live
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <motion.svg
+                      className="w-4 h-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      whileHover={{ x: 2 }}
+                    >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
+                    </motion.svg>
+                  </motion.a>
                 )}
               </motion.div>
             ))}
@@ -221,20 +250,34 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
+                transition={{ delay: idx * 0.1, duration: 0.5 }}
+                whileHover={{ y: -2 }}
+                className="p-4 rounded-xl bg-gray-900/50 hover:bg-gray-800/50 border border-gray-800/50 hover:border-accent/30 transition-all cursor-pointer"
               >
                 <h4 className="text-body font-semibold text-gray-400 mb-3 flex items-center gap-2">
-                  <span className="text-xl">{category.icon}</span>
+                  <motion.span
+                    className="text-xl"
+                    whileHover={{ scale: 1.2, rotate: 10 }}
+                    transition={{ type: 'spring', stiffness: 200 }}
+                  >
+                    {category.icon}
+                  </motion.span>
                   {category.name}
                 </h4>
                 <div className="space-y-2">
-                  {category.skills.slice(0, 5).map((skill) => (
-                    <div key={skill.name} className="text-body-sm text-gray-500">
+                  {category.skills.slice(0, 5).map((skill, skillIdx) => (
+                    <motion.div
+                      key={skill.name}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.1 + skillIdx * 0.05 }}
+                      className="text-body-sm text-gray-500 hover:text-accent transition-colors"
+                    >
                       {skill.name}
                       {skill.yearsExperience && skill.yearsExperience >= 5 && (
                         <span className="text-accent ml-1">({skill.yearsExperience}y)</span>
                       )}
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </motion.div>
@@ -257,18 +300,22 @@ export default function Home() {
               Let&apos;s talk about how I can help your team.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
+              <motion.a
                 href="/resume"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-cream hover:bg-gray-900 transition-colors rounded-lg text-body font-medium"
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
               >
                 View Resume
-              </a>
-              <a
+              </motion.a>
+              <motion.a
                 href="mailto:contact@nickkulavic.ai"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-white hover:bg-accent-light transition-colors rounded-lg text-body font-medium"
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
               >
                 Get in Touch
-              </a>
+              </motion.a>
             </div>
           </motion.div>
         </div>
