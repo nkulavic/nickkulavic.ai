@@ -77,23 +77,47 @@ export const experiences: ExperienceEntry[] = [
     category: 'entrepreneurship'
   },
   {
-    id: 'infusionsoft',
-    company: 'Infusionsoft',
-    role: 'Senior Integration Specialist',
-    location: 'Chandler, AZ (Remote)',
+    id: 'alignlife',
+    company: 'AlignLife Franchise',
+    role: 'Director of Automation & Lead Developer',
+    location: 'Denver, CO',
     startDate: 'January 2011',
-    endDate: 'December 2014',
-    description: 'Led API integration initiatives and provided expert consultation for enterprise CRM implementations.',
+    endDate: 'December 2016',
+    description: 'Built complete franchise technology stack for chiropractic practices, enabling multi-location management and operational automation.',
     achievements: [
-      'Managed complex API integrations for enterprise clients',
-      'Developed custom automation solutions using Infusionsoft API',
-      'Provided technical consultation for Fortune 500 companies',
-      'Created training materials and documentation for API usage',
-      'Collaborated with product team on API improvements and features',
-      'Mentored junior developers on best practices'
+      'Architected and built entire franchise technology infrastructure serving 20+ chiropractic locations',
+      'Designed automated workflows for patient management, scheduling, and billing systems',
+      'Implemented multi-location management platform with real-time operational oversight',
+      'Built Infusionsoft automation workflows for drip campaigns, patient recalls, and staff task management',
+      'Developed patient websites and online scheduling systems for individual franchise locations',
+      'Managed ACEVA.com (nutraceutical e-commerce platform) operationally and technologically',
+      'Led migration of ACEVA from Magento to Shopify, optimizing performance and user experience',
+      'Integrated CRM, scheduling, billing, and patient management systems into unified platform',
+      'Established operational procedures and standardized systems for franchise scalability'
     ],
-    technologies: ['Infusionsoft API', 'REST API', 'XML-RPC', 'PHP', 'JavaScript', 'MySQL'],
-    metrics: ['100+ enterprise integrations', 'API usage optimization'],
+    technologies: ['Infusionsoft API', 'PHP', 'JavaScript', 'MySQL', 'Magento', 'Shopify', 'REST API', 'HTML/CSS', 'CMS'],
+    metrics: ['20+ locations supported', 'Multi-location operations', '1000+ practitioners', 'E-commerce platform'],
+    category: 'entrepreneurship'
+  },
+  {
+    id: 'aceva',
+    company: 'ACEVA (Nutraceutical E-Commerce)',
+    role: 'Operations Director & Lead Developer',
+    location: 'Denver, CO',
+    startDate: 'January 2011',
+    endDate: 'December 2016',
+    description: 'Managed operational and technical aspects of nutraceutical e-commerce platform, including platform architecture and migration.',
+    achievements: [
+      'Maintained and optimized Magento-based e-commerce platform for nutraceutical products',
+      'Led complete platform migration from Magento to Shopify for improved performance',
+      'Implemented inventory management and order fulfillment automation',
+      'Configured product catalogs, customer accounts, and payment processing',
+      'Optimized checkout flows and user experience for e-commerce conversions',
+      'Managed customer data, subscription programs, and recurring billing',
+      'Integrated with third-party fulfillment and shipping providers'
+    ],
+    technologies: ['Magento', 'Shopify', 'E-commerce', 'Inventory Management', 'Payment Processing', 'Liquid', 'PHP'],
+    metrics: ['Successful platform migration', 'Improved page load times', 'Increased conversion rates'],
     category: 'full-stack'
   }
   // Additional roles to be extracted from resume HTML files
