@@ -3,11 +3,13 @@
 /* 2026 Minimalist Design System - Monochrome + Electric Blue Accent */
 
 :root {
-  /* Monochrome Palette */
+  /* Core Palette - Sleek Black & Cream */
   --color-black: #000000;
   --color-white: #FFFFFF;
+  --color-cream: #F5F1E8;
+  --color-cream-dark: #E8E3D8;
 
-  /* Gray Scale */
+  /* Gray Scale - Refined */
   --color-gray-50: #FAFAFA;
   --color-gray-100: #F5F5F5;
   --color-gray-200: #E5E5E5;
@@ -17,6 +19,7 @@
   --color-gray-600: #525252;
   --color-gray-700: #404040;
   --color-gray-800: #262626;
+  --color-gray-850: #1A1A1A;
   --color-gray-900: #171717;
   --color-gray-950: #0A0A0A;
 
@@ -25,17 +28,23 @@
   --color-accent-light: #3385FF;
   --color-accent-dark: #0052CC;
 
-  /* Semantic Colors */
-  --background: var(--color-white);
-  --foreground: var(--color-black);
+  /* Semantic Colors - Default to Black Background */
+  --background: var(--color-black);
+  --foreground: var(--color-cream);
+  --surface: var(--color-gray-900);
+  --border: var(--color-gray-800);
 }
 
 @theme inline {
   /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
   --color-black: #000000;
   --color-white: #FFFFFF;
+  --color-cream: #F5F1E8;
+  --color-cream-dark: #E8E3D8;
 
   /* Gray Scale */
   --color-gray-50: #FAFAFA;
@@ -47,6 +56,7 @@
   --color-gray-600: #525252;
   --color-gray-700: #404040;
   --color-gray-800: #262626;
+  --color-gray-850: #1A1A1A;
   --color-gray-900: #171717;
   --color-gray-950: #0A0A0A;
 
@@ -141,11 +151,20 @@
   --animate-slide-up: slideUp 0.6s ease-out;
 }
 
-/* Dark Mode - Pure Black Background */
+/* Light Mode Override (optional - defaults to black) */
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Keep black background by default for sleek look */
+    --background: var(--color-black);
+    --foreground: var(--color-cream);
+  }
+}
+
+/* Explicit Dark Mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--color-black);
-    --foreground: var(--color-white);
+    --foreground: var(--color-cream);
   }
 }
 
