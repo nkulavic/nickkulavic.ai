@@ -30,17 +30,14 @@ His SaaS companies have generated over $1.2M in revenue by combining deep techni
   const messagesWithContext = [systemMessage, ...messages];
 
   // Get a language model
-  const model = google('gemini-2.5-flash-preview-04-17');
+  const model = google('gemini-2.0-flash-exp');
 
   // Call the language model with the prompt
   const result = streamText({
     model,
     messages: messagesWithContext,
-    maxTokens: 32768,
-    temperature: 0.7,
-    topP: 0.4,
   });
 
   // Respond with a streaming response
-  return result.toDataStreamResponse();
+  return result.toTextStreamResponse();
 }

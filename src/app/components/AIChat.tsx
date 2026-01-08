@@ -1,4 +1,4 @@
-import { useChat } from 'ai/react';
+import { useChat } from '@ai-sdk/react';
 import { useState, useRef, useEffect } from 'react';
 import { FaRobot, FaUser } from 'react-icons/fa';
 
