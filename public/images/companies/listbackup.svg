@@ -1,0 +1,13 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#8B5CF6"/>
+
+  <!-- Shield icon representing backup/protection -->
+  <path d="M100 40L60 60V100C60 130 80 150 100 160C120 150 140 130 140 100V60L100 40Z" fill="white"/>
+
+  <!-- Checkmark inside shield -->
+  <path d="M80 100L95 115L120 85" stroke="#8B5CF6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- LB letters -->
+  <text x="100" y="115" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle">LB</text>
+</svg>

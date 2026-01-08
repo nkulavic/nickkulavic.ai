@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { experiences } from '@/app/data/experience';
 import { skillCategories } from '@/app/data/skills';
 
@@ -9,7 +10,7 @@ export default function ResumePage() {
   return (
     <div className="min-h-screen bg-cream">
       {/* Header Section - Dark */}
-      <div className="bg-black py-16 px-8 relative overflow-hidden">
+      <div className="bg-black py-20 px-8 relative overflow-hidden">
         {/* Animated background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
@@ -87,14 +88,14 @@ export default function ResumePage() {
             transition={{ delay: 0.4, duration: 0.6 }}
           >
             <motion.h2
-              className="text-h4 font-semibold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text mb-4"
+              className="text-h4 font-semibold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text mb-6"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
               Professional Summary
             </motion.h2>
-            <p className="text-body text-gray-300 leading-relaxed">
+            <p className="text-body text-gray-300 leading-loose">
               AI & Full-Stack Developer with 14+ years building enterprise applications and profitable SaaS ventures.
               Expertise in AWS, serverless architecture, and AI integration. Founded multiple companies generating $1.2M+
               in revenue. Currently developing AI-powered solutions at Take3Tech serving 500+ users with SOC 2 compliance.
@@ -105,7 +106,7 @@ export default function ResumePage() {
       </div>
 
       {/* Key Achievements - Cream Section */}
-      <div className="py-12 px-8 bg-cream">
+      <div className="py-16 px-8 bg-cream">
         <div className="max-w-3xl mx-auto">
           <motion.section
             initial={{ opacity: 0, y: 20 }}
@@ -164,7 +165,7 @@ export default function ResumePage() {
       </div>
 
       {/* Experience - White Section */}
-      <div className="py-16 px-8 bg-white">
+      <div className="py-20 px-8 bg-white">
         <div className="max-w-3xl mx-auto">
           <section>
             <h2 className="text-h4 font-semibold text-gray-900 mb-8">Professional Experience</h2>
@@ -179,31 +180,29 @@ export default function ResumePage() {
                   className="group border-l-4 border-accent/30 hover:border-accent pl-6 transition-colors relative"
                 >
                   {/* Logo */}
-                  {exp.logo && (
+                  {exp.logo && exp.logo.imagePath && (
                     <motion.div
-                      className="absolute -left-11 top-0"
+                      className="absolute -left-14 top-0 bg-white rounded-xl p-2 shadow-lg"
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ delay: expIdx * 0.1 + 0.1, type: "spring", stiffness: 150 }}
-                      whileHover={{ scale: 1.15, rotate: 5 }}
+                      whileHover={{ scale: 1.15, rotate: 3 }}
                     >
-                      <div
-                        className="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-xs border shadow-sm"
-                        style={{
-                          backgroundColor: exp.logo.bgColor,
-                          color: exp.logo.color,
-                          borderColor: exp.logo.color + '40'
-                        }}
-                      >
-                        {exp.logo.initials}
+                      <div className="w-10 h-10 relative">
+                        <Image
+                          src={exp.logo.imagePath}
+                          alt={`${exp.company} logo`}
+                          fill
+                          className="object-contain"
+                        />
                       </div>
                     </motion.div>
                   )}
 
-                  <div className="flex justify-between items-baseline mb-2">
+                  <div className="flex justify-between items-baseline mb-4">
                     <div>
-                      <h3 className="text-body-lg font-semibold text-gray-900 group-hover:text-accent transition-colors">
+                      <h3 className="text-body-lg font-semibold text-gray-900 group-hover:text-accent transition-colors mb-1">
                         {exp.role}
                       </h3>
                       <p className="text-body text-gray-600">{exp.company} • {exp.location}</p>
@@ -213,11 +212,11 @@ export default function ResumePage() {
                     </span>
                   </div>
 
-                  <p className="text-body-sm text-gray-600 mb-3 italic">
+                  <p className="text-body-sm text-gray-600 mb-4 italic leading-relaxed">
                     {exp.description}
                   </p>
 
-                  <ul className="mt-3 space-y-2">
+                  <ul className="mt-4 space-y-2">
                     {exp.achievements.map((achievement, achIdx) => (
                       <motion.li
                         key={achievement}
@@ -233,7 +232,7 @@ export default function ResumePage() {
                   </ul>
 
                   {exp.metrics && exp.metrics.length > 0 && (
-                    <div className="mt-3 flex flex-wrap gap-2">
+                    <div className="mt-4 flex flex-wrap gap-2">
                       {exp.metrics.map((metric, metricIdx) => (
                         <motion.span
                           key={metric}
@@ -249,7 +248,7 @@ export default function ResumePage() {
                     </div>
                   )}
 
-                  <div className="mt-3 text-body-sm text-gray-500">
+                  <div className="mt-4 text-body-sm text-gray-500 leading-relaxed">
                     <span className="font-medium text-gray-700">Technologies:</span>{' '}
                     <span className="text-gray-600">{exp.technologies.join(', ')}</span>
                   </div>
@@ -261,7 +260,7 @@ export default function ResumePage() {
       </div>
 
       {/* Skills - Cream Section */}
-      <div className="py-16 px-8 bg-cream">
+      <div className="py-20 px-8 bg-cream">
         <div className="max-w-3xl mx-auto">
           <section>
             <h2 className="text-h4 font-semibold text-gray-900 mb-8">Technical Skills</h2>
@@ -274,9 +273,9 @@ export default function ResumePage() {
                   transition={{ delay: catIdx * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -2, boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)' }}
-                  className="bg-white border border-gray-200 rounded-xl p-5 cursor-pointer transition-all"
+                  className="bg-white border border-gray-200 rounded-xl p-6 cursor-pointer transition-all"
                 >
-                  <h3 className="text-body font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                  <h3 className="text-body font-semibold text-gray-900 mb-4 flex items-center gap-2">
                     <motion.span
                       className="text-xl"
                       whileHover={{ scale: 1.2, rotate: 5 }}
@@ -286,7 +285,7 @@ export default function ResumePage() {
                     </motion.span>
                     {category.name}
                   </h3>
-                  <div className="space-y-1">
+                  <div className="space-y-2">
                     {category.skills.map((skill, skillIdx) => (
                       <motion.div
                         key={skill.name}
@@ -311,7 +310,7 @@ export default function ResumePage() {
       </div>
 
       {/* Education & Certifications - White Section */}
-      <div className="py-16 px-8 bg-white">
+      <div className="py-20 px-8 bg-white">
         <div className="max-w-3xl mx-auto">
           <motion.section
             className="mb-12"
@@ -353,7 +352,7 @@ export default function ResumePage() {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1, duration: 0.5 }}
                   whileHover={{ x: 4, boxShadow: '0 8px 20px rgba(0, 102, 255, 0.1)' }}
-                  className="bg-cream border border-gray-200 rounded-xl p-5 hover:border-accent/30 transition-all cursor-pointer group flex items-start gap-4"
+                  className="bg-cream border border-gray-200 rounded-xl p-6 hover:border-accent/30 transition-all cursor-pointer group flex items-start gap-4"
                 >
                   <motion.div
                     className="text-3xl"

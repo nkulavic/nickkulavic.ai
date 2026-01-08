@@ -14,6 +14,7 @@ export interface ExperienceEntry {
     initials: string;
     color: string;
     bgColor: string;
+    imagePath?: string;
   };
 }
 
@@ -29,7 +30,8 @@ export const experiences: ExperienceEntry[] = [
     logo: {
       initials: 'T3',
       color: '#0066FF',
-      bgColor: '#0066FF15'
+      bgColor: '#0066FF15',
+      imagePath: '/images/companies/take3tech.png'
     },
     achievements: [
       'Architected LoanMaps, a comprehensive loan origination system serving 500+ loan officers',
@@ -55,7 +57,8 @@ export const experiences: ExperienceEntry[] = [
     logo: {
       initials: 'LB',
       color: '#8B5CF6',
-      bgColor: '#8B5CF615'
+      bgColor: '#8B5CF615',
+      imagePath: '/images/companies/listbackup.svg'
     },
     achievements: [
       'Architected fully serverless solution using AWS Cognito, DynamoDB, and Lambda',
@@ -80,7 +83,8 @@ export const experiences: ExperienceEntry[] = [
     logo: {
       initials: 'MF',
       color: '#0891B2',
-      bgColor: '#0891B215'
+      bgColor: '#0891B215',
+      imagePath: '/images/companies/myfusion.png'
     },
     achievements: [
       'Generated $1.2M+ in cumulative revenue through sustainable SaaS model',
@@ -107,7 +111,8 @@ export const experiences: ExperienceEntry[] = [
     logo: {
       initials: 'AL',
       color: '#10B981',
-      bgColor: '#10B98115'
+      bgColor: '#10B98115',
+      imagePath: '/images/companies/alignlife.svg'
     },
     achievements: [
       'Architected and built entire franchise technology infrastructure serving 20+ chiropractic locations',
@@ -135,7 +140,8 @@ export const experiences: ExperienceEntry[] = [
     logo: {
       initials: 'AC',
       color: '#059669',
-      bgColor: '#05966915'
+      bgColor: '#05966915',
+      imagePath: '/images/companies/aceva.png'
     },
     achievements: [
       'Maintained and optimized Magento-based e-commerce platform for nutraceutical products',

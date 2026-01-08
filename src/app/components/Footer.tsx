@@ -20,7 +20,7 @@ const Footer = () => {
               <h3 className="text-h3 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text mb-4">
                 Let&apos;s Build Something Great
               </h3>
-              <p className="text-body text-gray-400 mb-6 leading-relaxed">
+              <p className="text-body text-gray-400 mb-6 leading-loose">
                 Looking for an AI Engineer or Full-Stack Developer who delivers results?
                 I&apos;m available for full-time opportunities.
               </p>
@@ -86,9 +86,9 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-h4 font-bold text-cream mb-2">Nick Kulavic</h3>
+            <h3 className="text-h4 font-bold text-cream mb-3">Nick Kulavic</h3>
             <p className="text-body-sm text-gray-500 mb-4">AI Developer & SaaS Entrepreneur</p>
-            <p className="text-body-sm text-gray-600 leading-relaxed">
+            <p className="text-body-sm text-gray-600 leading-loose">
               Building enterprise AI applications and scaling SaaS solutions with 14+ years of proven results.
             </p>
           </motion.div>

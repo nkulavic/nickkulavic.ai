@@ -1,20 +1,40 @@
 'use client'
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { experiences } from './data/experience';
+import Image from 'next/image';
+import { experiences, ExperienceEntry } from './data/experience';
 import { projects } from './data/projects';
 import { skillCategories } from './data/skills';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import CompanyModal from './components/CompanyModal';
 
 export default function Home() {
+  const [selectedExperience, setSelectedExperience] = useState<ExperienceEntry | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (exp: ExperienceEntry) => {
+    setSelectedExperience(exp);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedExperience(null), 300);
+  };
+
   return (
     <div className="min-h-screen bg-cream">
       <Header />
+      <CompanyModal
+        experience={selectedExperience}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
 
       {/* Hero - Dark Section */}
-      <section className="pt-32 pb-20 px-8 bg-black relative overflow-hidden">
+      <section className="pt-40 pb-32 px-8 bg-black relative overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
@@ -52,7 +72,7 @@ export default function Home() {
               AI Engineer & Full-Stack Developer
             </motion.p>
             <motion.p
-              className="text-body-lg text-gray-500 max-w-2xl leading-relaxed"
+              className="text-body-lg text-gray-500 max-w-2xl leading-loose mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -130,7 +150,7 @@ export default function Home() {
       </section>
 
       {/* About - Light Section */}
-      <section className="py-20 px-8 bg-cream relative">
+      <section className="py-24 px-8 bg-cream relative">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -148,7 +168,7 @@ export default function Home() {
               About
             </motion.h2>
 
-            <div className="space-y-6">
+            <div className="space-y-8">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -156,7 +176,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-1 before:w-1 before:h-1 before:bg-accent before:rounded-full"
               >
-                <p className="text-body-lg text-gray-700 leading-relaxed">
+                <p className="text-body-lg text-gray-700 leading-loose">
                   I&apos;m an AI & Full-Stack Developer who builds enterprise-grade applications and profitable SaaS ventures.
                   With deep expertise in AWS, serverless architecture, and AI integration, I&apos;ve founded multiple companies
                   that have generated over $1.2M in revenue while serving thousands of users globally.
@@ -170,7 +190,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-1 before:w-1 before:h-1 before:bg-accent before:rounded-full"
               >
-                <p className="text-body-lg text-gray-700 leading-relaxed">
+                <p className="text-body-lg text-gray-700 leading-loose">
                   Currently at Take3Tech, I&apos;m building AI-powered mortgage solutions serving 500+ loan officers with
                   SOC 2 compliance. I specialize in turning complex technical challenges into scalable, secure solutions
                   that deliver real business value.
@@ -182,7 +202,7 @@ export default function Home() {
       </section>
 
       {/* What I Bring - White Section */}
-      <section className="py-20 px-8 bg-white">
+      <section className="py-24 px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -244,7 +264,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08, duration: 0.5 }}
                 whileHover={{ y: -6, boxShadow: '0 12px 32px rgba(0, 102, 255, 0.12)' }}
-                className="bg-gradient-to-br from-cream to-white border border-gray-200 rounded-2xl p-6 hover:border-accent/40 transition-all group cursor-pointer"
+                className="bg-gradient-to-br from-cream to-white border border-gray-200 rounded-2xl p-8 hover:border-accent/40 transition-all group cursor-pointer"
               >
                 <motion.div
                   className="text-4xl mb-4"
@@ -253,10 +273,10 @@ export default function Home() {
                 >
                   {item.icon}
                 </motion.div>
-                <h3 className="text-body-lg font-bold text-gray-900 mb-3 group-hover:text-accent transition-colors">
+                <h3 className="text-body-lg font-bold text-gray-900 mb-4 group-hover:text-accent transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-body-sm text-gray-600 leading-relaxed">
+                <p className="text-body-sm text-gray-600 leading-loose">
                   {item.description}
                 </p>
               </motion.div>
@@ -266,7 +286,7 @@ export default function Home() {
       </section>
 
       {/* Experience - Dark Section */}
-      <section className="py-20 px-8 bg-gray-950">
+      <section className="py-24 px-8 bg-gray-950">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -288,35 +308,48 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
-                whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(0, 102, 255, 0.1)' }}
-                className="bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-accent/50 transition-all cursor-pointer relative overflow-hidden"
+                whileHover={{ y: -6, boxShadow: '0 25px 50px rgba(0, 102, 255, 0.15)' }}
+                onClick={() => openModal(exp)}
+                className="bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-accent/50 transition-all cursor-pointer relative overflow-hidden group"
               >
-                {/* Logo in corner */}
-                {exp.logo && (
+                {/* Click hint */}
+                <motion.div
+                  className="absolute top-4 left-4 flex items-center gap-2 text-caption text-gray-600 group-hover:text-accent transition-colors"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: idx * 0.1 + 0.3 }}
+                >
+                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
+                  </svg>
+                  <span>Click for details</span>
+                </motion.div>
+
+                {/* Real Company Logo */}
+                {exp.logo && exp.logo.imagePath && (
                   <motion.div
-                    className="absolute top-4 right-4"
+                    className="absolute top-4 right-4 bg-white rounded-xl p-3 shadow-lg"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.1 + 0.15, type: "spring", stiffness: 150 }}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileHover={{ scale: 1.1, rotate: 3 }}
                   >
-                    <div
-                      className="w-14 h-14 rounded-xl flex items-center justify-center font-bold text-sm border border-opacity-30"
-                      style={{
-                        backgroundColor: exp.logo.bgColor,
-                        color: exp.logo.color,
-                        borderColor: exp.logo.color
-                      }}
-                    >
-                      {exp.logo.initials}
+                    <div className="w-16 h-16 relative">
+                      <Image
+                        src={exp.logo.imagePath}
+                        alt={`${exp.company} logo`}
+                        fill
+                        className="object-contain"
+                      />
                     </div>
                   </motion.div>
                 )}
 
-                <div className="flex items-start justify-between mb-4 pr-16">
+                <div className="flex items-start justify-between mb-6 pr-16">
                   <div>
-                    <h3 className="text-body-lg font-semibold text-cream mb-1">{exp.role}</h3>
+                    <h3 className="text-body-lg font-semibold text-cream mb-2">{exp.role}</h3>
                     <p className="text-body text-gray-400">{exp.company}</p>
                   </div>
                   {exp.endDate === 'Present' && (
@@ -330,10 +363,10 @@ export default function Home() {
                     </motion.span>
                   )}
                 </div>
-                <p className="text-body-sm text-gray-500 mb-4">
+                <p className="text-body-sm text-gray-500 mb-5">
                   {exp.startDate} – {exp.endDate} • {exp.location}
                 </p>
-                <p className="text-body-sm text-gray-300 mb-4">{exp.description}</p>
+                <p className="text-body-sm text-gray-300 leading-relaxed mb-5">{exp.description}</p>
 
                 {exp.metrics && exp.metrics.length > 0 && (
                   <div className="flex flex-wrap gap-2">
@@ -357,7 +390,7 @@ export default function Home() {
       </section>
 
       {/* Projects - Light Section */}
-      <section className="py-20 px-8 bg-white">
+      <section className="py-24 px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -380,16 +413,16 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
                 whileHover={{ y: -4, boxShadow: '0 12px 24px rgba(0, 0, 0, 0.08)' }}
-                className="bg-cream border border-gray-200 rounded-2xl p-6 hover:border-accent/50 transition-all group cursor-pointer"
+                className="bg-cream border border-gray-200 rounded-2xl p-8 hover:border-accent/50 transition-all group cursor-pointer"
               >
                 <motion.h4
-                  className="text-h4 font-semibold text-gray-900 mb-2 transition-colors"
+                  className="text-h4 font-semibold text-gray-900 mb-3 transition-colors"
                   whileHover={{ color: '#0066FF' }}
                 >
                   {project.title}
                 </motion.h4>
-                <p className="text-body-sm text-gray-600 mb-3">{project.subtitle}</p>
-                <p className="text-body-sm text-gray-700 mb-4">{project.description}</p>
+                <p className="text-body-sm text-gray-600 mb-4">{project.subtitle}</p>
+                <p className="text-body-sm text-gray-700 leading-relaxed mb-5">{project.description}</p>
 
                 {project.metrics && (
                   <div className="grid grid-cols-2 gap-3 mb-4">
@@ -436,7 +469,7 @@ export default function Home() {
       </section>
 
       {/* Skills - Dark Section */}
-      <section className="py-20 px-8 bg-black relative overflow-hidden">
+      <section className="py-24 px-8 bg-black relative overflow-hidden">
         {/* Animated background accent */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
@@ -482,7 +515,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08, duration: 0.5, type: "spring", stiffness: 100 }}
                 whileHover={{ y: -6, boxShadow: '0 20px 40px rgba(0, 102, 255, 0.15)' }}
-                className="p-5 rounded-2xl bg-gradient-to-br from-gray-900/80 to-gray-950 hover:from-gray-800 hover:to-gray-900 border border-gray-800/50 hover:border-accent/40 transition-all duration-300 cursor-pointer group"
+                className="p-6 rounded-2xl bg-gradient-to-br from-gray-900/80 to-gray-950 hover:from-gray-800 hover:to-gray-900 border border-gray-800/50 hover:border-accent/40 transition-all duration-300 cursor-pointer group"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <motion.span
@@ -497,7 +530,7 @@ export default function Home() {
                   </h4>
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {category.skills.slice(0, 5).map((skill, skillIdx) => (
                     <motion.div
                       key={skill.name}
@@ -902,7 +935,7 @@ export default function Home() {
                 </motion.div>
 
                 {/* Quote Text */}
-                <p className="text-body text-gray-300 leading-relaxed mb-6 group-hover:text-cream transition-colors">
+                <p className="text-body text-gray-300 leading-loose mb-6 group-hover:text-cream transition-colors">
                   {testimonial.quote}
                 </p>
 
@@ -1055,7 +1088,7 @@ export default function Home() {
               Ready to Connect?
             </motion.h2>
             <motion.p
-              className="text-body-lg text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed"
+              className="text-body-lg text-gray-700 mb-10 max-w-2xl mx-auto leading-loose"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
