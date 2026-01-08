@@ -3,11 +3,11 @@
 /* 2026 Minimalist Design System - Monochrome + Electric Blue Accent */
 
 :root {
-  /* Core Palette - Sleek Black & Cream */
+  /* Core Palette - 2026 Modern (Balanced Dark & Light) */
   --color-black: #000000;
   --color-white: #FFFFFF;
-  --color-cream: #F5F1E8;
-  --color-cream-dark: #E8E3D8;
+  --color-cream: #FAF8F5;
+  --color-cream-dark: #F0EDE6;
 
   /* Gray Scale - Refined */
   --color-gray-50: #FAFAFA;
@@ -28,11 +28,13 @@
   --color-accent-light: #3385FF;
   --color-accent-dark: #0052CC;
 
-  /* Semantic Colors - Default to Black Background */
-  --background: var(--color-black);
-  --foreground: var(--color-cream);
-  --surface: var(--color-gray-900);
-  --border: var(--color-gray-800);
+  /* Semantic Colors - Balanced Light Default */
+  --background: var(--color-cream);
+  --foreground: var(--color-gray-900);
+  --surface: var(--color-white);
+  --surface-dark: var(--color-gray-950);
+  --border: var(--color-gray-200);
+  --border-dark: var(--color-gray-800);
 }
 
 @theme inline {
@@ -40,11 +42,13 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
+  --color-surface-dark: var(--surface-dark);
   --color-border: var(--border);
+  --color-border-dark: var(--border-dark);
   --color-black: #000000;
   --color-white: #FFFFFF;
-  --color-cream: #F5F1E8;
-  --color-cream-dark: #E8E3D8;
+  --color-cream: #FAF8F5;
+  --color-cream-dark: #F0EDE6;
 
   /* Gray Scale */
   --color-gray-50: #FAFAFA;
@@ -151,20 +155,14 @@
   --animate-slide-up: slideUp 0.6s ease-out;
 }
 
-/* Light Mode Override (optional - defaults to black) */
-@media (prefers-color-scheme: light) {
-  :root {
-    /* Keep black background by default for sleek look */
-    --background: var(--color-black);
-    --foreground: var(--color-cream);
-  }
-}
-
-/* Explicit Dark Mode */
+/* Dark Mode - Deep Gray Background */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: var(--color-black);
+    --background: var(--color-gray-950);
     --foreground: var(--color-cream);
+    --surface: var(--color-gray-900);
+    --surface-dark: var(--color-black);
+    --border: var(--color-gray-800);
   }
 }
 
