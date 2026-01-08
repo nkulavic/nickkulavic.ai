@@ -14,23 +14,52 @@ export default function Home() {
       <Header />
 
       {/* Hero - Dark Section */}
-      <section className="pt-32 pb-20 px-8 bg-black">
-        <div className="max-w-7xl mx-auto">
+      <section className="pt-32 pb-20 px-8 bg-black relative overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div
+            className="absolute -top-40 -right-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl"
+            animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
+            transition={{ duration: 8, repeat: Infinity }}
+          />
+          <motion.div
+            className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl"
+            animate={{ y: [0, -30, 0], x: [0, -20, 0] }}
+            transition={{ duration: 10, repeat: Infinity, delay: 1 }}
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-display font-bold text-cream mb-6">
+            <motion.h1
+              className="text-display font-bold text-cream mb-6 bg-gradient-to-r from-cream via-cream to-accent bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
               Nick Kulavic
-            </h1>
-            <p className="text-h3 text-gray-400 mb-8">
+            </motion.h1>
+            <motion.p
+              className="text-h3 text-transparent bg-gradient-to-r from-gray-400 to-accent bg-clip-text mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               AI Engineer & Full-Stack Developer
-            </p>
-            <p className="text-body-lg text-gray-500 max-w-2xl leading-relaxed">
+            </motion.p>
+            <motion.p
+              className="text-body-lg text-gray-500 max-w-2xl leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
               Building enterprise AI applications and scaling SaaS solutions.
               14+ years experience, $1.2M+ revenue, zero security breaches.
-            </p>
+            </motion.p>
 
             {/* Key Metrics Row */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
@@ -42,14 +71,19 @@ export default function Home() {
               ].map((metric, idx) => (
                 <motion.div
                   key={metric.label}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 + idx * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
-                  className="group"
+                  initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ delay: 0.4 + idx * 0.08, duration: 0.6, type: "spring", stiffness: 100 }}
+                  whileHover={{ scale: 1.08, y: -4 }}
+                  className="group cursor-pointer"
                 >
-                  <div className="text-h2 font-bold text-accent group-hover:text-accent-light transition-colors">{metric.value}</div>
-                  <div className="text-body-sm text-gray-500">{metric.label}</div>
+                  <motion.div
+                    className="text-h2 font-bold text-accent group-hover:text-accent-light transition-colors"
+                    whileHover={{ textShadow: "0 0 8px rgba(0, 102, 255, 0.5)" }}
+                  >
+                    {metric.value}
+                  </motion.div>
+                  <div className="text-body-sm text-gray-500 group-hover:text-gray-400 transition-colors">{metric.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -58,7 +92,7 @@ export default function Home() {
       </section>
 
       {/* About - Light Section */}
-      <section className="py-20 px-8 bg-cream">
+      <section className="py-20 px-8 bg-cream relative">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -66,17 +100,45 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <h2 className="text-h2 font-bold text-gray-900 mb-6">About</h2>
-            <p className="text-body-lg text-gray-700 leading-relaxed mb-6">
-              I&apos;m an AI & Full-Stack Developer who builds enterprise-grade applications and profitable SaaS ventures.
-              With deep expertise in AWS, serverless architecture, and AI integration, I&apos;ve founded multiple companies
-              that have generated over $1.2M in revenue while serving thousands of users globally.
-            </p>
-            <p className="text-body-lg text-gray-700 leading-relaxed">
-              Currently at Take3Tech, I&apos;m building AI-powered mortgage solutions serving 500+ loan officers with
-              SOC 2 compliance. I specialize in turning complex technical challenges into scalable, secure solutions
-              that deliver real business value.
-            </p>
+            <motion.h2
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-8"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              About
+            </motion.h2>
+
+            <div className="space-y-6">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-1 before:w-1 before:h-1 before:bg-accent before:rounded-full"
+              >
+                <p className="text-body-lg text-gray-700 leading-relaxed">
+                  I&apos;m an AI & Full-Stack Developer who builds enterprise-grade applications and profitable SaaS ventures.
+                  With deep expertise in AWS, serverless architecture, and AI integration, I&apos;ve founded multiple companies
+                  that have generated over $1.2M in revenue while serving thousands of users globally.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-1 before:w-1 before:h-1 before:bg-accent before:rounded-full"
+              >
+                <p className="text-body-lg text-gray-700 leading-relaxed">
+                  Currently at Take3Tech, I&apos;m building AI-powered mortgage solutions serving 500+ loan officers with
+                  SOC 2 compliance. I specialize in turning complex technical challenges into scalable, secure solutions
+                  that deliver real business value.
+                </p>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -229,53 +291,85 @@ export default function Home() {
       </section>
 
       {/* Skills - Dark Section */}
-      <section className="py-20 px-8 bg-black">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-20 px-8 bg-black relative overflow-hidden">
+        {/* Animated background accent */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div
+            className="absolute -right-40 -bottom-40 w-96 h-96 bg-accent/5 rounded-full blur-3xl"
+            animate={{ y: [0, 40, 0], x: [0, -20, 0] }}
+            transition={{ duration: 12, repeat: Infinity }}
+          />
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="mb-12"
           >
-            <h2 className="text-h2 font-bold text-cream mb-4">Technical Expertise</h2>
-            <p className="text-body-lg text-gray-500">
+            <motion.h2
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text mb-4"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              Technical Expertise
+            </motion.h2>
+            <motion.p
+              className="text-body-lg text-gray-500"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
               Comprehensive skill set spanning AI, cloud infrastructure, and full-stack development
-            </p>
+            </motion.p>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {skillCategories.slice(0, 4).map((category, idx) => (
               <motion.div
                 key={category.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1, duration: 0.5 }}
-                whileHover={{ y: -2 }}
-                className="p-4 rounded-xl bg-gray-900/50 hover:bg-gray-800/50 border border-gray-800/50 hover:border-accent/30 transition-all cursor-pointer"
+                transition={{ delay: idx * 0.08, duration: 0.5, type: "spring", stiffness: 100 }}
+                whileHover={{ y: -6, boxShadow: '0 20px 40px rgba(0, 102, 255, 0.15)' }}
+                className="p-5 rounded-2xl bg-gradient-to-br from-gray-900/80 to-gray-950 hover:from-gray-800 hover:to-gray-900 border border-gray-800/50 hover:border-accent/40 transition-all duration-300 cursor-pointer group"
               >
-                <h4 className="text-body font-semibold text-gray-400 mb-3 flex items-center gap-2">
+                <div className="flex items-center gap-3 mb-4">
                   <motion.span
-                    className="text-xl"
-                    whileHover={{ scale: 1.2, rotate: 10 }}
+                    className="text-3xl"
+                    whileHover={{ scale: 1.25, rotate: 12 }}
                     transition={{ type: 'spring', stiffness: 200 }}
                   >
                     {category.icon}
                   </motion.span>
-                  {category.name}
-                </h4>
-                <div className="space-y-2">
+                  <h4 className="text-body font-semibold text-gray-300 group-hover:text-cream transition-colors">
+                    {category.name}
+                  </h4>
+                </div>
+
+                <div className="space-y-2.5">
                   {category.skills.slice(0, 5).map((skill, skillIdx) => (
                     <motion.div
                       key={skill.name}
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: idx * 0.1 + skillIdx * 0.05 }}
-                      className="text-body-sm text-gray-500 hover:text-accent transition-colors"
+                      viewport={{ once: true }}
+                      transition={{ delay: idx * 0.08 + skillIdx * 0.04 }}
+                      className="flex items-center justify-between text-body-sm text-gray-500 group-hover:text-gray-400 transition-colors"
                     >
-                      {skill.name}
+                      <span>{skill.name}</span>
                       {skill.yearsExperience && skill.yearsExperience >= 5 && (
-                        <span className="text-accent ml-1">({skill.yearsExperience}y)</span>
+                        <motion.span
+                          className="text-accent font-medium text-caption"
+                          whileHover={{ scale: 1.1 }}
+                        >
+                          {skill.yearsExperience}y
+                        </motion.span>
                       )}
                     </motion.div>
                   ))}
@@ -287,36 +381,91 @@ export default function Home() {
       </section>
 
       {/* CTA - Light Section */}
-      <section className="py-20 px-8 bg-cream">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-24 px-8 bg-cream relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div
+            className="absolute -top-40 -left-40 w-80 h-80 bg-accent/8 rounded-full blur-3xl"
+            animate={{ y: [0, 40, 0], x: [0, 20, 0] }}
+            transition={{ duration: 10, repeat: Infinity }}
+          />
+        </div>
+
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
           >
-            <h2 className="text-h2 font-bold text-gray-900 mb-6">Ready to Connect?</h2>
-            <p className="text-body-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+            <motion.h2
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-6"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              Ready to Connect?
+            </motion.h2>
+            <motion.p
+              className="text-body-lg text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
               Looking for an experienced AI Engineer or Full-Stack Developer who can deliver results?
               Let&apos;s talk about how I can help your team.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            </motion.p>
+
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               <motion.a
                 href="/resume"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-cream hover:bg-gray-900 transition-colors rounded-lg text-body font-medium"
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-black text-cream hover:bg-gray-900 transition-all duration-300 rounded-xl text-body font-semibold shadow-lg hover:shadow-xl group relative overflow-hidden"
+                whileHover={{ scale: 1.05, y: -3 }}
+                whileTap={{ scale: 0.97 }}
               >
+                <motion.span
+                  animate={{ x: [0, 4, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  📄
+                </motion.span>
                 View Resume
               </motion.a>
+
               <motion.a
                 href="mailto:contact@nickkulavic.ai"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-white hover:bg-accent-light transition-colors rounded-lg text-body font-medium"
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-accent text-white hover:bg-accent-light transition-all duration-300 rounded-xl text-body font-semibold shadow-lg hover:shadow-2xl group relative overflow-hidden"
+                whileHover={{ scale: 1.05, y: -3 }}
+                whileTap={{ scale: 0.97 }}
               >
+                <motion.span
+                  animate={{ y: [0, -2, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  ✉️
+                </motion.span>
                 Get in Touch
               </motion.a>
-            </div>
+            </motion.div>
+
+            {/* Optional: Add a subtle text below */}
+            <motion.p
+              className="text-body-sm text-gray-600 mt-8"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              Available for full-time roles, consulting, and project-based work
+            </motion.p>
           </motion.div>
         </div>
       </section>
