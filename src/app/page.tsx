@@ -177,34 +177,30 @@ export default function Home() {
               About
             </motion.h2>
 
-            <div className="space-y-12">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+            <div className="space-y-8">
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-1 before:w-1 before:h-1 before:bg-accent before:rounded-full"
+                className="text-body-lg text-gray-700 leading-relaxed"
               >
-                <p className="text-body-lg text-gray-700 leading-loose">
-                  I&apos;m an AI & Full-Stack Developer who builds enterprise-grade applications and profitable SaaS ventures.
-                  With deep expertise in AWS, serverless architecture, and AI integration, I&apos;ve founded multiple companies
-                  that have generated over $1.2M in revenue while serving thousands of users globally.
-                </p>
-              </motion.div>
+                I&apos;m an AI & Full-Stack Developer who builds enterprise-grade applications and profitable SaaS ventures.
+                With deep expertise in AWS, serverless architecture, and AI integration, I&apos;ve founded multiple companies
+                that have generated over $1.2M in revenue while serving thousands of users globally.
+              </motion.p>
 
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-1 before:w-1 before:h-1 before:bg-accent before:rounded-full"
+                className="text-body-lg text-gray-700 leading-relaxed"
               >
-                <p className="text-body-lg text-gray-700 leading-loose">
-                  Currently at Take3Tech, I&apos;m building AI-powered mortgage solutions serving 500+ loan officers with
-                  SOC 2 compliance. I specialize in turning complex technical challenges into scalable, secure solutions
-                  that deliver real business value.
-                </p>
-              </motion.div>
+                Currently at Take3Tech, I&apos;m building AI-powered mortgage solutions serving 500+ loan officers with
+                SOC 2 compliance. I specialize in turning complex technical challenges into scalable, secure solutions
+                that deliver real business value.
+              </motion.p>
             </div>
           </motion.div>
         </div>
@@ -374,7 +370,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08, duration: 0.5 }}
                 whileHover={{ y: -6, boxShadow: '0 12px 32px rgba(0, 102, 255, 0.12)' }}
-                className="bg-gradient-to-br from-cream to-white border border-gray-200 rounded-2xl p-8 hover:border-accent/40 transition-all group cursor-pointer"
+                className="bg-gradient-to-br from-cream to-white border border-gray-200 rounded-2xl p-8 hover:border-accent/40 transition-all group cursor-pointer text-center"
               >
                 <motion.div
                   className="text-4xl mb-4"
@@ -383,10 +379,10 @@ export default function Home() {
                 >
                   {item.icon}
                 </motion.div>
-                <h3 className="text-body-lg font-bold text-gray-900 mb-4 group-hover:text-accent transition-colors">
+                <h3 className="text-body-lg font-bold text-gray-900 mb-3 group-hover:text-accent transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-body-sm text-gray-600 leading-loose">
+                <p className="text-body-sm text-gray-600 leading-relaxed">
                   {item.description}
                 </p>
               </motion.div>
