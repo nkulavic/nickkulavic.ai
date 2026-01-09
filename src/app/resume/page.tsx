@@ -168,17 +168,17 @@ export default function ResumePage() {
       </div>
 
       {/* Core Competencies - Cream Section */}
-      <div className="py-16 px-8 bg-cream">
+      <div className="py-24 px-8 bg-cream">
         <div className="max-w-3xl mx-auto">
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="mb-8"
+            className="mb-12"
           >
             <motion.h2
-              className="text-h4 font-semibold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-6"
+              className="text-h4 font-semibold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-8"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -186,7 +186,7 @@ export default function ResumePage() {
             >
               Core Competencies
             </motion.h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {[
                 { icon: '🤖', label: 'AI/ML Engineering', items: ['AWS Bedrock', 'Claude AI', 'ChatGPT API', 'Prompt Engineering'] },
                 { icon: '☁️', label: 'Cloud Architecture', items: ['AWS Lambda', 'DynamoDB', 'API Gateway', 'Serverless'] },
@@ -252,7 +252,7 @@ export default function ResumePage() {
             >
               Career Highlights
             </motion.h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
               {[
                 { value: '$1.2M+', label: 'Total Revenue', icon: '💰' },
                 { value: '500+', label: 'Enterprise Users', icon: '👥' },
@@ -293,11 +293,11 @@ export default function ResumePage() {
       </div>
 
       {/* Experience - White Section */}
-      <div className="py-20 px-8 bg-white">
+      <div className="py-24 px-8 bg-white">
         <div className="max-w-3xl mx-auto">
           <section>
-            <h2 className="text-h4 font-semibold text-gray-900 mb-8">Professional Experience</h2>
-            <div className="space-y-8">
+            <h2 className="text-h4 font-semibold text-gray-900 mb-12">Professional Experience</h2>
+            <div className="space-y-12">
               {experiences.map((exp, expIdx) => (
                 <motion.div
                   key={exp.id}
@@ -388,7 +388,7 @@ export default function ResumePage() {
       </div>
 
       {/* Featured Projects - Cream Section */}
-      <div className="py-20 px-8 bg-cream">
+      <div className="py-24 px-8 bg-cream">
         <div className="max-w-3xl mx-auto">
           <motion.section
             initial={{ opacity: 0, y: 20 }}
@@ -396,8 +396,8 @@ export default function ResumePage() {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-h4 font-semibold text-gray-900 mb-8">Featured Projects</h2>
-            <div className="space-y-6">
+            <h2 className="text-h4 font-semibold text-gray-900 mb-12">Featured Projects</h2>
+            <div className="space-y-8">
               {projects.filter(p => p.featured).map((project, projIdx) => (
                 <motion.div
                   key={project.id}
@@ -484,11 +484,11 @@ export default function ResumePage() {
       </div>
 
       {/* Skills - White Section */}
-      <div className="py-20 px-8 bg-white">
+      <div className="py-24 px-8 bg-white">
         <div className="max-w-3xl mx-auto">
           <section>
-            <h2 className="text-h4 font-semibold text-gray-900 mb-8">Technical Skills</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <h2 className="text-h4 font-semibold text-gray-900 mb-12">Technical Skills</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {skillCategories.map((category, catIdx) => (
                 <motion.div
                   key={category.name}
@@ -534,17 +534,17 @@ export default function ResumePage() {
       </div>
 
       {/* Education & Certifications - White Section */}
-      <div className="py-20 px-8 bg-white">
+      <div className="py-24 px-8 bg-white">
         <div className="max-w-3xl mx-auto">
           <motion.section
-            className="mb-12"
+            className="mb-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
             <motion.h2
-              className="text-h4 font-semibold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-6"
+              className="text-h4 font-semibold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-8"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -552,7 +552,7 @@ export default function ResumePage() {
             >
               Education & Certifications
             </motion.h2>
-            <div className="space-y-4">
+            <div className="space-y-6">
               {[
                 {
                   title: 'AWS Certified Solutions Architect',
@@ -604,8 +604,8 @@ export default function ResumePage() {
           </motion.section>
 
           {/* Target Roles */}
-          <section className="mb-8">
-            <h2 className="text-h4 font-semibold text-gray-900 mb-4">Target Roles</h2>
+          <section className="mb-12">
+            <h2 className="text-h4 font-semibold text-gray-900 mb-6">Target Roles</h2>
             <div className="flex flex-wrap gap-3">
               {['AI Engineer', 'Full-Stack Developer', 'Technical Lead', 'SaaS Founder/CTO'].map((role) => (
                 <span

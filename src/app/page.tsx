@@ -159,7 +159,7 @@ export default function Home() {
       </section>
 
       {/* About - Light Section */}
-      <section className="py-24 px-8 bg-cream relative">
+      <section className="py-32 px-8 bg-cream relative">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -168,7 +168,7 @@ export default function Home() {
             transition={{ duration: 0.7 }}
           >
             <motion.h2
-              className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-8"
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-12"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -177,7 +177,7 @@ export default function Home() {
               About
             </motion.h2>
 
-            <div className="space-y-8">
+            <div className="space-y-12">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -211,7 +211,7 @@ export default function Home() {
       </section>
 
       {/* Recent Achievements - Gradient Section */}
-      <section className="py-24 px-8 bg-gradient-to-br from-white via-cream to-white relative overflow-hidden">
+      <section className="py-32 px-8 bg-gradient-to-br from-white via-cream to-white relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
             className="absolute top-1/2 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl"
@@ -241,7 +241,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 icon: '🚀',
@@ -312,13 +312,13 @@ export default function Home() {
       </section>
 
       {/* What I Bring - White Section */}
-      <section className="py-24 px-8 bg-white">
+      <section className="py-32 px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-12 text-center"
+            className="mb-16 text-center"
           >
             <motion.h2
               className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-4"
@@ -334,7 +334,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 icon: '🚀',
@@ -396,13 +396,13 @@ export default function Home() {
       </section>
 
       {/* Experience - Dark Section */}
-      <section className="py-24 px-8 bg-gray-950">
+      <section className="py-32 px-8 bg-gray-950">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-12"
+            className="mb-16"
           >
             <h2 className="text-h2 font-bold text-cream mb-4">Experience</h2>
             <p className="text-body-lg text-gray-500">
@@ -410,7 +410,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {experiences.map((exp, idx) => (
               <motion.div
                 key={exp.id}
@@ -500,13 +500,13 @@ export default function Home() {
       </section>
 
       {/* Projects - Light Section */}
-      <section className="py-24 px-8 bg-white">
+      <section className="py-32 px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-12"
+            className="mb-16"
           >
             <h2 className="text-h2 font-bold text-gray-900 mb-4">Featured Projects</h2>
             <p className="text-body-lg text-gray-700">
@@ -514,7 +514,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.filter(p => p.featured).slice(0, 4).map((project, idx) => (
               <motion.div
                 key={project.id}
@@ -579,7 +579,7 @@ export default function Home() {
       </section>
 
       {/* Skills - Dark Section */}
-      <section className="py-24 px-8 bg-black relative overflow-hidden">
+      <section className="py-32 px-8 bg-black relative overflow-hidden">
         {/* Animated background accent */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
@@ -594,7 +594,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-12"
+            className="mb-16"
           >
             <motion.h2
               className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text mb-4"
@@ -616,7 +616,7 @@ export default function Home() {
             </motion.p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {skillCategories.slice(0, 4).map((category, idx) => (
               <motion.div
                 key={category.name}
@@ -776,7 +776,7 @@ export default function Home() {
       </section>
 
       {/* Featured Projects Showcase */}
-      <section className="py-24 px-8 bg-gradient-to-b from-black to-gray-950 relative overflow-hidden">
+      <section className="py-32 px-8 bg-gradient-to-b from-black to-gray-950 relative overflow-hidden">
         {/* Background elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
@@ -964,7 +964,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials / Social Proof */}
-      <section className="py-24 px-8 bg-gradient-to-b from-black via-gray-950 to-black relative overflow-hidden">
+      <section className="py-32 px-8 bg-gradient-to-b from-black via-gray-950 to-black relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
@@ -976,7 +976,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
             <motion.h2
               className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text mb-4"
@@ -999,7 +999,7 @@ export default function Home() {
           </motion.div>
 
           {/* Testimonials Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 quote: "Nick's ability to architect and build complex systems while maintaining enterprise-grade security is exceptional. His work on our SOC 2 compliance was flawless - zero breaches, production-ready in record time.",
