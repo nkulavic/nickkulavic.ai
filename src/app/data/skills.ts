@@ -36,11 +36,11 @@ export const skillCategories: SkillCategory[] = [
       { name: 'SES', level: 'expert', yearsExperience: 10 },
       { name: 'SNS', level: 'expert', yearsExperience: 10 },
       { name: 'CloudWatch', level: 'expert', yearsExperience: 10 },
-      { name: 'Athena', level: 'advanced', yearsExperience: 6 },
-      { name: 'Glue', level: 'advanced', yearsExperience: 6 },
-      { name: 'Elastic Beanstalk', level: 'advanced', yearsExperience: 8 },
-      { name: 'RDS', level: 'advanced', yearsExperience: 7 },
-      { name: 'EC2', level: 'advanced', yearsExperience: 8 },
+      { name: 'Elastic Beanstalk', level: 'expert', yearsExperience: 10 },
+      { name: 'Athena', level: 'advanced', yearsExperience: 8 },
+      { name: 'Glue', level: 'advanced', yearsExperience: 7 },
+      { name: 'RDS', level: 'advanced', yearsExperience: 10 },
+      { name: 'EC2', level: 'advanced', yearsExperience: 10 },
       { name: 'Serverless Architecture', level: 'expert', yearsExperience: 10 }
     ]
   },
