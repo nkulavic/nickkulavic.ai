@@ -79,7 +79,7 @@ export const experiences: ExperienceEntry[] = [
     location: 'Denver, CO',
     startDate: 'January 2015',
     endDate: 'Present',
-    description: 'Founded and scaled profitable SaaS business providing API integration and automation solutions for CRM platforms.',
+    description: 'Founded and scaled profitable SaaS business on comprehensive AWS infrastructure, leveraging 12+ AWS services since 2015 for API integration and automation solutions.',
     logo: {
       initials: 'MF',
       color: '#0891B2',
@@ -87,17 +87,23 @@ export const experiences: ExperienceEntry[] = [
       imagePath: '/images/companies/myfusion.png'
     },
     achievements: [
-      'Generated $1.2M+ in cumulative revenue through sustainable SaaS model',
-      'Processed 33,000+ recurring orders across six continents',
-      'Built comprehensive API ecosystem connecting 30+ platforms (Salesforce, HubSpot, Twilio, SendGrid, Stripe, etc.)',
-      'Engineered REST API handling 2M+ monthly requests with 99.9% uptime',
+      'Generated $1.2M+ in cumulative revenue through sustainable SaaS model built entirely on AWS',
+      'Architected production AWS infrastructure using Lambda, API Gateway, DynamoDB, S3, Cognito, and 7+ additional services',
+      'Processed 33,000+ recurring orders across six continents with serverless AWS Lambda functions',
+      'Engineered REST API handling 2M+ monthly requests with 99.9% uptime using API Gateway and Lambda',
+      'Implemented AWS Cognito for user authentication and authorization across 2,000+ active users',
+      'Built data analytics pipeline with AWS Athena and Glue for business intelligence and reporting',
+      'Leveraged CloudFront CDN and Route53 for global content delivery and DNS management',
+      'Integrated SES for transactional emails and SNS for real-time notifications and alerts',
+      'Deployed monitoring and logging with CloudWatch for operational visibility across all services',
+      'Utilized Elastic Beanstalk for scalable application hosting and automatic deployments',
+      'Built comprehensive API ecosystem connecting 30+ platforms (Salesforce, HubSpot, Twilio, SendGrid, Stripe)',
       'Developed MyFusion Helper, a React-based CRM extension with 50+ helper applets',
-      'Implemented automated billing system with Stripe integration',
       'Created webhook processing system for real-time data synchronization',
       'Built custom workflow builder for non-technical users'
     ],
-    technologies: ['Node.js', 'AWS Lambda', 'API Gateway', 'REST API', 'React', 'Infusionsoft/Keap', 'Stripe', 'Webhooks', 'OAuth'],
-    metrics: ['$1.2M+ revenue', '33,000+ orders', '2M+ monthly API requests', '30+ integrations', '2,000+ active users'],
+    technologies: ['AWS Lambda', 'API Gateway', 'DynamoDB', 'S3', 'Cognito', 'Athena', 'Glue', 'CloudFront', 'Route53', 'SES', 'SNS', 'CloudWatch', 'Elastic Beanstalk', 'Node.js', 'React', 'REST API', 'Infusionsoft/Keap', 'Stripe', 'Webhooks', 'OAuth'],
+    metrics: ['$1.2M+ revenue', '33,000+ orders', '2M+ monthly API requests', '30+ integrations', '12+ AWS services', '2,000+ active users'],
     category: 'entrepreneurship'
   },
   {

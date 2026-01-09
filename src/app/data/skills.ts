@@ -26,15 +26,22 @@ export const skillCategories: SkillCategory[] = [
     name: 'Cloud & Infrastructure',
     icon: '☁️',
     skills: [
-      { name: 'AWS Lambda', level: 'expert', yearsExperience: 8 },
-      { name: 'API Gateway', level: 'expert', yearsExperience: 8 },
-      { name: 'DynamoDB', level: 'expert', yearsExperience: 8 },
+      { name: 'AWS Lambda', level: 'expert', yearsExperience: 10 },
+      { name: 'API Gateway', level: 'expert', yearsExperience: 10 },
+      { name: 'DynamoDB', level: 'expert', yearsExperience: 10 },
       { name: 'S3', level: 'expert', yearsExperience: 10 },
-      { name: 'Cognito', level: 'expert', yearsExperience: 5 },
+      { name: 'Cognito', level: 'expert', yearsExperience: 10 },
+      { name: 'CloudFront', level: 'expert', yearsExperience: 10 },
+      { name: 'Route53', level: 'expert', yearsExperience: 10 },
+      { name: 'SES', level: 'expert', yearsExperience: 10 },
+      { name: 'SNS', level: 'expert', yearsExperience: 10 },
+      { name: 'CloudWatch', level: 'expert', yearsExperience: 10 },
+      { name: 'Athena', level: 'advanced', yearsExperience: 6 },
+      { name: 'Glue', level: 'advanced', yearsExperience: 6 },
+      { name: 'Elastic Beanstalk', level: 'advanced', yearsExperience: 8 },
       { name: 'RDS', level: 'advanced', yearsExperience: 7 },
-      { name: 'CloudFront', level: 'advanced', yearsExperience: 6 },
       { name: 'EC2', level: 'advanced', yearsExperience: 8 },
-      { name: 'Serverless Architecture', level: 'expert', yearsExperience: 8 }
+      { name: 'Serverless Architecture', level: 'expert', yearsExperience: 10 }
     ]
   },
   {
