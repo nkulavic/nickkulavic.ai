@@ -15,14 +15,14 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'AWS Bedrock', level: 'expert', yearsExperience: 3 },
       { name: 'Claude AI', level: 'expert', yearsExperience: 3 },
-      { name: 'Gemini', level: 'expert' },
-      { name: 'Groq', level: 'advanced' },
+      { name: 'Gemini', level: 'expert', yearsExperience: 1 },
+      { name: 'Groq', level: 'advanced', yearsExperience: 1 },
       { name: 'ChatGPT API', level: 'expert', yearsExperience: 3 },
       { name: 'Prompt Engineering', level: 'expert', yearsExperience: 3 },
-      { name: 'Multi-Model AI Integration', level: 'expert' },
-      { name: 'PDF Processing & NLP', level: 'expert' },
-      { name: 'Machine Learning', level: 'advanced' },
-      { name: 'Natural Language Processing', level: 'advanced' }
+      { name: 'Multi-Model AI Integration', level: 'expert', yearsExperience: 2 },
+      { name: 'PDF Processing & NLP', level: 'expert', yearsExperience: 3 },
+      { name: 'Machine Learning', level: 'advanced', yearsExperience: 3 },
+      { name: 'Natural Language Processing', level: 'advanced', yearsExperience: 3 }
     ]
   },
   {
@@ -53,7 +53,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'React', level: 'expert', yearsExperience: 7 },
       { name: 'Next.js', level: 'expert', yearsExperience: 4 },
-      { name: 'SvelteKit', level: 'advanced' },
+      { name: 'SvelteKit', level: 'advanced', yearsExperience: 1 },
       { name: 'TypeScript', level: 'expert', yearsExperience: 6 },
       { name: 'JavaScript', level: 'expert', yearsExperience: 14 },
       { name: 'Tailwind CSS', level: 'advanced', yearsExperience: 3 },
@@ -67,8 +67,8 @@ export const skillCategories: SkillCategory[] = [
     name: 'Backend Development',
     icon: '⚙️',
     skills: [
-      { name: '.NET', level: 'advanced' },
-      { name: 'C#', level: 'advanced' },
+      { name: '.NET', level: 'advanced', yearsExperience: 1 },
+      { name: 'C#', level: 'advanced', yearsExperience: 1 },
       { name: 'Node.js', level: 'expert', yearsExperience: 10 },
       { name: 'Express.js', level: 'expert', yearsExperience: 9 },
       { name: 'REST API Design', level: 'expert', yearsExperience: 12 },
@@ -83,11 +83,11 @@ export const skillCategories: SkillCategory[] = [
     icon: '🗄️',
     skills: [
       { name: 'DynamoDB', level: 'expert', yearsExperience: 8 },
-      { name: 'PostgreSQL', level: 'advanced' },
+      { name: 'PostgreSQL', level: 'advanced', yearsExperience: 1 },
       { name: 'MySQL', level: 'expert', yearsExperience: 12 },
       { name: 'MongoDB', level: 'advanced', yearsExperience: 5 },
       { name: 'Redis', level: 'intermediate', yearsExperience: 3 },
-      { name: 'Database Migrations', level: 'advanced' }
+      { name: 'Database Migrations', level: 'advanced', yearsExperience: 1 }
     ]
   },
   {
@@ -143,7 +143,7 @@ export const skillCategories: SkillCategory[] = [
     name: 'Security & Compliance',
     icon: '🔒',
     skills: [
-      { name: 'SOC 2 Compliance', level: 'advanced' },
+      { name: 'SOC 2 Compliance', level: 'advanced', yearsExperience: 1 },
       { name: 'JWT Authentication', level: 'expert', yearsExperience: 6 },
       { name: 'OAuth', level: 'expert', yearsExperience: 8 },
       { name: 'Data Encryption', level: 'advanced', yearsExperience: 8 },

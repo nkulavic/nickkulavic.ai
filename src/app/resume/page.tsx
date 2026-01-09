@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { experiences } from '@/app/data/experience';
 import { skillCategories } from '@/app/data/skills';
 import { projects } from '@/app/data/projects';
+import { certifications, education, careerStats, summaryHighlights } from '@/app/data/education';
 
 export default function ResumePage() {
   return (
@@ -144,14 +145,7 @@ export default function ResumePage() {
               Proven track record of technical excellence combined with business results.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {[
-                '🚀 Founded 3 SaaS companies generating $1.2M+ revenue',
-                '☁️ 8+ years AWS expert (Lambda, Bedrock, DynamoDB)',
-                '🤖 AI-first development with Claude, AWS Bedrock, ChatGPT',
-                '🛡️ SOC 2 compliant systems with zero security breaches',
-                '⚡ 2M+ monthly API requests across 30+ integrations',
-                '👥 Serving 500+ enterprise users with 99.9% uptime'
-              ].map((item, idx) => (
+              {summaryHighlights.map((item, idx) => (
                 <motion.div
                   key={item}
                   initial={{ opacity: 0, x: -10 }}
@@ -253,14 +247,7 @@ export default function ResumePage() {
               Career Highlights
             </motion.h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-              {[
-                { value: '$1.2M+', label: 'Total Revenue', icon: '💰' },
-                { value: '500+', label: 'Enterprise Users', icon: '👥' },
-                { value: '2M+', label: 'Monthly API Requests', icon: '⚡' },
-                { value: '30+', label: 'Integrations', icon: '🔗' },
-                { value: '0', label: 'Security Breaches', icon: '🛡️' },
-                { value: '14+', label: 'Years Experience', icon: '⭐' }
-              ].map((stat, idx) => (
+              {careerStats.map((stat, idx) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 10, scale: 0.95 }}
@@ -536,6 +523,7 @@ export default function ResumePage() {
       {/* Education & Certifications - White Section */}
       <div className="py-24 px-8 bg-white">
         <div className="max-w-3xl mx-auto">
+          {/* Education Section */}
           <motion.section
             className="mb-16"
             initial={{ opacity: 0, y: 20 }}
@@ -550,27 +538,64 @@ export default function ResumePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              Education & Certifications
+              Education
             </motion.h2>
             <div className="space-y-6">
-              {[
-                {
-                  title: 'AWS Certified Solutions Architect',
-                  organization: 'Amazon Web Services',
-                  level: 'Professional Level',
-                  icon: '☁️',
-                  color: '#FF9900'
-                },
-                {
-                  title: 'Infusionsoft Certified Partner',
-                  organization: 'Keap',
-                  level: 'Expert Level',
-                  icon: '🎓',
-                  color: '#73C41D'
-                }
-              ].map((cert, idx) => (
+              {education.map((edu, idx) => (
                 <motion.div
-                  key={cert.title}
+                  key={edu.id}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1, duration: 0.5 }}
+                  whileHover={{ x: 4, boxShadow: '0 8px 20px rgba(0, 102, 255, 0.1)' }}
+                  className="bg-cream border border-gray-200 rounded-xl p-6 hover:border-accent/30 transition-all cursor-pointer group flex items-start gap-4"
+                >
+                  <motion.div
+                    className="text-3xl"
+                    whileHover={{ scale: 1.2, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 200 }}
+                  >
+                    {edu.icon}
+                  </motion.div>
+                  <div className="flex-1">
+                    <h3 className="text-body font-semibold text-gray-900 group-hover:text-accent transition-colors">
+                      {edu.degree}
+                    </h3>
+                    <p className="text-body-sm text-gray-600">
+                      {edu.institution} • {edu.location}
+                    </p>
+                    <p className="text-body-sm text-gray-500 mt-1">{edu.year}</p>
+                    {edu.description && (
+                      <p className="text-body-sm text-gray-500 mt-2 italic">{edu.description}</p>
+                    )}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.section>
+
+          {/* Certifications Section */}
+          <motion.section
+            className="mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.h2
+              className="text-h4 font-semibold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-8"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              Certifications & Credentials
+            </motion.h2>
+            <div className="space-y-6">
+              {certifications.map((cert, idx) => (
+                <motion.div
+                  key={cert.id}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -592,6 +617,9 @@ export default function ResumePage() {
                     <p className="text-body-sm text-gray-600">
                       {cert.organization} • {cert.level}
                     </p>
+                    {cert.description && (
+                      <p className="text-body-sm text-gray-500 mt-2 italic">{cert.description}</p>
+                    )}
                   </div>
                   <motion.div
                     className="w-2 h-2 rounded-full"
