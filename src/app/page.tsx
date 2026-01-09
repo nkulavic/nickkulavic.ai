@@ -963,8 +963,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials / Social Proof */}
-      <section className="py-32 px-8 bg-gradient-to-b from-black via-gray-950 to-black relative overflow-hidden">
+      {/* Trust Indicators / Social Proof */}
+      <section className="py-24 px-8 bg-gradient-to-b from-black via-gray-950 to-black relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
@@ -976,7 +976,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-12"
           >
             <motion.h2
               className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text mb-4"
@@ -985,7 +985,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              What People Say
+              Proven Track Record
             </motion.h2>
             <motion.p
               className="text-body-lg text-gray-500"
@@ -994,114 +994,9 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              Real feedback from colleagues, clients, and business partners
+              Results that speak for themselves
             </motion.p>
           </motion.div>
-
-          {/* Testimonials Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                quote: "Nick's ability to architect and build complex systems while maintaining enterprise-grade security is exceptional. His work on our SOC 2 compliance was flawless - zero breaches, production-ready in record time.",
-                author: "David Chen",
-                role: "CTO",
-                company: "Take3Tech",
-                avatar: "DC",
-                color: "#0066FF"
-              },
-              {
-                quote: "What sets Nick apart is his combination of deep technical expertise and business acumen. He doesn't just write code - he builds revenue-generating products. The $1.2M speaks for itself.",
-                author: "Sarah Martinez",
-                role: "Founder & CEO",
-                company: "Tech Ventures LLC",
-                avatar: "SM",
-                color: "#8B5CF6"
-              },
-              {
-                quote: "Working with Nick on API integrations was a masterclass in system design. He connected 30+ platforms seamlessly, handling 2M+ monthly requests with 99.9% uptime. Truly world-class engineering.",
-                author: "Michael Thompson",
-                role: "VP of Engineering",
-                company: "CRM Solutions Inc",
-                avatar: "MT",
-                color: "#10B981"
-              }
-            ].map((testimonial, idx) => (
-              <motion.div
-                key={testimonial.author}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.12, duration: 0.6 }}
-                whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(0, 102, 255, 0.2)' }}
-                className="bg-gradient-to-br from-gray-900/90 to-gray-950 border border-gray-800/50 hover:border-accent/50 rounded-2xl p-8 transition-all duration-300 cursor-pointer group"
-              >
-                {/* Quote Icon */}
-                <motion.div
-                  className="text-accent/30 text-6xl font-serif leading-none mb-4"
-                  whileHover={{ scale: 1.1, rotate: -5 }}
-                  transition={{ type: 'spring', stiffness: 200 }}
-                >
-                  &ldquo;
-                </motion.div>
-
-                {/* Quote Text */}
-                <p className="text-body text-gray-300 leading-loose mb-6 group-hover:text-cream transition-colors">
-                  {testimonial.quote}
-                </p>
-
-                {/* Star Rating */}
-                <div className="flex gap-1 mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <motion.svg
-                      key={i}
-                      className="w-5 h-5 text-yellow-500"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      initial={{ opacity: 0, scale: 0 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: idx * 0.12 + i * 0.05, type: 'spring', stiffness: 200 }}
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </motion.svg>
-                  ))}
-                </div>
-
-                {/* Author Info */}
-                <div className="flex items-center gap-4 border-t border-gray-800/50 pt-6">
-                  <motion.div
-                    className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-sm"
-                    style={{
-                      backgroundColor: testimonial.color + '20',
-                      color: testimonial.color,
-                      border: `2px solid ${testimonial.color}40`
-                    }}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ type: 'spring', stiffness: 200 }}
-                  >
-                    {testimonial.avatar}
-                  </motion.div>
-                  <div className="flex-1">
-                    <h4 className="text-body font-semibold text-cream group-hover:text-accent transition-colors">
-                      {testimonial.author}
-                    </h4>
-                    <p className="text-body-sm text-gray-500">
-                      {testimonial.role} • {testimonial.company}
-                    </p>
-                  </div>
-                  {/* LinkedIn Badge */}
-                  <motion.div
-                    className="text-gray-600 hover:text-[#0A66C2]"
-                    whileHover={{ scale: 1.2 }}
-                  >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                    </svg>
-                  </motion.div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
 
           {/* Trust Indicators */}
           <motion.div
