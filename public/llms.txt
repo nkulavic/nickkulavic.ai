@@ -1,0 +1,63 @@
+# Nick Kulavic - AI Engineer & Full-Stack Developer
+
+> Professional portfolio website for Nick Kulavic, an AI Engineer and Full-Stack Developer based in Denver, CO.
+
+## About Nick Kulavic
+
+Nick Kulavic is an AI & Full-Stack Developer with 14+ years of experience building enterprise applications and profitable SaaS ventures. He specializes in AWS, serverless architecture, and AI integration.
+
+### Current Role
+- **Position:** AI & Full-Stack Developer at Take3Tech (March 2025 - Present)
+- **Focus:** Building LoanMaps (loan origination system) and RuleTool (AI-driven PDF processing)
+- **Tech Stack:** Node.js, TypeScript, React, AWS Lambda, DynamoDB, AWS Bedrock, Claude AI
+- **Achievements:** SOC 2 compliant systems, 500+ enterprise users, 99.9% uptime
+
+### Entrepreneurship
+- **MyFusion Solutions (2015-Present):** Founded API integration platform generating $1.2M+ revenue
+- **ListBackup.ai (2023-Present):** Serverless SaaS for email list backup with AI classification
+
+### Key Metrics
+- $1.2M+ total revenue generated
+- 500+ enterprise users served
+- 2M+ monthly API requests handled
+- 30+ platform integrations built
+- 0 security breaches
+- 14+ years of experience
+
+### Technical Expertise
+- **AI/ML:** AWS Bedrock, Claude AI, ChatGPT API, Prompt Engineering, Multi-Model AI Integration
+- **Cloud:** AWS Lambda, API Gateway, DynamoDB, S3, Cognito, CloudFront (10+ years)
+- **Frontend:** React (7 years), Next.js (4 years), TypeScript (6 years), Tailwind CSS
+- **Backend:** Node.js (10 years), REST API Design, Serverless Architecture
+- **CRM/Integrations:** Infusionsoft/Keap, Salesforce, HubSpot, Twilio, SendGrid
+
+### Certifications
+- AWS Certified Solutions Architect (Professional Level)
+- AWS Certified Developer (Associate Level)
+- Infusionsoft Certified Partner (Expert Level, 10+ years)
+- AI/ML Practitioner (AWS Bedrock, Claude AI)
+- SOC 2 Compliance Implementation
+
+### Target Roles
+Nick is seeking opportunities as:
+- AI Engineer
+- Full-Stack Developer
+- Technical Lead
+- SaaS Founder/CTO
+
+### Contact
+- **Location:** Denver, CO
+- **Availability:** Remote or Denver-based positions
+- **Website:** https://nickkulavic.ai
+- **Resume:** https://nickkulavic.ai/resume
+
+## Site Structure
+
+- `/` - Homepage with overview, stats, and experience highlights
+- `/resume` - Detailed resume with skills, certifications, and work history
+- `/contact` - Contact information and availability
+
+## Optional
+
+- Contact: Available through website contact form
+- LinkedIn: /in/nickkulavic
