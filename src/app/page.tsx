@@ -177,7 +177,7 @@ export default function Home() {
               About
             </motion.h2>
 
-            <div className="space-y-8">
+            <div className="space-y-6">
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -200,6 +200,18 @@ export default function Home() {
                 Currently at Take3Tech, I&apos;m building AI-powered mortgage solutions serving 500+ loan officers with
                 SOC 2 compliance. I specialize in turning complex technical challenges into scalable, secure solutions
                 that deliver real business value.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="text-body-lg text-gray-700 leading-relaxed"
+              >
+                I also continue to run <span className="font-semibold text-accent">MyFusion Solutions</span>, where I built
+                MyFusion Helper — a platform with 60+ integrations connecting Infusionsoft/Keap with Salesforce, Google Sheets,
+                Twilio, and 30+ other platforms. It processes 2M+ API requests monthly and serves 2,000+ active users.
               </motion.p>
             </div>
           </motion.div>
@@ -370,7 +382,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08, duration: 0.5 }}
                 whileHover={{ y: -6, boxShadow: '0 12px 32px rgba(0, 102, 255, 0.12)' }}
-                className="bg-gradient-to-br from-cream to-white border border-gray-200 rounded-2xl p-8 hover:border-accent/40 transition-all group cursor-pointer text-center"
+                className="bg-gradient-to-br from-cream to-white border border-gray-200 rounded-2xl p-8 hover:border-accent/40 transition-all group cursor-pointer flex flex-col items-center text-center"
               >
                 <motion.div
                   className="text-4xl mb-4"
