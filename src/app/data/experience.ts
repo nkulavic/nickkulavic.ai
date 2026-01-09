@@ -26,7 +26,7 @@ export const experiences: ExperienceEntry[] = [
     location: 'Denver, CO',
     startDate: 'March 2025',
     endDate: 'Present',
-    description: 'Building enterprise AI-powered applications for the mortgage industry with focus on scalability, security, and compliance.',
+    description: 'Building enterprise AI-powered applications for the mortgage industry, working across .NET, SvelteKit, and serverless AWS architectures with focus on scalability, security, and compliance.',
     logo: {
       initials: 'T3',
       color: '#0066FF',
@@ -34,16 +34,21 @@ export const experiences: ExperienceEntry[] = [
       imagePath: '/images/companies/take3tech.png'
     },
     achievements: [
-      'Architected LoanMaps, a comprehensive loan origination system serving 500+ loan officers',
-      'Developed RuleTool, an AI-driven PDF processing platform achieving 80% faster processing times',
+      'Architected and maintained LoanMaps, a comprehensive .NET loan origination system built across multiple .NET versions (4.6+) serving 500+ loan officers, handling the entire mortgage process end-to-end',
+      'Built the engine for RuleTool using SvelteKit and PostgreSQL, processing overlay guidelines and investor PDFs to enable AI-powered querying of agency guidelines and lending requirements',
+      'Integrated multiple AI models (Groq, Gemini, AWS Bedrock/Claude) for intelligent document processing and natural language queries, achieving 80% faster processing times',
+      'Implemented Better Auth authentication system for RuleTool with secure user management',
+      'Developed PDF parsing and data extraction pipeline for mortgage investor guidelines and agency requirements',
+      'Created AI query system allowing users to ask questions about complex lending guidelines in natural language',
+      'Developed database migration workflows for PostgreSQL, ensuring zero-downtime schema updates',
       'Achieved SOC 2 compliance with zero security breaches across all applications',
       'Leveraged Claude Code and advanced AI tooling daily for accelerated development',
+      'Maintained and enhanced legacy .NET codebase while modernizing architecture incrementally',
       'Established robust CI/CD pipelines with GitHub Actions for automated deployments',
-      'Implemented real-time collaboration features with WebSocket architecture',
-      'Designed serverless architecture handling thousands of concurrent users'
+      'Implemented real-time collaboration features with WebSocket architecture'
     ],
-    technologies: ['Node.js', 'TypeScript', 'React', 'AWS Lambda', 'DynamoDB', 'AWS Bedrock', 'Claude AI', 'Next.js', 'WebSockets', 'GitHub Actions'],
-    metrics: ['500+ active users', 'SOC 2 compliant', '99.9% uptime', '80% faster processing'],
+    technologies: ['.NET', 'C#', '.NET Framework 4.6+', 'SvelteKit', 'PostgreSQL', 'Better Auth', 'Database Migrations', 'Groq', 'Gemini', 'AWS Bedrock', 'Claude AI', 'PDF Processing', 'Node.js', 'TypeScript', 'React', 'AWS Lambda', 'DynamoDB', 'Next.js', 'WebSockets', 'GitHub Actions'],
+    metrics: ['500+ active users', 'SOC 2 compliant', '99.9% uptime', '80% faster processing', 'Full mortgage lifecycle'],
     category: 'ai-engineering'
   },
   {
