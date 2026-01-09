@@ -72,13 +72,21 @@ export default function Home() {
               AI Engineer & Full-Stack Developer
             </motion.p>
             <motion.p
-              className="text-body-lg text-gray-500 max-w-2xl leading-loose mb-4"
+              className="text-h4 text-cream max-w-2xl leading-relaxed mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Building enterprise AI applications and scaling SaaS solutions.
-              14+ years experience, $1.2M+ revenue, zero security breaches.
+              I build AI-first applications that scale.
+            </motion.p>
+            <motion.p
+              className="text-body-lg text-gray-400 max-w-2xl leading-loose mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.35 }}
+            >
+              14+ years turning complex technical challenges into profitable solutions. From $0 to $1.2M+ revenue.
+              SOC 2 compliant systems serving 500+ enterprise users. Zero security breaches.
             </motion.p>
 
             {/* Key Metrics Row */}
@@ -198,6 +206,107 @@ export default function Home() {
               </motion.div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Recent Achievements - Gradient Section */}
+      <section className="py-24 px-8 bg-gradient-to-br from-white via-cream to-white relative overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div
+            className="absolute top-1/2 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl"
+            animate={{ y: [0, -30, 0], x: [0, 30, 0] }}
+            transition={{ duration: 15, repeat: Infinity }}
+          />
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <motion.h2
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-4"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              Recent Achievements
+            </motion.h2>
+            <p className="text-body-lg text-gray-600">
+              Latest wins in AI development and enterprise solutions (2024-2025)
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: '🚀',
+                title: 'Launched LoanMaps',
+                description: 'Enterprise loan origination system serving 500+ loan officers with AI-powered document processing',
+                date: '2024',
+                metrics: ['500+ users', '99.9% uptime', 'SOC 2']
+              },
+              {
+                icon: '⚡',
+                title: 'Built RuleTool AI',
+                description: 'Achieved 80% faster PDF processing with AWS Bedrock and Claude AI for mortgage lending rules',
+                date: '2024',
+                metrics: ['80% faster', '98% accuracy', 'Real-time']
+              },
+              {
+                icon: '🛡️',
+                title: 'SOC 2 Compliance',
+                description: 'Architected and achieved full SOC 2 compliance for enterprise mortgage platform with zero breaches',
+                date: '2024',
+                metrics: ['Zero breaches', 'Enterprise-grade', 'First audit']
+              }
+            ].map((achievement, idx) => (
+              <motion.div
+                key={achievement.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.12, duration: 0.6 }}
+                whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(0, 102, 255, 0.15)' }}
+                className="bg-white border border-gray-200 rounded-2xl p-8 hover:border-accent/50 transition-all cursor-pointer group"
+              >
+                <motion.div
+                  className="text-5xl mb-4"
+                  whileHover={{ scale: 1.2, rotate: 10 }}
+                  transition={{ type: 'spring', stiffness: 200 }}
+                >
+                  {achievement.icon}
+                </motion.div>
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-body-lg font-bold text-gray-900 group-hover:text-accent transition-colors">
+                    {achievement.title}
+                  </h3>
+                  <span className="text-caption text-gray-500 font-medium">{achievement.date}</span>
+                </div>
+                <p className="text-body-sm text-gray-600 leading-relaxed mb-4">
+                  {achievement.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {achievement.metrics.map((metric, metricIdx) => (
+                    <motion.span
+                      key={metric}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: idx * 0.12 + metricIdx * 0.05 }}
+                      whileHover={{ scale: 1.05 }}
+                      className="px-3 py-1 bg-accent/10 border border-accent/30 text-accent text-caption rounded-lg font-medium"
+                    >
+                      {metric}
+                    </motion.span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -1061,91 +1170,178 @@ export default function Home() {
       </section>
 
       {/* CTA - Light Section */}
-      <section className="py-24 px-8 bg-cream relative overflow-hidden">
+      <section className="py-32 px-8 bg-gradient-to-br from-white via-cream to-white relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
-            className="absolute -top-40 -left-40 w-80 h-80 bg-accent/8 rounded-full blur-3xl"
+            className="absolute -top-40 -left-40 w-96 h-96 bg-accent/10 rounded-full blur-3xl"
             animate={{ y: [0, 40, 0], x: [0, 20, 0] }}
             transition={{ duration: 10, repeat: Infinity }}
           />
+          <motion.div
+            className="absolute -bottom-40 -right-40 w-96 h-96 bg-accent/8 rounded-full blur-3xl"
+            animate={{ y: [0, -40, 0], x: [0, -20, 0] }}
+            transition={{ duration: 12, repeat: Infinity }}
+          />
         </div>
 
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+        <div className="max-w-5xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
+            <motion.div
+              className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/10 border border-green-500/30 rounded-full text-green-700 font-semibold text-body-sm mb-8"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <motion.span
+                animate={{ scale: [1, 1.3, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="w-2 h-2 bg-green-500 rounded-full"
+              />
+              Open to Opportunities
+            </motion.div>
+
             <motion.h2
-              className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-6"
+              className="text-h1 font-bold text-transparent bg-gradient-to-r from-gray-900 via-accent to-gray-900 bg-clip-text mb-8"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              Ready to Connect?
+              Let&apos;s Build Something Exceptional
             </motion.h2>
             <motion.p
-              className="text-body-lg text-gray-700 mb-10 max-w-2xl mx-auto leading-loose"
+              className="text-h4 text-gray-700 mb-6 max-w-3xl mx-auto leading-relaxed"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              Looking for an experienced AI Engineer or Full-Stack Developer who can deliver results?
-              Let&apos;s talk about how I can help your team.
+              Need an engineer who ships enterprise-grade AI solutions while driving revenue?
+            </motion.p>
+            <motion.p
+              className="text-body-lg text-gray-600 mb-12 max-w-2xl mx-auto"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+            >
+              I bring technical depth, business acumen, and a track record of delivering results that matter.
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <motion.a
+                href="mailto:contact@nickkulavic.ai"
+                className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-accent text-white hover:bg-accent-light transition-all duration-300 rounded-2xl text-body-lg font-bold shadow-2xl hover:shadow-accent/50 group relative overflow-hidden"
+                whileHover={{ scale: 1.08, y: -4, boxShadow: '0 20px 40px rgba(0, 102, 255, 0.4)' }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <motion.span
+                  className="text-2xl"
+                  animate={{ y: [0, -3, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  ✉️
+                </motion.span>
+                Schedule a Conversation
+                <motion.svg
+                  className="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  animate={{ x: [0, 4, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </motion.svg>
+              </motion.a>
+
+              <motion.a
                 href="/resume"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-black text-cream hover:bg-gray-900 transition-all duration-300 rounded-xl text-body font-semibold shadow-lg hover:shadow-xl group relative overflow-hidden"
+                className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-gray-900 hover:bg-gray-50 border-2 border-gray-300 hover:border-accent transition-all duration-300 rounded-2xl text-body-lg font-bold shadow-lg hover:shadow-xl group"
                 whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.97 }}
               >
                 <motion.span
+                  className="text-2xl"
                   animate={{ x: [0, 4, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
                   📄
                 </motion.span>
-                View Resume
-              </motion.a>
-
-              <motion.a
-                href="mailto:contact@nickkulavic.ai"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-accent text-white hover:bg-accent-light transition-all duration-300 rounded-xl text-body font-semibold shadow-lg hover:shadow-2xl group relative overflow-hidden"
-                whileHover={{ scale: 1.05, y: -3 }}
-                whileTap={{ scale: 0.97 }}
-              >
-                <motion.span
-                  animate={{ y: [0, -2, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  ✉️
-                </motion.span>
-                Get in Touch
+                View Full Resume
               </motion.a>
             </motion.div>
 
-            {/* Optional: Add a subtle text below */}
-            <motion.p
-              className="text-body-sm text-gray-600 mt-8"
+            {/* Role Tags */}
+            <motion.div
+              className="flex flex-wrap justify-center gap-3 mb-8"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+            >
+              {['AI Engineer', 'Full-Stack Developer', 'Technical Lead', 'Solutions Architect'].map((role, idx) => (
+                <motion.span
+                  key={role}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 + idx * 0.05 }}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="px-4 py-2 bg-accent/10 border border-accent/30 text-accent text-body-sm font-semibold rounded-lg"
+                >
+                  {role}
+                </motion.span>
+              ))}
+            </motion.div>
+
+            {/* Social Links */}
+            <motion.div
+              className="flex items-center justify-center gap-6"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Available for full-time roles, consulting, and project-based work
-            </motion.p>
+              <motion.a
+                href="https://linkedin.com/in/nickkulavic"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-600 hover:text-[#0A66C2] transition-colors text-body-sm font-medium"
+                whileHover={{ scale: 1.15, y: -2 }}
+              >
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+                LinkedIn
+              </motion.a>
+              <span className="text-gray-400">•</span>
+              <motion.a
+                href="https://github.com/nkulavic"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors text-body-sm font-medium"
+                whileHover={{ scale: 1.15, y: -2 }}
+              >
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+                GitHub
+              </motion.a>
+            </motion.div>
           </motion.div>
         </div>
       </section>
