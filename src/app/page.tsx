@@ -9,6 +9,7 @@ import { skillCategories } from './data/skills';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CompanyModal from './components/CompanyModal';
+import PlatformShowcase from './components/PlatformShowcase';
 
 export default function Home() {
   const [selectedExperience, setSelectedExperience] = useState<ExperienceEntry | null>(null);
@@ -94,7 +95,7 @@ export default function Home() {
               {[
                 { value: '$1.2M+', label: 'Revenue Generated' },
                 { value: '500+', label: 'Enterprise Users' },
-                { value: '30+', label: 'Integrations' },
+                { value: '30+', label: 'Platform APIs' },
                 { value: '14+', label: 'Years Experience' }
               ].map((metric, idx) => (
                 <motion.div
@@ -1345,6 +1346,9 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Platform Integrations Showcase */}
+      <PlatformShowcase />
 
       <Footer />
     </div>

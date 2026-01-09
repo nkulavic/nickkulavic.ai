@@ -107,11 +107,24 @@ export const skillCategories: SkillCategory[] = [
     name: 'CRM & Marketing Platforms',
     icon: '📊',
     skills: [
-      { name: 'Infusionsoft/Keap', level: 'expert', yearsExperience: 9 },
-      { name: 'Salesforce', level: 'advanced', yearsExperience: 5 },
-      { name: 'HubSpot', level: 'advanced', yearsExperience: 4 },
-      { name: 'ActiveCampaign', level: 'advanced', yearsExperience: 3 },
-      { name: 'MailChimp', level: 'advanced', yearsExperience: 5 }
+      { name: 'Infusionsoft/Keap', level: 'expert', yearsExperience: 10 },
+      { name: 'Salesforce', level: 'expert', yearsExperience: 10 },
+      { name: 'HubSpot', level: 'advanced', yearsExperience: 5 },
+      { name: 'ActiveCampaign', level: 'advanced', yearsExperience: 4 },
+      { name: 'MailChimp', level: 'advanced', yearsExperience: 6 },
+      { name: 'Google Sheets API', level: 'expert', yearsExperience: 7 }
+    ]
+  },
+  {
+    name: 'Communication & Collaboration',
+    icon: '💬',
+    skills: [
+      { name: 'Twilio SMS/Voice', level: 'expert', yearsExperience: 6 },
+      { name: 'SendGrid', level: 'expert', yearsExperience: 7 },
+      { name: 'Slack', level: 'advanced', yearsExperience: 4 },
+      { name: 'Zoom', level: 'advanced', yearsExperience: 3 },
+      { name: 'Calendly', level: 'advanced', yearsExperience: 4 },
+      { name: 'GoToWebinar', level: 'advanced', yearsExperience: 6 }
     ]
   },
   {

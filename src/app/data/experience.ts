@@ -84,7 +84,7 @@ export const experiences: ExperienceEntry[] = [
     location: 'Denver, CO',
     startDate: 'January 2015',
     endDate: 'Present',
-    description: 'Founded and scaled profitable SaaS business on comprehensive AWS infrastructure, leveraging 12+ AWS services since 2015 for API integration and automation solutions.',
+    description: 'Founded and scaled profitable SaaS business built entirely on AWS infrastructure, creating deep API integrations with 30+ platforms including Salesforce, HubSpot, Twilio, SendGrid, Google Sheets, Stripe, Zoom, Calendly, and every major CRM.',
     logo: {
       initials: 'MF',
       color: '#0891B2',
@@ -92,23 +92,24 @@ export const experiences: ExperienceEntry[] = [
       imagePath: '/images/companies/myfusion.png'
     },
     achievements: [
-      'Generated $1.2M+ in cumulative revenue through sustainable SaaS model built entirely on AWS',
-      'Architected production AWS infrastructure using Lambda, API Gateway, DynamoDB, S3, Cognito, and 7+ additional services',
+      'Generated $1.2M+ in cumulative revenue through sustainable SaaS model built entirely on AWS since 2015',
+      'Architected production AWS infrastructure using 12+ services: Lambda, API Gateway, DynamoDB, S3, Cognito, Athena, Glue, CloudFront, Route53, SES, SNS, CloudWatch, Elastic Beanstalk',
+      'Developed MyFusion Helper with 60+ helper integrations for Infusionsoft/Keap, serving 2,000+ active users',
+      'Built "Google Sheet It" - flagship helper syncing CRM data to Google Sheets with automated refresh and scheduling',
+      'Integrated extensive Salesforce API connections for data synchronization and workflow automation (since 2015)',
+      'Created deep integrations with communication platforms: Twilio (SMS/Voice), SendGrid (email delivery), Slack (notifications), Zoom (meetings)',
+      'Developed productivity integrations: Google Sheets API, Calendly (scheduling), Trello (tasks), Dropbox (files)',
+      'Built webinar platform integrations: GoToWebinar registration and attendance tracking',
+      'Implemented video platform integrations: YouTube, Wistia, Vimeo for engagement tracking',
+      'Engineered payment integrations: Stripe for subscription billing and payment processing',
+      'Built Facebook Lead Ads and Custom Audiences integration for marketing automation',
       'Processed 33,000+ recurring orders across six continents with serverless AWS Lambda functions',
-      'Engineered REST API handling 2M+ monthly requests with 99.9% uptime using API Gateway and Lambda',
-      'Implemented AWS Cognito for user authentication and authorization across 2,000+ active users',
-      'Built data analytics pipeline with AWS Athena and Glue for business intelligence and reporting',
-      'Leveraged CloudFront CDN and Route53 for global content delivery and DNS management',
-      'Integrated SES for transactional emails and SNS for real-time notifications and alerts',
-      'Deployed monitoring and logging with CloudWatch for operational visibility across all services',
-      'Utilized Elastic Beanstalk for scalable application hosting and automatic deployments',
-      'Built comprehensive API ecosystem connecting 30+ platforms (Salesforce, HubSpot, Twilio, SendGrid, Stripe)',
-      'Developed MyFusion Helper, a React-based CRM extension with 50+ helper applets',
-      'Created webhook processing system for real-time data synchronization',
-      'Built custom workflow builder for non-technical users'
+      'Engineered REST API handling 2M+ monthly requests with 99.9% uptime',
+      'Created webhook processing system for real-time data synchronization across all platforms',
+      'Built custom workflow builder for non-technical users to create complex automation'
     ],
-    technologies: ['AWS Lambda', 'API Gateway', 'DynamoDB', 'S3', 'Cognito', 'Athena', 'Glue', 'CloudFront', 'Route53', 'SES', 'SNS', 'CloudWatch', 'Elastic Beanstalk', 'Node.js', 'React', 'REST API', 'Infusionsoft/Keap', 'Stripe', 'Webhooks', 'OAuth'],
-    metrics: ['$1.2M+ revenue', '33,000+ orders', '2M+ monthly API requests', '30+ integrations', '12+ AWS services', '2,000+ active users'],
+    technologies: ['AWS Lambda', 'API Gateway', 'DynamoDB', 'S3', 'Cognito', 'Athena', 'Glue', 'CloudFront', 'Route53', 'SES', 'SNS', 'CloudWatch', 'Elastic Beanstalk', 'Node.js', 'React', 'Salesforce API', 'Google Sheets API', 'Twilio', 'SendGrid', 'Stripe', 'Slack', 'Zoom', 'Calendly', 'Trello', 'Facebook API', 'GoToWebinar', 'Infusionsoft/Keap', 'Webhooks', 'OAuth', 'REST API'],
+    metrics: ['$1.2M+ revenue', '33,000+ orders', '2M+ monthly API requests', '60+ helper integrations', '30+ platform APIs', '12+ AWS services', '2,000+ active users'],
     category: 'entrepreneurship'
   },
   {
