@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://nickkulavic.ai'),
+  verification: {
+    google: 'YOUR_GOOGLE_VERIFICATION_CODE', // Get this from Google Search Console
+  },
   title: {
     default: "Nick Kulavic - AI Engineer & Full-Stack Developer",
     template: "%s | Nick Kulavic"
@@ -44,20 +47,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://nickkulavic.ai",
     siteName: "Nick Kulavic Portfolio",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Nick Kulavic - AI Engineer & Full-Stack Developer",
-      },
-    ],
+    // OG image is auto-generated from opengraph-image.tsx
   },
   twitter: {
     card: "summary_large_image",
     title: "Nick Kulavic - AI Engineer & Full-Stack Developer",
     description: "Building enterprise AI applications and scaling SaaS solutions. 14+ years experience, $1.2M+ revenue.",
-    images: ["/og-image.png"],
+    // Twitter image is auto-generated from twitter-image.tsx
   },
   alternates: {
     canonical: "https://nickkulavic.ai",

@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
   images: {
     unoptimized: true,
   },
+  // Security headers are configured in vercel.json
 };
 
 export default nextConfig;
