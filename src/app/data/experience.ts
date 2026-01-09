@@ -41,7 +41,7 @@ export const experiences: ExperienceEntry[] = [
       'Developed PDF parsing and data extraction pipeline for mortgage investor guidelines and agency requirements',
       'Created AI query system allowing users to ask questions about complex lending guidelines in natural language',
       'Developed database migration workflows for PostgreSQL, ensuring zero-downtime schema updates',
-      'Achieved SOC 2 compliance with zero security breaches across all applications',
+      'Maintained SOC 2 compliant development workflows with zero security breaches',
       'Leveraged Claude Code and advanced AI tooling daily for accelerated development',
       'Maintained and enhanced legacy .NET codebase while modernizing architecture incrementally',
       'Established robust CI/CD pipelines with GitHub Actions for automated deployments',

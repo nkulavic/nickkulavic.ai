@@ -60,12 +60,12 @@ export const certifications: Certification[] = [
   },
   {
     id: 'soc2-compliance',
-    title: 'SOC 2 Compliance Implementation',
+    title: 'SOC 2 Compliant Development',
     organization: 'Take3Tech',
-    level: 'Achieved 2025',
+    level: 'Current',
     icon: '🛡️',
     color: '#10B981',
-    description: 'Led security implementation achieving SOC 2 compliance with zero security breaches'
+    description: 'Working within SOC 2 compliant environment with zero security breaches'
   }
 ];
 

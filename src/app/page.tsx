@@ -259,10 +259,10 @@ export default function Home() {
               },
               {
                 icon: '🛡️',
-                title: 'SOC 2 Compliance',
-                description: 'Architected and achieved full SOC 2 compliance for enterprise mortgage platform with zero breaches',
+                title: 'Enterprise Security',
+                description: 'Building within SOC 2 compliant environment, maintaining zero security breaches across all applications',
                 date: '2025',
-                metrics: ['Zero breaches', 'Enterprise-grade', 'First audit']
+                metrics: ['Zero breaches', 'Enterprise-grade', 'SOC 2 workflow']
               }
             ].map((achievement, idx) => (
               <motion.div
