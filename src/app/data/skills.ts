@@ -77,6 +77,19 @@ export const skillCategories: SkillCategory[] = [
     ]
   },
   {
+    name: 'Platform Integration & E-commerce',
+    icon: '🔗',
+    skills: [
+      { name: 'Teamwork.com API', level: 'expert', yearsExperience: 6 },
+      { name: 'WordPress', level: 'expert', yearsExperience: 10 },
+      { name: 'Zendesk', level: 'advanced', yearsExperience: 5 },
+      { name: 'Magento', level: 'advanced', yearsExperience: 6 },
+      { name: 'Shopify', level: 'expert', yearsExperience: 7 },
+      { name: 'WooCommerce', level: 'advanced', yearsExperience: 6 },
+      { name: 'Payment Gateways', level: 'expert', yearsExperience: 8 }
+    ]
+  },
+  {
     name: 'CRM & Marketing Platforms',
     icon: '📊',
     skills: [

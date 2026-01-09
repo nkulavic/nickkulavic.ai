@@ -107,7 +107,7 @@ export const experiences: ExperienceEntry[] = [
     location: 'Peoria, IL',
     startDate: 'January 2011',
     endDate: 'December 2016',
-    description: 'Built complete franchise technology stack for chiropractic practices, enabling multi-location management and operational automation.',
+    description: 'Built complete franchise technology stack with deep platform integrations connecting Teamwork.com, WordPress, Zendesk, Magento, and Shopify for chiropractic practice management.',
     logo: {
       initials: 'AL',
       color: '#10B981',
@@ -115,19 +115,20 @@ export const experiences: ExperienceEntry[] = [
       imagePath: '/images/companies/alignlife.svg'
     },
     achievements: [
-      'Architected and built entire franchise technology infrastructure serving 20+ chiropractic locations',
-      'Designed automated workflows for patient management, scheduling, and billing systems',
-      'Implemented multi-location management platform with real-time operational oversight',
+      'Architected deeply integrated Teamwork.com project management system connecting WordPress, Zendesk, Magento, and Shopify',
+      'Built custom Teamwork.com API integrations for franchise operations, task automation, and cross-platform synchronization',
+      'Designed automated workflows bridging patient management (WordPress), support tickets (Zendesk), and e-commerce (Magento/Shopify)',
+      'Developed unified franchise technology infrastructure serving 20+ chiropractic locations with real-time data flow',
+      'Created WordPress-based patient websites with custom scheduling integration and Teamwork.com task tracking',
+      'Implemented Zendesk support system integrated with Teamwork.com for seamless ticket-to-task conversion',
       'Built Infusionsoft automation workflows for drip campaigns, patient recalls, and staff task management',
-      'Developed patient websites and online scheduling systems for individual franchise locations',
-      'Managed ACEVA.com (nutraceutical e-commerce platform) operationally and technologically',
-      'Led migration of ACEVA from Magento to Shopify, optimizing performance and user experience',
-      'Integrated CRM, scheduling, billing, and patient management systems into unified platform',
+      'Led ACEVA.com migration from Magento to Shopify with integrated order tracking in Teamwork.com',
+      'Engineered cross-platform API layer connecting CRM, scheduling, billing, support, and e-commerce systems',
       'Established operational procedures and standardized systems for franchise scalability'
     ],
-    technologies: ['Infusionsoft API', 'PHP', 'JavaScript', 'MySQL', 'Magento', 'Shopify', 'REST API', 'HTML/CSS', 'CMS'],
-    metrics: ['20+ locations supported', 'Multi-location operations', '1000+ practitioners', 'E-commerce platform'],
-    category: 'entrepreneurship'
+    technologies: ['Teamwork.com API', 'WordPress', 'Zendesk API', 'Magento', 'Shopify', 'Infusionsoft API', 'PHP', 'JavaScript', 'MySQL', 'REST API', 'OAuth', 'Webhooks'],
+    metrics: ['20+ locations supported', '5+ platform integrations', '1000+ practitioners', 'Real-time sync'],
+    category: 'full-stack'
   },
   {
     id: 'aceva',
