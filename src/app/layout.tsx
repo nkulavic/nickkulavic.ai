@@ -17,9 +17,6 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://nickkulavic.ai'),
-  verification: {
-    google: 'YOUR_GOOGLE_VERIFICATION_CODE', // Get this from Google Search Console
-  },
   title: {
     default: "Nick Kulavic - AI Engineer & Full-Stack Developer",
     template: "%s | Nick Kulavic"
