@@ -237,7 +237,7 @@ export default function Home() {
               Recent Achievements
             </motion.h2>
             <p className="text-body-lg text-gray-600">
-              Latest wins in AI development and enterprise solutions (2024-2025)
+              Latest wins in AI development and enterprise solutions (2025)
             </p>
           </motion.div>
 
@@ -247,21 +247,21 @@ export default function Home() {
                 icon: '🚀',
                 title: 'Launched LoanMaps',
                 description: 'Enterprise loan origination system serving 500+ loan officers with AI-powered document processing',
-                date: '2024',
+                date: '2025',
                 metrics: ['500+ users', '99.9% uptime', 'SOC 2']
               },
               {
                 icon: '⚡',
                 title: 'Built RuleTool AI',
                 description: 'Achieved 80% faster PDF processing with AWS Bedrock and Claude AI for mortgage lending rules',
-                date: '2024',
+                date: '2025',
                 metrics: ['80% faster', '98% accuracy', 'Real-time']
               },
               {
                 icon: '🛡️',
                 title: 'SOC 2 Compliance',
                 description: 'Architected and achieved full SOC 2 compliance for enterprise mortgage platform with zero breaches',
-                date: '2024',
+                date: '2025',
                 metrics: ['Zero breaches', 'Enterprise-grade', 'First audit']
               }
             ].map((achievement, idx) => (
