@@ -319,9 +319,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* What I Bring - White Section */}
-      <section className="py-32 px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
+      {/* What I Bring - Dark Gradient Section */}
+      <section className="py-32 px-8 bg-gradient-to-b from-gray-950 via-black to-gray-950 relative overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div
+            className="absolute top-1/4 -left-20 w-80 h-80 bg-accent/8 rounded-full blur-3xl"
+            animate={{ y: [0, -30, 0], x: [0, 20, 0] }}
+            transition={{ duration: 12, repeat: Infinity }}
+          />
+          <motion.div
+            className="absolute bottom-1/4 -right-20 w-80 h-80 bg-purple-500/6 rounded-full blur-3xl"
+            animate={{ y: [0, 30, 0], x: [0, -20, 0] }}
+            transition={{ duration: 15, repeat: Infinity }}
+          />
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -329,7 +343,7 @@ export default function Home() {
             className="mb-16 text-center"
           >
             <motion.h2
-              className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-4"
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream via-white to-accent bg-clip-text mb-4"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -337,66 +351,85 @@ export default function Home() {
             >
               What Sets Me Apart
             </motion.h2>
-            <p className="text-body-lg text-gray-600 max-w-3xl mx-auto text-center">
+            <p className="text-body-lg text-gray-400 max-w-3xl mx-auto text-center">
               The rare combination that delivers both technical excellence and business results
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 icon: '🚀',
                 title: 'Ship Fast, Ship Right',
-                description: 'From zero to production in weeks, not months. Built entire SaaS platforms single-handedly while maintaining enterprise-grade security (SOC 2, zero breaches).'
+                description: 'From zero to production in weeks, not months. Built entire SaaS platforms single-handedly while maintaining enterprise-grade security (SOC 2, zero breaches).',
+                gradient: 'from-gray-800/80 via-gray-900/90 to-black'
               },
               {
                 icon: '💰',
                 title: 'Revenue-Focused Engineering',
-                description: '$1.2M+ generated across 3 ventures. I build products that customers pay for, not just impressive tech demos. Every line of code drives business value.'
+                description: '$1.2M+ generated across 3 ventures. I build products that customers pay for, not just impressive tech demos. Every line of code drives business value.',
+                gradient: 'from-gray-800/80 via-gray-900/90 to-black'
               },
               {
                 icon: '🤖',
                 title: 'AI-First Mindset',
-                description: 'Daily user of Claude Code, AWS Bedrock, and modern AI tooling. I leverage AI to 10x productivity while building AI products that solve real problems.'
+                description: 'Daily user of Claude Code, AWS Bedrock, and modern AI tooling. I leverage AI to 10x productivity while building AI products that solve real problems.',
+                gradient: 'from-gray-800/80 via-gray-900/90 to-black'
               },
               {
                 icon: '☁️',
                 title: 'AWS Architecture Expert',
-                description: '8+ years with AWS Lambda, DynamoDB, Bedrock. I design serverless systems that handle 2M+ monthly requests while keeping costs low and scaling automatically.'
+                description: '8+ years with AWS Lambda, DynamoDB, Bedrock. I design serverless systems that handle 2M+ monthly requests while keeping costs low and scaling automatically.',
+                gradient: 'from-gray-800/80 via-gray-900/90 to-black'
               },
               {
                 icon: '🔧',
                 title: 'Full-Stack Versatility',
-                description: 'React (7y), Node.js (10y), TypeScript (6y). Backend, frontend, infrastructure - I handle the entire stack so your team moves faster.'
+                description: 'React (7y), Node.js (10y), TypeScript (6y). Backend, frontend, infrastructure - I handle the entire stack so your team moves faster.',
+                gradient: 'from-gray-800/80 via-gray-900/90 to-black'
               },
               {
                 icon: '🎯',
                 title: 'Business-Minded Engineer',
-                description: 'Double major in Entrepreneurship & Marketing from Illinois State, with a minor in Organizational Leadership. I bring formal business training in project management, delegation, and strategic thinking — not just code.'
+                description: 'Double major in Entrepreneurship & Marketing from Illinois State, with a minor in Organizational Leadership. I bring formal business training in project management, delegation, and strategic thinking — not just code.',
+                gradient: 'from-gray-800/80 via-gray-900/90 to-black'
               }
             ].map((item, idx) => (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.08, duration: 0.5 }}
-                whileHover={{ y: -6, boxShadow: '0 12px 32px rgba(0, 102, 255, 0.12)' }}
-                className="bg-gradient-to-br from-cream to-white border border-gray-200 rounded-2xl p-8 hover:border-accent/40 transition-all group cursor-pointer flex flex-col items-center text-center"
+                transition={{ delay: idx * 0.1, duration: 0.6, type: 'spring', stiffness: 100 }}
+                whileHover={{
+                  y: -10,
+                  scale: 1.02,
+                  boxShadow: '0 25px 50px rgba(0, 102, 255, 0.25), 0 0 30px rgba(0, 102, 255, 0.1)'
+                }}
+                className={`relative bg-gradient-to-br ${item.gradient} backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-accent/60 transition-all duration-500 group cursor-pointer flex flex-col items-center text-center overflow-hidden`}
               >
+                {/* Subtle glow overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-accent/0 to-accent/0 group-hover:from-accent/5 group-hover:via-transparent group-hover:to-purple-500/5 transition-all duration-500 rounded-2xl" />
+
+                {/* Top accent line */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent group-hover:w-3/4 transition-all duration-500" />
+
                 <motion.div
-                  className="text-4xl mb-4"
-                  whileHover={{ scale: 1.15, rotate: 5 }}
-                  transition={{ type: 'spring', stiffness: 200 }}
+                  className="relative text-5xl mb-5 drop-shadow-lg"
+                  whileHover={{ scale: 1.25, rotate: 8 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
                 >
                   {item.icon}
                 </motion.div>
-                <h3 className="text-body-lg font-bold text-gray-900 mb-3 group-hover:text-accent transition-colors">
+                <h3 className="relative text-body-lg font-bold text-cream mb-3 group-hover:text-white transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-body-sm text-gray-600 leading-relaxed">
+                <p className="relative text-body-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
                   {item.description}
                 </p>
+
+                {/* Bottom subtle gradient */}
+                <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               </motion.div>
             ))}
           </div>
@@ -1069,6 +1102,137 @@ export default function Home() {
               </motion.span>
               <span className="text-body-sm">SOC 2 Compliant</span>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* GitHub Activity Section */}
+      <section className="py-24 px-8 bg-gradient-to-b from-black to-gray-950 relative overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div
+            className="absolute top-1/2 left-1/4 w-80 h-80 bg-green-500/5 rounded-full blur-3xl"
+            animate={{ y: [0, -20, 0], x: [0, 20, 0] }}
+            transition={{ duration: 10, repeat: Infinity }}
+          />
+        </div>
+
+        <div className="max-w-5xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <motion.h2
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-green-400 bg-clip-text mb-4"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              GitHub Activity
+            </motion.h2>
+            <p className="text-body-lg text-gray-500">
+              Active contributor and builder
+            </p>
+          </motion.div>
+
+          {/* GitHub Contribution Graph */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="bg-gradient-to-br from-gray-900/80 to-gray-950 border border-gray-800/50 rounded-2xl p-8 mb-8"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <svg className="w-8 h-8 text-cream" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+              <div>
+                <h3 className="text-body-lg font-semibold text-cream">Contribution Activity</h3>
+                <p className="text-body-sm text-gray-500">@nkulavic</p>
+              </div>
+              <motion.a
+                href="https://github.com/nkulavic"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-auto px-4 py-2 bg-gray-800 hover:bg-gray-700 text-cream text-body-sm font-medium rounded-lg transition-colors flex items-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                View Profile
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </motion.a>
+            </div>
+
+            {/* Contribution Calendar */}
+            <div className="overflow-x-auto pb-2">
+              <img
+                src="https://ghchart.rshah.org/0066FF/nkulavic"
+                alt="GitHub Contribution Chart"
+                className="w-full min-w-[700px] rounded-lg"
+              />
+            </div>
+          </motion.div>
+
+          {/* GitHub Stats Row */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { label: 'Public Repos', icon: '📦', color: 'accent' },
+              { label: 'Contributions', icon: '🔥', color: 'green-400' },
+              { label: 'Pull Requests', icon: '🔀', color: 'purple-400' },
+              { label: 'Years Active', icon: '⏱️', value: '10+', color: 'yellow-400' }
+            ].map((stat, idx) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 + idx * 0.1 }}
+                whileHover={{ scale: 1.05, y: -4 }}
+                className="bg-gradient-to-br from-gray-900/60 to-gray-950 border border-gray-800/50 rounded-xl p-4 text-center group cursor-pointer"
+              >
+                <motion.div
+                  className="text-2xl mb-2"
+                  whileHover={{ scale: 1.2, rotate: 10 }}
+                  transition={{ type: 'spring', stiffness: 200 }}
+                >
+                  {stat.icon}
+                </motion.div>
+                <div className="text-caption text-gray-500 group-hover:text-gray-400 transition-colors">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* View on GitHub CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="mt-8 text-center"
+          >
+            <motion.a
+              href="https://github.com/nkulavic"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-700 text-cream font-medium rounded-xl transition-colors border border-gray-700 hover:border-gray-600"
+              whileHover={{ scale: 1.05, boxShadow: '0 8px 24px rgba(0, 0, 0, 0.3)' }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+              Explore My GitHub
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </motion.a>
           </motion.div>
         </div>
       </section>
