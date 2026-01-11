@@ -337,7 +337,7 @@ export default function Home() {
             >
               What Sets Me Apart
             </motion.h2>
-            <p className="text-body-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-body-lg text-gray-600 max-w-3xl mx-auto text-center">
               The rare combination that delivers both technical excellence and business results
             </p>
           </motion.div>
@@ -371,8 +371,8 @@ export default function Home() {
               },
               {
                 icon: '🎯',
-                title: 'Startup to Enterprise',
-                description: 'Founded companies AND worked in enterprise environments. I understand both moving fast AND building systems that scale to thousands of users with compliance requirements.'
+                title: 'Business-Minded Engineer',
+                description: 'Double major in Entrepreneurship & Marketing from Illinois State, with a minor in Organizational Leadership. I bring formal business training in project management, delegation, and strategic thinking — not just code.'
               }
             ].map((item, idx) => (
               <motion.div
