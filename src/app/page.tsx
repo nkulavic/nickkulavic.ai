@@ -168,7 +168,7 @@ export default function Home() {
             transition={{ duration: 0.7 }}
           >
             <motion.h2
-              className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-12"
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -177,7 +177,7 @@ export default function Home() {
               About
             </motion.h2>
 
-            <div className="space-y-6">
+            <div className="space-y-6 mt-8">
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -241,7 +241,7 @@ export default function Home() {
             className="text-center mb-12"
           >
             <motion.h2
-              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream via-white to-green-400 bg-clip-text mb-4"
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream via-white to-green-400 bg-clip-text"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -249,7 +249,7 @@ export default function Home() {
             >
               Recent Achievements
             </motion.h2>
-            <p className="text-body-lg text-gray-400">
+            <p className="text-body-lg text-gray-400 mt-4">
               Latest wins in AI development and enterprise solutions (2025)
             </p>
           </motion.div>
@@ -310,10 +310,10 @@ export default function Home() {
                   </h3>
                   <span className="text-caption text-gray-500 font-medium">{achievement.date}</span>
                 </div>
-                <p className="relative text-body-sm text-gray-400 leading-relaxed mb-4 group-hover:text-gray-300 transition-colors">
+                <p className="relative text-body-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
                   {achievement.description}
                 </p>
-                <div className="relative flex flex-wrap gap-2">
+                <div className="relative flex flex-wrap gap-2 mt-6">
                   {achievement.metrics.map((metric, metricIdx) => (
                     <motion.span
                       key={metric}
@@ -361,7 +361,7 @@ export default function Home() {
             className="mb-16 text-center"
           >
             <motion.h2
-              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream via-white to-accent bg-clip-text mb-4"
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream via-white to-accent bg-clip-text"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -369,7 +369,7 @@ export default function Home() {
             >
               What Sets Me Apart
             </motion.h2>
-            <p className="text-body-lg text-gray-400 max-w-3xl mx-auto text-center">
+            <p className="text-body-lg text-gray-400 max-w-3xl mx-auto text-center mt-4">
               The rare combination that delivers both technical excellence and business results
             </p>
           </motion.div>
@@ -463,8 +463,8 @@ export default function Home() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-h2 font-bold text-cream mb-4">Experience</h2>
-            <p className="text-body-lg text-gray-500">
+            <h2 className="text-h2 font-bold text-cream">Experience</h2>
+            <p className="text-body-lg text-gray-500 mt-4">
               14+ years building scalable solutions across AI, SaaS, and enterprise applications
             </p>
           </motion.div>
@@ -535,10 +535,10 @@ export default function Home() {
                 <p className="text-body-sm text-gray-500 mb-5">
                   {exp.startDate} – {exp.endDate} • {exp.location}
                 </p>
-                <p className="text-body-sm text-gray-300 leading-relaxed mb-5">{exp.description}</p>
+                <p className="text-body-sm text-gray-300 leading-relaxed">{exp.description}</p>
 
                 {exp.metrics && exp.metrics.length > 0 && (
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mt-6">
                     {exp.metrics.map((metric, metricIdx) => (
                       <motion.span
                         key={metric}
@@ -581,8 +581,8 @@ export default function Home() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text mb-4">Featured Projects</h2>
-            <p className="text-body-lg text-gray-400">
+            <h2 className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text">Featured Projects</h2>
+            <p className="text-body-lg text-gray-400 mt-4">
               Real-world applications showcasing AI integration and scalable architecture
             </p>
           </motion.div>
@@ -618,10 +618,10 @@ export default function Home() {
                     {project.title}
                   </motion.h4>
                   <p className="text-body-sm text-gray-400 mb-4">{project.subtitle}</p>
-                  <p className="text-body-sm text-gray-300 leading-relaxed mb-5">{project.description}</p>
+                  <p className="text-body-sm text-gray-300 leading-relaxed">{project.description}</p>
 
                   {project.metrics && (
-                    <div className="grid grid-cols-2 gap-3 mb-4">
+                    <div className="grid grid-cols-2 gap-3 mt-6">
                       {project.metrics.slice(0, 2).map((metric, metricIdx) => (
                         <motion.div
                           key={metric.label}
@@ -643,7 +643,7 @@ export default function Home() {
                       href={project.links.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors text-body-sm font-medium"
+                      className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors text-body-sm font-medium mt-6"
                       whileHover={{ x: 4 }}
                     >
                       View Live
@@ -684,7 +684,7 @@ export default function Home() {
             className="mb-16"
           >
             <motion.h2
-              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text mb-4"
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -693,7 +693,7 @@ export default function Home() {
               Technical Expertise
             </motion.h2>
             <motion.p
-              className="text-body-lg text-gray-500"
+              className="text-body-lg text-gray-500 mt-4"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -886,7 +886,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <motion.h2
-              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text mb-4"
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -895,7 +895,7 @@ export default function Home() {
               Featured Projects
             </motion.h2>
             <motion.p
-              className="text-body-lg text-gray-500"
+              className="text-body-lg text-gray-500 mt-4"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -1066,7 +1066,7 @@ export default function Home() {
             className="text-center mb-12"
           >
             <motion.h2
-              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text mb-4"
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -1075,7 +1075,7 @@ export default function Home() {
               Proven Track Record
             </motion.h2>
             <motion.p
-              className="text-body-lg text-gray-500"
+              className="text-body-lg text-gray-500 mt-4"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -1170,7 +1170,7 @@ export default function Home() {
             className="text-center mb-12"
           >
             <motion.h2
-              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-green-400 bg-clip-text mb-4"
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-green-400 bg-clip-text"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -1178,7 +1178,7 @@ export default function Home() {
             >
               GitHub Activity
             </motion.h2>
-            <p className="text-body-lg text-gray-500">
+            <p className="text-body-lg text-gray-500 mt-4">
               Active contributor and builder
             </p>
           </motion.div>
