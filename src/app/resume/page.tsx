@@ -50,7 +50,8 @@ export default function ResumePage() {
               </div>
 
               <motion.a
-                href="#download"
+                href="/api/resume"
+                download="Nick_Kulavic_Resume.pdf"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white hover:bg-accent-light rounded-xl font-bold text-body-sm shadow-lg whitespace-nowrap"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -664,7 +665,9 @@ export default function ResumePage() {
               </motion.h3>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <motion.button
+                <motion.a
+                  href="/api/resume"
+                  download="Nick_Kulavic_Resume.pdf"
                   className="inline-flex items-center gap-3 px-10 py-5 bg-black text-cream hover:bg-gray-900 transition-all rounded-2xl text-body-lg font-bold shadow-2xl hover:shadow-xl"
                   whileHover={{ scale: 1.05, y: -3 }}
                   whileTap={{ scale: 0.98 }}
@@ -680,7 +683,7 @@ export default function ResumePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </motion.svg>
                   Download PDF Resume
-                </motion.button>
+                </motion.a>
 
                 <motion.a
                   href="mailto:contact@nickkulavic.ai"
