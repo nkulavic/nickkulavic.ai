@@ -301,3 +301,161 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin: 0;
 }
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  /* Page Setup */
+  @page {
+    size: letter;
+    margin: 0.4in;
+  }
+
+  /* Hide non-essential elements */
+  .no-print,
+  button,
+  nav,
+  footer:not(.print-footer) {
+    display: none !important;
+  }
+
+  /* Reset body for print */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Print resume container */
+  .print-resume {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Header section - keep dark background */
+  .resume-header {
+    background: #171717 !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    padding: 16pt 20pt !important;
+  }
+
+  .resume-header h1 {
+    color: white !important;
+    font-size: 22pt !important;
+  }
+
+  .resume-header p {
+    color: #3385FF !important;
+  }
+
+  /* Keep accent colors */
+  .text-accent,
+  .print-accent {
+    color: #0066FF !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Metric badges */
+  .bg-accent\/10 {
+    background-color: rgba(0, 102, 255, 0.1) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Career highlights bar */
+  .bg-gray-100 {
+    background-color: #f5f5f5 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Section headers */
+  .border-b-2.border-accent {
+    border-bottom-color: #0066FF !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Prevent page breaks inside sections */
+  .no-break {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Force page break */
+  .page-break-before {
+    page-break-before: always !important;
+    break-before: page !important;
+  }
+
+  /* Links - show as text */
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+
+  /* Hide shadows */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Availability badge */
+  .bg-green-500\/20 {
+    background-color: rgba(34, 197, 94, 0.2) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .border-green-500\/40 {
+    border-color: rgba(34, 197, 94, 0.4) !important;
+  }
+
+  .text-green-400 {
+    color: #22c55e !important;
+  }
+
+  .bg-green-500 {
+    background-color: #22c55e !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Ensure proper text colors */
+  .text-gray-900 {
+    color: #171717 !important;
+  }
+
+  .text-gray-700 {
+    color: #404040 !important;
+  }
+
+  .text-gray-600 {
+    color: #525252 !important;
+  }
+
+  .text-gray-500 {
+    color: #737373 !important;
+  }
+
+  /* Grid layouts for print */
+  .grid {
+    display: grid !important;
+  }
+
+  .grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}

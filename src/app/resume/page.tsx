@@ -50,8 +50,8 @@ export default function ResumePage() {
               </div>
 
               <motion.a
-                href="/api/resume"
-                download="Nick_Kulavic_Resume.pdf"
+                href="/resume/print"
+                target="_blank"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white hover:bg-accent-light rounded-xl font-bold text-body-sm shadow-lg whitespace-nowrap"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -666,8 +666,8 @@ export default function ResumePage() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <motion.a
-                  href="/api/resume"
-                  download="Nick_Kulavic_Resume.pdf"
+                  href="/resume/print"
+                  target="_blank"
                   className="inline-flex items-center gap-3 px-10 py-5 bg-black text-cream hover:bg-gray-900 transition-all rounded-2xl text-body-lg font-bold shadow-2xl hover:shadow-xl"
                   whileHover={{ scale: 1.05, y: -3 }}
                   whileTap={{ scale: 0.98 }}
