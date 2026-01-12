@@ -7,6 +7,7 @@ export interface Project {
   technologies: string[];
   category: 'ai' | 'saas' | 'api' | 'full-stack';
   featured: boolean;
+  group?: string; // Optional grouping for related projects (e.g., "mortgage-tech")
   links: {
     live?: string;
     github?: string;
@@ -16,6 +17,11 @@ export interface Project {
   metrics?: { label: string; value: string }[];
   highlights: string[];
 }
+
+// Project group display names
+export const projectGroups: Record<string, string> = {
+  'mortgage-tech': 'Mortgage Tech Suite'
+};
 
 export const projects: Project[] = [
   {
@@ -27,6 +33,7 @@ export const projects: Project[] = [
     technologies: ['Next.js', 'TypeScript', 'AWS Lambda', 'DynamoDB', 'Claude AI', 'AWS Bedrock', 'WebSockets', 'S3'],
     category: 'ai',
     featured: true,
+    group: 'mortgage-tech',
     links: {},
     image: '/projects/loanmaps-placeholder.png',
     metrics: [
@@ -52,6 +59,7 @@ export const projects: Project[] = [
     technologies: ['Node.js', 'AWS Bedrock', 'S3', 'Lambda', 'PDF.js', 'Claude AI', 'TypeScript'],
     category: 'ai',
     featured: true,
+    group: 'mortgage-tech',
     links: {},
     image: '/projects/ruletool-placeholder.png',
     metrics: [

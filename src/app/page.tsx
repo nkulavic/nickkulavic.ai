@@ -6,6 +6,9 @@ import Image from 'next/image';
 import { experiences, ExperienceEntry } from './data/experience';
 import { projects } from './data/projects';
 import { skillCategories } from './data/skills';
+import { siteConfig, availability, heroStats, heroDescription, trustIndicators } from './data/siteConfig';
+import { valuePropositions, valuePropositionsSubtitle } from './data/valuePropositions';
+import { recentAchievements, achievementsSubtitle } from './data/achievements';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CompanyModal from './components/CompanyModal';
@@ -62,7 +65,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              Nick Kulavic
+              {siteConfig.name}
             </motion.h1>
             <motion.p
               className="text-h3 text-transparent bg-gradient-to-r from-gray-400 to-accent bg-clip-text mb-8"
@@ -70,7 +73,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              AI Engineer & Full-Stack Developer
+              {siteConfig.title}
             </motion.p>
             <motion.p
               className="text-h4 text-cream max-w-2xl leading-relaxed mb-6"
@@ -78,7 +81,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              I build AI-first applications that scale.
+              {heroDescription.primary}
             </motion.p>
             <motion.p
               className="text-body-lg text-gray-400 max-w-2xl leading-loose mb-4"
@@ -86,18 +89,12 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
             >
-              14+ years turning complex technical challenges into profitable solutions. From $0 to $1.2M+ revenue.
-              SOC 2 compliant systems serving 500+ enterprise users. Zero security breaches.
+              {heroDescription.secondary}
             </motion.p>
 
             {/* Key Metrics Row */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-              {[
-                { value: '$1.2M+', label: 'Revenue Generated' },
-                { value: '500+', label: 'Enterprise Users' },
-                { value: '30+', label: 'Platform APIs' },
-                { value: '14+', label: 'Years Experience' }
-              ].map((metric, idx) => (
+              {heroStats.map((metric, idx) => (
                 <motion.div
                   key={metric.label}
                   initial={{ opacity: 0, y: 20, scale: 0.95 }}
@@ -141,11 +138,11 @@ export default function Home() {
                     Currently Seeking Opportunities
                   </motion.h3>
                   <p className="text-body-sm text-gray-400">
-                    AI Engineer • Full-Stack Developer • Technical Lead • Remote or Denver-based
+                    {availability.roles.join(' • ')} • {availability.location}
                   </p>
                 </div>
                 <motion.a
-                  href="mailto:contact@nickkulavic.ai"
+                  href={`mailto:${siteConfig.email}`}
                   className="px-6 py-3 bg-accent hover:bg-accent-light text-white font-semibold rounded-xl shadow-lg whitespace-nowrap"
                   whileHover={{ scale: 1.05, boxShadow: '0 8px 24px rgba(0, 102, 255, 0.3)' }}
                   whileTap={{ scale: 0.97 }}
@@ -250,34 +247,12 @@ export default function Home() {
               Recent Achievements
             </motion.h2>
             <p className="text-body-lg text-gray-400 mt-4">
-              Latest wins in AI development and enterprise solutions (2025)
+              {achievementsSubtitle}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: '🚀',
-                title: 'Launched LoanMaps',
-                description: 'Enterprise loan origination system serving 500+ loan officers with AI-powered document processing',
-                date: '2025',
-                metrics: ['500+ users', '99.9% uptime', 'SOC 2']
-              },
-              {
-                icon: '⚡',
-                title: 'Built RuleTool AI',
-                description: 'Achieved 80% faster PDF processing with AWS Bedrock and Claude AI for mortgage lending rules',
-                date: '2025',
-                metrics: ['80% faster', '98% accuracy', 'Real-time']
-              },
-              {
-                icon: '🛡️',
-                title: 'Enterprise Security',
-                description: 'Building within SOC 2 compliant environment, maintaining zero security breaches across all applications',
-                date: '2025',
-                metrics: ['Zero breaches', 'Enterprise-grade', 'SOC 2 workflow']
-              }
-            ].map((achievement, idx) => (
+            {recentAchievements.map((achievement, idx) => (
               <motion.div
                 key={achievement.title}
                 initial={{ opacity: 0, y: 30, scale: 0.95 }}
@@ -370,49 +345,12 @@ export default function Home() {
               What Sets Me Apart
             </motion.h2>
             <p className="text-body-lg text-gray-400 max-w-3xl mx-auto text-center mt-4">
-              The rare combination that delivers both technical excellence and business results
+              {valuePropositionsSubtitle}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: '🚀',
-                title: 'Ship Fast, Ship Right',
-                description: 'From zero to production in weeks, not months. Built entire SaaS platforms single-handedly while maintaining enterprise-grade security (SOC 2, zero breaches).',
-                gradient: 'from-gray-800/80 via-gray-900/90 to-black'
-              },
-              {
-                icon: '💰',
-                title: 'Revenue-Focused Engineering',
-                description: '$1.2M+ generated across 3 ventures. I build products that customers pay for, not just impressive tech demos. Every line of code drives business value.',
-                gradient: 'from-gray-800/80 via-gray-900/90 to-black'
-              },
-              {
-                icon: '🤖',
-                title: 'AI-First Mindset',
-                description: 'Daily user of Claude Code, AWS Bedrock, and modern AI tooling. I leverage AI to 10x productivity while building AI products that solve real problems.',
-                gradient: 'from-gray-800/80 via-gray-900/90 to-black'
-              },
-              {
-                icon: '☁️',
-                title: 'AWS Architecture Expert',
-                description: '8+ years with AWS Lambda, DynamoDB, Bedrock. I design serverless systems that handle 2M+ monthly requests while keeping costs low and scaling automatically.',
-                gradient: 'from-gray-800/80 via-gray-900/90 to-black'
-              },
-              {
-                icon: '🔧',
-                title: 'Full-Stack Versatility',
-                description: 'React (7y), Node.js (10y), TypeScript (6y). Backend, frontend, infrastructure - I handle the entire stack so your team moves faster.',
-                gradient: 'from-gray-800/80 via-gray-900/90 to-black'
-              },
-              {
-                icon: '🎯',
-                title: 'Business-Minded Engineer',
-                description: 'Double major in Entrepreneurship & Marketing from Illinois State, with a minor in Organizational Leadership. I bring formal business training in project management, delegation, and strategic thinking — not just code.',
-                gradient: 'from-gray-800/80 via-gray-900/90 to-black'
-              }
-            ].map((item, idx) => (
+            {valuePropositions.map((item, idx) => (
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, y: 30, scale: 0.95 }}
@@ -1093,61 +1031,24 @@ export default function Home() {
             transition={{ delay: 0.4 }}
             className="mt-16 flex flex-wrap justify-center items-center gap-8 text-gray-500"
           >
-            <motion.div
-              className="flex items-center gap-2"
-              whileHover={{ scale: 1.05, color: '#00FF88' }}
-            >
-              <motion.span
-                className="text-2xl"
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                ✓
-              </motion.span>
-              <span className="text-body-sm">14+ Years Experience</span>
-            </motion.div>
-            <div className="w-px h-6 bg-gray-800" />
-            <motion.div
-              className="flex items-center gap-2"
-              whileHover={{ scale: 1.05, color: '#00FF88' }}
-            >
-              <motion.span
-                className="text-2xl"
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, delay: 0.5, repeat: Infinity }}
-              >
-                ✓
-              </motion.span>
-              <span className="text-body-sm">$1.2M+ Revenue Generated</span>
-            </motion.div>
-            <div className="w-px h-6 bg-gray-800" />
-            <motion.div
-              className="flex items-center gap-2"
-              whileHover={{ scale: 1.05, color: '#00FF88' }}
-            >
-              <motion.span
-                className="text-2xl"
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, delay: 1, repeat: Infinity }}
-              >
-                ✓
-              </motion.span>
-              <span className="text-body-sm">Zero Security Breaches</span>
-            </motion.div>
-            <div className="w-px h-6 bg-gray-800" />
-            <motion.div
-              className="flex items-center gap-2"
-              whileHover={{ scale: 1.05, color: '#00FF88' }}
-            >
-              <motion.span
-                className="text-2xl"
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, delay: 1.5, repeat: Infinity }}
-              >
-                ✓
-              </motion.span>
-              <span className="text-body-sm">SOC 2 Compliant</span>
-            </motion.div>
+            {trustIndicators.map((indicator, idx) => (
+              <React.Fragment key={indicator.text}>
+                {idx > 0 && <div className="w-px h-6 bg-gray-800" />}
+                <motion.div
+                  className="flex items-center gap-2"
+                  whileHover={{ scale: 1.05, color: '#00FF88' }}
+                >
+                  <motion.span
+                    className="text-2xl"
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 2, delay: indicator.animationDelay, repeat: Infinity }}
+                  >
+                    {indicator.icon}
+                  </motion.span>
+                  <span className="text-body-sm">{indicator.text}</span>
+                </motion.div>
+              </React.Fragment>
+            ))}
           </motion.div>
         </div>
       </section>
@@ -1197,10 +1098,10 @@ export default function Home() {
               </svg>
               <div>
                 <h3 className="text-body-lg font-semibold text-cream">Contribution Activity</h3>
-                <p className="text-body-sm text-gray-500">@nkulavic</p>
+                <p className="text-body-sm text-gray-500">@{siteConfig.github}</p>
               </div>
               <motion.a
-                href="https://github.com/nkulavic"
+                href={siteConfig.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ml-auto px-4 py-2 bg-gray-800 hover:bg-gray-700 text-cream text-body-sm font-medium rounded-lg transition-colors flex items-center gap-2"
@@ -1264,7 +1165,7 @@ export default function Home() {
             className="mt-8 text-center"
           >
             <motion.a
-              href="https://github.com/nkulavic"
+              href={siteConfig.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-700 text-cream font-medium rounded-xl transition-colors border border-gray-700 hover:border-gray-600"
@@ -1357,7 +1258,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <motion.a
-                href="mailto:contact@nickkulavic.ai"
+                href={`mailto:${siteConfig.email}`}
                 className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-accent text-white hover:bg-accent-light transition-all duration-300 rounded-2xl text-body-lg font-bold shadow-2xl hover:shadow-accent/50 group relative overflow-hidden"
                 whileHover={{ scale: 1.08, y: -4, boxShadow: '0 20px 40px rgba(0, 102, 255, 0.4)' }}
                 whileTap={{ scale: 0.97 }}
@@ -1431,7 +1332,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <motion.a
-                href="https://linkedin.com/in/nickkulavic"
+                href={siteConfig.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-600 hover:text-[#0A66C2] transition-colors text-body-sm font-medium"
@@ -1444,7 +1345,7 @@ export default function Home() {
               </motion.a>
               <span className="text-gray-400">•</span>
               <motion.a
-                href="https://github.com/nkulavic"
+                href={siteConfig.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors text-body-sm font-medium"

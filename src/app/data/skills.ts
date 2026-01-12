@@ -1,5 +1,7 @@
 export interface SkillCategory {
   name: string;
+  shortName: string;  // Abbreviated name for compact displays (e.g., "AI/ML")
+  priority: number;   // Display priority (1 = highest, used for ordering on print resume)
   icon: string;
   skills: {
     name: string;
@@ -11,6 +13,8 @@ export interface SkillCategory {
 export const skillCategories: SkillCategory[] = [
   {
     name: 'AI & Machine Learning',
+    shortName: 'AI/ML',
+    priority: 1,
     icon: '🤖',
     skills: [
       { name: 'AWS Bedrock', level: 'expert', yearsExperience: 2 },
@@ -27,6 +31,8 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: 'Cloud & Infrastructure',
+    shortName: 'Cloud',
+    priority: 2,
     icon: '☁️',
     skills: [
       { name: 'AWS Lambda', level: 'expert', yearsExperience: 10 },
@@ -49,6 +55,8 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: 'Frontend Development',
+    shortName: 'Frontend',
+    priority: 4,
     icon: '🎨',
     skills: [
       { name: 'React', level: 'expert', yearsExperience: 7 },
@@ -65,6 +73,8 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: 'Backend Development',
+    shortName: 'Backend',
+    priority: 3,
     icon: '⚙️',
     skills: [
       { name: 'Go', level: 'expert', yearsExperience: 3 },
@@ -81,6 +91,8 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: 'Databases',
+    shortName: 'Databases',
+    priority: 7,
     icon: '🗄️',
     skills: [
       { name: 'DynamoDB', level: 'expert', yearsExperience: 8 },
@@ -93,6 +105,8 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: 'Platform Integration & E-commerce',
+    shortName: 'Platforms',
+    priority: 5,
     icon: '🔗',
     skills: [
       { name: 'Teamwork.com API', level: 'expert', yearsExperience: 6 },
@@ -106,6 +120,8 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: 'CRM & Marketing Platforms',
+    shortName: 'CRM/APIs',
+    priority: 6,
     icon: '📊',
     skills: [
       { name: 'Infusionsoft/Keap', level: 'expert', yearsExperience: 10 },
@@ -118,6 +134,8 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: 'Communication & Collaboration',
+    shortName: 'Comms',
+    priority: 9,
     icon: '💬',
     skills: [
       { name: 'Twilio SMS/Voice', level: 'expert', yearsExperience: 6 },
@@ -130,6 +148,8 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: 'DevOps & Tools',
+    shortName: 'DevOps',
+    priority: 8,
     icon: '🛠️',
     skills: [
       { name: 'Git', level: 'expert', yearsExperience: 12 },
@@ -142,6 +162,8 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: 'Security & Compliance',
+    shortName: 'Security',
+    priority: 10,
     icon: '🔒',
     skills: [
       { name: 'SOC 2 Compliance', level: 'advanced' },
@@ -153,6 +175,8 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: 'Business & Leadership',
+    shortName: 'Business',
+    priority: 11,
     icon: '💼',
     skills: [
       { name: 'SaaS Product Development', level: 'expert', yearsExperience: 10 },

@@ -7,6 +7,7 @@ import { experiences } from '@/app/data/experience';
 import { skillCategories } from '@/app/data/skills';
 import { projects } from '@/app/data/projects';
 import { certifications, education, careerStats, summaryHighlights } from '@/app/data/education';
+import { siteConfig, availability } from '@/app/data/siteConfig';
 
 export default function ResumePage() {
   return (
@@ -37,7 +38,7 @@ export default function ResumePage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1, duration: 0.6 }}
                 >
-                  Nick Kulavic
+                  {siteConfig.name}
                 </motion.h1>
                 <motion.p
                   className="text-h4 text-transparent bg-gradient-to-r from-gray-400 to-accent bg-clip-text mb-4"
@@ -45,7 +46,7 @@ export default function ResumePage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.6 }}
                 >
-                  AI Engineer & Full-Stack Developer
+                  {siteConfig.title}
                 </motion.p>
               </div>
 
@@ -81,22 +82,22 @@ export default function ResumePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span className="text-gray-300">Denver, CO</span>
+                <span className="text-gray-300">{siteConfig.location}</span>
               </motion.div>
 
               <motion.a
-                href="mailto:contact@nickkulavic.ai"
+                href={`mailto:${siteConfig.email}`}
                 className="flex items-center gap-3 text-body-sm text-gray-400 bg-gray-900/50 rounded-lg p-4 border border-gray-800/50 hover:text-accent hover:border-accent/50 transition-all"
                 whileHover={{ scale: 1.02, y: -2 }}
               >
                 <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span>contact@nickkulavic.ai</span>
+                <span>{siteConfig.email}</span>
               </motion.a>
 
               <motion.a
-                href="https://linkedin.com/in/nickkulavic"
+                href={siteConfig.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-body-sm text-gray-400 bg-gray-900/50 rounded-lg p-4 border border-gray-800/50 hover:text-[#0A66C2] hover:border-[#0A66C2]/50 transition-all"
@@ -122,7 +123,7 @@ export default function ResumePage() {
                   transition={{ duration: 2, repeat: Infinity }}
                   className="w-2 h-2 bg-green-500 rounded-full"
                 />
-                Available for AI Engineer, Full-Stack Developer, and Technical Lead roles
+                Available for {availability.roles.join(', ')} roles
               </div>
             </motion.div>
           </motion.header>

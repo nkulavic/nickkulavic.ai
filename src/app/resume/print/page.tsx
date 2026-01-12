@@ -3,32 +3,25 @@
 import { experiences } from '@/app/data/experience';
 import { skillCategories } from '@/app/data/skills';
 import { education, certifications, careerStats } from '@/app/data/education';
-import { projects } from '@/app/data/projects';
+import { projects, projectGroups } from '@/app/data/projects';
+import { siteConfig, availability } from '@/app/data/siteConfig';
 
 export default function PrintResumePage() {
   const handlePrint = () => {
     window.print();
   };
 
-  // Get top skills for each priority category
-  const prioritySkills = [
-    { name: 'AI & Machine Learning', shortName: 'AI/ML' },
-    { name: 'Cloud & Infrastructure', shortName: 'Cloud' },
-    { name: 'Backend Development', shortName: 'Backend' },
-    { name: 'Frontend Development', shortName: 'Frontend' },
-    { name: 'Platform Integration & E-commerce', shortName: 'Platforms' },
-    { name: 'CRM & Marketing Platforms', shortName: 'CRM/APIs' },
-  ].map(cat => {
-    const found = skillCategories.find(c => c.name === cat.name);
-    if (!found) return null;
-    return {
-      name: cat.shortName,
-      skills: found.skills
+  // Get top skills for each priority category using shortName and priority from data
+  const prioritySkills = skillCategories
+    .filter(c => c.priority && c.priority <= 6) // Top 6 priorities for print layout
+    .sort((a, b) => (a.priority || 99) - (b.priority || 99))
+    .map(category => ({
+      name: category.shortName,
+      skills: category.skills
         .filter(s => s.level === 'expert' || s.level === 'advanced')
         .slice(0, 5)
         .map(s => s.name)
-    };
-  }).filter(Boolean);
+    }));
 
   // Get specific projects for custom layout
   const myfusionHelper = projects.find(p => p.id === 'myfusion-helper');
@@ -58,24 +51,24 @@ export default function PrintResumePage() {
           <div className="flex justify-between items-start">
             <div>
               <h1 className="text-4xl font-bold tracking-tight text-gray-900">
-                NICK KULAVIC
+                {siteConfig.name.toUpperCase()}
               </h1>
               <p className="text-xl text-accent mt-1 font-semibold">
-                AI Engineer & Full-Stack Developer
+                {siteConfig.title}
               </p>
             </div>
             <div className="text-right text-sm text-gray-600 space-y-0.5">
-              <p className="font-medium">Denver, CO</p>
-              <p>contact@nickkulavic.ai</p>
-              <p className="text-accent">linkedin.com/in/nickkulavic</p>
-              <p className="text-accent font-medium">nickkulavic.ai</p>
+              <p className="font-medium">{siteConfig.location}</p>
+              <p>{siteConfig.email}</p>
+              <p className="text-accent">{siteConfig.linkedin}</p>
+              <p className="text-accent font-medium">{siteConfig.website}</p>
             </div>
           </div>
 
           {/* Availability Badge */}
           <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 bg-accent/10 border border-accent/30 rounded-full text-accent text-xs font-medium">
             <span className="w-2 h-2 bg-green-500 rounded-full print-green-dot"></span>
-            Available for AI Engineer, Full-Stack Developer & Technical Lead roles
+            Available for {availability.roles.join(', ')} roles
           </div>
         </header>
 
@@ -187,7 +180,7 @@ export default function PrintResumePage() {
 
               {/* LoanMaps + RuleTool grouped */}
               <div className="no-break">
-                <h3 className="font-bold text-gray-900 text-sm">Mortgage Tech Suite</h3>
+                <h3 className="font-bold text-gray-900 text-sm">{projectGroups['mortgage-tech']}</h3>
                 <p className="text-xs text-gray-600 mb-1">LoanMaps & RuleTool</p>
                 <p className="text-xs text-gray-700">
                   Enterprise loan origination system with AI-powered PDF processing for mortgage guidelines.
@@ -257,7 +250,7 @@ export default function PrintResumePage() {
 
         {/* Footer */}
         <footer className="px-8 py-3 border-t border-gray-200 text-center text-xs text-gray-500">
-          References available upon request | Full portfolio at <span className="text-accent font-medium">nickkulavic.ai</span>
+          References available upon request | Full portfolio at <span className="text-accent font-medium">{siteConfig.website}</span>
         </footer>
 
       </div>
