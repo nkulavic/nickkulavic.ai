@@ -70,25 +70,25 @@ export const projects: Project[] = [
   {
     id: 'listbackup',
     title: 'ListBackup.ai',
-    subtitle: 'SaaS Email List Protection',
-    description: 'Serverless platform for automated email list backups with AI classification',
-    longDescription: 'Full-stack SaaS solution with AWS Cognito, DynamoDB, and AI-powered features for email marketing list protection. Supports multiple providers with automated backup scheduling.',
-    technologies: ['React', 'AWS', 'Cognito', 'DynamoDB', 'Material UI', 'AWS Bedrock', 'Lambda', 'S3'],
+    subtitle: 'Business Intelligence & Data Lake Platform',
+    description: 'Serverless BI platform with automated data lake, AI classification, and multi-provider ETL pipelines',
+    longDescription: 'Full-stack SaaS business intelligence solution with AWS-powered data lake architecture. Features automated ETL pipelines, AI-powered data classification, and real-time analytics across multiple marketing platforms.',
+    technologies: ['React', 'AWS', 'Cognito', 'DynamoDB', 'Material UI', 'AWS Bedrock', 'Lambda', 'S3', 'Athena', 'Glue'],
     category: 'saas',
     featured: true,
     links: { live: 'https://listbackup.ai' },
     image: '/projects/listbackup-placeholder.png',
     metrics: [
-      { label: 'Backups Processed', value: '10K+' },
+      { label: 'Data Processed', value: '10K+' },
       { label: 'Security Breaches', value: '0' }
     ],
     highlights: [
-      'Multi-provider support (ActiveCampaign, MailChimp, etc.)',
-      'AI-powered classification and tagging',
+      'AWS data lake architecture with S3, Athena, and Glue',
+      'Multi-provider ETL pipelines (ActiveCampaign, MailChimp, etc.)',
+      'AI-powered data classification and tagging',
       'Zero-trust security architecture',
-      'Automated ETL pipeline',
-      'Real-time backup scheduling',
-      'Encrypted data storage'
+      'Real-time analytics and reporting',
+      'Encrypted data storage with automated backups'
     ]
   },
   {

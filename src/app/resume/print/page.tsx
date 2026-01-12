@@ -30,12 +30,9 @@ export default function PrintResumePage() {
     };
   }).filter(Boolean);
 
-  // Prioritize MyFusion Helper and key projects
-  const featuredProjects = [
-    projects.find(p => p.id === 'myfusion-helper'),
-    projects.find(p => p.id === 'loanmaps'),
-    projects.find(p => p.id === 'ruletool'),
-  ].filter((p): p is NonNullable<typeof p> => p !== undefined);
+  // Get specific projects for custom layout
+  const myfusionHelper = projects.find(p => p.id === 'myfusion-helper');
+  const listbackup = projects.find(p => p.id === 'listbackup');
   const relevantExperiences = experiences.slice(0, 3);
 
   return (
@@ -170,14 +167,15 @@ export default function PrintResumePage() {
               Featured Projects
             </h2>
             <div className="grid grid-cols-3 gap-4">
-              {featuredProjects.map((project) => (
-                <div key={project.id} className="no-break">
-                  <h3 className="font-bold text-gray-900 text-sm">{project.title}</h3>
-                  <p className="text-xs text-gray-600 mb-1">{project.subtitle}</p>
-                  <p className="text-xs text-gray-700">{project.description}</p>
-                  {project.metrics && (
+              {/* MyFusion Helper */}
+              {myfusionHelper && (
+                <div className="no-break">
+                  <h3 className="font-bold text-gray-900 text-sm">{myfusionHelper.title}</h3>
+                  <p className="text-xs text-gray-600 mb-1">{myfusionHelper.subtitle}</p>
+                  <p className="text-xs text-gray-700">{myfusionHelper.description}</p>
+                  {myfusionHelper.metrics && (
                     <div className="flex flex-wrap gap-1 mt-2">
-                      {project.metrics.slice(0, 2).map((metric) => (
+                      {myfusionHelper.metrics.slice(0, 2).map((metric) => (
                         <span key={metric.label} className="text-xs px-2 py-0.5 bg-accent/10 text-accent rounded font-medium">
                           {metric.value} {metric.label}
                         </span>
@@ -185,7 +183,39 @@ export default function PrintResumePage() {
                     </div>
                   )}
                 </div>
-              ))}
+              )}
+
+              {/* LoanMaps + RuleTool grouped */}
+              <div className="no-break">
+                <h3 className="font-bold text-gray-900 text-sm">Mortgage Tech Suite</h3>
+                <p className="text-xs text-gray-600 mb-1">LoanMaps & RuleTool</p>
+                <p className="text-xs text-gray-700">
+                  Enterprise loan origination system with AI-powered PDF processing for mortgage guidelines.
+                  SOC 2 compliant platform serving 500+ loan officers.
+                </p>
+                <div className="flex flex-wrap gap-1 mt-2">
+                  <span className="text-xs px-2 py-0.5 bg-accent/10 text-accent rounded font-medium">500+ Users</span>
+                  <span className="text-xs px-2 py-0.5 bg-accent/10 text-accent rounded font-medium">80% Faster</span>
+                </div>
+              </div>
+
+              {/* ListBackup.ai */}
+              {listbackup && (
+                <div className="no-break">
+                  <h3 className="font-bold text-gray-900 text-sm">{listbackup.title}</h3>
+                  <p className="text-xs text-gray-600 mb-1">{listbackup.subtitle}</p>
+                  <p className="text-xs text-gray-700">{listbackup.description}</p>
+                  {listbackup.metrics && (
+                    <div className="flex flex-wrap gap-1 mt-2">
+                      {listbackup.metrics.slice(0, 2).map((metric) => (
+                        <span key={metric.label} className="text-xs px-2 py-0.5 bg-accent/10 text-accent rounded font-medium">
+                          {metric.value} {metric.label}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           </section>
 

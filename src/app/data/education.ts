@@ -21,22 +21,13 @@ export interface Education {
 
 export const certifications: Certification[] = [
   {
-    id: 'aws-solutions-architect',
-    title: 'AWS Certified Solutions Architect',
-    organization: 'Amazon Web Services',
-    level: 'Professional Level',
+    id: 'aws-expertise',
+    title: 'AWS Production Expertise',
+    organization: '11 Years Experience',
+    level: 'Since 2015',
     icon: '☁️',
     color: '#FF9900',
-    description: '10+ years hands-on AWS experience with Lambda, DynamoDB, S3, Cognito, and enterprise architecture'
-  },
-  {
-    id: 'aws-developer',
-    title: 'AWS Certified Developer',
-    organization: 'Amazon Web Services',
-    level: 'Associate Level',
-    icon: '⚙️',
-    color: '#FF9900',
-    description: 'Expertise in serverless applications, CI/CD, and AWS SDK integration'
+    description: 'Built & operated SaaS on AWS since 2015: Lambda, API Gateway, DynamoDB, S3, Cognito, 12+ services'
   },
   {
     id: 'infusionsoft-partner',
@@ -49,14 +40,14 @@ export const certifications: Certification[] = [
     description: '10+ years building CRM automations and integrations for 2,000+ users'
   },
   {
-    id: 'ai-ml-practitioner',
-    title: 'AI/ML Practitioner',
-    organization: 'AWS & Anthropic',
+    id: 'ai-production',
+    title: 'AI/ML Production Systems',
+    organization: 'AWS Bedrock & Claude',
     level: 'Production Experience',
     year: '2023',
     icon: '🤖',
     color: '#0066FF',
-    description: 'Hands-on experience with AWS Bedrock, Claude AI, and multi-model AI integration in production'
+    description: 'Shipping AI features with AWS Bedrock, Claude, Gemini, and ChatGPT in production'
   },
   {
     id: 'soc2-compliance',
@@ -109,7 +100,7 @@ export const careerStats: CareerStat[] = [
 // Summary highlights
 export const summaryHighlights = [
   '🚀 Founded 3 SaaS companies generating $1.2M+ revenue',
-  '☁️ 10+ years AWS expert (Lambda, Bedrock, DynamoDB)',
+  '☁️ 11 years AWS production experience (since 2015)',
   '🤖 AI-first development with Claude, AWS Bedrock, ChatGPT',
   '🛡️ SOC 2 compliant systems with zero security breaches',
   '⚡ 2M+ monthly API requests across 30+ integrations',
