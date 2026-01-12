@@ -14,10 +14,10 @@ export default function PrintResumePage() {
   const prioritySkills = [
     { name: 'AI & Machine Learning', shortName: 'AI/ML' },
     { name: 'Cloud & Infrastructure', shortName: 'Cloud' },
-    { name: 'Frontend Development', shortName: 'Frontend' },
     { name: 'Backend Development', shortName: 'Backend' },
-    { name: 'Databases', shortName: 'Databases' },
-    { name: 'DevOps & Tools', shortName: 'DevOps' },
+    { name: 'Frontend Development', shortName: 'Frontend' },
+    { name: 'Platform Integration & E-commerce', shortName: 'Platforms' },
+    { name: 'CRM & Marketing Platforms', shortName: 'CRM/APIs' },
   ].map(cat => {
     const found = skillCategories.find(c => c.name === cat.name);
     if (!found) return null;
@@ -30,7 +30,12 @@ export default function PrintResumePage() {
     };
   }).filter(Boolean);
 
-  const featuredProjects = projects.filter(p => p.featured).slice(0, 3);
+  // Prioritize MyFusion Helper and key projects
+  const featuredProjects = [
+    projects.find(p => p.id === 'myfusion-helper'),
+    projects.find(p => p.id === 'loanmaps'),
+    projects.find(p => p.id === 'ruletool'),
+  ].filter((p): p is NonNullable<typeof p> => p !== undefined);
   const relevantExperiences = experiences.slice(0, 3);
 
   return (
@@ -51,28 +56,28 @@ export default function PrintResumePage() {
       {/* Resume Content - Optimized for print */}
       <div className="print-resume max-w-[8.5in] mx-auto">
 
-        {/* Header Section */}
-        <header className="resume-header bg-gray-900 text-white px-8 py-6 print:bg-gray-900 print:text-white print:-webkit-print-color-adjust-exact print:print-color-adjust-exact">
+        {/* Header Section - Light background for print-friendly output */}
+        <header className="resume-header bg-white px-8 py-6 border-b-4 border-accent">
           <div className="flex justify-between items-start">
             <div>
-              <h1 className="text-4xl font-bold tracking-tight text-white print:text-white">
+              <h1 className="text-4xl font-bold tracking-tight text-gray-900">
                 NICK KULAVIC
               </h1>
-              <p className="text-xl text-accent mt-1 font-semibold print:text-accent">
+              <p className="text-xl text-accent mt-1 font-semibold">
                 AI Engineer & Full-Stack Developer
               </p>
             </div>
-            <div className="text-right text-sm text-gray-300 space-y-0.5 print:text-gray-300">
-              <p>Denver, CO</p>
+            <div className="text-right text-sm text-gray-600 space-y-0.5">
+              <p className="font-medium">Denver, CO</p>
               <p>contact@nickkulavic.ai</p>
-              <p>linkedin.com/in/nickkulavic</p>
-              <p>nickkulavic.ai</p>
+              <p className="text-accent">linkedin.com/in/nickkulavic</p>
+              <p className="text-accent font-medium">nickkulavic.ai</p>
             </div>
           </div>
 
           {/* Availability Badge */}
-          <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 bg-green-500/20 border border-green-500/40 rounded-full text-green-400 text-xs font-medium print:bg-green-500/20 print:border-green-500/40">
-            <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+          <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 bg-accent/10 border border-accent/30 rounded-full text-accent text-xs font-medium">
+            <span className="w-2 h-2 bg-green-500 rounded-full print-green-dot"></span>
             Available for AI Engineer, Full-Stack Developer & Technical Lead roles
           </div>
         </header>
@@ -99,10 +104,10 @@ export default function PrintResumePage() {
             </h2>
             <p className="text-sm text-gray-700 leading-relaxed">
               AI Engineer & Full-Stack Developer with <strong>14+ years</strong> building enterprise applications and profitable SaaS ventures
-              generating <strong>$1.2M+ in revenue</strong>. Expert in AWS serverless architecture (Lambda, Bedrock, DynamoDB), AI integration
-              (Claude, Gemini, ChatGPT), and modern web development (React, Next.js, TypeScript). Currently building AI-powered
-              mortgage technology serving <strong>500+ users</strong> with SOC 2 compliance. Founded 3 successful SaaS companies processing
-              <strong> 2M+ monthly API requests</strong> with 99.9% uptime.
+              generating <strong>$1.2M+ in revenue</strong>. Expert in REST APIs (Go, Node.js) on AWS API Gateway v2 with streaming,
+              serverless architecture (Lambda, Bedrock, DynamoDB), and AI integration (Claude, Gemini, ChatGPT). Deep experience with
+              <strong> 30+ platform integrations</strong> including Salesforce, HubSpot, Infusionsoft, Twilio, and project management tools.
+              Founded 3 successful SaaS companies processing <strong>2M+ monthly API requests</strong> with 99.9% uptime.
             </p>
           </section>
 

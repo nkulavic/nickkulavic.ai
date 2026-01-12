@@ -333,22 +333,33 @@ p {
     padding: 0 !important;
   }
 
-  /* Header section - keep dark background */
+  /* Header section - light background for print */
   .resume-header {
-    background: #171717 !important;
-    color: white !important;
+    background: white !important;
+    border-bottom: 3pt solid #0066FF !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
     padding: 16pt 20pt !important;
   }
 
   .resume-header h1 {
-    color: white !important;
+    color: #171717 !important;
     font-size: 22pt !important;
   }
 
   .resume-header p {
-    color: #3385FF !important;
+    color: #525252 !important;
+  }
+
+  .resume-header .text-accent {
+    color: #0066FF !important;
+  }
+
+  /* Green availability dot */
+  .print-green-dot {
+    background-color: #22c55e !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
   /* Keep accent colors */
@@ -404,19 +415,15 @@ p {
     text-shadow: none !important;
   }
 
-  /* Availability badge */
-  .bg-green-500\/20 {
-    background-color: rgba(34, 197, 94, 0.2) !important;
+  /* Availability badge - accent blue style */
+  .bg-accent\/10 {
+    background-color: rgba(0, 102, 255, 0.1) !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
 
-  .border-green-500\/40 {
-    border-color: rgba(34, 197, 94, 0.4) !important;
-  }
-
-  .text-green-400 {
-    color: #22c55e !important;
+  .border-accent\/30 {
+    border-color: rgba(0, 102, 255, 0.3) !important;
   }
 
   .bg-green-500 {

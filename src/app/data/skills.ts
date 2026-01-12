@@ -67,13 +67,14 @@ export const skillCategories: SkillCategory[] = [
     name: 'Backend Development',
     icon: '⚙️',
     skills: [
-      { name: '.NET', level: 'advanced' },
-      { name: 'C#', level: 'advanced' },
+      { name: 'Go', level: 'expert', yearsExperience: 3 },
       { name: 'Node.js', level: 'expert', yearsExperience: 10 },
-      { name: 'Express.js', level: 'expert', yearsExperience: 9 },
       { name: 'REST API Design', level: 'expert', yearsExperience: 12 },
-      { name: 'GraphQL', level: 'advanced', yearsExperience: 3 },
+      { name: 'API Gateway v2', level: 'expert', yearsExperience: 5 },
+      { name: 'Express.js', level: 'expert', yearsExperience: 9 },
+      { name: 'Streaming APIs', level: 'expert', yearsExperience: 3 },
       { name: 'Serverless Functions', level: 'expert', yearsExperience: 8 },
+      { name: 'GraphQL', level: 'advanced', yearsExperience: 3 },
       { name: 'Microservices', level: 'advanced', yearsExperience: 6 },
       { name: 'WebSockets', level: 'advanced', yearsExperience: 5 }
     ]
