@@ -70,25 +70,25 @@ export const projects: Project[] = [
   {
     id: 'listbackup',
     title: 'ListBackup.ai',
-    subtitle: 'Business Intelligence & Data Lake Platform',
-    description: 'Serverless BI platform with automated data lake, AI classification, and multi-provider ETL pipelines',
-    longDescription: 'Full-stack SaaS business intelligence solution with AWS-powered data lake architecture. Features automated ETL pipelines, AI-powered data classification, and real-time analytics across multiple marketing platforms.',
-    technologies: ['React', 'AWS', 'Cognito', 'DynamoDB', 'Material UI', 'AWS Bedrock', 'Lambda', 'S3', 'Athena', 'Glue'],
+    subtitle: 'Multi-Platform Data Backup & Integration',
+    description: 'Serverless SaaS backing up business data from 15+ platforms with enterprise hierarchy support',
+    longDescription: 'Cloud-native data backup platform built on AWS serverless infrastructure. Connects to 15+ business platforms including CRMs, payment processors, and communication tools. Features enterprise hierarchy for complex organizations, automated scheduling, and military-grade encryption.',
+    technologies: ['Go', 'Node.js', 'Next.js', 'AWS Lambda', 'API Gateway', 'DynamoDB', 'S3', 'Cognito', 'TypeScript'],
     category: 'saas',
     featured: true,
     links: { live: 'https://listbackup.ai' },
     image: '/projects/listbackup-placeholder.png',
     metrics: [
-      { label: 'Data Processed', value: '10K+' },
+      { label: 'Integrations', value: '15+' },
       { label: 'Security Breaches', value: '0' }
     ],
     highlights: [
-      'AWS data lake architecture with S3, Athena, and Glue',
-      'Multi-provider ETL pipelines (ActiveCampaign, MailChimp, etc.)',
-      'AI-powered data classification and tagging',
-      'Zero-trust security architecture',
-      'Real-time analytics and reporting',
-      'Encrypted data storage with automated backups'
+      '15+ platform integrations (Keap, Stripe, GoHighLevel, HubSpot, ActiveCampaign)',
+      'Go & Node.js Lambda microservices architecture',
+      'Enterprise hierarchy with unlimited nesting',
+      'Automated backup scheduling with real-time monitoring',
+      'Military-grade encryption at rest and in transit',
+      'Per-account data isolation with S3 lifecycle policies'
     ]
   },
   {
