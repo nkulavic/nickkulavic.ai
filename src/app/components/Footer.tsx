@@ -5,10 +5,10 @@ import { motion } from 'framer-motion';
 
 const Footer = () => {
   return (
-    <footer className="bg-black py-16 px-8 border-t border-gray-900">
+    <footer className="bg-white py-16 px-8 border-t border-gray-200">
       <div className="max-w-7xl mx-auto">
         {/* Top Section - Stats & CTA */}
-        <div className="mb-12 pb-12 border-b border-gray-900">
+        <div className="mb-12 pb-12 border-b border-gray-200">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Left - CTA */}
             <motion.div
@@ -17,10 +17,10 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-h3 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text mb-4">
+              <h3 className="text-h3 font-bold text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-accent bg-clip-text mb-4">
                 Let&apos;s Build Something Great
               </h3>
-              <p className="text-body text-gray-400 mb-6 leading-loose">
+              <p className="text-body text-gray-600 mb-6 leading-loose">
                 Looking for an AI Engineer or Full-Stack Developer who delivers results?
                 I&apos;m available for full-time opportunities.
               </p>
@@ -58,7 +58,7 @@ const Footer = () => {
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + idx * 0.08, type: 'spring', stiffness: 150 }}
                   whileHover={{ scale: 1.05, y: -4 }}
-                  className="bg-gradient-to-br from-gray-900/80 to-gray-950 border border-gray-800/50 rounded-xl p-5 text-center group cursor-pointer"
+                  className="bg-white border border-gray-200 rounded-xl p-5 text-center group cursor-pointer shadow-md"
                 >
                   <motion.div
                     className="text-3xl mb-2"
@@ -69,7 +69,7 @@ const Footer = () => {
                   <div className="text-h3 font-bold text-accent mb-1">
                     {stat.value}
                   </div>
-                  <div className="text-caption text-gray-500 group-hover:text-gray-400 transition-colors">
+                  <div className="text-caption text-gray-600 group-hover:text-gray-800 transition-colors">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -86,9 +86,9 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-h4 font-bold text-cream mb-3">Nick Kulavic</h3>
-            <p className="text-body-sm text-gray-500 mb-4">AI Developer & SaaS Entrepreneur</p>
-            <p className="text-body-sm text-gray-600 leading-loose">
+            <h3 className="text-h4 font-bold text-gray-900 mb-3">Nick Kulavic</h3>
+            <p className="text-body-sm text-gray-600 mb-4">AI Developer & SaaS Entrepreneur</p>
+            <p className="text-body-sm text-gray-500 leading-loose">
               Building enterprise AI applications and scaling SaaS solutions with 14+ years of proven results.
             </p>
           </motion.div>
@@ -101,7 +101,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className="flex flex-col items-start md:items-center"
           >
-            <h4 className="text-body font-semibold text-gray-400 mb-4">Quick Links</h4>
+            <h4 className="text-body font-semibold text-gray-700 mb-4">Quick Links</h4>
             <div className="flex flex-col gap-3">
               {[
                 { name: 'Home', href: '/', icon: '🏠' },
@@ -112,7 +112,7 @@ const Footer = () => {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="flex items-center gap-2 text-gray-500 hover:text-accent transition-colors text-body-sm group"
+                  className="flex items-center gap-2 text-gray-600 hover:text-accent transition-colors text-body-sm group"
                   whileHover={{ x: 4 }}
                   transition={{ type: 'spring', stiffness: 200 }}
                 >
@@ -131,11 +131,11 @@ const Footer = () => {
             viewport={{ once: true }}
             className="flex flex-col items-start md:items-end"
           >
-            <h4 className="text-body font-semibold text-gray-400 mb-4">Get Started</h4>
+            <h4 className="text-body font-semibold text-gray-700 mb-4">Get Started</h4>
             <div className="flex flex-col gap-3 w-full md:w-auto">
               <motion.a
                 href="/resume"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 hover:bg-gray-800 border border-gray-800 hover:border-accent/50 text-gray-300 hover:text-cream rounded-lg transition-all text-body-sm font-medium"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 border border-gray-200 hover:border-accent/50 text-gray-700 hover:text-gray-900 rounded-lg transition-all text-body-sm font-medium"
                 whileHover={{ scale: 1.02, x: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -166,9 +166,9 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
-          className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center"
+          className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center"
         >
-          <p className="text-gray-600 text-body-sm mb-4 md:mb-0">
+          <p className="text-gray-500 text-body-sm mb-4 md:mb-0">
             © {new Date().getFullYear()} Nick Kulavic. All rights reserved.
           </p>
 

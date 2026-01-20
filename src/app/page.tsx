@@ -37,17 +37,17 @@ export default function Home() {
         onClose={closeModal}
       />
 
-      {/* Hero - Dark Section */}
-      <section className="pt-40 pb-32 px-8 bg-black relative overflow-hidden">
+      {/* Hero - Light Section */}
+      <section className="pt-40 pb-32 px-8 bg-gradient-to-b from-cream to-white relative overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
-            className="absolute -top-40 -right-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl"
+            className="absolute -top-40 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl"
             animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
             transition={{ duration: 8, repeat: Infinity }}
           />
           <motion.div
-            className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl"
+            className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl"
             animate={{ y: [0, -30, 0], x: [0, -20, 0] }}
             transition={{ duration: 10, repeat: Infinity, delay: 1 }}
           />
@@ -60,7 +60,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.h1
-              className="text-display font-bold text-cream mb-6 bg-gradient-to-r from-cream via-cream to-accent bg-clip-text text-transparent"
+              className="text-display font-bold text-gray-900 mb-6 bg-gradient-to-r from-gray-900 via-gray-800 to-accent bg-clip-text text-transparent"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
@@ -68,7 +68,7 @@ export default function Home() {
               {siteConfig.name}
             </motion.h1>
             <motion.p
-              className="text-h3 text-transparent bg-gradient-to-r from-gray-400 to-accent bg-clip-text mb-8"
+              className="text-h3 text-transparent bg-gradient-to-r from-gray-600 to-accent bg-clip-text mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -76,7 +76,7 @@ export default function Home() {
               {siteConfig.title}
             </motion.p>
             <motion.p
-              className="text-h4 text-cream max-w-2xl leading-relaxed mb-6"
+              className="text-h4 text-gray-900 max-w-2xl leading-relaxed mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -84,7 +84,7 @@ export default function Home() {
               {heroDescription.primary}
             </motion.p>
             <motion.p
-              className="text-body-lg text-gray-400 max-w-2xl leading-loose mb-4"
+              className="text-body-lg text-gray-600 max-w-2xl leading-loose mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
@@ -109,7 +109,7 @@ export default function Home() {
                   >
                     {metric.value}
                   </motion.div>
-                  <div className="text-body-sm text-gray-500 group-hover:text-gray-400 transition-colors">{metric.label}</div>
+                  <div className="text-body-sm text-gray-500 group-hover:text-gray-600 transition-colors">{metric.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -119,12 +119,12 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="mt-16 bg-gradient-to-r from-accent/10 to-accent/5 border border-accent/30 rounded-2xl p-6 backdrop-blur-sm"
+              className="mt-16 bg-white border border-accent/30 rounded-2xl p-6 shadow-lg"
             >
               <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                 <div className="text-center md:text-left">
                   <motion.h3
-                    className="text-body-lg font-semibold text-cream mb-2 flex items-center justify-center md:justify-start gap-2"
+                    className="text-body-lg font-semibold text-gray-900 mb-2 flex items-center justify-center md:justify-start gap-2"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.9 }}
@@ -137,7 +137,7 @@ export default function Home() {
                     </motion.span>
                     Currently Seeking Opportunities
                   </motion.h3>
-                  <p className="text-body-sm text-gray-400">
+                  <p className="text-body-sm text-gray-600">
                     {availability.roles.join(' • ')} • {availability.location}
                   </p>
                 </div>
@@ -215,16 +215,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Recent Achievements - Dark Gradient Section */}
-      <section className="py-32 px-8 bg-gradient-to-b from-gray-950 via-black to-gray-950 relative overflow-hidden">
+      {/* Recent Achievements - Light Section */}
+      <section className="py-32 px-8 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
-            className="absolute top-1/4 -right-20 w-80 h-80 bg-accent/8 rounded-full blur-3xl"
+            className="absolute top-1/4 -right-20 w-80 h-80 bg-accent/10 rounded-full blur-3xl"
             animate={{ y: [0, -30, 0], x: [0, -20, 0] }}
             transition={{ duration: 12, repeat: Infinity }}
           />
           <motion.div
-            className="absolute bottom-1/4 -left-20 w-80 h-80 bg-green-500/6 rounded-full blur-3xl"
+            className="absolute bottom-1/4 -left-20 w-80 h-80 bg-green-500/10 rounded-full blur-3xl"
             animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
             transition={{ duration: 15, repeat: Infinity }}
           />
@@ -238,7 +238,7 @@ export default function Home() {
             className="text-center mb-12"
           >
             <motion.h2
-              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream via-white to-green-400 bg-clip-text"
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-green-600 bg-clip-text"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -246,7 +246,7 @@ export default function Home() {
             >
               Recent Achievements
             </motion.h2>
-            <p className="text-body-lg text-gray-400 mt-4">
+            <p className="text-body-lg text-gray-600 mt-4">
               {achievementsSubtitle}
             </p>
           </motion.div>
@@ -262,30 +262,27 @@ export default function Home() {
                 whileHover={{
                   y: -10,
                   scale: 1.02,
-                  boxShadow: '0 25px 50px rgba(0, 102, 255, 0.25), 0 0 30px rgba(0, 102, 255, 0.1)'
+                  boxShadow: '0 25px 50px rgba(0, 102, 255, 0.15)'
                 }}
-                className="relative bg-gradient-to-br from-gray-800/80 via-gray-900/90 to-black backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-accent/60 transition-all duration-500 group cursor-pointer overflow-hidden"
+                className="relative bg-white border border-gray-200 rounded-2xl p-8 hover:border-accent/60 transition-all duration-500 group cursor-pointer overflow-hidden shadow-lg"
               >
-                {/* Subtle glow overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-accent/0 to-accent/0 group-hover:from-accent/5 group-hover:via-transparent group-hover:to-green-500/5 transition-all duration-500 rounded-2xl" />
-
                 {/* Top accent line */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent group-hover:w-3/4 transition-all duration-500" />
 
                 <motion.div
-                  className="relative text-5xl mb-5 drop-shadow-lg"
+                  className="relative text-5xl mb-5"
                   whileHover={{ scale: 1.25, rotate: 8 }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
                   {achievement.icon}
                 </motion.div>
                 <div className="relative flex items-center justify-between mb-3">
-                  <h3 className="text-body-lg font-bold text-cream group-hover:text-white transition-colors">
+                  <h3 className="text-body-lg font-bold text-gray-900 group-hover:text-accent transition-colors">
                     {achievement.title}
                   </h3>
                   <span className="text-caption text-gray-500 font-medium">{achievement.date}</span>
                 </div>
-                <p className="relative text-body-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
+                <p className="relative text-body-sm text-gray-600 leading-relaxed">
                   {achievement.description}
                 </p>
                 <div className="relative flex flex-wrap gap-2 mt-6">
@@ -303,26 +300,23 @@ export default function Home() {
                     </motion.span>
                   ))}
                 </div>
-
-                {/* Bottom subtle gradient */}
-                <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* What I Bring - Dark Gradient Section */}
-      <section className="py-32 px-8 bg-gradient-to-b from-gray-950 via-black to-gray-950 relative overflow-hidden">
+      {/* What I Bring - Light Section */}
+      <section className="py-32 px-8 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
-            className="absolute top-1/4 -left-20 w-80 h-80 bg-accent/8 rounded-full blur-3xl"
+            className="absolute top-1/4 -left-20 w-80 h-80 bg-accent/10 rounded-full blur-3xl"
             animate={{ y: [0, -30, 0], x: [0, 20, 0] }}
             transition={{ duration: 12, repeat: Infinity }}
           />
           <motion.div
-            className="absolute bottom-1/4 -right-20 w-80 h-80 bg-purple-500/6 rounded-full blur-3xl"
+            className="absolute bottom-1/4 -right-20 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"
             animate={{ y: [0, 30, 0], x: [0, -20, 0] }}
             transition={{ duration: 15, repeat: Infinity }}
           />
@@ -336,7 +330,7 @@ export default function Home() {
             className="mb-16 text-center"
           >
             <motion.h2
-              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream via-white to-accent bg-clip-text"
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-accent bg-clip-text"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -344,7 +338,7 @@ export default function Home() {
             >
               What Sets Me Apart
             </motion.h2>
-            <p className="text-body-lg text-gray-400 max-w-3xl mx-auto mt-4" style={{ textAlign: 'center' }}>
+            <p className="text-body-lg text-gray-600 max-w-3xl mx-auto mt-4" style={{ textAlign: 'center' }}>
               {valuePropositionsSubtitle}
             </p>
           </motion.div>
@@ -360,40 +354,34 @@ export default function Home() {
                 whileHover={{
                   y: -10,
                   scale: 1.02,
-                  boxShadow: '0 25px 50px rgba(0, 102, 255, 0.25), 0 0 30px rgba(0, 102, 255, 0.1)'
+                  boxShadow: '0 25px 50px rgba(0, 102, 255, 0.15)'
                 }}
-                className={`relative bg-gradient-to-br ${item.gradient} backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-accent/60 transition-all duration-500 group cursor-pointer flex flex-col items-center text-center overflow-hidden`}
+                className="relative bg-white border border-gray-200 rounded-2xl p-8 hover:border-accent/60 transition-all duration-500 group cursor-pointer flex flex-col items-center text-center overflow-hidden shadow-lg"
               >
-                {/* Subtle glow overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-accent/0 to-accent/0 group-hover:from-accent/5 group-hover:via-transparent group-hover:to-purple-500/5 transition-all duration-500 rounded-2xl" />
-
                 {/* Top accent line */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent group-hover:w-3/4 transition-all duration-500" />
 
                 <motion.div
-                  className="relative text-5xl mb-5 drop-shadow-lg"
+                  className="relative text-5xl mb-5"
                   whileHover={{ scale: 1.25, rotate: 8 }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
                   {item.icon}
                 </motion.div>
-                <h3 className="relative text-body-lg font-bold text-cream mb-3 group-hover:text-white transition-colors">
+                <h3 className="relative text-body-lg font-bold text-gray-900 mb-3 group-hover:text-accent transition-colors">
                   {item.title}
                 </h3>
-                <p className="relative text-body-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
+                <p className="relative text-body-sm text-gray-600 leading-relaxed">
                   {item.description}
                 </p>
-
-                {/* Bottom subtle gradient */}
-                <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Experience - Dark Section */}
-      <section className="py-32 px-8 bg-gray-950">
+      {/* Experience - Light Section */}
+      <section className="py-32 px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -401,8 +389,8 @@ export default function Home() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-h2 font-bold text-cream">Experience</h2>
-            <p className="text-body-lg text-gray-500 mt-4">
+            <h2 className="text-h2 font-bold text-gray-900">Experience</h2>
+            <p className="text-body-lg text-gray-600 mt-4">
               14+ years building scalable solutions across AI, SaaS, and enterprise applications
             </p>
           </motion.div>
@@ -415,13 +403,13 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
-                whileHover={{ y: -6, boxShadow: '0 25px 50px rgba(0, 102, 255, 0.15)' }}
+                whileHover={{ y: -6, boxShadow: '0 25px 50px rgba(0, 102, 255, 0.1)' }}
                 onClick={() => openModal(exp)}
-                className="bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-accent/50 transition-all cursor-pointer relative overflow-hidden group"
+                className="bg-white border border-gray-200 rounded-2xl p-8 hover:border-accent/50 transition-all cursor-pointer relative overflow-hidden group shadow-lg"
               >
                 {/* Click hint */}
                 <motion.div
-                  className="absolute top-4 left-4 flex items-center gap-2 text-caption text-gray-600 group-hover:text-accent transition-colors"
+                  className="absolute top-4 left-4 flex items-center gap-2 text-caption text-gray-400 group-hover:text-accent transition-colors"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: idx * 0.1 + 0.3 }}
@@ -436,7 +424,7 @@ export default function Home() {
                 {/* Real Company Logo */}
                 {exp.logo && exp.logo.imagePath && (
                   <motion.div
-                    className="absolute top-4 right-4 bg-white rounded-xl p-3 shadow-lg"
+                    className="absolute top-4 right-4 bg-gray-50 rounded-xl p-3 shadow-md border border-gray-100"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -456,15 +444,15 @@ export default function Home() {
 
                 <div className="flex items-start justify-between mb-6 pr-16">
                   <div>
-                    <h3 className="text-body-lg font-semibold text-cream mb-2">{exp.role}</h3>
-                    <p className="text-body text-gray-400">{exp.company}</p>
+                    <h3 className="text-body-lg font-semibold text-gray-900 mb-2">{exp.role}</h3>
+                    <p className="text-body text-gray-600">{exp.company}</p>
                   </div>
                   {exp.endDate === 'Present' && (
                     <motion.span
                       initial={{ scale: 0.8, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
                       transition={{ delay: idx * 0.1 + 0.2 }}
-                      className="px-3 py-1 bg-green-500/10 border border-green-500/30 text-green-400 text-caption rounded-full absolute top-20 right-4"
+                      className="px-3 py-1 bg-green-500/10 border border-green-500/30 text-green-600 text-caption rounded-full absolute top-20 right-4"
                     >
                       Current
                     </motion.span>
@@ -473,7 +461,7 @@ export default function Home() {
                 <p className="text-body-sm text-gray-500 mb-5">
                   {exp.startDate} – {exp.endDate} • {exp.location}
                 </p>
-                <p className="text-body-sm text-gray-300 leading-relaxed">{exp.description}</p>
+                <p className="text-body-sm text-gray-700 leading-relaxed">{exp.description}</p>
 
                 {exp.metrics && exp.metrics.length > 0 && (
                   <div className="flex flex-wrap gap-2 mt-6">
@@ -496,17 +484,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects - Dark Gradient Section */}
-      <section className="py-32 px-8 bg-gradient-to-b from-gray-950 via-black to-gray-950 relative overflow-hidden">
+      {/* Projects - Light Section */}
+      <section className="py-32 px-8 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
-            className="absolute top-1/4 -left-20 w-80 h-80 bg-purple-500/8 rounded-full blur-3xl"
+            className="absolute top-1/4 -left-20 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"
             animate={{ y: [0, -30, 0], x: [0, 20, 0] }}
             transition={{ duration: 14, repeat: Infinity }}
           />
           <motion.div
-            className="absolute bottom-1/4 -right-20 w-80 h-80 bg-accent/6 rounded-full blur-3xl"
+            className="absolute bottom-1/4 -right-20 w-80 h-80 bg-accent/10 rounded-full blur-3xl"
             animate={{ y: [0, 30, 0], x: [0, -20, 0] }}
             transition={{ duration: 16, repeat: Infinity }}
           />
@@ -519,8 +507,8 @@ export default function Home() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text">Featured Projects</h2>
-            <p className="text-body-lg text-gray-400 mt-4">
+            <h2 className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text">Featured Projects</h2>
+            <p className="text-body-lg text-gray-600 mt-4">
               Real-world applications showcasing AI integration and scalable architecture
             </p>
           </motion.div>
@@ -536,27 +524,21 @@ export default function Home() {
                 whileHover={{
                   y: -10,
                   scale: 1.02,
-                  boxShadow: '0 25px 50px rgba(139, 92, 246, 0.2), 0 0 30px rgba(139, 92, 246, 0.1)'
+                  boxShadow: '0 25px 50px rgba(139, 92, 246, 0.15)'
                 }}
-                className="relative bg-gradient-to-br from-gray-800/80 via-gray-900/90 to-black backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-purple-500/60 transition-all duration-500 group cursor-pointer overflow-hidden"
+                className="relative bg-white border border-gray-200 rounded-2xl p-8 hover:border-purple-500/60 transition-all duration-500 group cursor-pointer overflow-hidden shadow-lg"
               >
-                {/* Subtle glow overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 via-purple-500/0 to-purple-500/0 group-hover:from-purple-500/5 group-hover:via-transparent group-hover:to-accent/5 transition-all duration-500 rounded-2xl" />
-
                 {/* Top accent line */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-transparent via-purple-500 to-transparent group-hover:w-3/4 transition-all duration-500" />
 
-                {/* Bottom gradient overlay */}
-                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-b-2xl" />
-
                 <div className="relative z-10">
                   <motion.h4
-                    className="text-h4 font-semibold text-cream mb-3 transition-colors group-hover:text-white"
+                    className="text-h4 font-semibold text-gray-900 mb-3 transition-colors group-hover:text-purple-600"
                   >
                     {project.title}
                   </motion.h4>
-                  <p className="text-body-sm text-gray-400 mb-4">{project.subtitle}</p>
-                  <p className="text-body-sm text-gray-300 leading-relaxed">{project.description}</p>
+                  <p className="text-body-sm text-gray-500 mb-4">{project.subtitle}</p>
+                  <p className="text-body-sm text-gray-700 leading-relaxed">{project.description}</p>
 
                   {project.metrics && (
                     <div className="grid grid-cols-2 gap-3 mt-6">
@@ -567,10 +549,10 @@ export default function Home() {
                           whileInView={{ opacity: 1, scale: 1 }}
                           transition={{ delay: idx * 0.1 + metricIdx * 0.05 }}
                           whileHover={{ scale: 1.05 }}
-                          className="text-center p-3 bg-gray-800/50 border border-gray-700/50 rounded-lg hover:bg-gray-700/50 hover:border-purple-500/30 transition-all duration-300"
+                          className="text-center p-3 bg-gray-50 border border-gray-200 rounded-lg hover:bg-purple-50 hover:border-purple-300 transition-all duration-300"
                         >
-                          <div className="text-body-lg font-bold text-purple-400">{metric.value}</div>
-                          <div className="text-caption text-gray-400">{metric.label}</div>
+                          <div className="text-body-lg font-bold text-purple-600">{metric.value}</div>
+                          <div className="text-caption text-gray-500">{metric.label}</div>
                         </motion.div>
                       ))}
                     </div>
@@ -581,7 +563,7 @@ export default function Home() {
                       href={project.links.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors text-body-sm font-medium mt-6"
+                      className="inline-flex items-center gap-2 text-purple-600 hover:text-purple-500 transition-colors text-body-sm font-medium mt-6"
                       whileHover={{ x: 4 }}
                     >
                       View Live
@@ -603,12 +585,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills - Dark Section */}
-      <section className="py-32 px-8 bg-black relative overflow-hidden">
+      {/* Skills - Light Section */}
+      <section className="py-32 px-8 bg-white relative overflow-hidden">
         {/* Animated background accent */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
-            className="absolute -right-40 -bottom-40 w-96 h-96 bg-accent/5 rounded-full blur-3xl"
+            className="absolute -right-40 -bottom-40 w-96 h-96 bg-accent/10 rounded-full blur-3xl"
             animate={{ y: [0, 40, 0], x: [0, -20, 0] }}
             transition={{ duration: 12, repeat: Infinity }}
           />
@@ -622,7 +604,7 @@ export default function Home() {
             className="mb-16"
           >
             <motion.h2
-              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text"
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-accent bg-clip-text"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -631,7 +613,7 @@ export default function Home() {
               Technical Expertise
             </motion.h2>
             <motion.p
-              className="text-body-lg text-gray-500 mt-4"
+              className="text-body-lg text-gray-600 mt-4"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -650,7 +632,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08, duration: 0.5, type: "spring", stiffness: 100 }}
                 whileHover={{ y: -6, boxShadow: '0 20px 40px rgba(0, 102, 255, 0.15)' }}
-                className="p-6 rounded-2xl bg-gradient-to-br from-gray-900/80 to-gray-950 hover:from-gray-800 hover:to-gray-900 border border-gray-800/50 hover:border-accent/40 transition-all duration-300 cursor-pointer group"
+                className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-accent/40 transition-all duration-300 cursor-pointer group shadow-lg"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <motion.span
@@ -660,7 +642,7 @@ export default function Home() {
                   >
                     {category.icon}
                   </motion.span>
-                  <h4 className="text-body font-semibold text-gray-300 group-hover:text-cream transition-colors">
+                  <h4 className="text-body font-semibold text-gray-800 group-hover:text-accent transition-colors">
                     {category.name}
                   </h4>
                 </div>
@@ -676,7 +658,7 @@ export default function Home() {
                       className="group/skill"
                     >
                       <div className="flex items-center justify-between text-body-sm mb-1.5">
-                        <span className="text-gray-400 group-hover:text-cream transition-colors font-medium">
+                        <span className="text-gray-700 group-hover:text-gray-900 transition-colors font-medium">
                           {skill.name}
                         </span>
                         <div className="flex items-center gap-1.5">
@@ -686,8 +668,8 @@ export default function Home() {
                               skill.level === 'expert'
                                 ? 'bg-accent/20 text-accent'
                                 : skill.level === 'advanced'
-                                ? 'bg-purple-500/20 text-purple-400'
-                                : 'bg-gray-700/50 text-gray-400'
+                                ? 'bg-purple-500/20 text-purple-500'
+                                : 'bg-gray-200 text-gray-600'
                             }`}
                             whileHover={{ scale: 1.1 }}
                           >
@@ -705,7 +687,7 @@ export default function Home() {
                         </div>
                       </div>
                       {/* Proficiency Bar */}
-                      <div className="h-1 bg-gray-800/50 rounded-full overflow-hidden">
+                      <div className="h-1 bg-gray-200 rounded-full overflow-hidden">
                         <motion.div
                           className={`h-full rounded-full ${
                             skill.level === 'expert'
@@ -779,7 +761,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 + idx * 0.08, type: 'spring', stiffness: 150 }}
                 whileHover={{ scale: 1.05, y: -4 }}
-                className="bg-gradient-to-br from-gray-900/60 to-gray-950 border border-gray-800/50 rounded-xl p-4 text-center group cursor-pointer"
+                className="bg-white border border-gray-200 rounded-xl p-4 text-center group cursor-pointer shadow-md"
               >
                 <motion.div
                   className="text-3xl mb-2"
@@ -791,7 +773,7 @@ export default function Home() {
                 <div className={`text-h3 font-bold text-${stat.color} mb-1`}>
                   {stat.count}
                 </div>
-                <div className="text-caption text-gray-500 group-hover:text-gray-400 transition-colors">
+                <div className="text-caption text-gray-600 group-hover:text-gray-800 transition-colors">
                   {stat.label}
                 </div>
               </motion.div>
@@ -800,8 +782,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Projects Showcase */}
-      <section className="py-32 px-8 bg-gradient-to-b from-black to-gray-950 relative overflow-hidden">
+      {/* Featured Projects Showcase - Light Section */}
+      <section className="py-32 px-8 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
         {/* Background elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
@@ -824,7 +806,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <motion.h2
-              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text"
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-accent bg-clip-text"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -833,7 +815,7 @@ export default function Home() {
               Featured Projects
             </motion.h2>
             <motion.p
-              className="text-body-lg text-gray-500 mt-4"
+              className="text-body-lg text-gray-600 mt-4"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -852,11 +834,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.15, duration: 0.6 }}
-                whileHover={{ y: -8, boxShadow: '0 25px 50px rgba(0, 102, 255, 0.25)' }}
-                className="bg-gradient-to-br from-gray-900/90 to-gray-950 border border-gray-800/50 hover:border-accent/50 rounded-3xl overflow-hidden transition-all duration-300 group"
+                whileHover={{ y: -8, boxShadow: '0 25px 50px rgba(0, 102, 255, 0.15)' }}
+                className="bg-white border border-gray-200 hover:border-accent/50 rounded-3xl overflow-hidden transition-all duration-300 group shadow-lg"
               >
                 {/* Project Image Placeholder */}
-                <div className="relative h-48 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
+                <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <motion.div
                       className="text-7xl opacity-20"
@@ -882,13 +864,13 @@ export default function Home() {
 
                 {/* Project Content */}
                 <div className="p-8">
-                  <h3 className="text-h4 font-bold text-cream mb-2 group-hover:text-accent transition-colors">
+                  <h3 className="text-h4 font-bold text-gray-900 mb-2 group-hover:text-accent transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-body-sm text-gray-500 mb-4">
                     {project.subtitle}
                   </p>
-                  <p className="text-body text-gray-400 leading-relaxed mb-6">
+                  <p className="text-body text-gray-600 leading-relaxed mb-6">
                     {project.description}
                   </p>
 
@@ -903,7 +885,7 @@ export default function Home() {
                           viewport={{ once: true }}
                           transition={{ delay: idx * 0.15 + metricIdx * 0.05 }}
                           whileHover={{ scale: 1.05 }}
-                          className="bg-gray-800/50 rounded-lg p-3 text-center border border-gray-700/50"
+                          className="bg-gray-50 rounded-lg p-3 text-center border border-gray-200"
                         >
                           <div className="text-body font-bold text-accent mb-1">
                             {metric.value}
@@ -926,13 +908,13 @@ export default function Home() {
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.15 + techIdx * 0.03 }}
                         whileHover={{ scale: 1.1, y: -2 }}
-                        className="px-3 py-1 bg-gray-800/60 text-gray-400 text-[11px] rounded-full border border-gray-700/30"
+                        className="px-3 py-1 bg-gray-100 text-gray-600 text-[11px] rounded-full border border-gray-200"
                       >
                         {tech}
                       </motion.span>
                     ))}
                     {project.technologies.length > 5 && (
-                      <span className="px-3 py-1 bg-gray-800/60 text-gray-500 text-[11px] rounded-full">
+                      <span className="px-3 py-1 bg-gray-100 text-gray-500 text-[11px] rounded-full">
                         +{project.technologies.length - 5}
                       </span>
                     )}
@@ -988,8 +970,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust Indicators / Social Proof */}
-      <section className="py-24 px-8 bg-gradient-to-b from-black via-gray-950 to-black relative overflow-hidden">
+      {/* Trust Indicators / Social Proof - Light Section */}
+      <section className="py-24 px-8 bg-white relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
@@ -1004,7 +986,7 @@ export default function Home() {
             className="text-center mb-12"
           >
             <motion.h2
-              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text"
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-accent bg-clip-text"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -1013,7 +995,7 @@ export default function Home() {
               Proven Track Record
             </motion.h2>
             <motion.p
-              className="text-body-lg text-gray-500 mt-4"
+              className="text-body-lg text-gray-600 mt-4"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -1029,11 +1011,11 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="mt-16 flex flex-wrap justify-center items-center gap-8 text-gray-500"
+            className="mt-16 flex flex-wrap justify-center items-center gap-8 text-gray-600"
           >
             {trustIndicators.map((indicator, idx) => (
               <React.Fragment key={indicator.text}>
-                {idx > 0 && <div className="w-px h-6 bg-gray-800" />}
+                {idx > 0 && <div className="w-px h-6 bg-gray-300" />}
                 <motion.div
                   className="flex items-center gap-2"
                   whileHover={{ scale: 1.05, color: '#00FF88' }}
@@ -1053,11 +1035,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* GitHub Activity Section */}
-      <section className="py-24 px-8 bg-gradient-to-b from-black to-gray-950 relative overflow-hidden">
+      {/* GitHub Activity Section - Light */}
+      <section className="py-24 px-8 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
-            className="absolute top-1/2 left-1/4 w-80 h-80 bg-green-500/5 rounded-full blur-3xl"
+            className="absolute top-1/2 left-1/4 w-80 h-80 bg-green-500/10 rounded-full blur-3xl"
             animate={{ y: [0, -20, 0], x: [0, 20, 0] }}
             transition={{ duration: 10, repeat: Infinity }}
           />
@@ -1071,7 +1053,7 @@ export default function Home() {
             className="text-center mb-12"
           >
             <motion.h2
-              className="text-h2 font-bold text-transparent bg-gradient-to-r from-cream to-green-400 bg-clip-text"
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-green-600 bg-clip-text"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -1079,7 +1061,7 @@ export default function Home() {
             >
               GitHub Activity
             </motion.h2>
-            <p className="text-body-lg text-gray-500 mt-4">
+            <p className="text-body-lg text-gray-600 mt-4">
               Active contributor and builder
             </p>
           </motion.div>
@@ -1090,21 +1072,21 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bg-gradient-to-br from-gray-900/80 to-gray-950 border border-gray-800/50 rounded-2xl p-8 mb-8"
+            className="bg-white border border-gray-200 rounded-2xl p-8 mb-8 shadow-lg"
           >
             <div className="flex items-center gap-3 mb-6">
-              <svg className="w-8 h-8 text-cream" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-8 h-8 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
               </svg>
               <div>
-                <h3 className="text-body-lg font-semibold text-cream">Contribution Activity</h3>
+                <h3 className="text-body-lg font-semibold text-gray-900">Contribution Activity</h3>
                 <p className="text-body-sm text-gray-500">@{siteConfig.github}</p>
               </div>
               <motion.a
                 href={siteConfig.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-auto px-4 py-2 bg-gray-800 hover:bg-gray-700 text-cream text-body-sm font-medium rounded-lg transition-colors flex items-center gap-2"
+                className="ml-auto px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 text-body-sm font-medium rounded-lg transition-colors flex items-center gap-2 border border-gray-200"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -1140,7 +1122,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 + idx * 0.1 }}
                 whileHover={{ scale: 1.05, y: -4 }}
-                className="bg-gradient-to-br from-gray-900/60 to-gray-950 border border-gray-800/50 rounded-xl p-4 text-center group cursor-pointer"
+                className="bg-white border border-gray-200 rounded-xl p-4 text-center group cursor-pointer shadow-md"
               >
                 <motion.div
                   className="text-2xl mb-2"
@@ -1149,7 +1131,7 @@ export default function Home() {
                 >
                   {stat.icon}
                 </motion.div>
-                <div className="text-caption text-gray-500 group-hover:text-gray-400 transition-colors">
+                <div className="text-caption text-gray-600 group-hover:text-gray-800 transition-colors">
                   {stat.label}
                 </div>
               </motion.div>
@@ -1168,8 +1150,8 @@ export default function Home() {
               href={siteConfig.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-700 text-cream font-medium rounded-xl transition-colors border border-gray-700 hover:border-gray-600"
-              whileHover={{ scale: 1.05, boxShadow: '0 8px 24px rgba(0, 0, 0, 0.3)' }}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-xl transition-colors"
+              whileHover={{ scale: 1.05, boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)' }}
               whileTap={{ scale: 0.98 }}
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
