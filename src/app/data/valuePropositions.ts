@@ -13,7 +13,7 @@ export const valuePropositions: ValueProposition[] = [
     id: 'ship-fast',
     icon: '🚀',
     title: 'Ship Fast, Ship Right',
-    description: 'From zero to production in weeks, not months. Built entire SaaS platforms single-handedly while maintaining enterprise-grade security (SOC 2, zero breaches).',
+    description: 'From zero to production in weeks, not months. Architected complete CI/CD pipelines and infrastructure for enterprise SaaS platforms while maintaining SOC 2 compliance and zero security breaches.',
     gradient: 'from-gray-800/80 via-gray-900/90 to-black'
   },
   {
@@ -34,7 +34,7 @@ export const valuePropositions: ValueProposition[] = [
     id: 'aws-expert',
     icon: '☁️',
     title: 'AWS Architecture Expert',
-    description: '8+ years with AWS Lambda, DynamoDB, Bedrock. I design serverless systems that handle 2M+ monthly requests while keeping costs low and scaling automatically.',
+    description: '10+ years building production AWS infrastructure—Lambda, DynamoDB, Bedrock, API Gateway, Cognito. I architect serverless systems handling 2M+ monthly requests with full CI/CD automation, monitoring, and cost optimization.',
     gradient: 'from-gray-800/80 via-gray-900/90 to-black'
   },
   {

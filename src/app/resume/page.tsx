@@ -143,8 +143,8 @@ export default function ResumePage() {
               Professional Summary
             </motion.h2>
             <p className="text-body text-gray-300 leading-loose mb-6">
-              AI & Full-Stack Developer with 14+ years building enterprise applications and profitable SaaS ventures.
-              Proven track record of technical excellence combined with business results.
+              Senior AI & Platform Engineer with 14+ years architecting enterprise systems and scaling profitable SaaS ventures.
+              I build production infrastructure that drives revenue—$1.2M+ generated across 3 companies, 2M+ monthly API requests, zero security breaches.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {summaryHighlights.map((item, idx) => (
@@ -185,7 +185,7 @@ export default function ResumePage() {
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {[
                 { icon: '🤖', label: 'AI/ML Engineering', items: ['AWS Bedrock', 'Claude AI', 'ChatGPT API', 'Prompt Engineering'] },
-                { icon: '☁️', label: 'Cloud Architecture', items: ['AWS Lambda', 'DynamoDB', 'API Gateway', 'Serverless'] },
+                { icon: '☁️', label: 'Cloud & MLOps', items: ['AWS Lambda', 'CI/CD Pipelines', 'MLOps', 'Serverless'] },
                 { icon: '⚛️', label: 'Frontend Development', items: ['React (7y)', 'Next.js', 'TypeScript (6y)', 'Tailwind'] },
                 { icon: '⚙️', label: 'Backend Development', items: ['Node.js (10y)', 'REST APIs', 'Express.js', 'WebSockets'] },
                 { icon: '🔐', label: 'Security & Compliance', items: ['SOC 2', 'OAuth', 'JWT', 'Zero Breaches'] },
@@ -637,7 +637,7 @@ export default function ResumePage() {
           <section className="mb-12">
             <h2 className="text-h4 font-semibold text-gray-900 mb-6">Target Roles</h2>
             <div className="flex flex-wrap gap-3">
-              {['AI Engineer', 'Full-Stack Developer', 'Technical Lead', 'SaaS Founder/CTO'].map((role) => (
+              {['Senior AI Engineer', 'Staff Platform Engineer', 'DevOps/MLOps Engineer', 'Technical Lead', 'Solutions Architect'].map((role) => (
                 <span
                   key={role}
                   className="px-4 py-2 bg-accent/10 border border-accent/30 text-accent text-body-sm font-medium rounded-lg"
