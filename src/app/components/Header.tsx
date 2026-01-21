@@ -9,6 +9,7 @@ const Header = () => {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'Resume', href: '/resume' },
+    { name: 'LinkedIn', href: 'https://linkedin.com/in/nickkulavic', external: true },
     { name: 'Contact', href: 'mailto:contact@nickkulavic.ai' }
   ];
 
@@ -31,6 +32,8 @@ const Header = () => {
               <motion.a
                 key={index}
                 href={item.href}
+                target={item.external ? '_blank' : undefined}
+                rel={item.external ? 'noopener noreferrer' : undefined}
                 className="text-gray-700 hover:text-accent transition-colors font-medium text-body-sm"
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
@@ -72,6 +75,8 @@ const Header = () => {
                 <motion.a
                   key={index}
                   href={item.href}
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
                   className="block py-3 px-4 text-gray-700 hover:text-accent hover:bg-gray-50 rounded-lg transition-colors font-medium"
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}

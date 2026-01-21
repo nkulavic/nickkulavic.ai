@@ -147,17 +147,23 @@ export const skillCategories: SkillCategory[] = [
     ]
   },
   {
-    name: 'DevOps & Tools',
+    name: 'DevOps, MLOps & Infrastructure',
     shortName: 'DevOps',
-    priority: 8,
+    priority: 3,
     icon: '🛠️',
     skills: [
+      { name: 'CI/CD Pipelines', level: 'expert', yearsExperience: 10 },
+      { name: 'GitHub Actions', level: 'expert', yearsExperience: 5 },
+      { name: 'Infrastructure as Code', level: 'advanced', yearsExperience: 7 },
+      { name: 'MLOps', level: 'advanced', yearsExperience: 2 },
+      { name: 'Serverless Architecture', level: 'expert', yearsExperience: 10 },
+      { name: 'Production Monitoring', level: 'expert', yearsExperience: 10 },
+      { name: 'Automated Deployments', level: 'expert', yearsExperience: 8 },
+      { name: 'SOC 2 Compliance', level: 'advanced', yearsExperience: 2 },
       { name: 'Git', level: 'expert', yearsExperience: 12 },
-      { name: 'GitHub Actions', level: 'advanced', yearsExperience: 3 },
-      { name: 'CI/CD', level: 'advanced', yearsExperience: 6 },
       { name: 'Docker', level: 'intermediate', yearsExperience: 4 },
       { name: 'Vercel', level: 'advanced', yearsExperience: 3 },
-      { name: 'AWS CloudFormation', level: 'intermediate', yearsExperience: 5 }
+      { name: 'AWS CloudFormation', level: 'advanced', yearsExperience: 5 }
     ]
   },
   {

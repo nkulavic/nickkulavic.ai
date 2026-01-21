@@ -141,17 +141,129 @@ export default function Home() {
                     {availability.roles.join(' • ')} • {availability.location}
                   </p>
                 </div>
-                <motion.a
-                  href={`mailto:${siteConfig.email}`}
-                  className="px-6 py-3 bg-accent hover:bg-accent-light text-white font-semibold rounded-xl shadow-lg whitespace-nowrap"
-                  whileHover={{ scale: 1.05, boxShadow: '0 8px 24px rgba(0, 102, 255, 0.3)' }}
-                  whileTap={{ scale: 0.97 }}
-                >
-                  Let&apos;s Talk →
-                </motion.a>
+                <div className="flex gap-3">
+                  <motion.a
+                    href={`mailto:${siteConfig.email}`}
+                    className="px-6 py-3 bg-accent hover:bg-accent-light text-white font-semibold rounded-xl shadow-lg whitespace-nowrap"
+                    whileHover={{ scale: 1.05, boxShadow: '0 8px 24px rgba(0, 102, 255, 0.3)' }}
+                    whileTap={{ scale: 0.97 }}
+                  >
+                    Let&apos;s Talk →
+                  </motion.a>
+                  <motion.a
+                    href={siteConfig.linkedinUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-[#0A66C2] hover:bg-[#004182] text-white font-semibold rounded-xl shadow-lg whitespace-nowrap flex items-center gap-2"
+                    whileHover={{ scale: 1.05, boxShadow: '0 8px 24px rgba(10, 102, 194, 0.3)' }}
+                    whileTap={{ scale: 0.97 }}
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                    LinkedIn →
+                  </motion.a>
+                </div>
               </div>
             </motion.div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Core Competencies - Light Section */}
+      <section className="py-24 px-8 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div
+            className="absolute top-1/4 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl"
+            animate={{ y: [0, -20, 0], x: [0, 20, 0] }}
+            transition={{ duration: 10, repeat: Infinity }}
+          />
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <motion.h2
+              className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-accent bg-clip-text"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              Core Competencies
+            </motion.h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {[
+              {
+                icon: '☁️',
+                title: 'Cloud & Infrastructure',
+                items: ['AWS (Lambda, DynamoDB, Bedrock, S3, Cognito, API Gateway)', 'Serverless Architecture', 'Infrastructure as Code']
+              },
+              {
+                icon: '🛠️',
+                title: 'DevOps & MLOps',
+                items: ['CI/CD Pipelines', 'GitHub Actions', 'Automated Deployments', 'Production Monitoring', 'MLOps']
+              },
+              {
+                icon: '🤖',
+                title: 'AI & Machine Learning',
+                items: ['AWS Bedrock', 'Claude AI', 'Document Processing', 'LLM Integration']
+              },
+              {
+                icon: '🔒',
+                title: 'Security & Compliance',
+                items: ['SOC 2', 'Enterprise Security', 'Zero-Breach Track Record']
+              },
+              {
+                icon: '⚡',
+                title: 'Full Stack',
+                items: ['React', 'Next.js', 'SvelteKit', 'Node.js', 'Go', 'TypeScript', 'REST APIs']
+              }
+            ].map((competency, idx) => (
+              <motion.div
+                key={competency.title}
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.08, duration: 0.5, type: "spring", stiffness: 100 }}
+                whileHover={{ y: -6, boxShadow: '0 12px 24px rgba(0, 102, 255, 0.12)' }}
+                className="bg-cream border border-gray-200 rounded-xl p-6 hover:border-accent/40 transition-all cursor-pointer group"
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <motion.span
+                    className="text-2xl"
+                    whileHover={{ scale: 1.2, rotate: 8 }}
+                    transition={{ type: 'spring', stiffness: 200 }}
+                  >
+                    {competency.icon}
+                  </motion.span>
+                  <h3 className="text-body font-bold text-gray-900 group-hover:text-accent transition-colors">
+                    {competency.title}
+                  </h3>
+                </div>
+                <ul className="space-y-1.5">
+                  {competency.items.map((item, itemIdx) => (
+                    <motion.li
+                      key={item}
+                      initial={{ opacity: 0, x: -5 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: idx * 0.08 + itemIdx * 0.03 }}
+                      className="text-body-sm text-gray-600 pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-accent"
+                    >
+                      {item}
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -182,8 +294,8 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-body-lg text-gray-700 leading-relaxed"
               >
-                I&apos;m an AI & Full-Stack Developer who builds enterprise-grade applications and profitable SaaS ventures.
-                With deep expertise in AWS, serverless architecture, and AI integration, I&apos;ve founded multiple companies
+                I&apos;m a Senior AI & Platform Engineer who architects enterprise-grade systems and profitable SaaS ventures.
+                With deep expertise in AWS infrastructure, DevOps/MLOps, and AI integration, I&apos;ve founded multiple companies
                 that have generated over $1.2M in revenue while serving thousands of users globally.
               </motion.p>
 
@@ -194,9 +306,9 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-body-lg text-gray-700 leading-relaxed"
               >
-                Currently at Take3Tech, I&apos;m building AI-powered mortgage solutions serving 500+ loan officers with
-                SOC 2 compliance. I specialize in turning complex technical challenges into scalable, secure solutions
-                that deliver real business value.
+                Currently at Take3Tech, I lead AI infrastructure and platform engineering for mortgage solutions serving 500+ loan officers.
+                I own the full DevOps lifecycle—CI/CD pipelines, automated deployments, production monitoring—while maintaining
+                SOC 2 compliance with zero security breaches.
               </motion.p>
 
               <motion.p
@@ -1290,7 +1402,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.25 }}
             >
-              {['AI Engineer', 'Full-Stack Developer', 'Technical Lead', 'Solutions Architect'].map((role, idx) => (
+              {['Senior AI Engineer', 'Staff Platform Engineer', 'DevOps/MLOps Engineer', 'Technical Lead', 'Solutions Architect'].map((role, idx) => (
                 <motion.span
                   key={role}
                   initial={{ opacity: 0, y: 10 }}

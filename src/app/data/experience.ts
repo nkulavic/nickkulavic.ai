@@ -26,7 +26,7 @@ export const experiences: ExperienceEntry[] = [
     location: 'Denver, CO',
     startDate: 'March 2025',
     endDate: 'Present',
-    description: 'Building enterprise AI-powered applications for the mortgage industry, working across .NET, SvelteKit, and serverless AWS architectures with focus on scalability, security, and compliance.',
+    description: 'Leading AI infrastructure and platform engineering for enterprise mortgage SaaS serving 500+ loan officers. Architected AI-powered document processing pipeline (AWS Bedrock + Claude) achieving 80% performance improvement. Full ownership of serverless AWS stack, CI/CD pipelines, and SOC 2 compliance—zero security breaches.',
     logo: {
       initials: 'T3',
       color: '#0066FF',
@@ -47,7 +47,7 @@ export const experiences: ExperienceEntry[] = [
       'Established robust CI/CD pipelines with GitHub Actions for automated deployments',
       'Implemented real-time collaboration features with WebSocket architecture'
     ],
-    technologies: ['.NET', 'C#', '.NET Framework 4.6+', 'SvelteKit', 'PostgreSQL', 'Better Auth', 'Database Migrations', 'Groq', 'Gemini', 'AWS Bedrock', 'Claude AI', 'PDF Processing', 'Node.js', 'TypeScript', 'React', 'AWS Lambda', 'DynamoDB', 'Next.js', 'WebSockets', 'GitHub Actions'],
+    technologies: ['.NET', 'C#', '.NET Framework 4.6+', 'SvelteKit', 'PostgreSQL', 'Better Auth', 'Database Migrations', 'Groq', 'Gemini', 'AWS Bedrock', 'Claude AI', 'PDF Processing', 'Node.js', 'TypeScript', 'React', 'AWS Lambda', 'DynamoDB', 'Next.js', 'WebSockets', 'GitHub Actions', 'MLOps', 'CI/CD', 'DevOps', 'Infrastructure as Code', 'SOC 2 Compliance'],
     metrics: ['500+ active users', 'SOC 2 compliant', '99.9% uptime', '80% faster processing', 'Full mortgage lifecycle'],
     category: 'ai-engineering'
   },

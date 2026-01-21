@@ -34,8 +34,8 @@ export interface TrustIndicator {
 
 export const siteConfig: SiteConfig = {
   name: 'Nick Kulavic',
-  title: 'AI Engineer & Full-Stack Developer',
-  tagline: 'I build AI-first applications that scale.',
+  title: 'Senior AI & Platform Engineer',
+  tagline: 'I architect AI-powered enterprise systems that drive revenue and scale securely.',
   location: 'Denver, CO',
   email: 'contact@nickkulavic.ai',
   linkedin: 'linkedin.com/in/nickkulavic',
@@ -48,7 +48,7 @@ export const siteConfig: SiteConfig = {
 
 export const availability: Availability = {
   status: 'available',
-  roles: ['AI Engineer', 'Full-Stack Developer', 'Technical Lead'],
+  roles: ['Senior AI Engineer', 'Platform Engineer', 'DevOps/MLOps', 'Staff Engineer'],
   location: 'Remote or Denver-based'
 };
 
@@ -60,7 +60,7 @@ export const heroStats: HeroStat[] = [
 ];
 
 export const heroDescription = {
-  primary: 'I build AI-first applications that scale.',
+  primary: 'I architect AI-powered enterprise systems that drive revenue and scale securely.',
   secondary: '14+ years turning complex technical challenges into profitable solutions. From $0 to $1.2M+ revenue. SOC 2 compliant systems serving 500+ enterprise users. Zero security breaches.'
 };
 

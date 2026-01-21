@@ -30,6 +30,15 @@ export const certifications: Certification[] = [
     description: 'Built & operated SaaS on AWS since 2015: Lambda, API Gateway, DynamoDB, S3, Cognito, 12+ services'
   },
   {
+    id: 'mlops-infrastructure',
+    title: 'MLOps & AI Infrastructure',
+    organization: 'Production Experience',
+    level: 'Current',
+    icon: '🤖',
+    color: '#8B5CF6',
+    description: 'Building and deploying ML pipelines with AWS Bedrock, model integration, and production AI systems'
+  },
+  {
     id: 'infusionsoft-partner',
     title: 'Infusionsoft Certified Partner',
     organization: 'Keap',
@@ -101,8 +110,8 @@ export const careerStats: CareerStat[] = [
 export const summaryHighlights = [
   '🚀 Founded 3 SaaS companies generating $1.2M+ revenue',
   '☁️ 11 years AWS production experience (since 2015)',
-  '🤖 AI-first development with Claude, AWS Bedrock, ChatGPT',
+  '🛠️ Full DevOps/MLOps ownership: CI/CD, monitoring, deployments',
+  '🤖 AI infrastructure with AWS Bedrock, Claude, and ML pipelines',
   '🛡️ SOC 2 compliant systems with zero security breaches',
-  '⚡ 2M+ monthly API requests across 30+ integrations',
   '👥 Serving 500+ enterprise users with 99.9% uptime'
 ];
