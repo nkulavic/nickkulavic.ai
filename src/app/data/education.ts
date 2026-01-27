@@ -78,6 +78,15 @@ export const education: Education[] = [
     year: '2008 - 2012',
     description: 'Minor in Organizational Leadership (business psychology). Entrepreneurship focus on small business consulting and development. Foundation in project management, team leadership, and strategic business operations.',
     icon: '🎓'
+  },
+  {
+    id: 'professional-development',
+    degree: 'Professional Software Engineering',
+    institution: 'Continuous Professional Development',
+    location: 'Denver, CO',
+    year: '2011 - Present',
+    description: '14+ years building production systems and profitable SaaS companies. AWS certifications, enterprise architecture patterns, and hands-on experience across the full technology stack.',
+    icon: '💻'
   }
 ];
 
@@ -89,7 +98,7 @@ export interface CareerStat {
 }
 
 export const careerStats: CareerStat[] = [
-  { value: '$1.2M+', label: 'Total Revenue', icon: '💰' },
+  { value: '$1.7M+', label: 'Total Revenue', icon: '💰' },
   { value: '500+', label: 'Enterprise Users', icon: '👥' },
   { value: '2M+', label: 'Monthly API Requests', icon: '⚡' },
   { value: '30+', label: 'Integrations', icon: '🔗' },
@@ -99,7 +108,7 @@ export const careerStats: CareerStat[] = [
 
 // Summary highlights
 export const summaryHighlights = [
-  '🚀 Founded 3 SaaS companies generating $1.2M+ revenue',
+  '🚀 Founded 3 SaaS companies generating $1.7M+ revenue',
   '☁️ 11 years AWS production experience (since 2015)',
   '🛠️ Full DevOps/MLOps ownership: CI/CD, monitoring, deployments',
   '🤖 AI infrastructure with AWS Bedrock, Claude, and ML pipelines',

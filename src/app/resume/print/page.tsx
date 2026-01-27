@@ -94,7 +94,7 @@ export default function PrintResumePage() {
             </h2>
             <p className="text-sm text-gray-700 leading-relaxed">
               AI Engineer & Full-Stack Developer with <strong>14+ years</strong> building enterprise applications and profitable SaaS ventures
-              generating <strong>$1.2M+ in revenue</strong>. Expert in REST APIs (Go, Node.js) on AWS API Gateway v2 with streaming,
+              generating <strong>$1.7M+ in revenue</strong>. Expert in REST APIs (Go, Node.js) on AWS API Gateway v2 with streaming,
               serverless architecture (Lambda, Bedrock, DynamoDB), and AI integration (Claude, Gemini, ChatGPT). Deep experience with
               <strong> 30+ platform integrations</strong> including Salesforce, HubSpot, Infusionsoft, Twilio, and project management tools.
               Founded 3 successful SaaS companies processing <strong>2M+ monthly API requests</strong> with 99.9% uptime.

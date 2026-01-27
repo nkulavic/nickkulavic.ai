@@ -147,7 +147,7 @@ export default function ResumePage() {
             </motion.h2>
             <p className="text-body text-gray-700 leading-loose mb-6">
               Senior AI & Platform Engineer with 14+ years architecting enterprise systems and scaling profitable SaaS ventures.
-              I build production infrastructure that drives revenue—$1.2M+ generated across 3 companies, 2M+ monthly API requests, zero security breaches.
+              I build production infrastructure that drives revenue—$1.7M+ generated across 3 companies, 2M+ monthly API requests, zero security breaches.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {summaryHighlights.map((item, idx) => (
@@ -192,7 +192,7 @@ export default function ResumePage() {
                 { icon: '⚛️', label: 'Frontend Development', items: ['React (7y)', 'Next.js', 'TypeScript (6y)', 'Tailwind'] },
                 { icon: '⚙️', label: 'Backend Development', items: ['Node.js (10y)', 'REST APIs', 'Express.js', 'WebSockets'] },
                 { icon: '🔐', label: 'Security & Compliance', items: ['SOC 2', 'OAuth', 'JWT', 'Zero Breaches'] },
-                { icon: '💼', label: 'Business & Leadership', items: ['SaaS Founder', '$1.2M+ Revenue', 'Product Dev', 'API Strategy'] }
+                { icon: '💼', label: 'Business & Leadership', items: ['SaaS Founder', '$1.7M+ Revenue', 'Product Dev', 'API Strategy'] }
               ].map((competency, idx) => (
                 <motion.div
                   key={competency.label}

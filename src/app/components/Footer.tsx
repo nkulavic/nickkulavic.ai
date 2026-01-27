@@ -47,7 +47,7 @@ const Footer = () => {
             >
               {[
                 { value: '14+', label: 'Years Experience', icon: '⏱️' },
-                { value: '$1.2M+', label: 'Revenue Generated', icon: '💰' },
+                { value: '$1.7M+', label: 'Revenue Generated', icon: '💰' },
                 { value: '500+', label: 'Enterprise Users', icon: '👥' },
                 { value: '0', label: 'Security Breaches', icon: '🔒' }
               ].map((stat, idx) => (

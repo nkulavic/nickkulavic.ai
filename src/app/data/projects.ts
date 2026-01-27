@@ -113,7 +113,7 @@ export const projects: Project[] = [
     metrics: [
       { label: 'Active Users', value: '2,000+' },
       { label: 'API Requests', value: '2M+/month' },
-      { label: 'Revenue', value: '$1.2M+' }
+      { label: 'Revenue', value: '$1.7M+' }
     ],
     highlights: [
       '30+ third-party integrations (Salesforce, HubSpot, Twilio, etc.)',
@@ -136,9 +136,9 @@ export const projects: Project[] = [
     links: { live: 'https://myfusionsolutions.com' },
     image: '/projects/myfusion-solutions-placeholder.png',
     metrics: [
-      { label: 'Revenue', value: '$1.2M+' },
-      { label: 'Orders', value: '33,000+' },
-      { label: 'Integrations', value: '30+' }
+      { label: 'Revenue', value: '$1.7M+' },
+      { label: 'Active Users', value: '2,000+' },
+      { label: 'Integrations', value: '60+' }
     ],
     highlights: [
       'Serverless architecture with AWS Lambda',

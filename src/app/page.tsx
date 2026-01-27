@@ -288,7 +288,7 @@ export default function Home() {
 
             <div className="mt-8">
               <p className="text-body-lg text-gray-700 leading-loose mb-6">
-                I&apos;m a Senior AI & Platform Engineer who architects enterprise-grade systems and profitable SaaS ventures. With deep expertise in AWS infrastructure, DevOps/MLOps, and AI integration, I&apos;ve founded multiple companies that have generated over $1.2M in revenue while serving thousands of users globally.
+                I&apos;m a Senior AI & Platform Engineer who architects enterprise-grade systems and profitable SaaS ventures. With deep expertise in AWS infrastructure, DevOps/MLOps, and AI integration, I&apos;ve founded multiple companies that have generated over $1.7M in revenue while serving thousands of users globally.
               </p>
 
               <p className="text-body-lg text-gray-700 leading-loose mb-6">

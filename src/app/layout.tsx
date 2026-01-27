@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     default: "Nick Kulavic - AI Engineer & Full-Stack Developer",
     template: "%s | Nick Kulavic"
   },
-  description: "AI & Full-Stack Developer with 14+ years building scalable SaaS solutions. Expert in AWS, React, TypeScript, and AI integration. Founded ventures generating $1.2M+ revenue.",
+  description: "AI & Full-Stack Developer with 14+ years building scalable SaaS solutions. Expert in AWS, React, TypeScript, and AI integration. Founded ventures generating $1.7M+ revenue.",
   keywords: ["AI Engineer", "Full-Stack Developer", "AWS", "React", "TypeScript", "SaaS Founder", "Nick Kulavic", "Denver Developer", "Serverless", "Claude AI", "AWS Bedrock"],
   authors: [{ name: "Nick Kulavic", url: "https://nickkulavic.ai" }],
   creator: "Nick Kulavic",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Nick Kulavic - AI Engineer & Full-Stack Developer",
-    description: "Building enterprise AI applications and scaling SaaS solutions. 14+ years experience, $1.2M+ revenue, SOC 2 compliant systems.",
+    description: "Building enterprise AI applications and scaling SaaS solutions. 14+ years experience, $1.7M+ revenue, SOC 2 compliant systems.",
     type: "website",
     locale: "en_US",
     url: "https://nickkulavic.ai",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Nick Kulavic - AI Engineer & Full-Stack Developer",
-    description: "Building enterprise AI applications and scaling SaaS solutions. 14+ years experience, $1.2M+ revenue.",
+    description: "Building enterprise AI applications and scaling SaaS solutions. 14+ years experience, $1.7M+ revenue.",
     // Twitter image is auto-generated from twitter-image.tsx
   },
   alternates: {

@@ -48,7 +48,7 @@ export const experiences: ExperienceEntry[] = [
       'Implemented real-time collaboration features with WebSocket architecture'
     ],
     technologies: ['.NET', 'C#', '.NET Framework 4.6+', 'SvelteKit', 'PostgreSQL', 'Better Auth', 'Database Migrations', 'Groq', 'Gemini', 'AWS Bedrock', 'Claude AI', 'PDF Processing', 'Node.js', 'TypeScript', 'React', 'AWS Lambda', 'DynamoDB', 'Next.js', 'WebSockets', 'GitHub Actions', 'MLOps', 'CI/CD', 'DevOps', 'Infrastructure as Code', 'SOC 2 Compliance'],
-    metrics: ['500+ active users', 'SOC 2 compliant', '99.9% uptime', '80% faster processing', 'Full mortgage lifecycle'],
+    metrics: ['2,000 users', 'SOC 2 compliant', '99.9% uptime', '80% faster processing', 'Full mortgage lifecycle'],
     category: 'ai-engineering'
   },
   {
@@ -92,7 +92,7 @@ export const experiences: ExperienceEntry[] = [
       imagePath: '/images/companies/myfusion.png'
     },
     achievements: [
-      'Generated $1.2M+ in cumulative revenue through sustainable SaaS model built entirely on AWS since 2015',
+      'Generated $1.7M+ in cumulative revenue through sustainable SaaS model built entirely on AWS since 2015',
       'Architected production AWS infrastructure using 12+ services: Lambda, API Gateway, DynamoDB, S3, Cognito, Athena, Glue, CloudFront, Route53, SES, SNS, CloudWatch, Elastic Beanstalk',
       'Developed MyFusion Helper with 60+ helper integrations for Infusionsoft/Keap, serving 2,000+ active users',
       'Built "Google Sheet It" - flagship helper syncing CRM data to Google Sheets with automated refresh and scheduling',
@@ -103,13 +103,13 @@ export const experiences: ExperienceEntry[] = [
       'Implemented video platform integrations: YouTube, Wistia, Vimeo for engagement tracking',
       'Engineered payment integrations: Stripe for subscription billing and payment processing',
       'Built Facebook Lead Ads and Custom Audiences integration for marketing automation',
-      'Processed 33,000+ recurring orders across six continents with serverless AWS Lambda functions',
+      'Processed transactions across six continents with serverless AWS Lambda functions',
       'Engineered REST API handling 2M+ monthly requests with 99.9% uptime',
       'Created webhook processing system for real-time data synchronization across all platforms',
       'Built custom workflow builder for non-technical users to create complex automation'
     ],
     technologies: ['AWS Lambda', 'API Gateway', 'DynamoDB', 'S3', 'Cognito', 'Athena', 'Glue', 'CloudFront', 'Route53', 'SES', 'SNS', 'CloudWatch', 'Elastic Beanstalk', 'Node.js', 'React', 'Salesforce API', 'Google Sheets API', 'Twilio', 'SendGrid', 'Stripe', 'Slack', 'Zoom', 'Calendly', 'Trello', 'Facebook API', 'GoToWebinar', 'Infusionsoft/Keap', 'Webhooks', 'OAuth', 'REST API'],
-    metrics: ['$1.2M+ revenue', '33,000+ orders', '2M+ monthly API requests', '60+ helper integrations', '30+ platform APIs', '12+ AWS services', '2,000+ active users'],
+    metrics: ['$1.7M+ revenue', '2M+ monthly API requests', '60+ helper integrations', '30+ platform APIs', '12+ AWS services', '2,000+ active users'],
     category: 'entrepreneurship'
   },
   {

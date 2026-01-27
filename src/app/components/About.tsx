@@ -29,7 +29,7 @@ const About = () => {
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               As the founder of multiple successful SaaS companies including MyFusion Solutions and ListBackup.ai, 
-              I&apos;ve generated over $1.2M in revenue by combining deep technical expertise with a keen business sense.
+              I&apos;ve generated over $1.7M in revenue by combining deep technical expertise with a keen business sense.
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               My passion lies in leveraging cutting-edge AI technologies to solve real-world problems and create 

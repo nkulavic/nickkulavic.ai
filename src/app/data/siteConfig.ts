@@ -53,7 +53,7 @@ export const availability: Availability = {
 };
 
 export const heroStats: HeroStat[] = [
-  { value: '$1.2M+', label: 'Revenue Generated', icon: '💰' },
+  { value: '$1.7M+', label: 'Revenue Generated', icon: '💰' },
   { value: '500+', label: 'Enterprise Users', icon: '👥' },
   { value: '30+', label: 'Platform APIs', icon: '🔗' },
   { value: '14+', label: 'Years Experience', icon: '⭐' }
@@ -61,12 +61,12 @@ export const heroStats: HeroStat[] = [
 
 export const heroDescription = {
   primary: 'I architect AI-powered enterprise systems that drive revenue and scale securely.',
-  secondary: '14+ years turning complex technical challenges into profitable solutions. From $0 to $1.2M+ revenue. SOC 2 compliant systems serving 500+ enterprise users. Zero security breaches.'
+  secondary: '14+ years turning complex technical challenges into profitable solutions. From $0 to $1.7M+ revenue. SOC 2 compliant systems serving 500+ enterprise users. Zero security breaches.'
 };
 
 export const trustIndicators: TrustIndicator[] = [
   { icon: '✓', text: '14+ Years Experience', animationDelay: 0 },
-  { icon: '✓', text: '$1.2M+ Revenue Generated', animationDelay: 0.5 },
+  { icon: '✓', text: '$1.7M+ Revenue Generated', animationDelay: 0.5 },
   { icon: '✓', text: 'Zero Security Breaches', animationDelay: 1 },
   { icon: '✓', text: 'SOC 2 Compliant', animationDelay: 1.5 }
 ];

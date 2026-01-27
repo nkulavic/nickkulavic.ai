@@ -20,7 +20,7 @@ export const valuePropositions: ValueProposition[] = [
     id: 'revenue-focused',
     icon: '💰',
     title: 'Revenue-Focused Engineering',
-    description: '$1.2M+ generated across 3 ventures. I build products that customers pay for, not just impressive tech demos. Every line of code drives business value.',
+    description: '$1.7M+ generated across 3 ventures. I build products that customers pay for, not just impressive tech demos. Every line of code drives business value.',
     gradient: 'from-gray-800/80 via-gray-900/90 to-black'
   },
   {

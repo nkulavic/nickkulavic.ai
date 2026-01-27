@@ -88,7 +88,7 @@ export default async function Image() {
             lineHeight: 1.4,
           }}
         >
-          14+ years building scalable SaaS solutions. $1.2M+ revenue.
+          14+ years building scalable SaaS solutions. $1.7M+ revenue.
           AWS, React, TypeScript expert.
         </div>
 
@@ -101,7 +101,7 @@ export default async function Image() {
           }}
         >
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <div style={{ fontSize: '36px', fontWeight: 700, color: '#0066FF' }}>$1.2M+</div>
+            <div style={{ fontSize: '36px', fontWeight: 700, color: '#0066FF' }}>$1.7M+</div>
             <div style={{ fontSize: '16px', color: '#666666' }}>Revenue</div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
