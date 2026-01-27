@@ -51,7 +51,7 @@ export default function CompanyModal({ experience, isOpen, onClose }: CompanyMod
                 {/* Header with Logo */}
                 <div className="bg-gradient-to-r from-gray-50 to-gray-100 p-8 border-b border-gray-200">
                   {/* Top CTA Bar - visible immediately on mobile */}
-                  <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-200">
+                  <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-200 pr-8">
                     <span className="text-body-sm text-gray-500">Interested in working together?</span>
                     <motion.a
                       href="/resume"
