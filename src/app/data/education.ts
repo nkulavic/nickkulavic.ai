@@ -78,15 +78,6 @@ export const education: Education[] = [
     year: '2008 - 2012',
     description: 'Minor in Organizational Leadership (business psychology). Entrepreneurship focus on small business consulting and development. Foundation in project management, team leadership, and strategic business operations.',
     icon: '🎓'
-  },
-  {
-    id: 'self-taught',
-    degree: 'Self-Taught Software Engineer',
-    institution: 'Continuous Learning',
-    location: 'Denver, CO',
-    year: '2011 - Present',
-    description: '14+ years of hands-on development, building production systems and profitable SaaS companies. Combining technical skills with business acumen.',
-    icon: '💻'
   }
 ];
 
