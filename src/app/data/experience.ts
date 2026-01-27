@@ -63,7 +63,7 @@ export const experiences: ExperienceEntry[] = [
       initials: 'LB',
       color: '#8B5CF6',
       bgColor: '#8B5CF615',
-      imagePath: '/images/companies/listbackup.svg'
+      imagePath: '/images/companies/listbackup.ico'
     },
     achievements: [
       'Architected fully serverless solution using AWS Cognito, DynamoDB, and Lambda',
