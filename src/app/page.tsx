@@ -185,12 +185,12 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="mb-12"
           >
             <motion.h2
               className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-accent bg-clip-text"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
@@ -323,12 +323,12 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="mb-12"
           >
             <motion.h2
               className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-green-600 bg-clip-text"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
@@ -415,18 +415,18 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-16 text-center"
+            className="mb-16"
           >
             <motion.h2
               className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-accent bg-clip-text"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
               What Sets Me Apart
             </motion.h2>
-            <p className="text-body-lg text-gray-600 max-w-3xl mx-auto mt-4 text-center">
+            <p className="text-body-lg text-gray-600 mt-4">
               {valuePropositionsSubtitle}
             </p>
           </motion.div>
@@ -891,7 +891,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="mb-16"
           >
             <motion.h2
               className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-accent bg-clip-text"
@@ -1071,7 +1071,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="mb-12"
           >
             <motion.h2
               className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-accent bg-clip-text"
@@ -1138,12 +1138,12 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="mb-12"
           >
             <motion.h2
               className="text-h2 font-bold text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-green-600 bg-clip-text"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
