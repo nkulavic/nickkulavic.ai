@@ -14,7 +14,7 @@ export const platforms: Platform[] = [
     id: 'infusionsoft',
     name: 'Infusionsoft/Keap',
     category: 'crm',
-    logo: '/images/platforms/infusionsoft.svg',
+    logo: '/images/platforms/keap.png',
     yearsExperience: 10,
     integrationLevel: 'deep',
     description: 'Built 60+ helper integrations, 2M+ monthly API requests'
@@ -23,7 +23,7 @@ export const platforms: Platform[] = [
     id: 'salesforce',
     name: 'Salesforce',
     category: 'crm',
-    logo: '/images/platforms/salesforce.svg',
+    logo: '/images/platforms/salesforce.png',
     yearsExperience: 10,
     integrationLevel: 'deep',
     description: 'Extensive custom integration work since 2015'
@@ -32,7 +32,7 @@ export const platforms: Platform[] = [
     id: 'hubspot',
     name: 'HubSpot',
     category: 'crm',
-    logo: '/images/platforms/hubspot.svg',
+    logo: '/images/platforms/hubspot.png',
     yearsExperience: 5,
     integrationLevel: 'deep'
   },
@@ -40,7 +40,7 @@ export const platforms: Platform[] = [
     id: 'activecampaign',
     name: 'ActiveCampaign',
     category: 'crm',
-    logo: '/images/platforms/activecampaign.svg',
+    logo: '/images/platforms/activecampaign.png',
     yearsExperience: 4,
     integrationLevel: 'moderate'
   },
@@ -48,7 +48,7 @@ export const platforms: Platform[] = [
     id: 'mailchimp',
     name: 'MailChimp',
     category: 'marketing',
-    logo: '/images/platforms/mailchimp.svg',
+    logo: '/images/platforms/mailchimp.png',
     yearsExperience: 6,
     integrationLevel: 'moderate'
   },
@@ -58,7 +58,7 @@ export const platforms: Platform[] = [
     id: 'twilio',
     name: 'Twilio',
     category: 'communication',
-    logo: '/images/platforms/twilio.svg',
+    logo: '/images/platforms/twilio.png',
     yearsExperience: 6,
     integrationLevel: 'deep',
     description: 'SMS helper integration with MyFusion Helper'
@@ -67,7 +67,7 @@ export const platforms: Platform[] = [
     id: 'sendgrid',
     name: 'SendGrid',
     category: 'communication',
-    logo: '/images/platforms/sendgrid.svg',
+    logo: '/images/platforms/sendgrid.png',
     yearsExperience: 7,
     integrationLevel: 'deep',
     description: 'Email delivery API integration'
@@ -76,7 +76,7 @@ export const platforms: Platform[] = [
     id: 'slack',
     name: 'Slack',
     category: 'communication',
-    logo: '/images/platforms/slack.svg',
+    logo: '/images/platforms/slack.png',
     yearsExperience: 4,
     integrationLevel: 'moderate',
     description: 'Slack It helper for notifications'
@@ -85,7 +85,7 @@ export const platforms: Platform[] = [
     id: 'zoom',
     name: 'Zoom',
     category: 'communication',
-    logo: '/images/platforms/zoom.svg',
+    logo: '/images/platforms/zoom.png',
     yearsExperience: 3,
     integrationLevel: 'moderate',
     description: 'Meeting and webinar integrations'
@@ -96,7 +96,7 @@ export const platforms: Platform[] = [
     id: 'google-sheets',
     name: 'Google Sheets',
     category: 'productivity',
-    logo: '/images/platforms/google-sheets.svg',
+    logo: '/images/platforms/google-sheets.png',
     yearsExperience: 7,
     integrationLevel: 'deep',
     description: 'Google Sheet It - flagship helper for CRM data export'
@@ -105,7 +105,7 @@ export const platforms: Platform[] = [
     id: 'trello',
     name: 'Trello',
     category: 'productivity',
-    logo: '/images/platforms/trello.svg',
+    logo: '/images/platforms/trello.png',
     yearsExperience: 5,
     integrationLevel: 'moderate',
     description: 'Trello It helper for task management'
@@ -114,7 +114,7 @@ export const platforms: Platform[] = [
     id: 'dropbox',
     name: 'Dropbox',
     category: 'productivity',
-    logo: '/images/platforms/dropbox.svg',
+    logo: '/images/platforms/dropbox.png',
     yearsExperience: 5,
     integrationLevel: 'moderate',
     description: 'Dropbox It helper for file storage'
@@ -123,7 +123,7 @@ export const platforms: Platform[] = [
     id: 'calendly',
     name: 'Calendly',
     category: 'productivity',
-    logo: '/images/platforms/calendly.svg',
+    logo: '/images/platforms/calendly.png',
     yearsExperience: 4,
     integrationLevel: 'moderate',
     description: 'Scheduling and appointment API integration'
@@ -134,7 +134,7 @@ export const platforms: Platform[] = [
     id: 'shopify',
     name: 'Shopify',
     category: 'ecommerce',
-    logo: '/images/platforms/shopify.svg',
+    logo: '/images/platforms/shopify.png',
     yearsExperience: 8,
     integrationLevel: 'deep',
     description: 'Led ACEVA migration, order processing integration'
@@ -143,7 +143,7 @@ export const platforms: Platform[] = [
     id: 'magento',
     name: 'Magento',
     category: 'ecommerce',
-    logo: '/images/platforms/magento.svg',
+    logo: '/images/platforms/magento.png',
     yearsExperience: 6,
     integrationLevel: 'deep',
     description: 'E-commerce platform development and migration'
@@ -152,7 +152,7 @@ export const platforms: Platform[] = [
     id: 'woocommerce',
     name: 'WooCommerce',
     category: 'ecommerce',
-    logo: '/images/platforms/woocommerce.svg',
+    logo: '/images/platforms/woocommerce.png',
     yearsExperience: 6,
     integrationLevel: 'moderate'
   },
@@ -160,7 +160,7 @@ export const platforms: Platform[] = [
     id: 'stripe',
     name: 'Stripe',
     category: 'payment',
-    logo: '/images/platforms/stripe.svg',
+    logo: '/images/platforms/stripe.png',
     yearsExperience: 8,
     integrationLevel: 'deep',
     description: 'Payment processing and subscription billing'
@@ -171,7 +171,7 @@ export const platforms: Platform[] = [
     id: 'gotowebinar',
     name: 'GoToWebinar',
     category: 'webinar',
-    logo: '/images/platforms/gotowebinar.svg',
+    logo: '/images/platforms/gotowebinar.png',
     yearsExperience: 6,
     integrationLevel: 'moderate',
     description: 'Registration and attendance tracking'
@@ -180,7 +180,7 @@ export const platforms: Platform[] = [
     id: 'youtube',
     name: 'YouTube',
     category: 'video',
-    logo: '/images/platforms/youtube.svg',
+    logo: '/images/platforms/youtube.png',
     yearsExperience: 5,
     integrationLevel: 'moderate',
     description: 'Video engagement tracking'
@@ -189,7 +189,7 @@ export const platforms: Platform[] = [
     id: 'wistia',
     name: 'Wistia',
     category: 'video',
-    logo: '/images/platforms/wistia.svg',
+    logo: '/images/platforms/wistia.png',
     yearsExperience: 5,
     integrationLevel: 'moderate'
   },
@@ -197,7 +197,7 @@ export const platforms: Platform[] = [
     id: 'vimeo',
     name: 'Vimeo',
     category: 'video',
-    logo: '/images/platforms/vimeo.svg',
+    logo: '/images/platforms/vimeo.png',
     yearsExperience: 5,
     integrationLevel: 'moderate'
   },
@@ -207,7 +207,7 @@ export const platforms: Platform[] = [
     id: 'zendesk',
     name: 'Zendesk',
     category: 'support',
-    logo: '/images/platforms/zendesk.svg',
+    logo: '/images/platforms/zendesk.png',
     yearsExperience: 6,
     integrationLevel: 'deep',
     description: 'Support ticket integration with AlignLife'
@@ -216,7 +216,7 @@ export const platforms: Platform[] = [
     id: 'teamwork',
     name: 'Teamwork.com',
     category: 'project-management',
-    logo: '/images/platforms/teamwork.svg',
+    logo: '/images/platforms/teamwork.png',
     yearsExperience: 6,
     integrationLevel: 'deep',
     description: 'Deep integrations with WordPress, Zendesk, Magento, Shopify at AlignLife'
@@ -225,7 +225,7 @@ export const platforms: Platform[] = [
     id: 'wordpress',
     name: 'WordPress',
     category: 'productivity',
-    logo: '/images/platforms/wordpress.svg',
+    logo: '/images/platforms/wordpress.png',
     yearsExperience: 10,
     integrationLevel: 'deep',
     description: 'Custom plugin development and API integrations'
@@ -236,7 +236,7 @@ export const platforms: Platform[] = [
     id: 'facebook',
     name: 'Facebook',
     category: 'marketing',
-    logo: '/images/platforms/facebook.svg',
+    logo: '/images/platforms/facebook.png',
     yearsExperience: 6,
     integrationLevel: 'moderate',
     description: 'Lead Ads and Custom Audiences integration'

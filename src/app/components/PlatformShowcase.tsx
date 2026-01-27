@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { platforms, platformCategories, getDeepIntegrations, getTotalPlatformCount } from '@/app/data/platforms';
 
 export default function PlatformShowcase() {
@@ -141,12 +142,22 @@ export default function PlatformShowcase() {
                 </motion.div>
               )}
 
-              {/* Platform Logo - Placeholder */}
+              {/* Platform Logo */}
               <motion.div
-                className="w-16 h-16 mb-4 rounded-xl bg-gray-100 flex items-center justify-center text-4xl text-gray-400"
+                className="w-16 h-16 mb-4 rounded-xl bg-gray-50 flex items-center justify-center overflow-hidden"
                 whileHover={{ rotate: 5 }}
               >
-                {platform.name.charAt(0)}
+                {platform.logo ? (
+                  <Image
+                    src={platform.logo}
+                    alt={`${platform.name} logo`}
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                  />
+                ) : (
+                  <span className="text-4xl text-gray-400">{platform.name.charAt(0)}</span>
+                )}
               </motion.div>
 
               {/* Platform Name */}
