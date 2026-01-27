@@ -286,36 +286,18 @@ export default function Home() {
               About
             </motion.h2>
 
-            <div className="space-y-8 mt-8">
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-body-lg text-gray-700 leading-loose"
-              >
+            <div className="mt-8">
+              <p className="text-body-lg text-gray-700 leading-loose mb-6">
                 I&apos;m a Senior AI & Platform Engineer who architects enterprise-grade systems and profitable SaaS ventures. With deep expertise in AWS infrastructure, DevOps/MLOps, and AI integration, I&apos;ve founded multiple companies that have generated over $1.2M in revenue while serving thousands of users globally.
-              </motion.p>
+              </p>
 
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-body-lg text-gray-700 leading-loose"
-              >
+              <p className="text-body-lg text-gray-700 leading-loose mb-6">
                 Currently at Take3Tech, I lead AI infrastructure and platform engineering for mortgage solutions serving 500+ loan officers. I own the full DevOps lifecycle—CI/CD pipelines, automated deployments, production monitoring—while maintaining SOC 2 compliance with zero security breaches.
-              </motion.p>
+              </p>
 
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-body-lg text-gray-700 leading-loose"
-              >
+              <p className="text-body-lg text-gray-700 leading-loose">
                 I also continue to run <span className="font-semibold text-accent">MyFusion Solutions</span>, where I built MyFusion Helper — a platform with 60+ integrations connecting Infusionsoft/Keap with Salesforce, Google Sheets, Twilio, and 30+ other platforms. It processes 2M+ API requests monthly and serves 2,000+ active users.
-              </motion.p>
+              </p>
             </div>
           </motion.div>
         </div>
