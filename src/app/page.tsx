@@ -426,7 +426,7 @@ export default function Home() {
             >
               What Sets Me Apart
             </motion.h2>
-            <p className="text-body-lg text-gray-600 max-w-3xl mx-auto mt-4" style={{ textAlign: 'center' }}>
+            <p className="text-body-lg text-gray-600 max-w-3xl mx-auto mt-4 text-center">
               {valuePropositionsSubtitle}
             </p>
           </motion.div>
