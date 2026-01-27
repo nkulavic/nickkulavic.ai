@@ -12,12 +12,12 @@ import { siteConfig, availability } from '@/app/data/siteConfig';
 export default function ResumePage() {
   return (
     <div className="min-h-screen bg-cream">
-      {/* Header Section - Dark */}
-      <div className="bg-black py-20 px-8 relative overflow-hidden">
+      {/* Header Section - Light */}
+      <div className="bg-gradient-to-b from-white to-cream py-20 px-8 relative overflow-hidden">
         {/* Animated background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
-            className="absolute -top-40 -right-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl"
+            className="absolute -top-40 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl"
             animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
             transition={{ duration: 8, repeat: Infinity }}
           />
@@ -25,7 +25,7 @@ export default function ResumePage() {
 
         <div className="max-w-3xl mx-auto relative z-10">
           <motion.header
-            className="pb-10 mb-10 border-b border-gray-800"
+            className="pb-10 mb-10 border-b border-gray-200"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -33,7 +33,7 @@ export default function ResumePage() {
             <div className="flex items-start justify-between mb-6">
               <div>
                 <motion.h1
-                  className="text-h1 font-bold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text mb-3"
+                  className="text-h1 font-bold text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-accent bg-clip-text mb-3"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1, duration: 0.6 }}
@@ -41,7 +41,7 @@ export default function ResumePage() {
                   {siteConfig.name}
                 </motion.h1>
                 <motion.p
-                  className="text-h4 text-transparent bg-gradient-to-r from-gray-400 to-accent bg-clip-text mb-4"
+                  className="text-h4 text-transparent bg-gradient-to-r from-gray-600 to-accent bg-clip-text mb-4"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.6 }}
@@ -75,19 +75,19 @@ export default function ResumePage() {
               transition={{ delay: 0.4, duration: 0.6 }}
             >
               <motion.div
-                className="flex items-center gap-3 text-body-sm text-gray-400 bg-gray-900/50 rounded-lg p-4 border border-gray-800/50"
+                className="flex items-center gap-3 text-body-sm text-gray-600 bg-white rounded-lg p-4 border border-gray-200 shadow-sm"
                 whileHover={{ scale: 1.02, borderColor: 'rgba(0, 102, 255, 0.5)' }}
               >
                 <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span className="text-gray-300">{siteConfig.location}</span>
+                <span className="text-gray-700">{siteConfig.location}</span>
               </motion.div>
 
               <motion.a
                 href={`mailto:${siteConfig.email}`}
-                className="flex items-center gap-3 text-body-sm text-gray-400 bg-gray-900/50 rounded-lg p-4 border border-gray-800/50 hover:text-accent hover:border-accent/50 transition-all"
+                className="flex items-center gap-3 text-body-sm text-gray-600 bg-white rounded-lg p-4 border border-gray-200 shadow-sm hover:text-accent hover:border-accent/50 transition-all"
                 whileHover={{ scale: 1.02, y: -2 }}
               >
                 <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -100,7 +100,7 @@ export default function ResumePage() {
                 href={siteConfig.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-body-sm text-gray-400 bg-gray-900/50 rounded-lg p-4 border border-gray-800/50 hover:text-[#0A66C2] hover:border-[#0A66C2]/50 transition-all"
+                className="flex items-center gap-3 text-body-sm text-gray-600 bg-white rounded-lg p-4 border border-gray-200 shadow-sm hover:text-[#0A66C2] hover:border-[#0A66C2]/50 transition-all"
                 whileHover={{ scale: 1.02, y: -2 }}
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -112,12 +112,12 @@ export default function ResumePage() {
 
             {/* Currently Seeking */}
             <motion.div
-              className="bg-gradient-to-r from-green-500/10 to-green-500/5 border border-green-500/30 rounded-xl p-4"
+              className="bg-gradient-to-r from-green-100 to-green-50 border border-green-300 rounded-xl p-4"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
             >
-              <div className="flex items-center justify-center gap-2 text-green-400 font-semibold text-body-sm">
+              <div className="flex items-center justify-center gap-2 text-green-700 font-semibold text-body-sm">
                 <motion.span
                   animate={{ scale: [1, 1.3, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
@@ -135,14 +135,14 @@ export default function ResumePage() {
             transition={{ delay: 0.4, duration: 0.6 }}
           >
             <motion.h2
-              className="text-h4 font-semibold text-transparent bg-gradient-to-r from-cream to-accent bg-clip-text mb-6"
+              className="text-h4 font-semibold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-6"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
               Professional Summary
             </motion.h2>
-            <p className="text-body text-gray-300 leading-loose mb-6">
+            <p className="text-body text-gray-700 leading-loose mb-6">
               Senior AI & Platform Engineer with 14+ years architecting enterprise systems and scaling profitable SaaS ventures.
               I build production infrastructure that drives revenue—$1.2M+ generated across 3 companies, 2M+ monthly API requests, zero security breaches.
             </p>
@@ -153,7 +153,7 @@ export default function ResumePage() {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5 + idx * 0.05, duration: 0.4 }}
-                  className="flex items-start gap-3 text-body-sm text-gray-300 bg-gray-900/50 rounded-lg p-3 border border-gray-800/50"
+                  className="flex items-start gap-3 text-body-sm text-gray-700 bg-white rounded-lg p-3 border border-gray-200 shadow-sm"
                 >
                   <span>{item}</span>
                 </motion.div>

@@ -155,16 +155,61 @@
   --animate-slide-up: slideUp 0.6s ease-out;
 }
 
-/* Dark Mode - Deep Gray Background */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--color-gray-950);
-    --foreground: var(--color-cream);
-    --surface: var(--color-gray-900);
-    --surface-dark: var(--color-black);
-    --border: var(--color-gray-800);
-  }
+/* Dark Mode - Manual Toggle Support */
+.dark {
+  --background: var(--color-gray-950);
+  --foreground: var(--color-cream);
+  --surface: var(--color-gray-900);
+  --surface-dark: var(--color-black);
+  --border: var(--color-gray-800);
 }
+
+/* Dark mode background/text utilities */
+.dark body {
+  background: var(--color-gray-950);
+  color: var(--color-cream);
+}
+
+/* Dark mode section backgrounds */
+.dark .bg-white { background-color: var(--color-gray-900) !important; }
+.dark .bg-cream { background-color: var(--color-gray-950) !important; }
+.dark .bg-gray-50 { background-color: var(--color-gray-900) !important; }
+.dark .bg-gray-100 { background-color: var(--color-gray-850) !important; }
+
+/* Dark mode text colors */
+.dark .text-gray-900 { color: var(--color-cream) !important; }
+.dark .text-gray-800 { color: var(--color-gray-200) !important; }
+.dark .text-gray-700 { color: var(--color-gray-300) !important; }
+.dark .text-gray-600 { color: var(--color-gray-400) !important; }
+.dark .text-gray-500 { color: var(--color-gray-500) !important; }
+
+/* Dark mode borders */
+.dark .border-gray-200 { border-color: var(--color-gray-800) !important; }
+.dark .border-gray-300 { border-color: var(--color-gray-700) !important; }
+
+/* Dark mode gradients */
+.dark .from-white { --tw-gradient-from: var(--color-gray-900) !important; }
+.dark .to-white { --tw-gradient-to: var(--color-gray-900) !important; }
+.dark .via-white { --tw-gradient-via: var(--color-gray-900) !important; }
+.dark .from-cream { --tw-gradient-from: var(--color-gray-950) !important; }
+.dark .to-cream { --tw-gradient-to: var(--color-gray-950) !important; }
+.dark .via-cream { --tw-gradient-via: var(--color-gray-950) !important; }
+.dark .from-gray-50 { --tw-gradient-from: var(--color-gray-900) !important; }
+.dark .to-gray-50 { --tw-gradient-to: var(--color-gray-900) !important; }
+.dark .via-gray-50 { --tw-gradient-via: var(--color-gray-900) !important; }
+
+/* Dark mode header */
+.dark .bg-cream\/95 { background-color: rgba(10, 10, 10, 0.95) !important; }
+
+/* Dark mode shadows */
+.dark .shadow-lg { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3) !important; }
+.dark .shadow-md { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3) !important; }
+
+/* Dark mode green availability badge */
+.dark .from-green-100 { --tw-gradient-from: rgba(34, 197, 94, 0.1) !important; }
+.dark .to-green-50 { --tw-gradient-to: rgba(34, 197, 94, 0.05) !important; }
+.dark .border-green-300 { border-color: rgba(34, 197, 94, 0.3) !important; }
+.dark .text-green-700 { color: #4ade80 !important; }
 
 /* Keyframe Animations */
 @keyframes fadeIn {
