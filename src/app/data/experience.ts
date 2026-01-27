@@ -58,7 +58,7 @@ export const experiences: ExperienceEntry[] = [
     location: 'Denver, CO',
     startDate: 'January 2023',
     endDate: 'Present',
-    description: 'Founded serverless SaaS platform for email list backup and protection, ensuring business continuity for email marketing operations.',
+    description: 'Founded AI-powered data backup and integration platform for modern businesses. Connects to 50+ business tools across CRM, payments, email marketing, and e-commerce with enterprise-grade security and intelligent automation.',
     logo: {
       initials: 'LB',
       color: '#8B5CF6',
@@ -66,15 +66,19 @@ export const experiences: ExperienceEntry[] = [
       imagePath: '/images/companies/listbackup.ico'
     },
     achievements: [
-      'Architected fully serverless solution using AWS Cognito, DynamoDB, and Lambda',
-      'Implemented AI capabilities using AWS Bedrock and Claude/ChatGPT APIs for intelligent classification',
-      'Achieved zero security breaches with robust JWT authentication and encryption',
-      'Built automated ETL AI pipeline for data processing and transformation',
-      'Designed multi-provider integration supporting major email marketing platforms',
-      'Implemented real-time backup scheduling with automated notifications'
+      'Built AI-powered data backup platform integrating with 50+ business tools (Keap, HubSpot, Salesforce, Stripe, Shopify, Mailchimp, ActiveCampaign)',
+      'Architected Go & Node.js Lambda microservices with delta sync optimization and conflict resolution',
+      'Implemented AI capabilities for intelligent data mapping, predictive analytics, and smart anomaly alerts',
+      'Built enterprise hierarchy system with unlimited nesting for complex organizations',
+      'Engineered AES-256 encryption at rest and in transit with multi-region storage redundancy',
+      'Developed real-time synchronization with webhook-based updates and automated scheduling',
+      'Created point-in-time recovery system with version control, audit trails, and rollback capabilities',
+      'Implemented role-based access controls with granular permissions and regular security audits',
+      'Built multi-format export system (JSON, CSV, XML) with full API access',
+      'Designed tiered pricing model (Starter, Professional, Enterprise) with custom integration services'
     ],
-    technologies: ['AWS', 'React', 'DynamoDB', 'Material UI', 'AWS Bedrock', 'Claude AI', 'Serverless', 'JWT', 'REST API'],
-    metrics: ['10K+ backups processed', '0 security breaches', 'Multi-provider support'],
+    technologies: ['Go', 'Node.js', 'Next.js', 'AWS Lambda', 'API Gateway', 'DynamoDB', 'S3', 'Cognito', 'TypeScript', 'AWS Bedrock', 'Claude AI', 'Webhooks', 'AES-256 Encryption', 'REST API'],
+    metrics: ['50+ integrations', '0 security breaches', 'Multi-region storage', 'Enterprise-grade security'],
     category: 'entrepreneurship'
   },
   {

@@ -78,25 +78,27 @@ export const projects: Project[] = [
   {
     id: 'listbackup',
     title: 'ListBackup.ai',
-    subtitle: 'Multi-Platform Data Backup & Integration',
-    description: 'Serverless SaaS backing up business data from 15+ platforms with enterprise hierarchy support',
-    longDescription: 'Cloud-native data backup platform built on AWS serverless infrastructure. Connects to 15+ business platforms including CRMs, payment processors, and communication tools. Features enterprise hierarchy for complex organizations, automated scheduling, and military-grade encryption.',
-    technologies: ['Go', 'Node.js', 'Next.js', 'AWS Lambda', 'API Gateway', 'DynamoDB', 'S3', 'Cognito', 'TypeScript'],
+    subtitle: 'AI-Powered Data Backup Platform',
+    description: 'AI-powered backup platform connecting 50+ business tools with intelligent automation and enterprise security',
+    longDescription: 'AI-powered data backup and integration platform for modern businesses. Connects to 50+ business tools across CRM, payments, email marketing, and e-commerce. Features intelligent data mapping, predictive analytics, smart alerts, enterprise hierarchy, and AES-256 encryption with multi-region storage.',
+    technologies: ['Go', 'Node.js', 'Next.js', 'AWS Lambda', 'API Gateway', 'DynamoDB', 'S3', 'Cognito', 'TypeScript', 'AWS Bedrock', 'Claude AI'],
     category: 'saas',
     featured: true,
     links: { live: 'https://listbackup.ai' },
     image: '/projects/listbackup-placeholder.png',
     metrics: [
-      { label: 'Integrations', value: '15+' },
-      { label: 'Security Breaches', value: '0' }
+      { label: 'Integrations', value: '50+' },
+      { label: 'Security Breaches', value: '0' },
+      { label: 'Storage', value: 'Multi-region' }
     ],
     highlights: [
-      '15+ platform integrations (Keap, Stripe, GoHighLevel, HubSpot, ActiveCampaign)',
-      'Go & Node.js Lambda microservices architecture',
-      'Enterprise hierarchy with unlimited nesting',
-      'Automated backup scheduling with real-time monitoring',
-      'Military-grade encryption at rest and in transit',
-      'Per-account data isolation with S3 lifecycle policies'
+      '50+ platform integrations (Keap, HubSpot, Salesforce, Stripe, Shopify, Mailchimp, ActiveCampaign)',
+      'AI-powered intelligent data mapping and predictive analytics',
+      'Go & Node.js Lambda microservices with delta sync optimization',
+      'Enterprise hierarchy with unlimited nesting and role-based access',
+      'AES-256 encryption with multi-region storage redundancy',
+      'Point-in-time recovery with version control and audit trails',
+      'Real-time webhook synchronization with smart anomaly alerts'
     ]
   },
   {
