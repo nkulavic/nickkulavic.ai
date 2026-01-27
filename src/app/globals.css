@@ -211,6 +211,26 @@
 .dark .border-green-300 { border-color: rgba(34, 197, 94, 0.3) !important; }
 .dark .text-green-700 { color: #4ade80 !important; }
 
+/* Dark mode gradient text - make headings visible */
+.dark .from-gray-900 { --tw-gradient-from: var(--color-cream) !important; }
+.dark .via-gray-900 { --tw-gradient-via: var(--color-cream) !important; }
+.dark .to-gray-900 { --tw-gradient-to: var(--color-cream) !important; }
+.dark .from-gray-800 { --tw-gradient-from: var(--color-gray-200) !important; }
+.dark .via-gray-800 { --tw-gradient-via: var(--color-gray-200) !important; }
+.dark .to-gray-800 { --tw-gradient-to: var(--color-gray-200) !important; }
+
+/* Dark mode cards and interactive elements */
+.dark .hover\:bg-gray-100:hover { background-color: var(--color-gray-800) !important; }
+.dark .hover\:bg-gray-200:hover { background-color: var(--color-gray-700) !important; }
+.dark .hover\:bg-gray-50:hover { background-color: var(--color-gray-800) !important; }
+
+/* Dark mode mobile menu */
+.dark .bg-white.border-t { background-color: var(--color-gray-900) !important; }
+
+/* Dark mode theme toggle button */
+.dark .bg-gray-100 { background-color: var(--color-gray-800) !important; }
+.dark .hover\:bg-gray-200:hover { background-color: var(--color-gray-700) !important; }
+
 /* Keyframe Animations */
 @keyframes fadeIn {
   0% { opacity: 0; }

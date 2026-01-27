@@ -8,12 +8,15 @@ import { skillCategories } from '@/app/data/skills';
 import { projects } from '@/app/data/projects';
 import { certifications, education, careerStats, summaryHighlights } from '@/app/data/education';
 import { siteConfig, availability } from '@/app/data/siteConfig';
+import Header from '@/app/components/Header';
+import Footer from '@/app/components/Footer';
 
 export default function ResumePage() {
   return (
     <div className="min-h-screen bg-cream">
+      <Header />
       {/* Header Section - Light */}
-      <div className="bg-gradient-to-b from-white to-cream py-20 px-8 relative overflow-hidden">
+      <div className="bg-gradient-to-b from-white to-cream pt-32 pb-20 px-8 relative overflow-hidden">
         {/* Animated background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
@@ -736,6 +739,8 @@ export default function ResumePage() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
