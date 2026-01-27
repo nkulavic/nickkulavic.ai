@@ -115,7 +115,7 @@ export const platforms: Platform[] = [
     name: 'Dropbox',
     category: 'productivity',
     logo: '/images/platforms/dropbox.png',
-    yearsExperience: 5,
+    yearsExperience: 11,
     integrationLevel: 'moderate',
     description: 'Dropbox It helper for file storage'
   },
@@ -153,7 +153,7 @@ export const platforms: Platform[] = [
     name: 'WooCommerce',
     category: 'ecommerce',
     logo: '/images/platforms/woocommerce.png',
-    yearsExperience: 6,
+    yearsExperience: 12,
     integrationLevel: 'moderate'
   },
   {
@@ -161,7 +161,7 @@ export const platforms: Platform[] = [
     name: 'Stripe',
     category: 'payment',
     logo: '/images/platforms/stripe.png',
-    yearsExperience: 8,
+    yearsExperience: 11,
     integrationLevel: 'deep',
     description: 'Payment processing and subscription billing'
   },
@@ -181,7 +181,7 @@ export const platforms: Platform[] = [
     name: 'YouTube',
     category: 'video',
     logo: '/images/platforms/youtube.png',
-    yearsExperience: 5,
+    yearsExperience: 11,
     integrationLevel: 'moderate',
     description: 'Video engagement tracking'
   },
@@ -190,7 +190,7 @@ export const platforms: Platform[] = [
     name: 'Wistia',
     category: 'video',
     logo: '/images/platforms/wistia.png',
-    yearsExperience: 5,
+    yearsExperience: 11,
     integrationLevel: 'moderate'
   },
   {
@@ -198,7 +198,7 @@ export const platforms: Platform[] = [
     name: 'Vimeo',
     category: 'video',
     logo: '/images/platforms/vimeo.png',
-    yearsExperience: 5,
+    yearsExperience: 11,
     integrationLevel: 'moderate'
   },
 
@@ -208,7 +208,7 @@ export const platforms: Platform[] = [
     name: 'Zendesk',
     category: 'support',
     logo: '/images/platforms/zendesk.png',
-    yearsExperience: 6,
+    yearsExperience: 13,
     integrationLevel: 'deep',
     description: 'Support ticket integration with AlignLife'
   },
@@ -217,7 +217,7 @@ export const platforms: Platform[] = [
     name: 'Teamwork.com',
     category: 'project-management',
     logo: '/images/platforms/teamwork.png',
-    yearsExperience: 6,
+    yearsExperience: 14,
     integrationLevel: 'deep',
     description: 'Deep integrations with WordPress, Zendesk, Magento, Shopify at AlignLife'
   },
@@ -237,7 +237,7 @@ export const platforms: Platform[] = [
     name: 'Facebook',
     category: 'marketing',
     logo: '/images/platforms/facebook.png',
-    yearsExperience: 6,
+    yearsExperience: 11,
     integrationLevel: 'moderate',
     description: 'Lead Ads and Custom Audiences integration'
   }
