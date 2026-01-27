@@ -119,7 +119,7 @@ export const experiences: ExperienceEntry[] = [
     location: 'Peoria, IL',
     startDate: 'January 2011',
     endDate: 'December 2016',
-    description: 'Built complete franchise technology stack with deep platform integrations connecting Teamwork.com, WordPress, Zendesk, Magento, and Shopify for chiropractic practice management.',
+    description: 'Scaled franchise technology infrastructure from 3 to 30 locations during tenure. Built complete technology stack integrating Teamwork.com, WordPress, Zendesk, and e-commerce platforms to support Five Star Services: Chiropractic, Toxin Elimination, Nutrition Enhancement, Hormone Balance, and Weight Loss programs.',
     logo: {
       initials: 'AL',
       color: '#10B981',
@@ -127,19 +127,20 @@ export const experiences: ExperienceEntry[] = [
       imagePath: '/images/companies/alignlife.svg'
     },
     achievements: [
+      'Scaled franchise technology infrastructure supporting growth from 3 to 30 locations across multiple states',
       'Architected deeply integrated Teamwork.com project management system connecting WordPress, Zendesk, Magento, and Shopify',
-      'Built custom Teamwork.com API integrations for franchise operations, task automation, and cross-platform synchronization',
+      'Built unified technology platform supporting Five Star Services: Chiropractic, Toxin Elimination, Nutrition Enhancement, Hormone Balance, and Weight Loss',
       'Designed automated workflows bridging patient management (WordPress), support tickets (Zendesk), and e-commerce (Magento/Shopify)',
-      'Developed unified franchise technology infrastructure serving 20+ chiropractic locations with real-time data flow',
-      'Created WordPress-based patient websites with custom scheduling integration and Teamwork.com task tracking',
-      'Implemented Zendesk support system integrated with Teamwork.com for seamless ticket-to-task conversion',
-      'Built Infusionsoft automation workflows for drip campaigns, patient recalls, and staff task management',
-      'Led ACEVA.com migration from Magento to Shopify with integrated order tracking in Teamwork.com',
+      'Developed franchise-wide technology infrastructure enabling rapid location expansion with standardized systems',
+      'Created WordPress-based patient websites with custom scheduling integration and Teamwork.com task tracking for each location',
+      'Implemented Zendesk support system integrated with Teamwork.com for seamless ticket-to-task conversion across all franchises',
+      'Built Infusionsoft automation workflows for drip campaigns, patient recalls, and multi-location staff task management',
+      'Led ACEVA.com e-commerce platform migration and integration with franchise operations',
       'Engineered cross-platform API layer connecting CRM, scheduling, billing, support, and e-commerce systems',
-      'Established operational procedures and standardized systems for franchise scalability'
+      'Established operational procedures and standardized technology playbook enabling 10x franchise growth'
     ],
     technologies: ['Teamwork.com API', 'WordPress', 'Zendesk API', 'Magento', 'Shopify', 'Infusionsoft API', 'PHP', 'JavaScript', 'MySQL', 'REST API', 'OAuth', 'Webhooks'],
-    metrics: ['20+ locations supported', '5+ platform integrations', '1000+ practitioners', 'Real-time sync'],
+    metrics: ['3→30 locations', '10x growth', '5+ platform integrations', 'Multi-state expansion'],
     category: 'full-stack'
   },
   {
@@ -149,7 +150,7 @@ export const experiences: ExperienceEntry[] = [
     location: 'Peoria, IL',
     startDate: 'January 2011',
     endDate: 'December 2016',
-    description: 'Managed operational and technical aspects of nutraceutical e-commerce platform, including platform architecture and migration.',
+    description: 'Built end-to-end e-commerce platform for nutraceutical company serving 100+ wholesale practitioner locations nationwide. Architected recurring subscription system, wholesale pricing tiers, and complete platform migration from Magento to Shopify.',
     logo: {
       initials: 'AC',
       color: '#059669',
@@ -157,16 +158,20 @@ export const experiences: ExperienceEntry[] = [
       imagePath: '/images/companies/aceva.png'
     },
     achievements: [
-      'Maintained and optimized Magento-based e-commerce platform for nutraceutical products',
-      'Led complete platform migration from Magento to Shopify for improved performance',
-      'Implemented inventory management and order fulfillment automation',
-      'Configured product catalogs, customer accounts, and payment processing',
-      'Optimized checkout flows and user experience for e-commerce conversions',
-      'Managed customer data, subscription programs, and recurring billing',
-      'Integrated with third-party fulfillment and shipping providers'
+      'Built end-to-end e-commerce platform serving 100+ wholesale practitioner locations across the country',
+      'Architected recurring subscription system for nutraceutical auto-ship programs with flexible scheduling',
+      'Developed wholesale/practitioner pricing tier system with custom discount structures and volume pricing',
+      'Led complete platform migration from Magento to Shopify, improving performance and reducing maintenance overhead',
+      'Implemented multi-tier customer hierarchy: retail customers, wholesale practitioners, and franchise locations',
+      'Built automated inventory management system syncing across e-commerce and wholesale channels',
+      'Created practitioner portal for wholesale ordering, patient recommendations, and commission tracking',
+      'Engineered integration between ACEVA e-commerce and AlignLife franchise CRM systems',
+      'Developed automated fulfillment workflows with third-party logistics providers',
+      'Implemented subscription billing with Stripe including failed payment recovery and dunning management',
+      'Optimized checkout flows and product pages resulting in improved conversion rates'
     ],
-    technologies: ['Magento', 'Shopify', 'E-commerce', 'Inventory Management', 'Payment Processing', 'Liquid', 'PHP'],
-    metrics: ['Successful platform migration', 'Improved page load times', 'Increased conversion rates'],
+    technologies: ['Magento', 'Shopify', 'Shopify Liquid', 'E-commerce', 'Subscription Billing', 'Stripe', 'Inventory Management', 'Wholesale Pricing', 'PHP', 'JavaScript', 'REST API'],
+    metrics: ['100+ wholesale locations', 'Recurring subscriptions', 'Nationwide distribution', 'Platform migration'],
     category: 'full-stack'
   }
   // Additional roles to be extracted from resume HTML files
