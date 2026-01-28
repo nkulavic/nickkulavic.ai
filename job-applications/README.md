@@ -23,6 +23,8 @@ Prepared: January 28, 2026
 | Hightouch | Software Engineer, AI Agents | Competitive | Ready to apply |
 | Abacus.AI | Full Stack AI Engineer | Competitive | Ready to apply |
 | Skylight | Full Stack Engineer, AI Features | $200K-$220K | Ready to apply |
+| OpenAI | Software Engineer / Applied AI | $200K+ | Ready to apply |
+| Salesforge | Senior Golang Backend Engineer | Remote EU | Ready to apply |
 
 ## Application Links
 
@@ -63,3 +65,6 @@ Prepared: January 28, 2026
 - `cover-letter-hightouch.md` - Hightouch AI Agents (YC - integrations focus!)
 - `cover-letter-abacus.md` - Abacus.AI Full Stack AI
 - `cover-letter-skylight.md` - Skylight AI Features ($200-220K)
+- `cover-letter-openai.md` - OpenAI Software/Applied AI Engineer
+- `cover-letter-salesforge.md` - Salesforge Go Backend (sales AI)
+- `cover-letter-figure.md` - Figure Fintech (mortgage + blockchain)
