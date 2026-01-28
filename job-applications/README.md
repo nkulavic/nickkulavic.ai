@@ -19,6 +19,8 @@ Prepared: January 28, 2026
 | Stripe | AI Solutions Architect | $203K-$305K | Ready to apply |
 | Stripe | ML Engineer, Payments ML Accelerator | $212K-$318K | Ready to apply |
 | Vercel | Software Engineer, Marketplace | Competitive | Ready to apply |
+| Datadog | Software Engineer, Data & Analytics | Competitive | Ready to apply |
+| Hightouch | Software Engineer, AI Agents | Competitive | Ready to apply |
 
 ## Application Links
 
@@ -55,3 +57,5 @@ Prepared: January 28, 2026
 - `cover-letter-amerisave.md` - AmeriSave Director of AI (Mortgage tech - perfect match!)
 - `cover-letter-stripe.md` - Stripe AI Solutions Architect ($203-305K)
 - `cover-letter-vercel.md` - Vercel Marketplace Engineer
+- `cover-letter-datadog.md` - Datadog Data & Analytics Platform
+- `cover-letter-hightouch.md` - Hightouch AI Agents (YC - integrations focus!)
