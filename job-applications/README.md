@@ -26,6 +26,7 @@ Prepared: January 28, 2026
 | OpenAI | Software Engineer / Applied AI | $200K+ | Ready to apply |
 | Airtable | Senior SE, Observability (LLM) | Competitive | Ready to apply |
 | Zapier | Software Engineer, Integrations | Remote | Ready to apply |
+| Retool | Software Engineer | Remote/SF | Ready to apply |
 
 ## Application Links
 
@@ -71,3 +72,4 @@ Prepared: January 28, 2026
 - `cover-letter-figure.md` - Figure Fintech (mortgage + blockchain)
 - `cover-letter-airtable.md` - Airtable LLM Observability
 - `cover-letter-zapier.md` - Zapier Integrations (you built a competitor!)
+- `cover-letter-retool.md` - Retool Internal Tools
