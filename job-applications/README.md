@@ -21,6 +21,8 @@ Prepared: January 28, 2026
 | Vercel | Software Engineer, Marketplace | Competitive | Ready to apply |
 | Datadog | Software Engineer, Data & Analytics | Competitive | Ready to apply |
 | Hightouch | Software Engineer, AI Agents | Competitive | Ready to apply |
+| Abacus.AI | Full Stack AI Engineer | Competitive | Ready to apply |
+| Skylight | Full Stack Engineer, AI Features | $200K-$220K | Ready to apply |
 
 ## Application Links
 
@@ -59,3 +61,5 @@ Prepared: January 28, 2026
 - `cover-letter-vercel.md` - Vercel Marketplace Engineer
 - `cover-letter-datadog.md` - Datadog Data & Analytics Platform
 - `cover-letter-hightouch.md` - Hightouch AI Agents (YC - integrations focus!)
+- `cover-letter-abacus.md` - Abacus.AI Full Stack AI
+- `cover-letter-skylight.md` - Skylight AI Features ($200-220K)
