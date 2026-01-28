@@ -16,6 +16,9 @@ Prepared: January 28, 2026
 | Veeam | Senior Staff Platform Engineer | $155K+ avg | Ready to apply |
 | Estuary | Data Platform Engineer | Competitive | Ready to apply |
 | Figure (FIGR) | AI/Fintech Engineer | Competitive | Ready to apply |
+| Stripe | AI Solutions Architect | $203K-$305K | Ready to apply |
+| Stripe | ML Engineer, Payments ML Accelerator | $212K-$318K | Ready to apply |
+| Vercel | Software Engineer, Marketplace | Competitive | Ready to apply |
 
 ## Application Links
 
@@ -50,3 +53,5 @@ Prepared: January 28, 2026
 - `cover-letter-pasito.md` - Pasito Full Stack + AI
 - `cover-letter-template.md` - Generic template for other applications
 - `cover-letter-amerisave.md` - AmeriSave Director of AI (Mortgage tech - perfect match!)
+- `cover-letter-stripe.md` - Stripe AI Solutions Architect ($203-305K)
+- `cover-letter-vercel.md` - Vercel Marketplace Engineer
