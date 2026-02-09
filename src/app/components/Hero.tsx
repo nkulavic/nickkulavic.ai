@@ -1,65 +1,121 @@
-"use client"
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
+import { BackgroundBeams } from "@/components/ui/aceternity/background-beams";
+import { Spotlight } from "@/components/ui/aceternity/spotlight";
+import { TextGenerateEffect } from "@/components/ui/aceternity/text-generate-effect";
+import { CardContainer, CardBody, CardItem } from "@/components/ui/aceternity/3d-card";
+import { MovingBorder } from "@/components/ui/aceternity/moving-border";
+import { siteConfig, heroStats, heroDescription } from "@/app/data/siteConfig";
 
 const Hero = () => {
   return (
-    <section className="relative py-20 px-4 md:px-8 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -right-10 -top-10 w-72 h-72 bg-blue-400 dark:bg-blue-600 rounded-full opacity-10 blur-3xl"></div>
-        <div className="absolute -left-10 top-40 w-80 h-80 bg-indigo-400 dark:bg-indigo-600 rounded-full opacity-10 blur-3xl"></div>
-        <div className="absolute right-20 bottom-10 w-60 h-60 bg-purple-400 dark:bg-purple-600 rounded-full opacity-10 blur-3xl"></div>
-      </div>
-      
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <section className="relative min-h-screen w-full overflow-hidden bg-cream dark:bg-gray-950">
+      {/* Background Effects */}
+      <BackgroundBeams className="absolute inset-0" />
+      <Spotlight className="absolute -top-40 left-0 md:-top-20 md:left-60" fill="#0066FF" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-32">
+        <div className="flex flex-col items-center justify-center text-center">
+          {/* Title with Text Generate Effect */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-4"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 text-transparent bg-clip-text">
-              Nick Kulavic
-            </h1>
-            <h2 className="text-2xl md:text-3xl font-medium text-gray-700 dark:text-gray-300 mb-6">
-              AI Developer & SaaS Entrepreneur
-            </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-              Building innovative AI solutions and SaaS products that solve real business problems.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <motion.a
-                href="#contact"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                Contact Me
-              </motion.a>
-              <motion.a
-                href="#companies"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 border-2 border-blue-600 dark:border-blue-400 font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                View Portfolio
-              </motion.a>
-            </div>
+            <TextGenerateEffect
+              words={siteConfig.name}
+              className="text-6xl font-bold text-gray-900 dark:text-cream md:text-7xl lg:text-8xl"
+            />
           </motion.div>
-          
+
+          {/* Title and Subtitle */}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mb-4 bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-2xl font-semibold text-transparent md:text-3xl lg:text-4xl"
+          >
+            {siteConfig.title}
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="mb-12 max-w-3xl text-lg text-gray-700 dark:text-gray-300 md:text-xl"
+          >
+            {heroDescription.primary}
+          </motion.p>
+
+          {/* CTA Buttons */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="flex justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            className="mb-16 flex flex-wrap items-center justify-center gap-4"
           >
-            <div className="relative w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-gray-800 dark:to-indigo-900 rounded-full shadow-2xl flex items-center justify-center overflow-hidden border-4 border-white dark:border-gray-700">
-              <span className="text-8xl md:text-9xl font-bold text-gray-500 dark:text-gray-400">NK</span>
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-indigo-600/10 dark:from-blue-400/10 dark:to-indigo-400/10"></div>
-            </div>
+            <MovingBorder
+              as="a"
+              href={`mailto:${siteConfig.email}`}
+              duration={3000}
+              className="text-lg font-medium text-gray-900 dark:text-cream"
+            >
+              Contact Me
+            </MovingBorder>
+
+            <a
+              href="/resume"
+              className="rounded-lg border-2 border-accent px-8 py-3 text-lg font-medium text-accent transition-all duration-300 hover:bg-accent hover:text-white"
+            >
+              View Resume
+            </a>
           </motion.div>
+
+          {/* Stats Grid with 3D Cards */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="grid w-full max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          >
+            {heroStats.map((stat, index) => (
+              <CardContainer key={index} className="w-full">
+                <CardBody className="group/card relative h-full w-full rounded-xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900">
+                  <CardItem
+                    translateZ={50}
+                    className="mb-2 text-4xl"
+                  >
+                    {stat.icon}
+                  </CardItem>
+                  <CardItem
+                    translateZ={60}
+                    className="mb-1 text-3xl font-bold text-accent md:text-4xl"
+                  >
+                    {stat.value}
+                  </CardItem>
+                  <CardItem
+                    translateZ={40}
+                    className="text-sm font-medium text-gray-600 dark:text-gray-400"
+                  >
+                    {stat.label}
+                  </CardItem>
+                </CardBody>
+              </CardContainer>
+            ))}
+          </motion.div>
+
+          {/* Secondary Description */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="mt-12 max-w-4xl text-center text-base text-gray-600 dark:text-gray-400 md:text-lg"
+          >
+            {heroDescription.secondary}
+          </motion.p>
         </div>
       </div>
     </section>
