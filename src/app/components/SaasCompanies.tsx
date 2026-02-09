@@ -1,10 +1,20 @@
 "use client";
 
 import React from "react";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/aceternity/3d-card";
-import { BackgroundGradient } from "@/components/ui/aceternity/background-gradient";
-import { GridPattern } from "@/components/ui/aceternity/grid-pattern";
+
+// Lazy load decorative background effects
+const BackgroundGradient = dynamic(
+  () => import("@/components/ui/aceternity/background-gradient").then((mod) => mod.BackgroundGradient),
+  { ssr: false }
+);
+
+const GridPattern = dynamic(
+  () => import("@/components/ui/aceternity/grid-pattern").then((mod) => mod.GridPattern),
+  { ssr: false }
+);
 
 interface Company {
   name: string;

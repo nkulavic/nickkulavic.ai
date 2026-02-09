@@ -1,13 +1,23 @@
 "use client";
 
 import React from "react";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import { BackgroundBeams } from "@/components/ui/aceternity/background-beams";
-import { Spotlight } from "@/components/ui/aceternity/spotlight";
 import { TextGenerateEffect } from "@/components/ui/aceternity/text-generate-effect";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/aceternity/3d-card";
 import { MovingBorder } from "@/components/ui/aceternity/moving-border";
 import { siteConfig, heroStats, heroDescription } from "@/app/data/siteConfig";
+
+// Lazy load heavy visual effects for better initial page load
+const BackgroundBeams = dynamic(
+  () => import("@/components/ui/aceternity/background-beams").then((mod) => mod.BackgroundBeams),
+  { ssr: false }
+);
+
+const Spotlight = dynamic(
+  () => import("@/components/ui/aceternity/spotlight").then((mod) => mod.Spotlight),
+  { ssr: false }
+);
 
 const Hero = () => {
   return (

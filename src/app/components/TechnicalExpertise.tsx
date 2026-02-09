@@ -4,6 +4,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BackgroundGradient } from '@/components/ui/aceternity/background-gradient';
+import { AnimatedCounter } from '@/components/ui/aceternity/animated-counter';
+import { CardContainer, CardBody } from '@/components/ui/aceternity/3d-card';
 import { skillCategories, getSkillCounts, getProductionSkills } from '@/app/data/skills';
 
 export default function TechnicalExpertise() {
@@ -71,9 +73,10 @@ export default function TechnicalExpertise() {
                   >
                     {stat.icon}
                   </motion.div>
-                  <div className={`text-3xl font-extrabold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2 relative z-10`}>
-                    {stat.value}
-                  </div>
+                  <AnimatedCounter
+                    value={stat.value}
+                    className={`text-3xl font-extrabold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2 relative z-10`}
+                  />
                   <div className="text-sm text-gray-600 font-semibold uppercase tracking-wide relative z-10 group-hover:text-gray-800 transition-colors">
                     {stat.label}
                   </div>
