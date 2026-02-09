@@ -48,7 +48,7 @@ export const siteConfig: SiteConfig = {
 
 export const availability: Availability = {
   status: 'available',
-  roles: ['Senior AI Engineer', 'Platform Engineer', 'DevOps/MLOps', 'Staff Engineer'],
+  roles: ['Senior AI Integration Engineer', 'Platform Engineer', 'Staff Full-Stack Engineer'],
   location: 'Remote or Denver-based'
 };
 

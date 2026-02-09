@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 import { useTheme } from './ThemeProvider';
 
 const Header = () => {
@@ -19,29 +20,35 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 bg-cream/95 backdrop-blur-md shadow-sm z-50 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-8">
         <div className="flex justify-between items-center h-16">
-          <motion.a
+          <Link
             href="/"
             className="text-xl font-bold text-gray-900 hover:text-accent transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
             NK
-          </motion.a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => (
-              <motion.a
-                key={index}
-                href={item.href}
-                target={item.external ? '_blank' : undefined}
-                rel={item.external ? 'noopener noreferrer' : undefined}
-                className="text-gray-700 hover:text-accent transition-colors font-medium text-body-sm"
-                whileHover={{ y: -2 }}
-                whileTap={{ y: 0 }}
-              >
-                {item.name}
-              </motion.a>
+              item.external ? (
+                <a
+                  key={index}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-700 hover:text-accent transition-colors font-medium text-body-sm"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  key={index}
+                  href={item.href}
+                  className="text-gray-700 hover:text-accent transition-colors font-medium text-body-sm"
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
 
             {/* Theme Toggle Button */}
@@ -118,19 +125,27 @@ const Header = () => {
           >
             <nav className="px-8 py-4 space-y-2">
               {navItems.map((item, index) => (
-                <motion.a
-                  key={index}
-                  href={item.href}
-                  target={item.external ? '_blank' : undefined}
-                  rel={item.external ? 'noopener noreferrer' : undefined}
-                  className="block py-3 px-4 text-gray-700 hover:text-accent hover:bg-gray-50 rounded-lg transition-colors font-medium"
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </motion.a>
+                item.external ? (
+                  <a
+                    key={index}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block py-3 px-4 text-gray-700 hover:text-accent hover:bg-gray-50 rounded-lg transition-colors font-medium"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={index}
+                    href={item.href}
+                    className="block py-3 px-4 text-gray-700 hover:text-accent hover:bg-gray-50 rounded-lg transition-colors font-medium"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
             </nav>
           </motion.div>

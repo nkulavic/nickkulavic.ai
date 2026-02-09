@@ -3,8 +3,8 @@ export default function JsonLd() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Nick Kulavic",
-    jobTitle: "AI Engineer & Full-Stack Developer",
-    description: "AI & Full-Stack Developer with 14+ years building scalable SaaS solutions. Expert in AWS, React, TypeScript, and AI integration.",
+    jobTitle: "Senior AI & Platform Engineer",
+    description: "Senior AI & Platform Engineer with 14+ years building enterprise AI systems, serverless AWS architecture, and SaaS platforms. $1.7M+ revenue generated.",
     url: "https://nickkulavic.ai",
     sameAs: [
       "https://linkedin.com/in/nickkulavic",
@@ -17,15 +17,10 @@ export default function JsonLd() {
       addressCountry: "US"
     },
     knowsAbout: [
-      "Artificial Intelligence",
-      "Machine Learning",
       "AWS",
-      "React",
-      "TypeScript",
-      "Node.js",
+      "AI Engineering",
       "Serverless Architecture",
-      "Full-Stack Development",
-      "SaaS Development",
+      "SaaS",
       "API Integration"
     ],
     hasCredential: [
@@ -47,29 +42,11 @@ export default function JsonLd() {
     "@type": "WebSite",
     name: "Nick Kulavic Portfolio",
     url: "https://nickkulavic.ai",
-    description: "Professional portfolio of Nick Kulavic, AI Engineer & Full-Stack Developer",
+    description: "Professional portfolio of Nick Kulavic, Senior AI & Platform Engineer",
     author: {
       "@type": "Person",
       name: "Nick Kulavic"
     }
-  };
-
-  const professionalServiceSchema = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "Nick Kulavic - Software Development",
-    description: "AI Engineering, Full-Stack Development, and SaaS Solutions",
-    areaServed: {
-      "@type": "Place",
-      name: "United States"
-    },
-    serviceType: [
-      "AI Engineering",
-      "Full-Stack Development",
-      "SaaS Development",
-      "AWS Cloud Solutions",
-      "API Integration"
-    ]
   };
 
   return (
@@ -81,10 +58,6 @@ export default function JsonLd() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }}
       />
     </>
   );

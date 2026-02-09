@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -104,21 +105,30 @@ const Footer = () => {
             <h4 className="text-body font-semibold text-gray-700 mb-4">Quick Links</h4>
             <div className="flex flex-col gap-3">
               {[
-                { name: 'Home', href: '/', icon: '🏠' },
-                { name: 'Resume', href: '/resume', icon: '📄' },
-                { name: 'Projects', href: '/#projects', icon: '💼' },
-                { name: 'Contact', href: 'mailto:nick@nickkulavic.com', icon: '✉️' }
+                { name: 'Home', href: '/', icon: '🏠', internal: true },
+                { name: 'Resume', href: '/resume', icon: '📄', internal: true },
+                { name: 'Projects', href: '/#projects', icon: '💼', internal: true },
+                { name: 'Contact', href: 'mailto:nick@nickkulavic.com', icon: '✉️', internal: false }
               ].map((item) => (
-                <motion.a
-                  key={item.name}
-                  href={item.href}
-                  className="flex items-center gap-2 text-gray-600 hover:text-accent transition-colors text-body-sm group"
-                  whileHover={{ x: 4 }}
-                  transition={{ type: 'spring', stiffness: 200 }}
-                >
-                  <span className="group-hover:scale-110 transition-transform">{item.icon}</span>
-                  {item.name}
-                </motion.a>
+                item.internal ? (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="flex items-center gap-2 text-gray-600 hover:text-accent transition-colors text-body-sm group"
+                  >
+                    <span className="group-hover:scale-110 transition-transform">{item.icon}</span>
+                    {item.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="flex items-center gap-2 text-gray-600 hover:text-accent transition-colors text-body-sm group"
+                  >
+                    <span className="group-hover:scale-110 transition-transform">{item.icon}</span>
+                    {item.name}
+                  </a>
+                )
               ))}
             </div>
           </motion.div>
@@ -133,17 +143,15 @@ const Footer = () => {
           >
             <h4 className="text-body font-semibold text-gray-700 mb-4">Get Started</h4>
             <div className="flex flex-col gap-3 w-full md:w-auto">
-              <motion.a
+              <Link
                 href="/resume"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 border border-gray-200 hover:border-accent/50 text-gray-700 hover:text-gray-900 rounded-lg transition-all text-body-sm font-medium"
-                whileHover={{ scale: 1.02, x: -2 }}
-                whileTap={{ scale: 0.98 }}
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
                 View Full Resume
-              </motion.a>
+              </Link>
               <motion.a
                 href="https://linkedin.com/in/nickkulavic"
                 target="_blank"
