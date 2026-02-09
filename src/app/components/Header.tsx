@@ -12,7 +12,7 @@ const Header = () => {
     { name: 'Home', href: '/' },
     { name: 'Resume', href: '/resume' },
     { name: 'LinkedIn', href: 'https://linkedin.com/in/nickkulavic', external: true },
-    { name: 'Contact', href: 'mailto:contact@nickkulavic.ai' }
+    { name: 'Contact', href: 'mailto:nick@nickkulavic.ai' }
   ];
 
   return (

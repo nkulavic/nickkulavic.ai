@@ -519,11 +519,115 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
   }
 
+  .grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  }
+
   .grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   }
 
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  /* Enhanced print styles for new layout */
+  .bg-gradient-to-r,
+  .bg-gradient-to-br,
+  .bg-gradient-to-b {
+    background: white !important;
+  }
+
+  /* Keep light gray backgrounds */
+  .from-gray-50,
+  .to-white,
+  .from-white,
+  .to-gray-50,
+  .from-accent\/5,
+  .to-blue-50 {
+    background-color: #fafafa !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Borders and accents */
+  .border-accent,
+  .border-l-4.border-accent {
+    border-color: #0066FF !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .border-accent\/20,
+  .border-accent\/30 {
+    border-color: rgba(0, 102, 255, 0.3) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Rounded corners print nicely */
+  .rounded-xl,
+  .rounded-lg,
+  .rounded-full {
+    border-radius: 8pt !important;
+  }
+
+  /* Accent backgrounds */
+  .bg-accent {
+    background-color: #0066FF !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Green badge */
+  .bg-green-50 {
+    background-color: rgba(34, 197, 94, 0.1) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .border-green-300 {
+    border-color: rgba(34, 197, 94, 0.4) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .text-green-700 {
+    color: #15803d !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* SVG icons */
+  svg {
+    display: inline-block !important;
+  }
+
+  /* Border styles */
+  .border-2 {
+    border-width: 2pt !important;
+  }
+
+  .border-l-4 {
+    border-left-width: 4pt !important;
+  }
+
+  /* Spacing adjustments */
+  section {
+    margin-bottom: 12pt !important;
+  }
+
+  /* Font weights */
+  .font-extrabold {
+    font-weight: 800 !important;
+  }
+
+  .font-bold {
+    font-weight: 700 !important;
+  }
+
+  .font-semibold {
+    font-weight: 600 !important;
   }
 }

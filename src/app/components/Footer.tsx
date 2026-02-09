@@ -25,7 +25,7 @@ const Footer = () => {
                 I&apos;m available for full-time opportunities.
               </p>
               <motion.a
-                href="mailto:contact@nickkulavic.ai"
+                href="mailto:nick@nickkulavic.ai"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-white font-semibold rounded-xl shadow-lg transition-all"
                 whileHover={{ scale: 1.05, boxShadow: '0 12px 32px rgba(0, 102, 255, 0.4)' }}
                 whileTap={{ scale: 0.98 }}
@@ -107,7 +107,7 @@ const Footer = () => {
                 { name: 'Home', href: '/', icon: '🏠' },
                 { name: 'Resume', href: '/resume', icon: '📄' },
                 { name: 'Projects', href: '/#projects', icon: '💼' },
-                { name: 'Contact', href: 'mailto:contact@nickkulavic.ai', icon: '✉️' }
+                { name: 'Contact', href: 'mailto:nick@nickkulavic.ai', icon: '✉️' }
               ].map((item) => (
                 <motion.a
                   key={item.name}
