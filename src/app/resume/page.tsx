@@ -672,7 +672,7 @@ export default function ResumePage() {
                 </motion.a>
 
                 <motion.a
-                  href="mailto:nick@nickkulavic.ai"
+                  href="mailto:nick@nickkulavic.com"
                   className="inline-flex items-center gap-3 px-10 py-5 bg-accent text-white hover:bg-accent-light transition-all rounded-2xl text-body-lg font-bold shadow-2xl hover:shadow-accent/50"
                   whileHover={{ scale: 1.05, y: -3, boxShadow: '0 20px 40px rgba(0, 102, 255, 0.4)' }}
                   whileTap={{ scale: 0.98 }}

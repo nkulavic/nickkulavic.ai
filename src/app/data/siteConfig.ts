@@ -37,7 +37,7 @@ export const siteConfig: SiteConfig = {
   title: 'Senior AI & Platform Engineer',
   tagline: 'I architect AI-powered enterprise systems that drive revenue and scale securely.',
   location: 'Denver, CO',
-  email: 'nick@nickkulavic.ai',
+  email: 'nick@nickkulavic.com',
   linkedin: 'linkedin.com/in/nickkulavic',
   linkedinUrl: 'https://linkedin.com/in/nickkulavic',
   github: 'nkulavic',
