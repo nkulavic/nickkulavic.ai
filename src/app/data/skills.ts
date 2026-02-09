@@ -39,74 +39,73 @@ export const skillCategories: SkillCategory[] = [
     ]
   },
   {
-    name: 'AWS Cloud Platform (Solutions Architect)',
+    name: 'AWS Cloud Platform (Serverless Solutions Architect)',
     shortName: 'AWS',
     priority: 2,
     icon: '☁️',
-    description: 'Full-stack AWS development, serverless architecture, and infrastructure management',
+    description: 'Expert in modern serverless architecture, infrastructure as code, and production-scale AWS systems',
     skills: [
-      // Compute
+      // Core Serverless Stack (Most Used)
       { name: 'Lambda (Serverless Functions)', level: 'expert', yearsExperience: 10, badge: 'Production' },
-      { name: 'EC2 (Elastic Compute)', level: 'expert', yearsExperience: 10 },
-      { name: 'ECS (Elastic Container Service)', level: 'advanced', yearsExperience: 5 },
-      { name: 'Fargate (Serverless Containers)', level: 'advanced', yearsExperience: 4 },
-      { name: 'Elastic Beanstalk', level: 'expert', yearsExperience: 10 },
-
-      // API & Integration
-      { name: 'API Gateway (v1 & v2)', level: 'expert', yearsExperience: 10, badge: 'Production' },
-      { name: 'EventBridge', level: 'expert', yearsExperience: 5 },
-      { name: 'Step Functions (Workflow Orchestration)', level: 'advanced', yearsExperience: 4 },
-      { name: 'SQS (Message Queues)', level: 'expert', yearsExperience: 8 },
-      { name: 'SNS (Notifications)', level: 'expert', yearsExperience: 10 },
-      { name: 'AppSync (GraphQL)', level: 'advanced', yearsExperience: 3 },
-
-      // Storage & Databases
-      { name: 'DynamoDB', level: 'expert', yearsExperience: 10, badge: 'Production' },
+      { name: 'API Gateway (v1 & v2 - HTTP/WebSocket)', level: 'expert', yearsExperience: 10, badge: 'Production' },
+      { name: 'DynamoDB (NoSQL Database)', level: 'expert', yearsExperience: 10, badge: 'Production' },
       { name: 'S3 (Object Storage)', level: 'expert', yearsExperience: 10, badge: 'Production' },
-      { name: 'RDS (Relational Database Service)', level: 'expert', yearsExperience: 10 },
-      { name: 'Aurora (MySQL/PostgreSQL)', level: 'advanced', yearsExperience: 7 },
-      { name: 'ElastiCache (Redis/Memcached)', level: 'advanced', yearsExperience: 5 },
-      { name: 'DocumentDB', level: 'intermediate', yearsExperience: 2 },
+      { name: 'IAM (Identity & Access Management)', level: 'expert', yearsExperience: 10, badge: 'Production' },
+      { name: 'CloudWatch (Monitoring & Logs)', level: 'expert', yearsExperience: 10, badge: 'Production' },
+      { name: 'Serverless Framework', level: 'expert', yearsExperience: 10, badge: 'Production' },
 
-      // Analytics & Data Processing
-      { name: 'Athena (SQL Analytics)', level: 'advanced', yearsExperience: 8 },
-      { name: 'Glue (ETL)', level: 'advanced', yearsExperience: 7 },
-      { name: 'Kinesis (Streaming Data)', level: 'advanced', yearsExperience: 5 },
+      // Event-Driven Architecture
+      { name: 'EventBridge (Event Bus)', level: 'expert', yearsExperience: 5, badge: 'Production' },
+      { name: 'SQS (Message Queues)', level: 'expert', yearsExperience: 8, badge: 'Production' },
+      { name: 'SNS (Pub/Sub Notifications)', level: 'expert', yearsExperience: 10, badge: 'Production' },
+      { name: 'Step Functions (State Machines)', level: 'advanced', yearsExperience: 4 },
+      { name: 'Kinesis (Real-time Streaming)', level: 'advanced', yearsExperience: 5 },
 
-      // Security & Identity
-      { name: 'Cognito (Authentication)', level: 'expert', yearsExperience: 10, badge: 'Production' },
-      { name: 'IAM (Identity & Access Management)', level: 'expert', yearsExperience: 10 },
-      { name: 'Secrets Manager', level: 'expert', yearsExperience: 7 },
+      // Security & Authentication
+      { name: 'Cognito (User Authentication)', level: 'expert', yearsExperience: 10, badge: 'Production' },
+      { name: 'Secrets Manager', level: 'expert', yearsExperience: 7, badge: 'Production' },
       { name: 'WAF (Web Application Firewall)', level: 'advanced', yearsExperience: 5 },
-      { name: 'Certificate Manager', level: 'expert', yearsExperience: 8 },
+      { name: 'Certificate Manager (SSL/TLS)', level: 'expert', yearsExperience: 8 },
+      { name: 'CloudTrail (Audit Logging)', level: 'expert', yearsExperience: 8 },
+
+      // Infrastructure as Code & DevOps
+      { name: 'CloudFormation (IaC)', level: 'expert', yearsExperience: 8, badge: 'Production' },
+      { name: 'CDK (Cloud Development Kit)', level: 'advanced', yearsExperience: 4 },
+      { name: 'SAM (Serverless Application Model)', level: 'expert', yearsExperience: 6 },
+      { name: 'Systems Manager (Parameter Store)', level: 'expert', yearsExperience: 6 },
 
       // Networking & CDN
-      { name: 'CloudFront (CDN)', level: 'expert', yearsExperience: 10 },
+      { name: 'CloudFront (CDN)', level: 'expert', yearsExperience: 10, badge: 'Production' },
       { name: 'Route53 (DNS)', level: 'expert', yearsExperience: 10 },
-      { name: 'VPC (Virtual Private Cloud)', level: 'advanced', yearsExperience: 8 },
+      { name: 'VPC (Virtual Private Cloud)', level: 'expert', yearsExperience: 8 },
       { name: 'Load Balancers (ALB/NLB)', level: 'expert', yearsExperience: 9 },
 
-      // Monitoring & DevOps
-      { name: 'CloudWatch (Monitoring & Logs)', level: 'expert', yearsExperience: 10, badge: 'Production' },
-      { name: 'CloudTrail (Audit Logging)', level: 'advanced', yearsExperience: 8 },
-      { name: 'X-Ray (Tracing)', level: 'advanced', yearsExperience: 5 },
-      { name: 'CloudFormation (IaC)', level: 'expert', yearsExperience: 8 },
-      { name: 'CDK (Cloud Development Kit)', level: 'advanced', yearsExperience: 4 },
-      { name: 'Systems Manager', level: 'advanced', yearsExperience: 6 },
+      // Container Orchestration
+      { name: 'Kubernetes (EKS)', level: 'advanced', yearsExperience: 4 },
+      { name: 'ECS (Elastic Container Service)', level: 'intermediate', yearsExperience: 3 },
+
+      // Databases & Storage
+      { name: 'RDS (PostgreSQL/MySQL)', level: 'expert', yearsExperience: 10 },
+      { name: 'Aurora Serverless', level: 'advanced', yearsExperience: 5 },
+      { name: 'ElastiCache (Redis)', level: 'advanced', yearsExperience: 5 },
+      { name: 'DocumentDB', level: 'intermediate', yearsExperience: 2 },
+
+      // Data & Analytics
+      { name: 'Athena (SQL on S3)', level: 'advanced', yearsExperience: 8 },
+      { name: 'Glue (ETL & Data Catalog)', level: 'advanced', yearsExperience: 7 },
 
       // AI/ML Services
-      { name: 'Bedrock (Managed AI)', level: 'expert', yearsExperience: 2, badge: 'Production' },
-      { name: 'SageMaker', level: 'intermediate', yearsExperience: 2 },
+      { name: 'Bedrock (Managed AI/LLM)', level: 'expert', yearsExperience: 2, badge: 'Production' },
+      { name: 'Textract (Document AI)', level: 'advanced', yearsExperience: 3 },
       { name: 'Comprehend (NLP)', level: 'advanced', yearsExperience: 3 },
-      { name: 'Textract (Document Analysis)', level: 'advanced', yearsExperience: 3 },
 
-      // Communication
+      // Additional Services
       { name: 'SES (Email Service)', level: 'expert', yearsExperience: 10, badge: 'Production' },
-
-      // CI/CD
-      { name: 'CodePipeline', level: 'advanced', yearsExperience: 6 },
-      { name: 'CodeBuild', level: 'advanced', yearsExperience: 6 },
-      { name: 'CodeDeploy', level: 'advanced', yearsExperience: 5 }
+      { name: 'X-Ray (Distributed Tracing)', level: 'advanced', yearsExperience: 5 },
+      { name: 'AppSync (GraphQL API)', level: 'advanced', yearsExperience: 3 },
+      { name: 'CodePipeline (CI/CD)', level: 'advanced', yearsExperience: 6 },
+      { name: 'Elastic Beanstalk', level: 'advanced', yearsExperience: 8 },
+      { name: 'EC2 (When needed)', level: 'advanced', yearsExperience: 10 }
     ]
   },
   {
