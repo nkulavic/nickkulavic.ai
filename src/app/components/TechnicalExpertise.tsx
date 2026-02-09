@@ -1,4 +1,5 @@
 'use client'
+// Enhanced Technical Expertise Display - v2.0
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
