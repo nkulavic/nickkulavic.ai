@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { platforms, platformCategories, getDeepIntegrations, getTotalPlatformCount } from '@/app/data/platforms';
-import { TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { CardContainer, CardBody, CardItem } from '@/components/ui/aceternity/3d-card';
 
 export default function PlatformShowcase() {

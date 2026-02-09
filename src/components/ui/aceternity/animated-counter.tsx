@@ -15,7 +15,14 @@ export function AnimatedCounter({
   direction = "up",
 }: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const motionValue = useMotionValue(direction === "down" ? value : 0);
+
+  // Handle non-numeric values
+  if (typeof value === "string" && isNaN(Number(value))) {
+    return <span className={className}>{value}</span>;
+  }
+
+  const numericValue = typeof value === "string" ? Number(value) : value;
+  const motionValue = useMotionValue(direction === "down" ? numericValue : 0);
   const springValue = useSpring(motionValue, {
     damping: 60,
     stiffness: 100,
@@ -24,26 +31,21 @@ export function AnimatedCounter({
 
   useEffect(() => {
     if (isInView) {
-      motionValue.set(direction === "down" ? 0 : Number(value));
+      motionValue.set(direction === "down" ? 0 : numericValue);
     }
-  }, [motionValue, isInView, value, direction]);
+  }, [motionValue, isInView, numericValue, direction]);
 
   useEffect(
     () =>
       springValue.on("change", (latest) => {
         if (ref.current) {
           ref.current.textContent = Intl.NumberFormat("en-US").format(
-            latest.toFixed(0)
+            Math.round(latest)
           );
         }
       }),
     [springValue]
   );
-
-  // Handle non-numeric values
-  if (typeof value === "string" && isNaN(Number(value))) {
-    return <span className={className}>{value}</span>;
-  }
 
   return <span className={className} ref={ref} />;
 }

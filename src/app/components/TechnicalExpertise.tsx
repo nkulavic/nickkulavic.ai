@@ -107,17 +107,17 @@ export default function TechnicalExpertise() {
             const hasMore = category.skills.length > displaySkills.length;
 
             return (
-              <motion.div
-                key={category.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                whileHover={{ y: -6, boxShadow: '0 12px 32px rgba(0, 102, 255, 0.15)' }}
-                className="bg-white rounded-xl p-6 border-2 border-gray-200 hover:border-accent/50 transition-all shadow-md group relative overflow-hidden"
-              >
-                {/* Subtle hover gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/3 via-transparent to-blue-500/3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <CardContainer key={category.name} className="w-full">
+                <CardBody className="w-full">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="bg-white rounded-xl p-6 border-2 border-gray-200 hover:border-accent/50 transition-all shadow-md group relative overflow-hidden w-full"
+                  >
+                    {/* Subtle hover gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/3 via-transparent to-blue-500/3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 <div className="flex items-start justify-between mb-4 relative z-10">
                   <div className="flex items-center gap-3">
                     <motion.span
@@ -187,14 +187,16 @@ export default function TechnicalExpertise() {
                   </motion.button>
                 )}
 
-                <div className="mt-4 pt-4 border-t border-gray-200 flex items-center justify-between text-xs text-gray-600 relative z-10">
-                  <span className="font-semibold">
-                    {category.skills.filter(s => s.level === 'expert').length} Expert •{' '}
-                    {category.skills.filter(s => s.level === 'advanced').length} Advanced
-                  </span>
-                  <span className="text-accent font-bold">{category.skills.length} total</span>
-                </div>
-              </motion.div>
+                    <div className="mt-4 pt-4 border-t border-gray-200 flex items-center justify-between text-xs text-gray-600 relative z-10">
+                      <span className="font-semibold">
+                        {category.skills.filter(s => s.level === 'expert').length} Expert •{' '}
+                        {category.skills.filter(s => s.level === 'advanced').length} Advanced
+                      </span>
+                      <span className="text-accent font-bold">{category.skills.length} total</span>
+                    </div>
+                  </motion.div>
+                </CardBody>
+              </CardContainer>
             );
           })}
         </div>
