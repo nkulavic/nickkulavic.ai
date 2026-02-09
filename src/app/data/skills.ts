@@ -20,19 +20,19 @@ export const skillCategories: SkillCategory[] = [
     icon: '🤖',
     description: 'Production AI/ML systems, LLM integration, and intelligent automation',
     skills: [
-      { name: 'AWS Bedrock', level: 'expert', yearsExperience: 2, badge: 'Production' },
-      { name: 'Claude AI (Anthropic)', level: 'expert', yearsExperience: 3, badge: 'Production' },
-      { name: 'OpenAI GPT-4/ChatGPT', level: 'expert', yearsExperience: 3, badge: 'Production' },
+      { name: 'AWS Bedrock', level: 'expert', yearsExperience: 2 },
+      { name: 'Claude AI (Anthropic)', level: 'expert', yearsExperience: 3 },
+      { name: 'OpenAI GPT-4/ChatGPT', level: 'expert', yearsExperience: 3 },
       { name: 'Google Gemini', level: 'expert', yearsExperience: 1 },
       { name: 'Groq (LPU Inference)', level: 'advanced', yearsExperience: 1 },
       { name: 'Cohere', level: 'advanced' },
       { name: 'Hugging Face', level: 'advanced', yearsExperience: 2 },
       { name: 'LangChain', level: 'expert', yearsExperience: 2 },
-      { name: 'Prompt Engineering', level: 'expert', yearsExperience: 3, badge: 'Production' },
+      { name: 'Prompt Engineering', level: 'expert', yearsExperience: 3 },
       { name: 'Multi-Model AI Orchestration', level: 'expert', yearsExperience: 2 },
       { name: 'RAG (Retrieval-Augmented Generation)', level: 'expert', yearsExperience: 2 },
       { name: 'Vector Databases (Pinecone, Weaviate)', level: 'advanced', yearsExperience: 2 },
-      { name: 'PDF Processing & Document AI', level: 'expert', yearsExperience: 3, badge: 'Production' },
+      { name: 'PDF Processing & Document AI', level: 'expert', yearsExperience: 3 },
       { name: 'Natural Language Processing', level: 'advanced', yearsExperience: 3 },
       { name: 'AI Agent Development', level: 'expert', yearsExperience: 2 },
       { name: 'Function Calling & Tool Use', level: 'expert', yearsExperience: 2 }
@@ -46,36 +46,36 @@ export const skillCategories: SkillCategory[] = [
     description: 'Expert in modern serverless architecture, infrastructure as code, and production-scale AWS systems',
     skills: [
       // Core Serverless Stack (Most Used)
-      { name: 'Lambda (Serverless Functions)', level: 'expert', yearsExperience: 10, badge: 'Production' },
-      { name: 'API Gateway (v1 & v2 - HTTP/WebSocket)', level: 'expert', yearsExperience: 10, badge: 'Production' },
-      { name: 'DynamoDB (NoSQL Database)', level: 'expert', yearsExperience: 10, badge: 'Production' },
-      { name: 'S3 (Object Storage)', level: 'expert', yearsExperience: 10, badge: 'Production' },
-      { name: 'IAM (Identity & Access Management)', level: 'expert', yearsExperience: 10, badge: 'Production' },
-      { name: 'CloudWatch (Monitoring & Logs)', level: 'expert', yearsExperience: 10, badge: 'Production' },
-      { name: 'Serverless Framework', level: 'expert', yearsExperience: 10, badge: 'Production' },
+      { name: 'Lambda (Serverless Functions)', level: 'expert', yearsExperience: 10 },
+      { name: 'API Gateway (v1 & v2 - HTTP/WebSocket)', level: 'expert', yearsExperience: 10 },
+      { name: 'DynamoDB (NoSQL Database)', level: 'expert', yearsExperience: 10 },
+      { name: 'S3 (Object Storage)', level: 'expert', yearsExperience: 10 },
+      { name: 'IAM (Identity & Access Management)', level: 'expert', yearsExperience: 10 },
+      { name: 'CloudWatch (Monitoring & Logs)', level: 'expert', yearsExperience: 10 },
+      { name: 'Serverless Framework', level: 'expert', yearsExperience: 10 },
 
       // Event-Driven Architecture
-      { name: 'EventBridge (Event Bus)', level: 'expert', yearsExperience: 5, badge: 'Production' },
-      { name: 'SQS (Message Queues)', level: 'expert', yearsExperience: 8, badge: 'Production' },
-      { name: 'SNS (Pub/Sub Notifications)', level: 'expert', yearsExperience: 10, badge: 'Production' },
+      { name: 'EventBridge (Event Bus)', level: 'expert', yearsExperience: 5 },
+      { name: 'SQS (Message Queues)', level: 'expert', yearsExperience: 8 },
+      { name: 'SNS (Pub/Sub Notifications)', level: 'expert', yearsExperience: 10 },
       { name: 'Step Functions (State Machines)', level: 'advanced', yearsExperience: 4 },
       { name: 'Kinesis (Real-time Streaming)', level: 'advanced', yearsExperience: 5 },
 
       // Security & Authentication
-      { name: 'Cognito (User Authentication)', level: 'expert', yearsExperience: 10, badge: 'Production' },
-      { name: 'Secrets Manager', level: 'expert', yearsExperience: 7, badge: 'Production' },
+      { name: 'Cognito (User Authentication)', level: 'expert', yearsExperience: 10 },
+      { name: 'Secrets Manager', level: 'expert', yearsExperience: 7 },
       { name: 'WAF (Web Application Firewall)', level: 'advanced', yearsExperience: 5 },
       { name: 'Certificate Manager (SSL/TLS)', level: 'expert', yearsExperience: 8 },
       { name: 'CloudTrail (Audit Logging)', level: 'expert', yearsExperience: 8 },
 
       // Infrastructure as Code & DevOps
-      { name: 'CloudFormation (IaC)', level: 'expert', yearsExperience: 8, badge: 'Production' },
+      { name: 'CloudFormation (IaC)', level: 'expert', yearsExperience: 8 },
       { name: 'CDK (Cloud Development Kit)', level: 'advanced', yearsExperience: 4 },
       { name: 'SAM (Serverless Application Model)', level: 'expert', yearsExperience: 6 },
       { name: 'Systems Manager (Parameter Store)', level: 'expert', yearsExperience: 6 },
 
       // Networking & CDN
-      { name: 'CloudFront (CDN)', level: 'expert', yearsExperience: 10, badge: 'Production' },
+      { name: 'CloudFront (CDN)', level: 'expert', yearsExperience: 10 },
       { name: 'Route53 (DNS)', level: 'expert', yearsExperience: 10 },
       { name: 'VPC (Virtual Private Cloud)', level: 'expert', yearsExperience: 8 },
       { name: 'Load Balancers (ALB/NLB)', level: 'expert', yearsExperience: 9 },
@@ -95,12 +95,12 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Glue (ETL & Data Catalog)', level: 'advanced', yearsExperience: 7 },
 
       // AI/ML Services
-      { name: 'Bedrock (Managed AI/LLM)', level: 'expert', yearsExperience: 2, badge: 'Production' },
+      { name: 'Bedrock (Managed AI/LLM)', level: 'expert', yearsExperience: 2 },
       { name: 'Textract (Document AI)', level: 'advanced', yearsExperience: 3 },
       { name: 'Comprehend (NLP)', level: 'advanced', yearsExperience: 3 },
 
       // Additional Services
-      { name: 'SES (Email Service)', level: 'expert', yearsExperience: 10, badge: 'Production' },
+      { name: 'SES (Email Service)', level: 'expert', yearsExperience: 10 },
       { name: 'X-Ray (Distributed Tracing)', level: 'advanced', yearsExperience: 5 },
       { name: 'AppSync (GraphQL API)', level: 'advanced', yearsExperience: 3 },
       { name: 'CodePipeline (CI/CD)', level: 'advanced', yearsExperience: 6 },
@@ -142,17 +142,17 @@ export const skillCategories: SkillCategory[] = [
     icon: '⚙️',
     description: 'Server-side development, API design, and microservices',
     skills: [
-      { name: 'Go (Golang)', level: 'expert', yearsExperience: 3, badge: 'Production' },
-      { name: 'Node.js', level: 'expert', yearsExperience: 10, badge: 'Production' },
+      { name: 'Go (Golang)', level: 'expert', yearsExperience: 3 },
+      { name: 'Node.js', level: 'expert', yearsExperience: 10 },
       { name: 'Python', level: 'advanced', yearsExperience: 5 },
       { name: 'TypeScript', level: 'expert', yearsExperience: 6 },
-      { name: 'REST API Design', level: 'expert', yearsExperience: 12, badge: 'Production' },
+      { name: 'REST API Design', level: 'expert', yearsExperience: 12 },
       { name: 'GraphQL', level: 'advanced', yearsExperience: 4 },
       { name: 'API Gateway v2 (WebSocket & HTTP)', level: 'expert', yearsExperience: 5 },
       { name: 'Express.js', level: 'expert', yearsExperience: 10 },
-      { name: 'Streaming APIs (SSE)', level: 'expert', yearsExperience: 3, badge: 'Production' },
+      { name: 'Streaming APIs (SSE)', level: 'expert', yearsExperience: 3 },
       { name: 'WebSockets (Real-time)', level: 'advanced', yearsExperience: 5 },
-      { name: 'Serverless Functions', level: 'expert', yearsExperience: 10, badge: 'Production' },
+      { name: 'Serverless Functions', level: 'expert', yearsExperience: 10 },
       { name: 'Microservices Architecture', level: 'expert', yearsExperience: 7 },
       { name: 'Event-Driven Architecture', level: 'expert', yearsExperience: 6 },
       { name: 'API Rate Limiting & Throttling', level: 'expert', yearsExperience: 8 },
@@ -167,8 +167,8 @@ export const skillCategories: SkillCategory[] = [
     icon: '🎨',
     description: 'Modern web interfaces, responsive design, and user experience',
     skills: [
-      { name: 'React', level: 'expert', yearsExperience: 7, badge: 'Production' },
-      { name: 'Next.js (App Router & Pages)', level: 'expert', yearsExperience: 4, badge: 'Production' },
+      { name: 'React', level: 'expert', yearsExperience: 7 },
+      { name: 'Next.js (App Router & Pages)', level: 'expert', yearsExperience: 4 },
       { name: 'SvelteKit', level: 'advanced', yearsExperience: 2 },
       { name: 'TypeScript', level: 'expert', yearsExperience: 6 },
       { name: 'JavaScript (ES6+)', level: 'expert', yearsExperience: 14 },
@@ -191,9 +191,9 @@ export const skillCategories: SkillCategory[] = [
     description: 'All major CRM systems and marketing automation platforms',
     skills: [
       // Major CRMs
-      { name: 'Salesforce (Sales Cloud, Service Cloud)', level: 'expert', yearsExperience: 10, badge: 'Production' },
-      { name: 'Infusionsoft/Keap', level: 'expert', yearsExperience: 10, badge: 'Production' },
-      { name: 'HubSpot (CRM, Marketing, Sales)', level: 'expert', yearsExperience: 6, badge: 'Production' },
+      { name: 'Salesforce (Sales Cloud, Service Cloud)', level: 'expert', yearsExperience: 10 },
+      { name: 'Infusionsoft/Keap', level: 'expert', yearsExperience: 10 },
+      { name: 'HubSpot (CRM, Marketing, Sales)', level: 'expert', yearsExperience: 6 },
       { name: 'Zoho CRM', level: 'advanced', yearsExperience: 4 },
       { name: 'Pipedrive', level: 'advanced', yearsExperience: 3 },
       { name: 'Microsoft Dynamics 365', level: 'advanced', yearsExperience: 3 },
@@ -221,7 +221,7 @@ export const skillCategories: SkillCategory[] = [
     description: 'Project management, collaboration, and business automation tools',
     skills: [
       // Project Management
-      { name: 'Teamwork.com', level: 'expert', yearsExperience: 6, badge: 'Production' },
+      { name: 'Teamwork.com', level: 'expert', yearsExperience: 6 },
       { name: 'Asana', level: 'expert', yearsExperience: 5 },
       { name: 'Monday.com', level: 'advanced', yearsExperience: 4 },
       { name: 'ClickUp', level: 'advanced', yearsExperience: 3 },
@@ -230,8 +230,8 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Basecamp', level: 'advanced', yearsExperience: 5 },
 
       // Data & Spreadsheets
-      { name: 'Airtable', level: 'expert', yearsExperience: 5, badge: 'Production' },
-      { name: 'Google Sheets API', level: 'expert', yearsExperience: 8, badge: 'Production' },
+      { name: 'Airtable', level: 'expert', yearsExperience: 5 },
+      { name: 'Google Sheets API', level: 'expert', yearsExperience: 8 },
       { name: 'Notion API', level: 'advanced', yearsExperience: 3 },
 
       // Automation
@@ -258,14 +258,14 @@ export const skillCategories: SkillCategory[] = [
     description: 'Online stores, payment processing, and subscription management',
     skills: [
       // E-commerce Platforms
-      { name: 'Shopify (Plus)', level: 'expert', yearsExperience: 7, badge: 'Production' },
-      { name: 'WooCommerce', level: 'expert', yearsExperience: 7, badge: 'Production' },
+      { name: 'Shopify (Plus)', level: 'expert', yearsExperience: 7 },
+      { name: 'WooCommerce', level: 'expert', yearsExperience: 7 },
       { name: 'Magento', level: 'advanced', yearsExperience: 6 },
       { name: 'BigCommerce', level: 'advanced', yearsExperience: 4 },
       { name: 'WordPress', level: 'expert', yearsExperience: 10 },
 
       // Payment Gateways
-      { name: 'Stripe', level: 'expert', yearsExperience: 8, badge: 'Production' },
+      { name: 'Stripe', level: 'expert', yearsExperience: 8 },
       { name: 'PayPal', level: 'expert', yearsExperience: 10 },
       { name: 'Square', level: 'advanced', yearsExperience: 5 },
       { name: 'Authorize.net', level: 'advanced', yearsExperience: 6 },
@@ -285,12 +285,12 @@ export const skillCategories: SkillCategory[] = [
     description: 'SMS, email, video, and real-time communication',
     skills: [
       // SMS & Voice
-      { name: 'Twilio (SMS, Voice, Video)', level: 'expert', yearsExperience: 7, badge: 'Production' },
+      { name: 'Twilio (SMS, Voice, Video)', level: 'expert', yearsExperience: 7 },
       { name: 'Plivo', level: 'advanced', yearsExperience: 3 },
 
       // Email
-      { name: 'SendGrid', level: 'expert', yearsExperience: 8, badge: 'Production' },
-      { name: 'AWS SES', level: 'expert', yearsExperience: 10, badge: 'Production' },
+      { name: 'SendGrid', level: 'expert', yearsExperience: 8 },
+      { name: 'AWS SES', level: 'expert', yearsExperience: 10 },
       { name: 'Postmark', level: 'advanced', yearsExperience: 4 },
       { name: 'Mandrill', level: 'advanced', yearsExperience: 5 },
 
@@ -313,14 +313,14 @@ export const skillCategories: SkillCategory[] = [
     description: 'SQL, NoSQL, and specialized data stores',
     skills: [
       // NoSQL
-      { name: 'DynamoDB', level: 'expert', yearsExperience: 10, badge: 'Production' },
+      { name: 'DynamoDB', level: 'expert', yearsExperience: 10 },
       { name: 'MongoDB', level: 'expert', yearsExperience: 6 },
       { name: 'Firestore', level: 'advanced', yearsExperience: 4 },
       { name: 'Redis', level: 'advanced', yearsExperience: 5 },
 
       // SQL
       { name: 'PostgreSQL', level: 'expert', yearsExperience: 8 },
-      { name: 'MySQL', level: 'expert', yearsExperience: 12, badge: 'Production' },
+      { name: 'MySQL', level: 'expert', yearsExperience: 12 },
       { name: 'Aurora (AWS)', level: 'advanced', yearsExperience: 6 },
 
       // Specialized
@@ -337,7 +337,7 @@ export const skillCategories: SkillCategory[] = [
     icon: '🛠️',
     description: 'Deployment automation, monitoring, and infrastructure as code',
     skills: [
-      { name: 'GitHub Actions', level: 'expert', yearsExperience: 5, badge: 'Production' },
+      { name: 'GitHub Actions', level: 'expert', yearsExperience: 5 },
       { name: 'GitLab CI/CD', level: 'advanced', yearsExperience: 4 },
       { name: 'Jenkins', level: 'advanced', yearsExperience: 5 },
       { name: 'CircleCI', level: 'advanced', yearsExperience: 4 },
@@ -349,7 +349,7 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Git', level: 'expert', yearsExperience: 12 },
       { name: 'Vercel', level: 'expert', yearsExperience: 4 },
       { name: 'Netlify', level: 'advanced', yearsExperience: 5 },
-      { name: 'Production Monitoring', level: 'expert', yearsExperience: 12, badge: 'Production' },
+      { name: 'Production Monitoring', level: 'expert', yearsExperience: 12 },
       { name: 'Automated Testing', level: 'expert', yearsExperience: 10 },
       { name: 'Infrastructure as Code', level: 'expert', yearsExperience: 8 }
     ]
@@ -361,11 +361,11 @@ export const skillCategories: SkillCategory[] = [
     icon: '🔒',
     description: 'Security best practices, compliance, and data protection',
     skills: [
-      { name: 'SOC 2 Compliance', level: 'expert', yearsExperience: 3, badge: 'Production' },
+      { name: 'SOC 2 Compliance', level: 'expert', yearsExperience: 3 },
       { name: 'JWT Authentication', level: 'expert', yearsExperience: 8 },
       { name: 'OAuth 2.0', level: 'expert', yearsExperience: 10 },
       { name: 'Data Encryption (at rest & in transit)', level: 'expert', yearsExperience: 10 },
-      { name: 'API Security', level: 'expert', yearsExperience: 12, badge: 'Production' },
+      { name: 'API Security', level: 'expert', yearsExperience: 12 },
       { name: 'GDPR Compliance', level: 'advanced', yearsExperience: 5 },
       { name: 'HIPAA Compliance', level: 'intermediate', yearsExperience: 2 },
       { name: 'Penetration Testing', level: 'intermediate', yearsExperience: 4 },
