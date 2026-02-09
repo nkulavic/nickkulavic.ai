@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { skillCategories, getSkillCounts, getProductionSkills } from '@/app/data/skills';
 
 export default function TechnicalExpertise() {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
 
   const skillCounts = getSkillCounts();
