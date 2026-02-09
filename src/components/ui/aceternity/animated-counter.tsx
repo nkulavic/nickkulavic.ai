@@ -16,12 +16,11 @@ export function AnimatedCounter({
 }: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
 
-  // Handle non-numeric values
-  if (typeof value === "string" && isNaN(Number(value))) {
-    return <span className={className}>{value}</span>;
-  }
+  // Check if value is non-numeric BEFORE parsing
+  const isNonNumeric = typeof value === "string" && isNaN(Number(value));
+  const numericValue = isNonNumeric ? 0 : (typeof value === "string" ? Number(value) : value);
 
-  const numericValue = typeof value === "string" ? Number(value) : value;
+  // ALL HOOKS MUST BE CALLED BEFORE ANY CONDITIONAL RETURNS
   const motionValue = useMotionValue(direction === "down" ? numericValue : 0);
   const springValue = useSpring(motionValue, {
     damping: 60,
@@ -30,22 +29,27 @@ export function AnimatedCounter({
   const isInView = useInView(ref, { once: true, margin: "0px" });
 
   useEffect(() => {
-    if (isInView) {
+    if (isInView && !isNonNumeric) {
       motionValue.set(direction === "down" ? 0 : numericValue);
     }
-  }, [motionValue, isInView, numericValue, direction]);
+  }, [motionValue, isInView, numericValue, direction, isNonNumeric]);
 
-  useEffect(
-    () =>
-      springValue.on("change", (latest) => {
-        if (ref.current) {
-          ref.current.textContent = Intl.NumberFormat("en-US").format(
-            Math.round(latest)
-          );
-        }
-      }),
-    [springValue]
-  );
+  useEffect(() => {
+    if (isNonNumeric) return;
+
+    return springValue.on("change", (latest) => {
+      if (ref.current) {
+        ref.current.textContent = Intl.NumberFormat("en-US").format(
+          Math.round(latest)
+        );
+      }
+    });
+  }, [springValue, isNonNumeric]);
+
+  // Handle non-numeric values AFTER all hooks
+  if (isNonNumeric) {
+    return <span className={className}>{value}</span>;
+  }
 
   return <span className={className} ref={ref} />;
 }
