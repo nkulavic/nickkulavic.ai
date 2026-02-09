@@ -4,12 +4,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { experiences } from '@/app/data/experience';
-import { skillCategories } from '@/app/data/skills';
 import { projects } from '@/app/data/projects';
 import { certifications, education, careerStats, summaryHighlights } from '@/app/data/education';
 import { siteConfig, availability } from '@/app/data/siteConfig';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
+import TechnicalExpertise from '@/app/components/TechnicalExpertise';
 
 export default function ResumePage() {
   return (
@@ -187,12 +187,15 @@ export default function ResumePage() {
             </motion.h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {[
-                { icon: '🤖', label: 'AI/ML Engineering', items: ['AWS Bedrock', 'Claude AI', 'ChatGPT API', 'Prompt Engineering'] },
-                { icon: '☁️', label: 'Cloud & MLOps', items: ['AWS Lambda', 'CI/CD Pipelines', 'MLOps', 'Serverless'] },
-                { icon: '⚛️', label: 'Frontend Development', items: ['React (7y)', 'Next.js', 'TypeScript (6y)', 'Tailwind'] },
-                { icon: '⚙️', label: 'Backend Development', items: ['Node.js (10y)', 'REST APIs', 'Express.js', 'WebSockets'] },
-                { icon: '🔐', label: 'Security & Compliance', items: ['SOC 2', 'OAuth', 'JWT', 'Zero Breaches'] },
-                { icon: '💼', label: 'Business & Leadership', items: ['SaaS Founder', '$1.7M+ Revenue', 'Product Dev', 'API Strategy'] }
+                { icon: '🤖', label: 'AI/ML Engineering', items: ['AWS Bedrock', 'Claude AI', 'OpenAI GPT-4', 'LangChain', 'RAG Systems', 'Multi-Model AI'], highlight: 'Production' },
+                { icon: '☁️', label: 'AWS Solutions Architect', items: ['Lambda', 'API Gateway v2', 'DynamoDB', 'S3', 'Cognito', '40+ Services'], highlight: '10 Years' },
+                { icon: '🌩️', label: 'Google Cloud Platform', items: ['Cloud Functions', 'Gemini API', 'BigQuery', 'Firestore', 'Vertex AI', 'Cloud Run'], highlight: 'Multi-Cloud' },
+                { icon: '⚙️', label: 'Backend & APIs', items: ['Go', 'Node.js (10y)', 'REST/GraphQL', 'Streaming APIs', 'Microservices', 'WebSockets'], highlight: 'Expert' },
+                { icon: '📊', label: 'All Major CRMs', items: ['Salesforce', 'HubSpot', 'Infusionsoft', 'Zoho', 'Pipedrive', '17+ Platforms'], highlight: 'Production' },
+                { icon: '🔗', label: 'Business Platforms', items: ['Teamwork', 'Airtable', 'Asana', 'Monday.com', 'Zapier', '20+ Tools'], highlight: 'Integration Expert' },
+                { icon: '🎨', label: 'Modern Frontend', items: ['React (7y)', 'Next.js', 'TypeScript', 'Tailwind', 'SvelteKit', 'SSR/SSG'], highlight: 'Production' },
+                { icon: '🛒', label: 'E-commerce & Payments', items: ['Shopify', 'WooCommerce', 'Stripe', 'PayPal', 'Subscriptions', 'Payment Gateways'], highlight: 'Expert' },
+                { icon: '🔐', label: 'Security & Compliance', items: ['SOC 2', 'OAuth/JWT', 'API Security', 'Data Encryption', 'Zero Breaches', 'GDPR'], highlight: 'Certified' }
               ].map((competency, idx) => (
                 <motion.div
                   key={competency.label}
@@ -203,17 +206,24 @@ export default function ResumePage() {
                   whileHover={{ y: -6, boxShadow: '0 12px 24px rgba(0, 102, 255, 0.12)' }}
                   className="bg-white border border-gray-200 rounded-xl p-6 hover:border-accent/40 transition-all cursor-pointer group"
                 >
-                  <div className="flex items-center gap-2 mb-4">
-                    <motion.span
-                      className="text-3xl"
-                      whileHover={{ scale: 1.2, rotate: 8 }}
-                      transition={{ type: 'spring', stiffness: 200 }}
-                    >
-                      {competency.icon}
-                    </motion.span>
-                    <h3 className="text-body font-bold text-gray-900 group-hover:text-accent transition-colors">
-                      {competency.label}
-                    </h3>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-2">
+                      <motion.span
+                        className="text-3xl"
+                        whileHover={{ scale: 1.2, rotate: 8 }}
+                        transition={{ type: 'spring', stiffness: 200 }}
+                      >
+                        {competency.icon}
+                      </motion.span>
+                      <h3 className="text-body font-bold text-gray-900 group-hover:text-accent transition-colors">
+                        {competency.label}
+                      </h3>
+                    </div>
+                    {competency.highlight && (
+                      <span className="px-2 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full">
+                        {competency.highlight}
+                      </span>
+                    )}
                   </div>
                   <ul className="space-y-1.5">
                     {competency.items.map((item, itemIdx) => (
@@ -475,53 +485,25 @@ export default function ResumePage() {
         </div>
       </div>
 
-      {/* Skills - White Section */}
+      {/* Technical Expertise - Enhanced Display */}
       <div className="py-24 px-8 bg-white">
-        <div className="max-w-3xl mx-auto">
-          <section>
-            <h2 className="text-h4 font-semibold text-gray-900 mb-12">Technical Skills</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {skillCategories.map((category, catIdx) => (
-                <motion.div
-                  key={category.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: catIdx * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -2, boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)' }}
-                  className="bg-cream border border-gray-200 rounded-xl p-6 cursor-pointer transition-all"
-                >
-                  <h3 className="text-body font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                    <motion.span
-                      className="text-xl"
-                      whileHover={{ scale: 1.2, rotate: 5 }}
-                      transition={{ type: 'spring', stiffness: 200 }}
-                    >
-                      {category.icon}
-                    </motion.span>
-                    {category.name}
-                  </h3>
-                  <div className="space-y-2">
-                    {category.skills.map((skill, skillIdx) => (
-                      <motion.div
-                        key={skill.name}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: catIdx * 0.1 + skillIdx * 0.05 }}
-                        viewport={{ once: true }}
-                        className="text-body-sm text-gray-600 hover:text-accent transition-colors"
-                      >
-                        {skill.name}
-                        {skill.yearsExperience && (
-                          <span className="text-accent ml-1 font-medium">({skill.yearsExperience}y)</span>
-                        )}
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </section>
+        <div className="max-w-6xl mx-auto">
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.h2
+              className="text-h3 font-bold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-12 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              Complete Technical Stack
+            </motion.h2>
+            <TechnicalExpertise />
+          </motion.section>
         </div>
       </div>
 

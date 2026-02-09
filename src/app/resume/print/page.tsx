@@ -11,17 +11,34 @@ export default function PrintResumePage() {
     window.print();
   };
 
-  // Get top skills for each priority category using shortName and priority from data
+  // Get top skills for each priority category - show the most impressive
   const prioritySkills = skillCategories
-    .filter(c => c.priority && c.priority <= 6) // Top 6 priorities for print layout
+    .filter(c => c.priority && c.priority <= 8) // Top 8 categories for comprehensive view
     .sort((a, b) => (a.priority || 99) - (b.priority || 99))
     .map(category => ({
       name: category.shortName,
+      fullName: category.name,
+      icon: category.icon,
       skills: category.skills
         .filter(s => s.level === 'expert' || s.level === 'advanced')
-        .slice(0, 5)
-        .map(s => s.name)
+        .slice(0, 6) // Show top 6 skills per category
+        .map(s => ({
+          name: s.name,
+          badge: s.badge,
+          years: s.yearsExperience
+        }))
     }));
+
+  // Get key metrics to highlight
+  const totalSkills = skillCategories.reduce((sum, cat) => sum + cat.skills.length, 0);
+  const expertSkills = skillCategories.reduce(
+    (sum, cat) => sum + cat.skills.filter(s => s.level === 'expert').length,
+    0
+  );
+  const productionSkills = skillCategories.reduce(
+    (sum, cat) => sum + cat.skills.filter(s => s.badge === 'Production').length,
+    0
+  );
 
   // Get specific projects for custom layout
   const myfusionHelper = projects.find(p => p.id === 'myfusion-helper');
@@ -122,28 +139,82 @@ export default function PrintResumePage() {
         {/* Main Content */}
         <main className="px-10 py-6 space-y-8">
 
-          {/* Technical Expertise - Enhanced layout */}
-          <section className="bg-gradient-to-br from-white to-gray-50 rounded-xl p-6 border border-gray-200 shadow-sm">
-            <h2 className="text-base font-bold text-gray-900 uppercase tracking-wider mb-4 flex items-center gap-2">
-              <span className="w-1.5 h-6 bg-accent rounded-full"></span>
-              Technical Expertise
-            </h2>
-            <div className="grid grid-cols-3 gap-6">
-              {prioritySkills.map((category) => (
+          {/* Technical Expertise - Comprehensive and Impressive */}
+          <section className="no-break">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-base font-bold text-gray-900 uppercase tracking-wider flex items-center gap-2">
+                <span className="w-1.5 h-6 bg-accent rounded-full"></span>
+                Complete Technical Stack
+              </h2>
+              <div className="flex gap-3 text-xs">
+                <span className="px-2 py-1 bg-accent/10 text-accent rounded font-bold">{totalSkills}+ Skills</span>
+                <span className="px-2 py-1 bg-green-500/10 text-green-700 rounded font-bold">{expertSkills} Expert</span>
+                <span className="px-2 py-1 bg-blue-500/10 text-blue-700 rounded font-bold">{productionSkills} Production</span>
+              </div>
+            </div>
+
+            {/* Core Technologies Grid */}
+            <div className="grid grid-cols-4 gap-3 mb-4">
+              {prioritySkills.slice(0, 8).map((category) => (
                 category && (
-                  <div key={category.name} className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
-                    <h3 className="font-bold text-accent mb-2 text-sm uppercase tracking-wide border-b border-accent/30 pb-1">{category.name}</h3>
-                    <ul className="text-xs text-gray-700 space-y-1.5 leading-relaxed">
+                  <div key={category.name} className="bg-white rounded-lg p-3 border border-gray-200">
+                    <div className="flex items-center gap-1.5 mb-2 pb-1.5 border-b border-gray-200">
+                      <span className="text-lg">{category.icon}</span>
+                      <h3 className="font-bold text-accent text-xs uppercase tracking-wide">{category.name}</h3>
+                    </div>
+                    <ul className="text-xs text-gray-700 space-y-1 leading-tight">
                       {category.skills.map((skill) => (
-                        <li key={skill} className="flex items-start gap-1.5">
-                          <span className="text-accent mt-0.5">▪</span>
-                          <span>{skill}</span>
+                        <li key={skill.name} className="flex items-start gap-1">
+                          <span className="text-accent mt-0.5 flex-shrink-0">•</span>
+                          <span className="flex-1">
+                            {skill.name}
+                            {skill.badge && (
+                              <span className="ml-1 text-[9px] px-1 py-0.5 bg-accent/10 text-accent rounded font-bold">
+                                {skill.badge}
+                              </span>
+                            )}
+                          </span>
                         </li>
                       ))}
                     </ul>
                   </div>
                 )
               ))}
+            </div>
+
+            {/* Additional Categories - Compact List */}
+            <div className="bg-gray-50 rounded-lg p-3 border border-gray-200">
+              <h3 className="text-xs font-bold text-gray-800 mb-2 uppercase tracking-wider">Additional Expertise</h3>
+              <div className="grid grid-cols-3 gap-x-4 gap-y-1 text-xs">
+                {skillCategories
+                  .filter(c => c.priority && c.priority > 8)
+                  .sort((a, b) => (a.priority || 99) - (b.priority || 99))
+                  .map((category) => {
+                    const topSkills = category.skills
+                      .filter(s => s.level === 'expert')
+                      .slice(0, 3)
+                      .map(s => s.name);
+                    return (
+                      <div key={category.name} className="flex items-start gap-1.5">
+                        <span className="text-sm mt-0.5">{category.icon}</span>
+                        <div>
+                          <span className="font-bold text-gray-800">{category.shortName}:</span>{' '}
+                          <span className="text-gray-600">{topSkills.join(', ')}</span>
+                        </div>
+                      </div>
+                    );
+                  })}
+              </div>
+            </div>
+
+            {/* Key Highlights Banner */}
+            <div className="mt-3 bg-gradient-to-r from-accent/5 to-blue-50 rounded-lg p-2 border border-accent/20">
+              <div className="flex items-center justify-center gap-6 text-xs">
+                <span className="font-bold text-gray-800">✓ Full AWS Solutions Architect</span>
+                <span className="font-bold text-gray-800">✓ Multi-Cloud (AWS + GCP)</span>
+                <span className="font-bold text-gray-800">✓ All Major CRMs</span>
+                <span className="font-bold text-gray-800">✓ Production AI/ML Systems</span>
+              </div>
             </div>
           </section>
 

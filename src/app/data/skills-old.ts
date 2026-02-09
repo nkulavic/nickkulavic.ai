@@ -1,0 +1,218 @@
+export interface SkillCategory {
+  name: string;
+  shortName: string;  // Abbreviated name for compact displays (e.g., "AI/ML")
+  priority: number;   // Display priority (1 = highest, used for ordering on print resume)
+  icon: string;
+  skills: {
+    name: string;
+    level: 'expert' | 'advanced' | 'intermediate';
+    yearsExperience?: number
+  }[];
+}
+
+export const skillCategories: SkillCategory[] = [
+  {
+    name: 'AI & Machine Learning',
+    shortName: 'AI/ML',
+    priority: 1,
+    icon: '🤖',
+    skills: [
+      { name: 'AWS Bedrock', level: 'expert', yearsExperience: 2 },
+      { name: 'Claude AI', level: 'expert', yearsExperience: 3 },
+      { name: 'Gemini', level: 'expert', yearsExperience: 1 },
+      { name: 'Groq', level: 'advanced', yearsExperience: 1 },
+      { name: 'ChatGPT API', level: 'expert', yearsExperience: 3 },
+      { name: 'Prompt Engineering', level: 'expert', yearsExperience: 3 },
+      { name: 'Multi-Model AI Integration', level: 'expert', yearsExperience: 2 },
+      { name: 'PDF Processing & NLP', level: 'expert', yearsExperience: 3 },
+      { name: 'Machine Learning', level: 'advanced', yearsExperience: 3 },
+      { name: 'Natural Language Processing', level: 'advanced', yearsExperience: 3 }
+    ]
+  },
+  {
+    name: 'Cloud & Infrastructure',
+    shortName: 'Cloud',
+    priority: 2,
+    icon: '☁️',
+    skills: [
+      { name: 'AWS Lambda', level: 'expert', yearsExperience: 10 },
+      { name: 'API Gateway', level: 'expert', yearsExperience: 10 },
+      { name: 'DynamoDB', level: 'expert', yearsExperience: 10 },
+      { name: 'S3', level: 'expert', yearsExperience: 10 },
+      { name: 'Cognito', level: 'expert', yearsExperience: 10 },
+      { name: 'CloudFront', level: 'expert', yearsExperience: 10 },
+      { name: 'Route53', level: 'expert', yearsExperience: 10 },
+      { name: 'SES', level: 'expert', yearsExperience: 10 },
+      { name: 'SNS', level: 'expert', yearsExperience: 10 },
+      { name: 'CloudWatch', level: 'expert', yearsExperience: 10 },
+      { name: 'Elastic Beanstalk', level: 'expert', yearsExperience: 10 },
+      { name: 'Athena', level: 'advanced', yearsExperience: 8 },
+      { name: 'Glue', level: 'advanced', yearsExperience: 7 },
+      { name: 'RDS', level: 'advanced', yearsExperience: 10 },
+      { name: 'EC2', level: 'advanced', yearsExperience: 10 },
+      { name: 'Serverless Architecture', level: 'expert', yearsExperience: 10 }
+    ]
+  },
+  {
+    name: 'Frontend Development',
+    shortName: 'Frontend',
+    priority: 4,
+    icon: '🎨',
+    skills: [
+      { name: 'React', level: 'expert', yearsExperience: 7 },
+      { name: 'Next.js', level: 'expert', yearsExperience: 4 },
+      { name: 'SvelteKit', level: 'advanced' },
+      { name: 'TypeScript', level: 'expert', yearsExperience: 6 },
+      { name: 'JavaScript', level: 'expert', yearsExperience: 14 },
+      { name: 'Tailwind CSS', level: 'advanced', yearsExperience: 3 },
+      { name: 'Material UI', level: 'advanced', yearsExperience: 4 },
+      { name: 'HTML5/CSS3', level: 'expert', yearsExperience: 14 },
+      { name: 'Responsive Design', level: 'expert', yearsExperience: 12 },
+      { name: 'Framer Motion', level: 'advanced', yearsExperience: 2 }
+    ]
+  },
+  {
+    name: 'Backend Development',
+    shortName: 'Backend',
+    priority: 3,
+    icon: '⚙️',
+    skills: [
+      { name: 'Go', level: 'expert', yearsExperience: 3 },
+      { name: 'Node.js', level: 'expert', yearsExperience: 10 },
+      { name: 'REST API Design', level: 'expert', yearsExperience: 12 },
+      { name: 'API Gateway v2', level: 'expert', yearsExperience: 5 },
+      { name: 'Express.js', level: 'expert', yearsExperience: 9 },
+      { name: 'Streaming APIs', level: 'expert', yearsExperience: 3 },
+      { name: 'Serverless Functions', level: 'expert', yearsExperience: 8 },
+      { name: 'GraphQL', level: 'advanced', yearsExperience: 3 },
+      { name: 'Microservices', level: 'advanced', yearsExperience: 6 },
+      { name: 'WebSockets', level: 'advanced', yearsExperience: 5 }
+    ]
+  },
+  {
+    name: 'Databases',
+    shortName: 'Databases',
+    priority: 7,
+    icon: '🗄️',
+    skills: [
+      { name: 'DynamoDB', level: 'expert', yearsExperience: 8 },
+      { name: 'PostgreSQL', level: 'advanced' },
+      { name: 'MySQL', level: 'expert', yearsExperience: 12 },
+      { name: 'MongoDB', level: 'advanced', yearsExperience: 5 },
+      { name: 'Redis', level: 'intermediate', yearsExperience: 3 },
+      { name: 'Database Migrations', level: 'advanced' }
+    ]
+  },
+  {
+    name: 'Platform Integration & E-commerce',
+    shortName: 'Platforms',
+    priority: 5,
+    icon: '🔗',
+    skills: [
+      { name: 'Teamwork.com API', level: 'expert', yearsExperience: 6 },
+      { name: 'WordPress', level: 'expert', yearsExperience: 10 },
+      { name: 'Zendesk', level: 'advanced', yearsExperience: 5 },
+      { name: 'Magento', level: 'advanced', yearsExperience: 6 },
+      { name: 'Shopify', level: 'expert', yearsExperience: 7 },
+      { name: 'WooCommerce', level: 'advanced', yearsExperience: 6 },
+      { name: 'Payment Gateways', level: 'expert', yearsExperience: 8 }
+    ]
+  },
+  {
+    name: 'CRM & Marketing Platforms',
+    shortName: 'CRM/APIs',
+    priority: 6,
+    icon: '📊',
+    skills: [
+      { name: 'Infusionsoft/Keap', level: 'expert', yearsExperience: 10 },
+      { name: 'Salesforce', level: 'expert', yearsExperience: 10 },
+      { name: 'HubSpot', level: 'advanced', yearsExperience: 5 },
+      { name: 'ActiveCampaign', level: 'advanced', yearsExperience: 4 },
+      { name: 'MailChimp', level: 'advanced', yearsExperience: 6 },
+      { name: 'Google Sheets API', level: 'expert', yearsExperience: 7 }
+    ]
+  },
+  {
+    name: 'Communication & Collaboration',
+    shortName: 'Comms',
+    priority: 9,
+    icon: '💬',
+    skills: [
+      { name: 'Twilio SMS/Voice', level: 'expert', yearsExperience: 6 },
+      { name: 'SendGrid', level: 'expert', yearsExperience: 7 },
+      { name: 'Slack', level: 'advanced', yearsExperience: 4 },
+      { name: 'Zoom', level: 'advanced', yearsExperience: 3 },
+      { name: 'Calendly', level: 'advanced', yearsExperience: 4 },
+      { name: 'GoToWebinar', level: 'advanced', yearsExperience: 6 }
+    ]
+  },
+  {
+    name: 'DevOps, MLOps & Infrastructure',
+    shortName: 'DevOps',
+    priority: 3,
+    icon: '🛠️',
+    skills: [
+      { name: 'CI/CD Pipelines', level: 'expert', yearsExperience: 10 },
+      { name: 'GitHub Actions', level: 'expert', yearsExperience: 5 },
+      { name: 'Infrastructure as Code', level: 'advanced', yearsExperience: 7 },
+      { name: 'MLOps', level: 'advanced', yearsExperience: 2 },
+      { name: 'Serverless Architecture', level: 'expert', yearsExperience: 10 },
+      { name: 'Production Monitoring', level: 'expert', yearsExperience: 10 },
+      { name: 'Automated Deployments', level: 'expert', yearsExperience: 8 },
+      { name: 'SOC 2 Compliance', level: 'advanced', yearsExperience: 2 },
+      { name: 'Git', level: 'expert', yearsExperience: 12 },
+      { name: 'Docker', level: 'intermediate', yearsExperience: 4 },
+      { name: 'Vercel', level: 'advanced', yearsExperience: 3 },
+      { name: 'AWS CloudFormation', level: 'advanced', yearsExperience: 5 }
+    ]
+  },
+  {
+    name: 'Security & Compliance',
+    shortName: 'Security',
+    priority: 10,
+    icon: '🔒',
+    skills: [
+      { name: 'SOC 2 Compliance', level: 'advanced' },
+      { name: 'JWT Authentication', level: 'expert', yearsExperience: 6 },
+      { name: 'OAuth', level: 'expert', yearsExperience: 8 },
+      { name: 'Data Encryption', level: 'advanced', yearsExperience: 8 },
+      { name: 'API Security', level: 'expert', yearsExperience: 10 }
+    ]
+  },
+  {
+    name: 'Business & Leadership',
+    shortName: 'Business',
+    priority: 11,
+    icon: '💼',
+    skills: [
+      { name: 'SaaS Product Development', level: 'expert', yearsExperience: 10 },
+      { name: 'Technical Leadership', level: 'expert', yearsExperience: 8 },
+      { name: 'Entrepreneurship', level: 'expert', yearsExperience: 10 },
+      { name: 'Project Management', level: 'advanced', yearsExperience: 12 },
+      { name: 'Client Communication', level: 'expert', yearsExperience: 14 }
+    ]
+  }
+];
+
+// Utility function to get skills by category
+export function getSkillsByCategory(category: string): SkillCategory | undefined {
+  return skillCategories.find(cat => cat.name === category);
+}
+
+// Utility function to get all expert-level skills
+export function getExpertSkills() {
+  return skillCategories.flatMap(category =>
+    category.skills
+      .filter(skill => skill.level === 'expert')
+      .map(skill => ({ ...skill, category: category.name }))
+  );
+}
+
+// Utility function to get skills with 5+ years experience
+export function getExperiencedSkills(minYears: number = 5) {
+  return skillCategories.flatMap(category =>
+    category.skills
+      .filter(skill => skill.yearsExperience && skill.yearsExperience >= minYears)
+      .map(skill => ({ ...skill, category: category.name }))
+  );
+}
