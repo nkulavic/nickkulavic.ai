@@ -1,9 +1,8 @@
 'use client'
-// Enhanced Technical Expertise Display - v3.0 (Visual Enhancements)
+// Enhanced Technical Expertise Display - v2.0
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BackgroundGradient } from '@/components/ui/aceternity/background-gradient';
 import { skillCategories, getSkillCounts, getProductionSkills } from '@/app/data/skills';
 
 export default function TechnicalExpertise() {
@@ -56,29 +55,21 @@ export default function TechnicalExpertise() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
+              whileHover={{ scale: 1.05, y: -4 }}
+              className="bg-white rounded-xl p-6 text-center shadow-lg border border-gray-200 cursor-pointer group"
             >
-              <BackgroundGradient className="rounded-xl p-0.5">
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -4 }}
-                  className="bg-white rounded-xl p-6 text-center cursor-pointer group h-full relative overflow-hidden"
-                >
-                  {/* Subtle hover glow effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                  <motion.div
-                    className="text-4xl mb-3 relative z-10"
-                    whileHover={{ scale: 1.2, rotate: 10 }}
-                  >
-                    {stat.icon}
-                  </motion.div>
-                  <div className={`text-3xl font-extrabold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2 relative z-10`}>
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-gray-600 font-semibold uppercase tracking-wide relative z-10 group-hover:text-gray-800 transition-colors">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              </BackgroundGradient>
+              <motion.div
+                className="text-4xl mb-3"
+                whileHover={{ scale: 1.2, rotate: 10 }}
+              >
+                {stat.icon}
+              </motion.div>
+              <div className={`text-3xl font-extrabold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}>
+                {stat.value}
+              </div>
+              <div className="text-sm text-gray-600 font-semibold uppercase tracking-wide">
+                {stat.label}
+              </div>
             </motion.div>
           ))}
         </div>
@@ -111,11 +102,9 @@ export default function TechnicalExpertise() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
                 whileHover={{ y: -6, boxShadow: '0 12px 32px rgba(0, 102, 255, 0.15)' }}
-                className="bg-white rounded-xl p-6 border-2 border-gray-200 hover:border-accent/50 transition-all shadow-md group relative overflow-hidden"
+                className="bg-white rounded-xl p-6 border-2 border-gray-200 hover:border-accent/50 transition-all shadow-md group"
               >
-                {/* Subtle hover gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/3 via-transparent to-blue-500/3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                <div className="flex items-start justify-between mb-4 relative z-10">
+                <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
                     <motion.span
                       className="text-4xl"
@@ -134,7 +123,7 @@ export default function TechnicalExpertise() {
                   </div>
                 </div>
 
-                <div className="space-y-2 relative z-10">
+                <div className="space-y-2">
                   <AnimatePresence mode="wait">
                     {displaySkills.map((skill, skillIdx) => (
                       <motion.div
@@ -143,7 +132,7 @@ export default function TechnicalExpertise() {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -10 }}
                         transition={{ delay: skillIdx * 0.03 }}
-                        className="flex items-center justify-between text-sm hover:bg-accent/5 rounded px-2 py-1 -mx-2 transition-colors"
+                        className="flex items-center justify-between text-sm"
                       >
                         <div className="flex items-center gap-2 flex-1">
                           <span className={`w-2 h-2 rounded-full ${
@@ -171,7 +160,7 @@ export default function TechnicalExpertise() {
                 {hasMore && (
                   <motion.button
                     onClick={() => toggleCategory(category.name)}
-                    className="mt-4 text-sm text-accent hover:text-accent-light font-bold flex items-center gap-1 group/btn relative z-10"
+                    className="mt-4 text-sm text-accent hover:text-accent-light font-bold flex items-center gap-1 group/btn"
                     whileHover={{ x: 4 }}
                   >
                     {isExpanded ? 'Show less' : `Show ${category.skills.length - displaySkills.length} more`}
@@ -184,7 +173,7 @@ export default function TechnicalExpertise() {
                   </motion.button>
                 )}
 
-                <div className="mt-4 pt-4 border-t border-gray-200 flex items-center justify-between text-xs text-gray-600 relative z-10">
+                <div className="mt-4 pt-4 border-t border-gray-200 flex items-center justify-between text-xs text-gray-600">
                   <span className="font-semibold">
                     {category.skills.filter(s => s.level === 'expert').length} Expert •{' '}
                     {category.skills.filter(s => s.level === 'advanced').length} Advanced
@@ -226,13 +215,11 @@ export default function TechnicalExpertise() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.05 }}
-                  className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-5 border border-gray-200 hover:border-accent/30 transition-all shadow-sm relative overflow-hidden group"
+                  className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-5 border border-gray-200 hover:border-accent/30 transition-all shadow-sm"
                 >
-                  {/* Subtle hover effect */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-accent/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   <button
                     onClick={() => toggleCategory(category.name)}
-                    className="w-full flex items-center justify-between group relative z-10"
+                    className="w-full flex items-center justify-between group"
                   >
                     <div className="flex items-center gap-3">
                       <span className="text-2xl">{category.icon}</span>
@@ -260,7 +247,7 @@ export default function TechnicalExpertise() {
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="mt-4 pt-4 border-t border-gray-200 overflow-hidden relative z-10"
+                        className="mt-4 pt-4 border-t border-gray-200 overflow-hidden"
                       >
                         <div className="grid grid-cols-1 gap-2">
                           {category.skills.map((skill, skillIdx) => (
@@ -269,7 +256,7 @@ export default function TechnicalExpertise() {
                               initial={{ opacity: 0, x: -10 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: skillIdx * 0.02 }}
-                              className="flex items-center justify-between text-sm hover:bg-accent/5 rounded px-2 py-1 -mx-2 transition-colors"
+                              className="flex items-center justify-between text-sm"
                             >
                               <div className="flex items-center gap-2">
                                 <span className={`w-1.5 h-1.5 rounded-full ${

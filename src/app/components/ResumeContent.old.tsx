@@ -10,9 +10,6 @@ import { siteConfig, availability } from '@/app/data/siteConfig';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import TechnicalExpertise from '@/app/components/TechnicalExpertise';
-import { Card, CardHeader, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
 
 export default function ResumeContent() {
   return (
@@ -140,37 +137,31 @@ export default function ResumeContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            <Card className="border-gray-200 shadow-sm">
-              <CardHeader>
-                <motion.h2
-                  className="text-h4 font-semibold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text"
-                  initial={{ opacity: 0, x: -20 }}
+            <motion.h2
+              className="text-h4 font-semibold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-6"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            >
+              Professional Summary
+            </motion.h2>
+            <p className="text-body text-gray-700 leading-loose mb-6">
+              Senior AI & Platform Engineer with 14+ years architecting enterprise systems and scaling profitable SaaS ventures.
+              I build production infrastructure that drives revenue—$1.7M+ generated across 3 companies, 2M+ monthly API requests, zero security breaches.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {summaryHighlights.map((item, idx) => (
+                <motion.div
+                  key={item}
+                  initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.4, duration: 0.6 }}
+                  transition={{ delay: 0.5 + idx * 0.05, duration: 0.4 }}
+                  className="flex items-start gap-3 text-body-sm text-gray-700 bg-white rounded-lg p-3 border border-gray-200 shadow-sm"
                 >
-                  Professional Summary
-                </motion.h2>
-              </CardHeader>
-              <CardContent>
-                <p className="text-body text-gray-700 leading-loose mb-6">
-                  Senior AI & Platform Engineer with 14+ years architecting enterprise systems and scaling profitable SaaS ventures.
-                  I build production infrastructure that drives revenue—$1.7M+ generated across 3 companies, 2M+ monthly API requests, zero security breaches.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {summaryHighlights.map((item, idx) => (
-                    <motion.div
-                      key={item}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.5 + idx * 0.05, duration: 0.4 }}
-                      className="flex items-start gap-3 text-body-sm text-gray-700 bg-white rounded-lg p-3 border border-gray-200 shadow-sm"
-                    >
-                      <span>{item}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+                  <span>{item}</span>
+                </motion.div>
+              ))}
+            </div>
           </motion.section>
         </div>
       </div>
@@ -213,44 +204,41 @@ export default function ResumeContent() {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.08, duration: 0.5, type: "spring", stiffness: 100 }}
                   whileHover={{ y: -6, boxShadow: '0 12px 24px rgba(0, 102, 255, 0.12)' }}
+                  className="bg-white border border-gray-200 rounded-xl p-6 hover:border-accent/40 transition-all cursor-pointer group"
                 >
-                  <Card className="border-gray-200 hover:border-accent/40 transition-all cursor-pointer group h-full">
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex items-center gap-2">
-                          <motion.span
-                            className="text-3xl"
-                            whileHover={{ scale: 1.2, rotate: 8 }}
-                            transition={{ type: 'spring', stiffness: 200 }}
-                          >
-                            {competency.icon}
-                          </motion.span>
-                          <h3 className="text-body font-bold text-gray-900 group-hover:text-accent transition-colors">
-                            {competency.label}
-                          </h3>
-                        </div>
-                        {competency.highlight && (
-                          <Badge variant="secondary" className="bg-accent/10 text-accent border-none">
-                            {competency.highlight}
-                          </Badge>
-                        )}
-                      </div>
-                      <ul className="space-y-1.5">
-                        {competency.items.map((item, itemIdx) => (
-                          <motion.li
-                            key={item}
-                            initial={{ opacity: 0, x: -5 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: idx * 0.08 + itemIdx * 0.03 }}
-                            className="text-body-sm text-gray-600 pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-accent"
-                          >
-                            {item}
-                          </motion.li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-2">
+                      <motion.span
+                        className="text-3xl"
+                        whileHover={{ scale: 1.2, rotate: 8 }}
+                        transition={{ type: 'spring', stiffness: 200 }}
+                      >
+                        {competency.icon}
+                      </motion.span>
+                      <h3 className="text-body font-bold text-gray-900 group-hover:text-accent transition-colors">
+                        {competency.label}
+                      </h3>
+                    </div>
+                    {competency.highlight && (
+                      <span className="px-2 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full">
+                        {competency.highlight}
+                      </span>
+                    )}
+                  </div>
+                  <ul className="space-y-1.5">
+                    {competency.items.map((item, itemIdx) => (
+                      <motion.li
+                        key={item}
+                        initial={{ opacity: 0, x: -5 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.08 + itemIdx * 0.03 }}
+                        className="text-body-sm text-gray-600 pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-accent"
+                      >
+                        {item}
+                      </motion.li>
+                    ))}
+                  </ul>
                 </motion.div>
               ))}
             </div>
@@ -262,51 +250,46 @@ export default function ResumeContent() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
+            className="bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all"
           >
-            <Card className="bg-gradient-to-br from-white to-gray-50 border-gray-200 shadow-lg hover:shadow-xl transition-all">
-              <CardHeader>
-                <motion.h2
-                  className="text-h4 font-semibold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+            <motion.h2
+              className="text-h4 font-semibold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-8"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              Career Highlights
+            </motion.h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+              {careerStats.map((stat, idx) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ delay: idx * 0.06, duration: 0.5, type: "spring", stiffness: 100 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
+                  whileHover={{ y: -6, boxShadow: '0 12px 24px rgba(0, 102, 255, 0.12)' }}
+                  className="p-5 bg-white border border-gray-100 rounded-xl hover:border-accent/30 transition-all cursor-pointer group"
                 >
-                  Career Highlights
-                </motion.h2>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-                  {careerStats.map((stat, idx) => (
-                    <motion.div
-                      key={stat.label}
-                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                      transition={{ delay: idx * 0.06, duration: 0.5, type: "spring", stiffness: 100 }}
-                      viewport={{ once: true }}
-                      whileHover={{ y: -6, boxShadow: '0 12px 24px rgba(0, 102, 255, 0.12)' }}
-                      className="p-5 bg-white border border-gray-100 rounded-xl hover:border-accent/30 transition-all cursor-pointer group"
+                  <div className="flex items-start justify-between mb-3">
+                    <motion.span
+                      className="text-2xl"
+                      whileHover={{ scale: 1.2, rotate: 5 }}
+                      transition={{ type: 'spring', stiffness: 200 }}
                     >
-                      <div className="flex items-start justify-between mb-3">
-                        <motion.span
-                          className="text-2xl"
-                          whileHover={{ scale: 1.2, rotate: 5 }}
-                          transition={{ type: 'spring', stiffness: 200 }}
-                        >
-                          {stat.icon}
-                        </motion.span>
-                      </div>
-                      <div className="text-h4 font-bold text-accent group-hover:text-accent-light transition-colors">
-                        {stat.value}
-                      </div>
-                      <div className="text-body-sm text-gray-600 group-hover:text-gray-700 transition-colors mt-1">
-                        {stat.label}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+                      {stat.icon}
+                    </motion.span>
+                  </div>
+                  <div className="text-h4 font-bold text-accent group-hover:text-accent-light transition-colors">
+                    {stat.value}
+                  </div>
+                  <div className="text-body-sm text-gray-600 group-hover:text-gray-700 transition-colors mt-1">
+                    {stat.label}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </motion.section>
         </div>
       </div>
@@ -316,7 +299,6 @@ export default function ResumeContent() {
         <div className="max-w-3xl mx-auto">
           <section>
             <h2 className="text-h4 font-semibold text-gray-900 mb-12">Professional Experience</h2>
-            <Separator className="mb-12" />
             <div className="space-y-12">
               {experiences.map((exp, expIdx) => (
                 <motion.div
@@ -382,28 +364,23 @@ export default function ResumeContent() {
                   {exp.metrics && exp.metrics.length > 0 && (
                     <div className="mt-4 flex flex-wrap gap-2">
                       {exp.metrics.map((metric, metricIdx) => (
-                        <motion.div
+                        <motion.span
                           key={metric}
                           initial={{ opacity: 0, scale: 0.9 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           transition={{ delay: expIdx * 0.1 + metricIdx * 0.05 }}
                           viewport={{ once: true }}
+                          className="text-caption text-gray-700 px-3 py-1 bg-cream border border-gray-200 rounded hover:bg-gray-50 transition-colors cursor-pointer"
                         >
-                          <Badge variant="outline" className="text-caption text-gray-700 bg-cream hover:bg-gray-50">
-                            {metric}
-                          </Badge>
-                        </motion.div>
+                          {metric}
+                        </motion.span>
                       ))}
                     </div>
                   )}
 
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    <span className="font-medium text-gray-700 text-body-sm">Technologies:</span>
-                    {exp.technologies.map((tech) => (
-                      <Badge key={tech} variant="secondary" className="text-caption">
-                        {tech}
-                      </Badge>
-                    ))}
+                  <div className="mt-4 text-body-sm text-gray-500 leading-relaxed">
+                    <span className="font-medium text-gray-700">Technologies:</span>{' '}
+                    <span className="text-gray-600">{exp.technologies.join(', ')}</span>
                   </div>
                 </motion.div>
               ))}
@@ -422,7 +399,6 @@ export default function ResumeContent() {
             viewport={{ once: true }}
           >
             <h2 className="text-h4 font-semibold text-gray-900 mb-12">Featured Projects</h2>
-            <Separator className="mb-12" />
             <div className="space-y-8">
               {projects.filter(p => p.featured).map((project, projIdx) => (
                 <motion.div
@@ -432,83 +408,76 @@ export default function ResumeContent() {
                   transition={{ delay: projIdx * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -4, boxShadow: '0 12px 24px rgba(0, 102, 255, 0.1)' }}
+                  className="bg-white border border-gray-200 rounded-xl p-8 hover:border-accent/40 transition-all group"
                 >
-                  <Card className="border-gray-200 hover:border-accent/40 transition-all group">
-                    <CardContent className="p-8">
-                      <div className="flex items-start justify-between mb-4">
-                        <div>
-                          <h3 className="text-body-lg font-bold text-gray-900 group-hover:text-accent transition-colors mb-1">
-                            {project.title}
-                          </h3>
-                          <p className="text-body-sm text-gray-600 font-medium">{project.subtitle}</p>
-                        </div>
-                        <Badge
-                          variant="secondary"
-                          className={`${
-                            project.category === 'ai'
-                              ? 'bg-accent/20 text-accent'
-                              : project.category === 'saas'
-                              ? 'bg-purple-500/20 text-purple-600'
-                              : 'bg-green-500/20 text-green-600'
-                          } uppercase tracking-wide border-none`}
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h3 className="text-body-lg font-bold text-gray-900 group-hover:text-accent transition-colors mb-1">
+                        {project.title}
+                      </h3>
+                      <p className="text-body-sm text-gray-600 font-medium">{project.subtitle}</p>
+                    </div>
+                    <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide ${
+                      project.category === 'ai'
+                        ? 'bg-accent/20 text-accent'
+                        : project.category === 'saas'
+                        ? 'bg-purple-500/20 text-purple-600'
+                        : 'bg-green-500/20 text-green-600'
+                    }`}>
+                      {project.category}
+                    </span>
+                  </div>
+
+                  <p className="text-body-sm text-gray-700 leading-relaxed mb-4">{project.longDescription}</p>
+
+                  {project.metrics && project.metrics.length > 0 && (
+                    <div className="grid grid-cols-3 gap-3 mb-4">
+                      {project.metrics.map((metric, metricIdx) => (
+                        <motion.div
+                          key={metric.label}
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: projIdx * 0.1 + metricIdx * 0.05 }}
+                          whileHover={{ scale: 1.05 }}
+                          className="bg-gray-50 rounded-lg p-3 text-center border border-gray-100"
                         >
-                          {project.category}
-                        </Badge>
-                      </div>
+                          <div className="text-body font-bold text-accent">{metric.value}</div>
+                          <div className="text-[10px] text-gray-600 uppercase tracking-wide">{metric.label}</div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  )}
 
-                      <p className="text-body-sm text-gray-700 leading-relaxed mb-4">{project.longDescription}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech, techIdx) => (
+                      <motion.span
+                        key={tech}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: projIdx * 0.1 + techIdx * 0.03 }}
+                        className="px-3 py-1 bg-gray-100 text-gray-600 text-[11px] rounded-full border border-gray-200"
+                      >
+                        {tech}
+                      </motion.span>
+                    ))}
+                  </div>
 
-                      {project.metrics && project.metrics.length > 0 && (
-                        <div className="grid grid-cols-3 gap-3 mb-4">
-                          {project.metrics.map((metric, metricIdx) => (
-                            <motion.div
-                              key={metric.label}
-                              initial={{ opacity: 0, scale: 0.9 }}
-                              whileInView={{ opacity: 1, scale: 1 }}
-                              viewport={{ once: true }}
-                              transition={{ delay: projIdx * 0.1 + metricIdx * 0.05 }}
-                              whileHover={{ scale: 1.05 }}
-                              className="bg-gray-50 rounded-lg p-3 text-center border border-gray-100"
-                            >
-                              <div className="text-body font-bold text-accent">{metric.value}</div>
-                              <div className="text-[10px] text-gray-600 uppercase tracking-wide">{metric.label}</div>
-                            </motion.div>
-                          ))}
-                        </div>
-                      )}
-
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {project.technologies.map((tech, techIdx) => (
-                          <motion.div
-                            key={tech}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: projIdx * 0.1 + techIdx * 0.03 }}
-                          >
-                            <Badge variant="outline" className="text-caption">
-                              {tech}
-                            </Badge>
-                          </motion.div>
-                        ))}
-                      </div>
-
-                      {project.links.live && (
-                        <motion.a
-                          href={project.links.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-accent hover:text-accent-light transition-colors text-body-sm font-medium"
-                          whileHover={{ x: 4 }}
-                        >
-                          View Project
-                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                        </motion.a>
-                      )}
-                    </CardContent>
-                  </Card>
+                  {project.links.live && (
+                    <motion.a
+                      href={project.links.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-accent hover:text-accent-light transition-colors text-body-sm font-medium"
+                      whileHover={{ x: 4 }}
+                    >
+                      View Project
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </motion.a>
+                  )}
                 </motion.div>
               ))}
             </div>
@@ -558,7 +527,6 @@ export default function ResumeContent() {
             >
               Education
             </motion.h2>
-            <Separator className="mb-8" />
             <div className="space-y-6">
               {education.map((edu, idx) => (
                 <motion.div
@@ -611,7 +579,6 @@ export default function ResumeContent() {
             >
               Certifications & Credentials
             </motion.h2>
-            <Separator className="mb-8" />
             <div className="space-y-6">
               {certifications.map((cert, idx) => (
                 <motion.div
@@ -654,16 +621,14 @@ export default function ResumeContent() {
           {/* Target Roles */}
           <section className="mb-12">
             <h2 className="text-h4 font-semibold text-gray-900 mb-6">Target Roles</h2>
-            <Separator className="mb-6" />
             <div className="flex flex-wrap gap-3">
               {['Senior AI Integration Engineer', 'Platform Engineer', 'Staff Full-Stack Engineer'].map((role) => (
-                <Badge
+                <span
                   key={role}
-                  variant="outline"
-                  className="px-4 py-2 bg-accent/10 border-accent/30 text-accent text-body-sm font-medium"
+                  className="px-4 py-2 bg-accent/10 border border-accent/30 text-accent text-body-sm font-medium rounded-lg"
                 >
                   {role}
-                </Badge>
+                </span>
               ))}
             </div>
           </section>
@@ -734,13 +699,12 @@ export default function ResumeContent() {
                 transition={{ delay: 0.2 }}
               >
                 {['Remote', 'Denver-based', 'Full-time', 'Contract'].map((type) => (
-                  <Badge
+                  <span
                     key={type}
-                    variant="secondary"
-                    className="px-4 py-2 text-body-sm"
+                    className="px-4 py-2 bg-gray-100 text-gray-700 text-body-sm font-medium rounded-lg border border-gray-200"
                   >
                     {type}
-                  </Badge>
+                  </span>
                 ))}
               </motion.div>
 

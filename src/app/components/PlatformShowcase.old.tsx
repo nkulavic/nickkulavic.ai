@@ -4,8 +4,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { platforms, platformCategories, getDeepIntegrations, getTotalPlatformCount } from '@/app/data/platforms';
-import { TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { CardContainer, CardBody, CardItem } from '@/components/ui/aceternity/3d-card';
 
 export default function PlatformShowcase() {
   const [activeCategory, setActiveCategory] = useState<string>('all');
@@ -76,32 +74,36 @@ export default function PlatformShowcase() {
           </div>
         </motion.div>
 
-        {/* Category Filters with Tabs */}
-        <div className="flex justify-center mb-12">
-          <Tabs value={activeCategory} onValueChange={setActiveCategory} className="w-full max-w-5xl">
-            <TabsList variant="line" className="flex flex-wrap gap-2 justify-center mb-8">
-              <TabsTrigger
-                value="all"
-                className="px-6 py-3 rounded-full text-body-sm font-medium data-[state=active]:bg-accent data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-accent/30 bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
-              >
-                All Platforms ({totalPlatforms})
-              </TabsTrigger>
-              {Object.entries(platformCategories).map(([key, value]) => {
-                const count = platforms.filter(p => p.category === key).length;
-                if (count === 0) return null;
+        {/* Category Filters */}
+        <div className="flex flex-wrap gap-3 justify-center mb-12">
+          <button
+            onClick={() => setActiveCategory('all')}
+            className={`px-6 py-3 rounded-full text-body-sm font-medium transition-all ${
+              activeCategory === 'all'
+                ? 'bg-accent text-white shadow-lg shadow-accent/30'
+                : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
+            }`}
+          >
+            All Platforms ({totalPlatforms})
+          </button>
+          {Object.entries(platformCategories).map(([key, value]) => {
+            const count = platforms.filter(p => p.category === key).length;
+            if (count === 0) return null;
 
-                return (
-                  <TabsTrigger
-                    key={key}
-                    value={key}
-                    className="px-6 py-3 rounded-full text-body-sm font-medium data-[state=active]:bg-accent data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-accent/30 bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
-                  >
-                    {value.label} ({count})
-                  </TabsTrigger>
-                );
-              })}
-            </TabsList>
-          </Tabs>
+            return (
+              <button
+                key={key}
+                onClick={() => setActiveCategory(key)}
+                className={`px-6 py-3 rounded-full text-body-sm font-medium transition-all ${
+                  activeCategory === key
+                    ? 'bg-accent text-white shadow-lg shadow-accent/30'
+                    : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
+                }`}
+              >
+                {value.label} ({count})
+              </button>
+            );
+          })}
         </div>
 
         {/* Platform Grid */}
@@ -117,68 +119,67 @@ export default function PlatformShowcase() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.03 }}
+              whileHover={{
+                scale: 1.08,
+                y: -8,
+                boxShadow: '0 20px 40px rgba(0, 102, 255, 0.15)'
+              }}
+              className={`relative bg-white backdrop-blur-sm border rounded-2xl p-6 flex flex-col items-center justify-center text-center group cursor-pointer shadow-md ${
+                platform.integrationLevel === 'deep'
+                  ? 'border-accent/40'
+                  : 'border-gray-200 hover:border-accent/30'
+              }`}
             >
-              <CardContainer className="inter-var">
-                <CardBody className={`relative bg-white backdrop-blur-sm border rounded-2xl p-6 flex flex-col items-center justify-center text-center group cursor-pointer shadow-md ${
-                  platform.integrationLevel === 'deep'
-                    ? 'border-accent/40'
-                    : 'border-gray-200 hover:border-accent/30'
-                }`}>
-                  {/* Deep Integration Badge */}
-                  {platform.integrationLevel === 'deep' && (
-                    <CardItem
-                      translateZ={50}
-                      className="absolute -top-2 -right-2 bg-accent text-white text-[10px] font-bold px-2 py-1 rounded-full"
-                    >
-                      DEEP
-                    </CardItem>
-                  )}
+              {/* Deep Integration Badge */}
+              {platform.integrationLevel === 'deep' && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: idx * 0.03 + 0.2 }}
+                  className="absolute -top-2 -right-2 bg-accent text-white text-[10px] font-bold px-2 py-1 rounded-full"
+                >
+                  DEEP
+                </motion.div>
+              )}
 
-                  {/* Platform Logo */}
-                  <CardItem
-                    translateZ={60}
-                    className="w-16 h-16 mb-4 rounded-xl bg-gray-50 flex items-center justify-center overflow-hidden"
-                  >
-                    {platform.logo ? (
-                      <Image
-                        src={platform.logo}
-                        alt={`${platform.name} logo`}
-                        width={48}
-                        height={48}
-                        className="object-contain"
-                      />
-                    ) : (
-                      <span className="text-4xl text-gray-400">{platform.name.charAt(0)}</span>
-                    )}
-                  </CardItem>
+              {/* Platform Logo */}
+              <motion.div
+                className="w-16 h-16 mb-4 rounded-xl bg-gray-50 flex items-center justify-center overflow-hidden"
+                whileHover={{ rotate: 5 }}
+              >
+                {platform.logo ? (
+                  <Image
+                    src={platform.logo}
+                    alt={`${platform.name} logo`}
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                  />
+                ) : (
+                  <span className="text-4xl text-gray-400">{platform.name.charAt(0)}</span>
+                )}
+              </motion.div>
 
-                  {/* Platform Name */}
-                  <CardItem
-                    translateZ={50}
-                    className="text-body-sm font-semibold text-gray-900 mb-2 group-hover:text-accent transition-colors"
-                  >
-                    {platform.name}
-                  </CardItem>
+              {/* Platform Name */}
+              <h3 className="text-body-sm font-semibold text-gray-900 mb-2 group-hover:text-accent transition-colors">
+                {platform.name}
+              </h3>
 
-                  {/* Years Badge */}
-                  <CardItem
-                    translateZ={40}
-                    className="text-caption text-gray-500 bg-gray-100 px-3 py-1 rounded-full"
-                  >
-                    {platform.yearsExperience}+ years
-                  </CardItem>
+              {/* Years Badge */}
+              <span className="text-caption text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                {platform.yearsExperience}+ years
+              </span>
 
-                  {/* Description */}
-                  {platform.description && (
-                    <CardItem
-                      translateZ={30}
-                      className="mt-3 text-[11px] text-gray-500 leading-snug"
-                    >
-                      {platform.description}
-                    </CardItem>
-                  )}
-                </CardBody>
-              </CardContainer>
+              {/* Description on hover */}
+              {platform.description && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  whileHover={{ opacity: 1, height: 'auto' }}
+                  className="mt-3 text-[11px] text-gray-500 leading-snug overflow-hidden"
+                >
+                  {platform.description}
+                </motion.div>
+              )}
             </motion.div>
           ))}
         </motion.div>
