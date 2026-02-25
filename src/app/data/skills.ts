@@ -417,11 +417,11 @@ export function getExperiencedSkills(minYears: number = 5) {
   );
 }
 
-// Get skills with Production badge
+// Get production-proven skills (expert level with 3+ years experience)
 export function getProductionSkills() {
   return skillCategories.flatMap(category =>
     category.skills
-      .filter(skill => skill.badge === 'Production')
+      .filter(skill => skill.level === 'expert' && skill.yearsExperience && skill.yearsExperience >= 3)
       .map(skill => ({ ...skill, category: category.name }))
   );
 }

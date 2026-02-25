@@ -32,7 +32,7 @@ export default async function Image() {
             left: 0,
             right: 0,
             height: '8px',
-            background: 'linear-gradient(90deg, #0066FF 0%, #00AAFF 100%)',
+            background: 'linear-gradient(90deg, #E67E22 0%, #D4A574 100%)',
           }}
         />
 
@@ -71,7 +71,7 @@ export default async function Image() {
             display: 'flex',
             fontSize: '36px',
             fontWeight: 500,
-            color: '#0066FF',
+            color: '#E67E22',
             marginBottom: '32px',
           }}
         >
@@ -101,19 +101,19 @@ export default async function Image() {
           }}
         >
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <div style={{ fontSize: '36px', fontWeight: 700, color: '#0066FF' }}>$1.7M+</div>
+            <div style={{ fontSize: '36px', fontWeight: 700, color: '#E67E22' }}>$1.7M+</div>
             <div style={{ fontSize: '16px', color: '#666666' }}>Revenue</div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <div style={{ fontSize: '36px', fontWeight: 700, color: '#0066FF' }}>500+</div>
+            <div style={{ fontSize: '36px', fontWeight: 700, color: '#E67E22' }}>500+</div>
             <div style={{ fontSize: '16px', color: '#666666' }}>Users</div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <div style={{ fontSize: '36px', fontWeight: 700, color: '#0066FF' }}>14+</div>
+            <div style={{ fontSize: '36px', fontWeight: 700, color: '#E67E22' }}>14+</div>
             <div style={{ fontSize: '16px', color: '#666666' }}>Years</div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <div style={{ fontSize: '36px', fontWeight: 700, color: '#0066FF' }}>0</div>
+            <div style={{ fontSize: '36px', fontWeight: 700, color: '#E67E22' }}>0</div>
             <div style={{ fontSize: '16px', color: '#666666' }}>Breaches</div>
           </div>
         </div>

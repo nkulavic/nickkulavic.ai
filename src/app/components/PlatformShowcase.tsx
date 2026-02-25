@@ -16,7 +16,7 @@ export default function PlatformShowcase() {
   const totalPlatforms = getTotalPlatformCount();
 
   return (
-    <section className="py-24 px-8 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden">
+    <section className="py-24 px-8 bg-muted/50 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 left-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
@@ -40,10 +40,10 @@ export default function PlatformShowcase() {
             Platform Integration Expert
           </motion.div>
 
-          <h2 className="text-h2 font-bold text-gray-900 mb-6">
+          <h2 className="text-h2 font-bold text-foreground mb-6">
             {totalPlatforms}+ Platform Integrations
           </h2>
-          <p className="text-body-lg text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-body-lg text-muted-foreground max-w-3xl mx-auto mb-8">
             Deep API integration experience across CRM, marketing, communication, e-commerce, and productivity platforms.
             Built production systems connecting enterprise ecosystems since 2015.
           </p>
@@ -52,24 +52,24 @@ export default function PlatformShowcase() {
           <div className="flex flex-wrap gap-6 justify-center text-center mb-12">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="bg-white border border-gray-200 rounded-2xl px-8 py-4 shadow-md"
+              className="glass-card px-8 py-4"
             >
               <div className="text-h3 font-bold text-accent mb-1">{deepIntegrations.length}</div>
-              <div className="text-body-sm text-gray-500">Deep Integrations</div>
+              <div className="text-body-sm text-muted-foreground">Deep Integrations</div>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="bg-white border border-gray-200 rounded-2xl px-8 py-4 shadow-md"
+              className="glass-card px-8 py-4"
             >
               <div className="text-h3 font-bold text-accent mb-1">60+</div>
-              <div className="text-body-sm text-gray-500">Helper Apps Built</div>
+              <div className="text-body-sm text-muted-foreground">Helper Apps Built</div>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="bg-white border border-gray-200 rounded-2xl px-8 py-4 shadow-md"
+              className="glass-card px-8 py-4"
             >
               <div className="text-h3 font-bold text-accent mb-1">10+</div>
-              <div className="text-body-sm text-gray-500">Years Experience</div>
+              <div className="text-body-sm text-muted-foreground">Years Experience</div>
             </motion.div>
           </div>
         </motion.div>
@@ -80,8 +80,8 @@ export default function PlatformShowcase() {
             onClick={() => setActiveCategory('all')}
             className={`px-6 py-3 rounded-full text-body-sm font-medium transition-all ${
               activeCategory === 'all'
-                ? 'bg-accent text-white shadow-lg shadow-accent/30'
-                : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
+                ? 'bg-accent text-accent-foreground shadow-lg'
+                : 'bg-card text-muted-foreground hover:bg-muted border border-border'
             }`}
           >
             All Platforms ({totalPlatforms})
@@ -96,8 +96,8 @@ export default function PlatformShowcase() {
                 onClick={() => setActiveCategory(key)}
                 className={`px-6 py-3 rounded-full text-body-sm font-medium transition-all ${
                   activeCategory === key
-                    ? 'bg-accent text-white shadow-lg shadow-accent/30'
-                    : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
+                    ? 'bg-accent text-accent-foreground shadow-lg'
+                    : 'bg-card text-muted-foreground hover:bg-muted border border-border'
                 }`}
               >
                 {value.label} ({count})
@@ -122,12 +122,12 @@ export default function PlatformShowcase() {
               whileHover={{
                 scale: 1.08,
                 y: -8,
-                boxShadow: '0 20px 40px rgba(0, 102, 255, 0.15)'
+                boxShadow: '0 20px 40px rgba(230, 126, 34, 0.15)'
               }}
-              className={`relative bg-white backdrop-blur-sm border rounded-2xl p-6 flex flex-col items-center justify-center text-center group cursor-pointer shadow-md ${
+              className={`relative glass-card p-6 flex flex-col items-center justify-center text-center group cursor-pointer ${
                 platform.integrationLevel === 'deep'
                   ? 'border-accent/40'
-                  : 'border-gray-200 hover:border-accent/30'
+                  : 'hover:border-accent/30'
               }`}
             >
               {/* Deep Integration Badge */}
@@ -144,7 +144,7 @@ export default function PlatformShowcase() {
 
               {/* Platform Logo */}
               <motion.div
-                className="w-16 h-16 mb-4 rounded-xl bg-gray-50 flex items-center justify-center overflow-hidden"
+                className="w-16 h-16 mb-4 rounded-xl bg-muted flex items-center justify-center overflow-hidden"
                 whileHover={{ rotate: 5 }}
               >
                 {platform.logo ? (
@@ -156,17 +156,17 @@ export default function PlatformShowcase() {
                     className="object-contain"
                   />
                 ) : (
-                  <span className="text-4xl text-gray-400">{platform.name.charAt(0)}</span>
+                  <span className="text-4xl text-muted-foreground">{platform.name.charAt(0)}</span>
                 )}
               </motion.div>
 
               {/* Platform Name */}
-              <h3 className="text-body-sm font-semibold text-gray-900 mb-2 group-hover:text-accent transition-colors">
+              <h3 className="text-body-sm font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
                 {platform.name}
               </h3>
 
               {/* Years Badge */}
-              <span className="text-caption text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+              <span className="text-caption text-muted-foreground bg-muted px-3 py-1 rounded-full">
                 {platform.yearsExperience}+ years
               </span>
 
@@ -175,7 +175,7 @@ export default function PlatformShowcase() {
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
                   whileHover={{ opacity: 1, height: 'auto' }}
-                  className="mt-3 text-[11px] text-gray-500 leading-snug overflow-hidden"
+                  className="mt-3 text-[11px] text-muted-foreground leading-snug overflow-hidden"
                 >
                   {platform.description}
                 </motion.div>
@@ -197,10 +197,10 @@ export default function PlatformShowcase() {
               📊
             </div>
             <div className="flex-1">
-              <h3 className="text-h4 font-bold text-gray-900 mb-3">
+              <h3 className="text-h4 font-bold text-foreground mb-3">
                 Google Sheet It - Flagship Integration
               </h3>
-              <p className="text-body text-gray-600 mb-4">
+              <p className="text-body text-muted-foreground mb-4">
                 Most popular MyFusion Helper integration, syncing Infusionsoft/Keap CRM data to Google Sheets
                 with automated refresh scheduling. Enables real-time reporting without logging into CRM.
               </p>
@@ -225,7 +225,7 @@ export default function PlatformShowcase() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <p className="text-body text-gray-600">
+          <p className="text-body text-muted-foreground">
             Need complex platform integrations? I&apos;ve built production API connections across the entire modern tech stack.
           </p>
         </motion.div>

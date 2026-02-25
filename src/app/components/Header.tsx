@@ -3,151 +3,159 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useTheme } from './ThemeProvider';
+import { Moon, Sun } from 'lucide-react';
+
+const sectionLinks = [
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Experience", href: "#experience" },
+  { label: "Contact", href: "#contact" },
+];
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, toggleTheme, mounted } = useTheme();
+  const pathname = usePathname();
+  const isHome = pathname === '/';
 
-  const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'Resume', href: '/resume' },
-    { name: 'LinkedIn', href: 'https://linkedin.com/in/nickkulavic', external: true },
-    { name: 'Contact', href: 'mailto:nick@nickkulavic.com' }
-  ];
+  const renderNavLink = (link: { label: string; href: string }, index: number, mobile = false) => {
+    const className = mobile
+      ? "block text-primary-foreground/70 hover:text-primary-foreground transition-colors font-body py-1"
+      : "text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors font-body";
+
+    if (isHome) {
+      return (
+        <a
+          key={index}
+          href={link.href}
+          className={className}
+          onClick={() => mobile && setMobileMenuOpen(false)}
+        >
+          {link.label}
+        </a>
+      );
+    }
+
+    return (
+      <Link
+        key={index}
+        href={`/${link.href}`}
+        className={className}
+        onClick={() => mobile && setMobileMenuOpen(false)}
+      >
+        {link.label}
+      </Link>
+    );
+  };
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-cream/95 backdrop-blur-md shadow-sm z-50 border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="flex justify-between items-center h-16">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-primary/90 backdrop-blur-xl border-b border-primary-foreground/5">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16">
+        <Link
+          href="/"
+          className="font-display font-bold text-xl text-primary-foreground tracking-tight hover:text-accent transition-colors"
+        >
+          NK
+        </Link>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-8">
+          {sectionLinks.map((link, i) => renderNavLink(link, i))}
+
           <Link
-            href="/"
-            className="text-xl font-bold text-gray-900 hover:text-accent transition-colors"
+            href="/resume"
+            className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors font-body"
           >
-            NK
+            Resume
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => (
-              item.external ? (
-                <a
-                  key={index}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-700 hover:text-accent transition-colors font-medium text-body-sm"
-                >
-                  {item.name}
-                </a>
-              ) : (
-                <Link
-                  key={index}
-                  href={item.href}
-                  className="text-gray-700 hover:text-accent transition-colors font-medium text-body-sm"
-                >
-                  {item.name}
-                </Link>
-              )
-            ))}
+          {/* Theme Toggle */}
+          <motion.button
+            onClick={toggleTheme}
+            className="p-2 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 text-primary-foreground transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+          >
+            {!mounted ? (
+              <div className="w-5 h-5" />
+            ) : theme === 'light' ? (
+              <Moon className="w-5 h-5" />
+            ) : (
+              <Sun className="w-5 h-5" />
+            )}
+          </motion.button>
 
-            {/* Theme Toggle Button */}
-            <motion.button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-            >
-              {!mounted ? (
-                <div className="w-5 h-5" />
-              ) : theme === 'light' ? (
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
-              ) : (
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              )}
-            </motion.button>
-          </nav>
+          <a
+            href="mailto:nick@nickkulavic.com"
+            className="text-sm bg-accent text-accent-foreground px-5 py-2 rounded-lg font-display font-semibold hover:brightness-110 transition-all"
+          >
+            Let&apos;s Talk
+          </a>
+        </div>
 
-          {/* Mobile: Theme Toggle + Menu Button */}
-          <div className="md:hidden flex items-center gap-2">
-            {/* Mobile Theme Toggle */}
-            <motion.button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors"
-              whileTap={{ scale: 0.95 }}
-              aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-            >
-              {!mounted ? (
-                <div className="w-5 h-5" />
-              ) : theme === 'light' ? (
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
-              ) : (
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              )}
-            </motion.button>
+        {/* Mobile: Theme Toggle + Menu Button */}
+        <div className="md:hidden flex items-center gap-2">
+          <motion.button
+            onClick={toggleTheme}
+            className="p-2 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 text-primary-foreground transition-colors"
+            whileTap={{ scale: 0.95 }}
+            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+          >
+            {!mounted ? (
+              <div className="w-5 h-5" />
+            ) : theme === 'light' ? (
+              <Moon className="w-5 h-5" />
+            ) : (
+              <Sun className="w-5 h-5" />
+            )}
+          </motion.button>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="text-gray-700 p-2 rounded-lg hover:bg-gray-100 transition-colors"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle mobile menu"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
-          </div>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="text-primary-foreground p-2"
+            aria-label="Toggle menu"
+          >
+            <div className="space-y-1.5">
+              <span className={`block w-6 h-0.5 bg-current transition-transform ${mobileMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
+              <span className={`block w-6 h-0.5 bg-current transition-opacity ${mobileMenuOpen ? "opacity-0" : ""}`} />
+              <span className={`block w-6 h-0.5 bg-current transition-transform ${mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            </div>
+          </button>
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-white border-t border-gray-200 shadow-lg overflow-hidden"
+            className="md:hidden bg-primary border-t border-primary-foreground/5 overflow-hidden"
           >
-            <nav className="px-8 py-4 space-y-2">
-              {navItems.map((item, index) => (
-                item.external ? (
-                  <a
-                    key={index}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block py-3 px-4 text-gray-700 hover:text-accent hover:bg-gray-50 rounded-lg transition-colors font-medium"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </a>
-                ) : (
-                  <Link
-                    key={index}
-                    href={item.href}
-                    className="block py-3 px-4 text-gray-700 hover:text-accent hover:bg-gray-50 rounded-lg transition-colors font-medium"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                )
-              ))}
-            </nav>
+            <div className="px-6 py-4 space-y-3">
+              {sectionLinks.map((link, i) => renderNavLink(link, i, true))}
+
+              <Link
+                href="/resume"
+                className="block text-primary-foreground/70 hover:text-primary-foreground transition-colors font-body py-1"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Resume
+              </Link>
+
+              <a
+                href="mailto:nick@nickkulavic.com"
+                className="block text-center bg-accent text-accent-foreground px-5 py-2.5 rounded-lg font-display font-semibold mt-3"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Let&apos;s Talk
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
