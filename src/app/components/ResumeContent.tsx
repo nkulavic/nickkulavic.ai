@@ -10,13 +10,52 @@ import { siteConfig, availability } from '@/app/data/siteConfig';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import TechnicalExpertise from '@/app/components/TechnicalExpertise';
+import {
+  Bot, Cloud, Server, Code, BarChart3, Link as LinkIcon, Palette,
+  ShoppingCart, Shield, DollarSign, Users, Zap, Award, GraduationCap,
+  Monitor, Download, Mail, MapPin, ExternalLink
+} from 'lucide-react';
 
 export default function ResumeContent() {
+  // Icon mappings for competencies
+  const competencyIcons: Record<string, React.ReactNode> = {
+    'AI/ML Engineering': <Bot className="w-6 h-6 text-accent" />,
+    'AWS Solutions Architect': <Cloud className="w-6 h-6 text-accent" />,
+    'Google Cloud Platform': <Server className="w-6 h-6 text-accent" />,
+    'Backend & APIs': <Code className="w-6 h-6 text-accent" />,
+    'All Major CRMs': <BarChart3 className="w-6 h-6 text-accent" />,
+    'Business Platforms': <LinkIcon className="w-6 h-6 text-accent" />,
+    'Modern Frontend': <Palette className="w-6 h-6 text-accent" />,
+    'E-commerce & Payments': <ShoppingCart className="w-6 h-6 text-accent" />,
+    'Security & Compliance': <Shield className="w-6 h-6 text-accent" />,
+  };
+
+  const statIcons: Record<string, React.ReactNode> = {
+    'Total Revenue': <DollarSign className="w-5 h-5 text-accent" />,
+    'Enterprise Users': <Users className="w-5 h-5 text-accent" />,
+    'Monthly API Requests': <Zap className="w-5 h-5 text-accent" />,
+    'Integrations': <LinkIcon className="w-5 h-5 text-accent" />,
+    'Security Breaches': <Shield className="w-5 h-5 text-accent" />,
+    'Years Experience': <Award className="w-5 h-5 text-accent" />,
+  };
+
+  const eduIcons: Record<string, React.ReactNode> = {
+    '\u{1F393}': <GraduationCap className="w-6 h-6 text-accent" />,
+    '\u{1F4BB}': <Monitor className="w-6 h-6 text-accent" />,
+  };
+
+  const certIcons: Record<string, React.ReactNode> = {
+    '\u2601\uFE0F': <Cloud className="w-6 h-6 text-accent" />,
+    '\u{1F916}': <Bot className="w-6 h-6 text-accent" />,
+    '\u{1F393}': <GraduationCap className="w-6 h-6 text-accent" />,
+    '\u{1F6E1}\uFE0F': <Shield className="w-6 h-6 text-accent" />,
+  };
+
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-background">
       <Header />
       {/* Header Section - Light */}
-      <div className="bg-gradient-to-b from-white to-cream pt-32 pb-20 px-8 relative overflow-hidden">
+      <div className="bg-gradient-to-b from-card to-background pt-32 pb-20 px-8 relative overflow-hidden">
         {/* Animated background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
@@ -28,7 +67,7 @@ export default function ResumeContent() {
 
         <div className="max-w-3xl mx-auto relative z-10">
           <motion.header
-            className="pb-10 mb-10 border-b border-gray-200"
+            className="pb-10 mb-10 border-b border-border"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -36,7 +75,7 @@ export default function ResumeContent() {
             <div className="flex items-start justify-between mb-6">
               <div>
                 <motion.h1
-                  className="text-h1 font-bold text-transparent bg-gradient-to-r from-gray-900 via-gray-800 to-accent bg-clip-text mb-3"
+                  className="text-h1 font-bold text-gradient mb-3"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1, duration: 0.6 }}
@@ -44,7 +83,7 @@ export default function ResumeContent() {
                   {siteConfig.name}
                 </motion.h1>
                 <motion.p
-                  className="text-h4 text-transparent bg-gradient-to-r from-gray-600 to-accent bg-clip-text mb-4"
+                  className="text-h4 text-gradient mb-4"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.6 }}
@@ -56,16 +95,14 @@ export default function ResumeContent() {
               <motion.a
                 href="/resume/print"
                 target="_blank"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white hover:bg-accent-light rounded-xl font-bold text-body-sm shadow-lg whitespace-nowrap"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground hover:brightness-110 rounded-xl font-bold text-body-sm shadow-lg whitespace-nowrap"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
-                whileHover={{ scale: 1.05, y: -2, boxShadow: '0 12px 24px rgba(0, 102, 255, 0.4)' }}
+                whileHover={{ scale: 1.05, y: -2, boxShadow: '0 12px 24px rgba(230, 126, 34, 0.4)' }}
                 whileTap={{ scale: 0.98 }}
               >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
+                <Download className="w-4 h-4" />
                 Download PDF
               </motion.a>
             </div>
@@ -78,24 +115,19 @@ export default function ResumeContent() {
               transition={{ delay: 0.4, duration: 0.6 }}
             >
               <motion.div
-                className="flex items-center gap-3 text-body-sm text-gray-600 bg-white rounded-lg p-4 border border-gray-200 shadow-sm"
-                whileHover={{ scale: 1.02, borderColor: 'rgba(0, 102, 255, 0.5)' }}
+                className="flex items-center gap-3 text-body-sm text-muted-foreground bg-card rounded-lg p-4 border border-border shadow-sm"
+                whileHover={{ scale: 1.02, borderColor: 'rgba(230, 126, 34, 0.5)' }}
               >
-                <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <span className="text-gray-700">{siteConfig.location}</span>
+                <MapPin className="w-5 h-5 text-accent" />
+                <span className="text-muted-foreground">{siteConfig.location}</span>
               </motion.div>
 
               <motion.a
                 href={`mailto:${siteConfig.email}`}
-                className="flex items-center gap-3 text-body-sm text-gray-600 bg-white rounded-lg p-4 border border-gray-200 shadow-sm hover:text-accent hover:border-accent/50 transition-all"
+                className="flex items-center gap-3 text-body-sm text-muted-foreground bg-card rounded-lg p-4 border border-border shadow-sm hover:text-accent hover:border-accent/50 transition-all"
                 whileHover={{ scale: 1.02, y: -2 }}
               >
-                <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
+                <Mail className="w-5 h-5 text-accent" />
                 <span>{siteConfig.email}</span>
               </motion.a>
 
@@ -103,7 +135,7 @@ export default function ResumeContent() {
                 href={siteConfig.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-body-sm text-gray-600 bg-white rounded-lg p-4 border border-gray-200 shadow-sm hover:text-[#0A66C2] hover:border-[#0A66C2]/50 transition-all"
+                className="flex items-center gap-3 text-body-sm text-muted-foreground bg-card rounded-lg p-4 border border-border shadow-sm hover:text-[#0A66C2] hover:border-[#0A66C2]/50 transition-all"
                 whileHover={{ scale: 1.02, y: -2 }}
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -138,14 +170,14 @@ export default function ResumeContent() {
             transition={{ delay: 0.4, duration: 0.6 }}
           >
             <motion.h2
-              className="text-h4 font-semibold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-6"
+              className="text-h4 font-semibold text-gradient mb-6"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
               Professional Summary
             </motion.h2>
-            <p className="text-body text-gray-700 leading-loose mb-6">
+            <p className="text-body text-muted-foreground leading-loose mb-6">
               Senior AI & Platform Engineer with 14+ years architecting enterprise systems and scaling profitable SaaS ventures.
               I build production infrastructure that drives revenue—$1.7M+ generated across 3 companies, 2M+ monthly API requests, zero security breaches.
             </p>
@@ -156,9 +188,9 @@ export default function ResumeContent() {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5 + idx * 0.05, duration: 0.4 }}
-                  className="flex items-start gap-3 text-body-sm text-gray-700 bg-white rounded-lg p-3 border border-gray-200 shadow-sm"
+                  className="flex items-start gap-3 text-body-sm text-muted-foreground bg-card rounded-lg p-3 border border-border shadow-sm"
                 >
-                  <span>{item}</span>
+                  <span>{item.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, '')}</span>
                 </motion.div>
               ))}
             </div>
@@ -167,7 +199,7 @@ export default function ResumeContent() {
       </div>
 
       {/* Core Competencies - Cream Section */}
-      <div className="py-24 px-8 bg-cream">
+      <div className="py-24 px-8 bg-background">
         <div className="max-w-3xl mx-auto">
           <motion.section
             initial={{ opacity: 0, y: 20 }}
@@ -177,7 +209,7 @@ export default function ResumeContent() {
             className="mb-12"
           >
             <motion.h2
-              className="text-h4 font-semibold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-8"
+              className="text-h4 font-semibold text-gradient mb-8"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -187,15 +219,15 @@ export default function ResumeContent() {
             </motion.h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {[
-                { icon: '🤖', label: 'AI/ML Engineering', items: ['AWS Bedrock', 'Claude AI', 'OpenAI GPT-4', 'LangChain', 'RAG Systems', 'Multi-Model AI'], highlight: 'Production' },
-                { icon: '☁️', label: 'AWS Solutions Architect', items: ['Lambda', 'API Gateway v2', 'DynamoDB', 'S3', 'Cognito', '40+ Services'], highlight: '10 Years' },
-                { icon: '🌩️', label: 'Google Cloud Platform', items: ['Cloud Functions', 'Gemini API', 'BigQuery', 'Firestore', 'Vertex AI', 'Cloud Run'], highlight: 'Multi-Cloud' },
-                { icon: '⚙️', label: 'Backend & APIs', items: ['Go', 'Node.js (10y)', 'REST/GraphQL', 'Streaming APIs', 'Microservices', 'WebSockets'], highlight: 'Expert' },
-                { icon: '📊', label: 'All Major CRMs', items: ['Salesforce', 'HubSpot', 'Infusionsoft/Keap (enterprise CRM)', 'Zoho', 'Pipedrive', '17+ Platforms'], highlight: 'Production' },
-                { icon: '🔗', label: 'Business Platforms', items: ['Teamwork', 'Airtable', 'Asana', 'Monday.com', 'Zapier', '20+ Tools'], highlight: 'Integration Expert' },
-                { icon: '🎨', label: 'Modern Frontend', items: ['React (7y)', 'Next.js', 'TypeScript', 'Tailwind', 'SvelteKit', 'SSR/SSG'], highlight: 'Production' },
-                { icon: '🛒', label: 'E-commerce & Payments', items: ['Shopify', 'WooCommerce', 'Stripe', 'PayPal', 'Subscriptions', 'Payment Gateways'], highlight: 'Expert' },
-                { icon: '🔐', label: 'Security & Compliance', items: ['SOC 2', 'OAuth/JWT', 'API Security', 'Data Encryption', 'Zero Breaches', 'GDPR'], highlight: 'Certified' }
+                { label: 'AI/ML Engineering', items: ['AWS Bedrock', 'Claude AI', 'OpenAI GPT-4', 'LangChain', 'RAG Systems', 'Multi-Model AI'], highlight: 'Production' },
+                { label: 'AWS Solutions Architect', items: ['Lambda', 'API Gateway v2', 'DynamoDB', 'S3', 'Cognito', '40+ Services'], highlight: '10 Years' },
+                { label: 'Google Cloud Platform', items: ['Cloud Functions', 'Gemini API', 'BigQuery', 'Firestore', 'Vertex AI', 'Cloud Run'], highlight: 'Multi-Cloud' },
+                { label: 'Backend & APIs', items: ['Go', 'Node.js (10y)', 'REST/GraphQL', 'Streaming APIs', 'Microservices', 'WebSockets'], highlight: 'Expert' },
+                { label: 'All Major CRMs', items: ['Salesforce', 'HubSpot', 'Infusionsoft/Keap (enterprise CRM)', 'Zoho', 'Pipedrive', '17+ Platforms'], highlight: 'Production' },
+                { label: 'Business Platforms', items: ['Teamwork', 'Airtable', 'Asana', 'Monday.com', 'Zapier', '20+ Tools'], highlight: 'Integration Expert' },
+                { label: 'Modern Frontend', items: ['React (7y)', 'Next.js', 'TypeScript', 'Tailwind', 'SvelteKit', 'SSR/SSG'], highlight: 'Production' },
+                { label: 'E-commerce & Payments', items: ['Shopify', 'WooCommerce', 'Stripe', 'PayPal', 'Subscriptions', 'Payment Gateways'], highlight: 'Expert' },
+                { label: 'Security & Compliance', items: ['SOC 2', 'OAuth/JWT', 'API Security', 'Data Encryption', 'Zero Breaches', 'GDPR'], highlight: 'Certified' }
               ].map((competency, idx) => (
                 <motion.div
                   key={competency.label}
@@ -203,19 +235,15 @@ export default function ResumeContent() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.08, duration: 0.5, type: "spring", stiffness: 100 }}
-                  whileHover={{ y: -6, boxShadow: '0 12px 24px rgba(0, 102, 255, 0.12)' }}
-                  className="bg-white border border-gray-200 rounded-xl p-6 hover:border-accent/40 transition-all cursor-pointer group"
+                  whileHover={{ y: -6, boxShadow: '0 12px 24px rgba(230, 126, 34, 0.12)' }}
+                  className="bg-card border border-border rounded-xl p-6 hover:border-accent/40 transition-all cursor-pointer group"
                 >
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-2">
-                      <motion.span
-                        className="text-3xl"
-                        whileHover={{ scale: 1.2, rotate: 8 }}
-                        transition={{ type: 'spring', stiffness: 200 }}
-                      >
-                        {competency.icon}
-                      </motion.span>
-                      <h3 className="text-body font-bold text-gray-900 group-hover:text-accent transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        {competencyIcons[competency.label]}
+                      </div>
+                      <h3 className="text-body font-bold text-foreground group-hover:text-accent transition-colors">
                         {competency.label}
                       </h3>
                     </div>
@@ -233,7 +261,7 @@ export default function ResumeContent() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.08 + itemIdx * 0.03 }}
-                        className="text-body-sm text-gray-600 pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-accent"
+                        className="text-body-sm text-muted-foreground pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-accent"
                       >
                         {item}
                       </motion.li>
@@ -250,10 +278,10 @@ export default function ResumeContent() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all"
+            className="bg-gradient-to-br from-card to-muted border border-border rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all"
           >
             <motion.h2
-              className="text-h4 font-semibold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-8"
+              className="text-h4 font-semibold text-gradient mb-8"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -269,22 +297,18 @@ export default function ResumeContent() {
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ delay: idx * 0.06, duration: 0.5, type: "spring", stiffness: 100 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -6, boxShadow: '0 12px 24px rgba(0, 102, 255, 0.12)' }}
-                  className="p-5 bg-white border border-gray-100 rounded-xl hover:border-accent/30 transition-all cursor-pointer group"
+                  whileHover={{ y: -6, boxShadow: '0 12px 24px rgba(230, 126, 34, 0.12)' }}
+                  className="p-5 bg-card border border-border rounded-xl hover:border-accent/30 transition-all cursor-pointer group"
                 >
                   <div className="flex items-start justify-between mb-3">
-                    <motion.span
-                      className="text-2xl"
-                      whileHover={{ scale: 1.2, rotate: 5 }}
-                      transition={{ type: 'spring', stiffness: 200 }}
-                    >
-                      {stat.icon}
-                    </motion.span>
+                    <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center">
+                      {statIcons[stat.label] || <Award className="w-5 h-5 text-accent" />}
+                    </div>
                   </div>
-                  <div className="text-h4 font-bold text-accent group-hover:text-accent-light transition-colors">
+                  <div className="text-h4 font-bold text-accent group-hover:text-accent transition-colors">
                     {stat.value}
                   </div>
-                  <div className="text-body-sm text-gray-600 group-hover:text-gray-700 transition-colors mt-1">
+                  <div className="text-body-sm text-muted-foreground group-hover:text-muted-foreground transition-colors mt-1">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -295,10 +319,10 @@ export default function ResumeContent() {
       </div>
 
       {/* Experience - White Section */}
-      <div className="py-24 px-8 bg-white">
+      <div className="py-24 px-8 bg-card">
         <div className="max-w-3xl mx-auto">
           <section>
-            <h2 className="text-h4 font-semibold text-gray-900 mb-12">Professional Experience</h2>
+            <h2 className="text-h4 font-semibold text-foreground mb-12">Professional Experience</h2>
             <div className="space-y-12">
               {experiences.map((exp, expIdx) => (
                 <motion.div
@@ -312,7 +336,7 @@ export default function ResumeContent() {
                   {/* Logo */}
                   {exp.logo && exp.logo.imagePath && (
                     <motion.div
-                      className="absolute -left-14 top-0 bg-white rounded-xl p-2 shadow-lg"
+                      className="absolute -left-14 top-0 bg-card rounded-xl p-2 shadow-lg"
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
@@ -332,17 +356,17 @@ export default function ResumeContent() {
 
                   <div className="flex justify-between items-baseline mb-4">
                     <div>
-                      <h3 className="text-body-lg font-semibold text-gray-900 group-hover:text-accent transition-colors mb-1">
+                      <h3 className="text-body-lg font-semibold text-foreground group-hover:text-accent transition-colors mb-1">
                         {exp.role}
                       </h3>
-                      <p className="text-body text-gray-600">{exp.company} • {exp.location}</p>
+                      <p className="text-body text-muted-foreground">{exp.company} • {exp.location}</p>
                     </div>
-                    <span className="text-body-sm text-gray-500 whitespace-nowrap ml-4">
+                    <span className="text-body-sm text-muted-foreground whitespace-nowrap ml-4">
                       {exp.startDate} – {exp.endDate}
                     </span>
                   </div>
 
-                  <p className="text-body-sm text-gray-600 mb-4 italic leading-relaxed">
+                  <p className="text-body-sm text-muted-foreground mb-4 italic leading-relaxed">
                     {exp.description}
                   </p>
 
@@ -354,7 +378,7 @@ export default function ResumeContent() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ delay: expIdx * 0.1 + achIdx * 0.05 }}
                         viewport={{ once: true }}
-                        className="text-body-sm text-gray-700 pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-accent"
+                        className="text-body-sm text-muted-foreground pl-5 relative before:content-['•'] before:absolute before:left-0 before:text-accent"
                       >
                         {achievement}
                       </motion.li>
@@ -370,7 +394,7 @@ export default function ResumeContent() {
                           whileInView={{ opacity: 1, scale: 1 }}
                           transition={{ delay: expIdx * 0.1 + metricIdx * 0.05 }}
                           viewport={{ once: true }}
-                          className="text-caption text-gray-700 px-3 py-1 bg-cream border border-gray-200 rounded hover:bg-gray-50 transition-colors cursor-pointer"
+                          className="text-caption text-muted-foreground px-3 py-1 bg-background border border-border rounded hover:bg-muted transition-colors cursor-pointer"
                         >
                           {metric}
                         </motion.span>
@@ -378,9 +402,9 @@ export default function ResumeContent() {
                     </div>
                   )}
 
-                  <div className="mt-4 text-body-sm text-gray-500 leading-relaxed">
-                    <span className="font-medium text-gray-700">Technologies:</span>{' '}
-                    <span className="text-gray-600">{exp.technologies.join(', ')}</span>
+                  <div className="mt-4 text-body-sm text-muted-foreground leading-relaxed">
+                    <span className="font-medium text-muted-foreground">Technologies:</span>{' '}
+                    <span className="text-muted-foreground">{exp.technologies.join(', ')}</span>
                   </div>
                 </motion.div>
               ))}
@@ -390,7 +414,7 @@ export default function ResumeContent() {
       </div>
 
       {/* Featured Projects - Cream Section */}
-      <div className="py-24 px-8 bg-cream">
+      <div className="py-24 px-8 bg-background">
         <div className="max-w-3xl mx-auto">
           <motion.section
             initial={{ opacity: 0, y: 20 }}
@@ -398,7 +422,7 @@ export default function ResumeContent() {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-h4 font-semibold text-gray-900 mb-12">Featured Projects</h2>
+            <h2 className="text-h4 font-semibold text-foreground mb-12">Featured Projects</h2>
             <div className="space-y-8">
               {projects.filter(p => p.featured).map((project, projIdx) => (
                 <motion.div
@@ -407,15 +431,15 @@ export default function ResumeContent() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: projIdx * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -4, boxShadow: '0 12px 24px rgba(0, 102, 255, 0.1)' }}
-                  className="bg-white border border-gray-200 rounded-xl p-8 hover:border-accent/40 transition-all group"
+                  whileHover={{ y: -4, boxShadow: '0 12px 24px rgba(230, 126, 34, 0.1)' }}
+                  className="bg-card border border-border rounded-xl p-8 hover:border-accent/40 transition-all group"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <h3 className="text-body-lg font-bold text-gray-900 group-hover:text-accent transition-colors mb-1">
+                      <h3 className="text-body-lg font-bold text-foreground group-hover:text-accent transition-colors mb-1">
                         {project.title}
                       </h3>
-                      <p className="text-body-sm text-gray-600 font-medium">{project.subtitle}</p>
+                      <p className="text-body-sm text-muted-foreground font-medium">{project.subtitle}</p>
                     </div>
                     <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide ${
                       project.category === 'ai'
@@ -428,7 +452,7 @@ export default function ResumeContent() {
                     </span>
                   </div>
 
-                  <p className="text-body-sm text-gray-700 leading-relaxed mb-4">{project.longDescription}</p>
+                  <p className="text-body-sm text-muted-foreground leading-relaxed mb-4">{project.longDescription}</p>
 
                   {project.metrics && project.metrics.length > 0 && (
                     <div className="grid grid-cols-3 gap-3 mb-4">
@@ -440,10 +464,10 @@ export default function ResumeContent() {
                           viewport={{ once: true }}
                           transition={{ delay: projIdx * 0.1 + metricIdx * 0.05 }}
                           whileHover={{ scale: 1.05 }}
-                          className="bg-gray-50 rounded-lg p-3 text-center border border-gray-100"
+                          className="bg-muted rounded-lg p-3 text-center border border-border"
                         >
                           <div className="text-body font-bold text-accent">{metric.value}</div>
-                          <div className="text-[10px] text-gray-600 uppercase tracking-wide">{metric.label}</div>
+                          <div className="text-[10px] text-muted-foreground uppercase tracking-wide">{metric.label}</div>
                         </motion.div>
                       ))}
                     </div>
@@ -457,7 +481,7 @@ export default function ResumeContent() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: projIdx * 0.1 + techIdx * 0.03 }}
-                        className="px-3 py-1 bg-gray-100 text-gray-600 text-[11px] rounded-full border border-gray-200"
+                        className="px-3 py-1 bg-muted text-muted-foreground text-[11px] rounded-full border border-border"
                       >
                         {tech}
                       </motion.span>
@@ -469,13 +493,11 @@ export default function ResumeContent() {
                       href={project.links.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-accent hover:text-accent-light transition-colors text-body-sm font-medium"
+                      className="inline-flex items-center gap-2 text-accent hover:text-accent transition-colors text-body-sm font-medium"
                       whileHover={{ x: 4 }}
                     >
                       View Project
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
+                      <ExternalLink className="w-4 h-4" />
                     </motion.a>
                   )}
                 </motion.div>
@@ -486,7 +508,7 @@ export default function ResumeContent() {
       </div>
 
       {/* Technical Expertise - Enhanced Display */}
-      <div className="py-24 px-8 bg-white">
+      <div className="py-24 px-8 bg-card">
         <div className="max-w-6xl mx-auto">
           <motion.section
             initial={{ opacity: 0, y: 20 }}
@@ -495,7 +517,7 @@ export default function ResumeContent() {
             transition={{ duration: 0.6 }}
           >
             <motion.h2
-              className="text-h3 font-bold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-12 text-center"
+              className="text-h3 font-bold text-gradient mb-12 text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -508,7 +530,7 @@ export default function ResumeContent() {
       </div>
 
       {/* Education & Certifications - White Section */}
-      <div className="py-24 px-8 bg-white">
+      <div className="py-24 px-8 bg-card">
         <div className="max-w-3xl mx-auto">
           {/* Education Section */}
           <motion.section
@@ -519,7 +541,7 @@ export default function ResumeContent() {
             transition={{ duration: 0.6 }}
           >
             <motion.h2
-              className="text-h4 font-semibold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-8"
+              className="text-h4 font-semibold text-gradient mb-8"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -535,26 +557,22 @@ export default function ResumeContent() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1, duration: 0.5 }}
-                  whileHover={{ x: 4, boxShadow: '0 8px 20px rgba(0, 102, 255, 0.1)' }}
-                  className="bg-cream border border-gray-200 rounded-xl p-6 hover:border-accent/30 transition-all cursor-pointer group flex items-start gap-4"
+                  whileHover={{ x: 4, boxShadow: '0 8px 20px rgba(230, 126, 34, 0.1)' }}
+                  className="bg-background border border-border rounded-xl p-6 hover:border-accent/30 transition-all cursor-pointer group flex items-start gap-4"
                 >
-                  <motion.div
-                    className="text-3xl"
-                    whileHover={{ scale: 1.2, rotate: 5 }}
-                    transition={{ type: 'spring', stiffness: 200 }}
-                  >
-                    {edu.icon}
-                  </motion.div>
+                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    {eduIcons[edu.icon] || <GraduationCap className="w-6 h-6 text-accent" />}
+                  </div>
                   <div className="flex-1">
-                    <h3 className="text-body font-semibold text-gray-900 group-hover:text-accent transition-colors">
+                    <h3 className="text-body font-semibold text-foreground group-hover:text-accent transition-colors">
                       {edu.degree}
                     </h3>
-                    <p className="text-body-sm text-gray-600">
+                    <p className="text-body-sm text-muted-foreground">
                       {edu.institution} • {edu.location}
                     </p>
-                    <p className="text-body-sm text-gray-500 mt-1">{edu.year}</p>
+                    <p className="text-body-sm text-muted-foreground mt-1">{edu.year}</p>
                     {edu.description && (
-                      <p className="text-body-sm text-gray-500 mt-2 italic">{edu.description}</p>
+                      <p className="text-body-sm text-muted-foreground mt-2 italic">{edu.description}</p>
                     )}
                   </div>
                 </motion.div>
@@ -571,7 +589,7 @@ export default function ResumeContent() {
             transition={{ duration: 0.6 }}
           >
             <motion.h2
-              className="text-h4 font-semibold text-transparent bg-gradient-to-r from-gray-900 to-accent bg-clip-text mb-8"
+              className="text-h4 font-semibold text-gradient mb-8"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -587,25 +605,21 @@ export default function ResumeContent() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1, duration: 0.5 }}
-                  whileHover={{ x: 4, boxShadow: '0 8px 20px rgba(0, 102, 255, 0.1)' }}
-                  className="bg-cream border border-gray-200 rounded-xl p-6 hover:border-accent/30 transition-all cursor-pointer group flex items-start gap-4"
+                  whileHover={{ x: 4, boxShadow: '0 8px 20px rgba(230, 126, 34, 0.1)' }}
+                  className="bg-background border border-border rounded-xl p-6 hover:border-accent/30 transition-all cursor-pointer group flex items-start gap-4"
                 >
-                  <motion.div
-                    className="text-3xl"
-                    whileHover={{ scale: 1.2, rotate: 5 }}
-                    transition={{ type: 'spring', stiffness: 200 }}
-                  >
-                    {cert.icon}
-                  </motion.div>
+                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    {certIcons[cert.icon] || <Award className="w-6 h-6 text-accent" />}
+                  </div>
                   <div className="flex-1">
-                    <h3 className="text-body font-semibold text-gray-900 group-hover:text-accent transition-colors">
+                    <h3 className="text-body font-semibold text-foreground group-hover:text-accent transition-colors">
                       {cert.title}
                     </h3>
-                    <p className="text-body-sm text-gray-600">
+                    <p className="text-body-sm text-muted-foreground">
                       {cert.organization} • {cert.level}
                     </p>
                     {cert.description && (
-                      <p className="text-body-sm text-gray-500 mt-2 italic">{cert.description}</p>
+                      <p className="text-body-sm text-muted-foreground mt-2 italic">{cert.description}</p>
                     )}
                   </div>
                   <motion.div
@@ -620,7 +634,7 @@ export default function ResumeContent() {
 
           {/* Target Roles */}
           <section className="mb-12">
-            <h2 className="text-h4 font-semibold text-gray-900 mb-6">Target Roles</h2>
+            <h2 className="text-h4 font-semibold text-foreground mb-6">Target Roles</h2>
             <div className="flex flex-wrap gap-3">
               {['Senior AI Integration Engineer', 'Platform Engineer', 'Staff Full-Stack Engineer'].map((role) => (
                 <span
@@ -634,7 +648,7 @@ export default function ResumeContent() {
           </section>
 
           {/* Download & Contact CTA */}
-          <div id="download" className="border-t border-gray-200 pt-12 text-center">
+          <div id="download" className="border-t border-border pt-12 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -642,7 +656,7 @@ export default function ResumeContent() {
               transition={{ duration: 0.6 }}
             >
               <motion.h3
-                className="text-h4 font-bold text-gray-900 mb-8"
+                className="text-h4 font-bold text-foreground mb-8"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -654,39 +668,21 @@ export default function ResumeContent() {
                 <motion.a
                   href="/resume/print"
                   target="_blank"
-                  className="inline-flex items-center gap-3 px-10 py-5 bg-black text-cream hover:bg-gray-900 transition-all rounded-2xl text-body-lg font-bold shadow-2xl hover:shadow-xl"
+                  className="inline-flex items-center gap-3 px-10 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all rounded-2xl text-body-lg font-bold shadow-2xl hover:shadow-xl"
                   whileHover={{ scale: 1.05, y: -3 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <motion.svg
-                    className="w-6 h-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    animate={{ y: [0, 4, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </motion.svg>
+                  <Download className="w-6 h-6" />
                   Download PDF Resume
                 </motion.a>
 
                 <motion.a
                   href="mailto:nick@nickkulavic.com"
-                  className="inline-flex items-center gap-3 px-10 py-5 bg-accent text-white hover:bg-accent-light transition-all rounded-2xl text-body-lg font-bold shadow-2xl hover:shadow-accent/50"
-                  whileHover={{ scale: 1.05, y: -3, boxShadow: '0 20px 40px rgba(0, 102, 255, 0.4)' }}
+                  className="inline-flex items-center gap-3 px-10 py-5 bg-accent text-accent-foreground hover:brightness-110 transition-all rounded-2xl text-body-lg font-bold shadow-2xl hover:shadow-accent/50"
+                  whileHover={{ scale: 1.05, y: -3, boxShadow: '0 20px 40px rgba(230, 126, 34, 0.4)' }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <motion.svg
-                    className="w-6 h-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    animate={{ y: [0, -3, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </motion.svg>
+                  <Mail className="w-6 h-6" />
                   Get in Touch
                 </motion.a>
               </div>
@@ -701,7 +697,7 @@ export default function ResumeContent() {
                 {['Remote', 'Denver-based', 'Full-time', 'Contract'].map((type) => (
                   <span
                     key={type}
-                    className="px-4 py-2 bg-gray-100 text-gray-700 text-body-sm font-medium rounded-lg border border-gray-200"
+                    className="px-4 py-2 bg-muted text-muted-foreground text-body-sm font-medium rounded-lg border border-border"
                   >
                     {type}
                   </span>
@@ -713,7 +709,7 @@ export default function ResumeContent() {
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
                 viewport={{ once: true }}
-                className="text-body text-gray-600"
+                className="text-body text-muted-foreground"
               >
                 Available for immediate opportunities • Authorized to work in the United States
               </motion.p>

@@ -1,9 +1,41 @@
 import type { Metadata } from "next";
+import { Space_Grotesk, DM_Sans, Inter, Lora, Space_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import JsonLd from "./components/JsonLd";
 import { ThemeProvider } from "./components/ThemeProvider";
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
+  display: 'swap',
+});
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-dm-sans',
+  display: 'swap',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const lora = Lora({
+  subsets: ['latin'],
+  variable: '--font-lora',
+  display: 'swap',
+});
+
+const spaceMono = Space_Mono({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  variable: '--font-space-mono',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://nickkulavic.ai'),
@@ -57,7 +89,7 @@ export default function RootLayout({
         <JsonLd />
       </head>
       <body
-        className="antialiased"
+        className={`${spaceGrotesk.variable} ${dmSans.variable} ${inter.variable} ${lora.variable} ${spaceMono.variable} antialiased`}
       >
         <ThemeProvider>
           {children}

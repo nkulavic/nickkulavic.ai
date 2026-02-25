@@ -51,7 +51,7 @@ export default function PrintResumeContent() {
       <div className="no-print fixed top-4 right-4 z-50">
         <button
           onClick={handlePrint}
-          className="flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-xl font-bold shadow-lg hover:bg-accent-light transition-all"
+          className="flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-xl font-bold shadow-lg hover:brightness-110 transition-all"
         >
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
@@ -109,7 +109,7 @@ export default function PrintResumeContent() {
         </header>
 
         {/* Professional Summary - Lead section */}
-        <div className="bg-gradient-to-br from-accent/5 to-blue-50 px-10 py-6 border-b-2 border-accent/20">
+        <div className="bg-gradient-to-br from-accent/5 to-accent/10 px-10 py-6 border-b-2 border-accent/20">
           <h2 className="text-lg font-bold text-gray-900 uppercase tracking-wider mb-3 flex items-center gap-2">
             <span className="w-1.5 h-6 bg-accent rounded-full"></span>
             Professional Summary
@@ -149,7 +149,7 @@ export default function PrintResumeContent() {
               <div className="flex gap-3 text-xs">
                 <span className="px-2 py-1 bg-accent/10 text-accent rounded font-bold">{totalSkills}+ Skills</span>
                 <span className="px-2 py-1 bg-green-500/10 text-green-700 rounded font-bold">{expertSkills} Expert</span>
-                <span className="px-2 py-1 bg-blue-500/10 text-blue-700 rounded font-bold">{productionSkills} Production</span>
+                <span className="px-2 py-1 bg-accent/10 text-accent rounded font-bold">{productionSkills} Production</span>
               </div>
             </div>
 
@@ -208,7 +208,7 @@ export default function PrintResumeContent() {
             </div>
 
             {/* Key Highlights Banner */}
-            <div className="mt-3 bg-gradient-to-r from-accent/5 to-blue-50 rounded-lg p-2 border border-accent/20">
+            <div className="mt-3 bg-gradient-to-r from-accent/5 to-accent/10 rounded-lg p-2 border border-accent/20">
               <div className="flex items-center justify-center gap-6 text-xs">
                 <span className="font-bold text-gray-800">✓ Full AWS Solutions Architect</span>
                 <span className="font-bold text-gray-800">✓ Multi-Cloud (AWS + GCP)</span>

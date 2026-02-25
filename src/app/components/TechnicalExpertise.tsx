@@ -4,6 +4,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { skillCategories, getSkillCounts, getProductionSkills } from '@/app/data/skills';
+import { Target, Star, Rocket, Cloud, Bot, Server, Settings, Palette, BarChart3, Link as LinkIcon, ShoppingCart, MessageSquare, Database, Wrench, Lock, Briefcase, ChevronDown } from 'lucide-react';
 
 export default function TechnicalExpertise() {
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
@@ -26,6 +27,31 @@ export default function TechnicalExpertise() {
     setExpandedCategories(newExpanded);
   };
 
+  // Map stat labels to icons
+  const statIconMap: Record<string, React.ReactNode> = {
+    'Total Skills': <Target className="w-8 h-8 text-accent" />,
+    'Expert Level': <Star className="w-8 h-8 text-accent" />,
+    'Production Proven': <Rocket className="w-8 h-8 text-accent" />,
+    'Cloud Platforms': <Cloud className="w-8 h-8 text-accent" />,
+  };
+
+  // Map emoji strings from skill category data to Lucide icons
+  const categoryIconMap: Record<string, React.ReactNode> = {
+    '\u{1F916}': <Bot className="w-7 h-7 text-accent" />,
+    '\u2601\uFE0F': <Cloud className="w-7 h-7 text-accent" />,
+    '\u{1F329}\uFE0F': <Server className="w-7 h-7 text-accent" />,
+    '\u2699\uFE0F': <Settings className="w-7 h-7 text-accent" />,
+    '\u{1F3A8}': <Palette className="w-7 h-7 text-accent" />,
+    '\u{1F4CA}': <BarChart3 className="w-7 h-7 text-accent" />,
+    '\u{1F517}': <LinkIcon className="w-7 h-7 text-accent" />,
+    '\u{1F6D2}': <ShoppingCart className="w-7 h-7 text-accent" />,
+    '\u{1F4AC}': <MessageSquare className="w-7 h-7 text-accent" />,
+    '\u{1F5C4}\uFE0F': <Database className="w-7 h-7 text-accent" />,
+    '\u{1F6E0}\uFE0F': <Wrench className="w-7 h-7 text-accent" />,
+    '\u{1F512}': <Lock className="w-7 h-7 text-accent" />,
+    '\u{1F4BC}': <Briefcase className="w-7 h-7 text-accent" />,
+  };
+
   return (
     <div className="space-y-12">
       {/* Skills Overview Dashboard */}
@@ -33,21 +59,21 @@ export default function TechnicalExpertise() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="bg-gradient-to-br from-accent/10 via-blue-50 to-white rounded-2xl p-8 border-2 border-accent/20 shadow-xl"
+        className="bg-gradient-to-br from-accent/10 via-accent/5 to-card rounded-2xl p-8 border-2 border-accent/20 shadow-xl"
       >
         <div className="flex items-center justify-between mb-6">
-          <h3 className="text-h4 font-bold text-gray-900">Technical Expertise Overview</h3>
-          <span className="px-4 py-2 bg-accent text-white rounded-full text-sm font-bold">
-            Full-Stack • Multi-Cloud • AI/ML
+          <h3 className="text-h4 font-bold text-foreground">Technical Expertise Overview</h3>
+          <span className="px-4 py-2 bg-accent text-accent-foreground rounded-full text-sm font-bold">
+            Full-Stack | Multi-Cloud | AI/ML
           </span>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { label: 'Total Skills', value: skillCounts.total, icon: '🎯', color: 'from-blue-500 to-blue-600' },
-            { label: 'Expert Level', value: skillCounts.expert, icon: '⭐', color: 'from-amber-500 to-amber-600' },
-            { label: 'Production Proven', value: productionSkills.length, icon: '🚀', color: 'from-green-500 to-green-600' },
-            { label: 'Cloud Platforms', value: '2+', icon: '☁️', color: 'from-purple-500 to-purple-600' }
+            { label: 'Total Skills', value: skillCounts.total, color: 'from-blue-500 to-blue-600' },
+            { label: 'Expert Level', value: skillCounts.expert, color: 'from-amber-500 to-amber-600' },
+            { label: 'Production Proven', value: productionSkills.length, color: 'from-green-500 to-green-600' },
+            { label: 'Cloud Platforms', value: '2+', color: 'from-purple-500 to-purple-600' }
           ].map((stat, idx) => (
             <motion.div
               key={stat.label}
@@ -56,18 +82,15 @@ export default function TechnicalExpertise() {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
               whileHover={{ scale: 1.05, y: -4 }}
-              className="bg-white rounded-xl p-6 text-center shadow-lg border border-gray-200 cursor-pointer group"
+              className="bg-card rounded-xl p-6 text-center shadow-lg border border-border cursor-pointer group"
             >
-              <motion.div
-                className="text-4xl mb-3"
-                whileHover={{ scale: 1.2, rotate: 10 }}
-              >
-                {stat.icon}
-              </motion.div>
+              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-3">
+                {statIconMap[stat.label]}
+              </div>
               <div className={`text-3xl font-extrabold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}>
                 {stat.value}
               </div>
-              <div className="text-sm text-gray-600 font-semibold uppercase tracking-wide">
+              <div className="text-sm text-muted-foreground font-semibold uppercase tracking-wide">
                 {stat.label}
               </div>
             </motion.div>
@@ -78,7 +101,7 @@ export default function TechnicalExpertise() {
       {/* Core Competencies - Top Categories */}
       <div>
         <motion.h3
-          className="text-h4 font-bold text-gray-900 mb-8"
+          className="text-h4 font-bold text-foreground mb-8"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -101,23 +124,20 @@ export default function TechnicalExpertise() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                whileHover={{ y: -6, boxShadow: '0 12px 32px rgba(0, 102, 255, 0.15)' }}
-                className="bg-white rounded-xl p-6 border-2 border-gray-200 hover:border-accent/50 transition-all shadow-md group"
+                whileHover={{ y: -6, boxShadow: '0 12px 32px rgba(230, 126, 34, 0.15)' }}
+                className="bg-card rounded-xl p-6 border-2 border-border hover:border-accent/50 transition-all shadow-md group"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
-                    <motion.span
-                      className="text-4xl"
-                      whileHover={{ scale: 1.2, rotate: 10 }}
-                    >
-                      {category.icon}
-                    </motion.span>
+                    <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                      {categoryIconMap[category.icon] || <Settings className="w-7 h-7 text-accent" />}
+                    </div>
                     <div>
-                      <h4 className="text-lg font-bold text-gray-900 group-hover:text-accent transition-colors">
+                      <h4 className="text-lg font-bold text-foreground group-hover:text-accent transition-colors">
                         {category.name}
                       </h4>
                       {category.description && (
-                        <p className="text-xs text-gray-500 mt-1">{category.description}</p>
+                        <p className="text-xs text-muted-foreground mt-1">{category.description}</p>
                       )}
                     </div>
                   </div>
@@ -140,7 +160,7 @@ export default function TechnicalExpertise() {
                             skill.level === 'advanced' ? 'bg-blue-500' :
                             'bg-gray-400'
                           }`} />
-                          <span className="text-gray-700 font-medium">{skill.name}</span>
+                          <span className="text-muted-foreground font-medium">{skill.name}</span>
                           {skill.badge && (
                             <span className="text-xs px-2 py-0.5 bg-accent/10 text-accent rounded-full font-bold">
                               {skill.badge}
@@ -148,7 +168,7 @@ export default function TechnicalExpertise() {
                           )}
                         </div>
                         {skill.yearsExperience && (
-                          <span className="text-xs text-gray-500 font-semibold">
+                          <span className="text-xs text-muted-foreground font-semibold">
                             {skill.yearsExperience}y
                           </span>
                         )}
@@ -160,22 +180,22 @@ export default function TechnicalExpertise() {
                 {hasMore && (
                   <motion.button
                     onClick={() => toggleCategory(category.name)}
-                    className="mt-4 text-sm text-accent hover:text-accent-light font-bold flex items-center gap-1 group/btn"
+                    className="mt-4 text-sm text-accent hover:text-accent font-bold flex items-center gap-1 group/btn"
                     whileHover={{ x: 4 }}
                   >
                     {isExpanded ? 'Show less' : `Show ${category.skills.length - displaySkills.length} more`}
-                    <motion.span
+                    <motion.div
                       animate={{ rotate: isExpanded ? 180 : 0 }}
                       transition={{ duration: 0.2 }}
                     >
-                      ▼
-                    </motion.span>
+                      <ChevronDown className="w-5 h-5 text-accent" />
+                    </motion.div>
                   </motion.button>
                 )}
 
-                <div className="mt-4 pt-4 border-t border-gray-200 flex items-center justify-between text-xs text-gray-600">
+                <div className="mt-4 pt-4 border-t border-border flex items-center justify-between text-xs text-muted-foreground">
                   <span className="font-semibold">
-                    {category.skills.filter(s => s.level === 'expert').length} Expert •{' '}
+                    {category.skills.filter(s => s.level === 'expert').length} Expert |{' '}
                     {category.skills.filter(s => s.level === 'advanced').length} Advanced
                   </span>
                   <span className="text-accent font-bold">{category.skills.length} total</span>
@@ -194,8 +214,8 @@ export default function TechnicalExpertise() {
           viewport={{ once: true }}
           className="flex items-center justify-between mb-6"
         >
-          <h3 className="text-h4 font-bold text-gray-900">Additional Expertise</h3>
-          <span className="text-sm text-gray-600">
+          <h3 className="text-h4 font-bold text-foreground">Additional Expertise</h3>
+          <span className="text-sm text-muted-foreground">
             {skillCategories.length - topCategories.length} more categories
           </span>
         </motion.div>
@@ -215,29 +235,31 @@ export default function TechnicalExpertise() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.05 }}
-                  className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-5 border border-gray-200 hover:border-accent/30 transition-all shadow-sm"
+                  className="bg-gradient-to-br from-muted to-card rounded-xl p-5 border border-border hover:border-accent/30 transition-all shadow-sm"
                 >
                   <button
                     onClick={() => toggleCategory(category.name)}
                     className="w-full flex items-center justify-between group"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="text-2xl">{category.icon}</span>
+                      <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        {categoryIconMap[category.icon] || <Settings className="w-5 h-5 text-accent" />}
+                      </div>
                       <div className="text-left">
-                        <h4 className="text-base font-bold text-gray-900 group-hover:text-accent transition-colors">
+                        <h4 className="text-base font-bold text-foreground group-hover:text-accent transition-colors">
                           {category.name}
                         </h4>
-                        <p className="text-xs text-gray-600">
-                          {expertSkills.length} expert • {category.skills.length} total
+                        <p className="text-xs text-muted-foreground">
+                          {expertSkills.length} expert | {category.skills.length} total
                         </p>
                       </div>
                     </div>
-                    <motion.span
+                    <motion.div
                       animate={{ rotate: isExpanded ? 180 : 0 }}
-                      className="text-accent text-xl"
+                      transition={{ duration: 0.2 }}
                     >
-                      ▼
-                    </motion.span>
+                      <ChevronDown className="w-5 h-5 text-accent" />
+                    </motion.div>
                   </button>
 
                   <AnimatePresence>
@@ -247,7 +269,7 @@ export default function TechnicalExpertise() {
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="mt-4 pt-4 border-t border-gray-200 overflow-hidden"
+                        className="mt-4 pt-4 border-t border-border overflow-hidden"
                       >
                         <div className="grid grid-cols-1 gap-2">
                           {category.skills.map((skill, skillIdx) => (
@@ -264,7 +286,7 @@ export default function TechnicalExpertise() {
                                   skill.level === 'advanced' ? 'bg-blue-500' :
                                   'bg-gray-400'
                                 }`} />
-                                <span className="text-gray-700">{skill.name}</span>
+                                <span className="text-muted-foreground">{skill.name}</span>
                                 {skill.badge && (
                                   <span className="text-xs px-2 py-0.5 bg-accent/10 text-accent rounded-full font-bold">
                                     {skill.badge}
@@ -272,7 +294,7 @@ export default function TechnicalExpertise() {
                                 )}
                               </div>
                               {skill.yearsExperience && (
-                                <span className="text-xs text-gray-500 font-semibold">
+                                <span className="text-xs text-muted-foreground font-semibold">
                                   {skill.yearsExperience}y
                                 </span>
                               )}
@@ -293,7 +315,7 @@ export default function TechnicalExpertise() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-600 pt-8 border-t border-gray-200"
+        className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground pt-8 border-t border-border"
       >
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 rounded-full bg-green-500" />
